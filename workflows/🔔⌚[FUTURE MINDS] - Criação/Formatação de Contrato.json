@@ -1,0 +1,3504 @@
+{
+  "active": true,
+  "connections": {
+    "formata_contrato_automacoes": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratar_dados": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "infos_bc1": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplica_contrato_modus_inovandi": {
+      "main": [
+        [
+          {
+            "node": "formata_contrato_automacoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_contrato_automacoes2": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratar_dados2": {
+      "main": [
+        [
+          {
+            "node": "variaveis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis1": {
+      "main": [
+        [
+          {
+            "node": "duplica_contrato_modus_inovandi_start",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplica_contrato_modus_inovandi_start": {
+      "main": [
+        [
+          {
+            "node": "formata_contrato_automacoes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_contrato_automacoes3": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratar_dados4": {
+      "main": [
+        [
+          {
+            "node": "variaveis2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis2": {
+      "main": [
+        [
+          {
+            "node": "duplica_contrato_metodo_modus_inovandi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplica_contrato_metodo_modus_inovandi": {
+      "main": [
+        [
+          {
+            "node": "formata_contrato_automacoes3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "tratar_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_contrato_automacoes4": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratar_dados5": {
+      "main": [
+        [
+          {
+            "node": "variaveis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis3": {
+      "main": [
+        [
+          {
+            "node": "duplica_contrato_mentoria-c-level",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratar_dados6": {
+      "main": [
+        [
+          {
+            "node": "variaveis4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis4": {
+      "main": [
+        [
+          {
+            "node": "duplica_contrato_mentoria_melhor_versao",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro4": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "tratar_dados6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro3": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "tratar_dados5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro2": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "tratar_dados4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro1": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "tratar_dados2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastrar_contato": {
+      "main": [
+        [
+          {
+            "node": "closer_juliana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplica_contrato_mentoria-c-level": {
+      "main": [
+        [
+          {
+            "node": "formata_contrato_automacoes4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_contrato_automacoes5": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplica_contrato_mentoria_melhor_versao": {
+      "main": [
+        [
+          {
+            "node": "formata_contrato_automacoes5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_bc_lilian1": {
+      "main": [
+        [
+          {
+            "node": "infos_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "closer_juliana": {
+      "main": [
+        [
+          {
+            "node": "notificacao_closer_juliana",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "closer_luiza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "closer_luiza": {
+      "main": [
+        [
+          {
+            "node": "notificacao_closer_luiza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mentoria_modus_inovandi_start": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_bc_lilian2": {
+      "main": [
+        [
+          {
+            "node": "infos_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_bc_lilian": {
+      "main": [
+        [
+          {
+            "node": "infos_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_bc_lilian3": {
+      "main": [
+        [
+          {
+            "node": "infos_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_bc_lilian4": {
+      "main": [
+        [
+          {
+            "node": "infos_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_closer_juliana": {
+      "main": [
+        [
+          {
+            "node": "Fim",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_closer_luiza": {
+      "main": [
+        [
+          {
+            "node": "Fim",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mentoria_modus_inovandi": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "metodo_modus_inovandi": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mentoria-c-level": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mentoria_minha_melhor_versao": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "duplica_contrato_modus_inovandi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-24T16:40:15.806Z",
+  "id": "XUNqGruAZn9B9xKD",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "🔔⌚[FUTURE MINDS] - Criação/Formatação de Contrato",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentURL": "={{ $node[\"duplica_contrato_modus_inovandi\"].json[\"id\"] }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{NOMECOMPLETO}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"nome\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPF}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ENDEREÇO}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"Endereço\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{RG}}",
+              "replaceText": "={{ $node[\"tratar_dados\"].json[\"RG\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{VALOR}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"Valor\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FORMADEPAGAMENTO}}",
+              "replaceText": "={{ $node.variaveis.json[\"Forma de Pagamento\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{DIA}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"DIA \"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{MESEXTENSO}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"MÊS\"].replace('01','Janeiro').replace('02','Fevereiro').replace('03','Março').replace('04','Abril').replace('05','Maio').replace('06','Junho').replace('07','Julho').replace('08','Agosto').replace('09','Setembro').replace('10','Outubro').replace('11','Novembro').replace('12','Dezembro') }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FIMDOANO}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"ANO (DOIS DIGITOS)\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPFCNPJ}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CEP}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"CEP\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{TELEFONE}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"Telefone\"] }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{EMAIL}}",
+              "replaceText": "={{ $node[\"variaveis\"].json[\"Email\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "formata_contrato_automacoes",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1220
+      ],
+      "id": "ab473c78-52cc-47e3-b866-bfa35c1aad18",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "P3tS57NAKeMIdvgP",
+          "name": "[Google Docs] - Automagic Bots"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"mentoria_modus_inovandi\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para validar e formatar o CEP com pontos e traço\nfunction validarFormatoCEP(cep) {\n  // Remove caracteres não numéricos\n  cep = cep.replace(/\\D/g, '');\n\n  // Verifica se o CEP tem a quantidade correta de dígitos\n  if (cep.length === 8) {\n    // Formata para o padrão 00000-000\n    cep = cep.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Se não tiver 8 dígitos, considera inválido\n    cep = '00000-000';\n  }\n\n  return cep;\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n\n    // Função para formatar o CPF\nfunction formatCPF(cpf) {\n  // Remover caracteres não numéricos\n  cpf = cpf.replace(/\\D/g, '');\n\n  // Verificar se o CPF tem a quantidade correta de dígitos\n  if (cpf.length === 11) {\n    // Formata para o padrão 000.000.000-00\n    return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n  } else {\n    // Se não tiver 11 dígitos, considera inválido\n    return '000.000.000-00';\n  }\n}\n\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"mentoria_modus_inovandi\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "e3499d44-1dcf-4b33-8939-1067f8fd6d05",
+      "name": "tratar_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_juliana_bot_conversa",
+              "value": "426782784"
+            },
+            {
+              "name": "id_notificacao_luiza_bot_conversa",
+              "value": "508598335"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados\"].runIndex >= 0 ? $node[\"tratar_dados\"].json[\"nome\"] : ($node[\"tratar_dados2\"].runIndex >= 0 ? $node[\"tratar_dados2\"].json[\"nome\"] : ($node[\"tratar_dados4\"].runIndex >= 0 ? $node[\"tratar_dados4\"].json[\"nome\"] : ($node[\"tratar_dados5\"].runIndex >= 0 ? $node[\"tratar_dados5\"].json[\"nome\"] : ($node[\"tratar_dados6\"].runIndex >= 0 ? $node[\"tratar_dados6\"].json[\"nome\"] :  \"\" )))) }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"tratar_dados\"].runIndex >= 0 ? $node[\"tratar_dados\"].json[\"email\"] : ($node[\"tratar_dados2\"].runIndex >= 0 ? $node[\"tratar_dados2\"].json[\"email\"] : ($node[\"tratar_dados4\"].runIndex >= 0 ? $node[\"tratar_dados4\"].json[\"email\"] : ($node[\"tratar_dados5\"].runIndex >= 0 ? $node[\"tratar_dados5\"].json[\"email\"] : ($node[\"tratar_dados6\"].runIndex >= 0 ? $node[\"tratar_dados6\"].json[\"email\"] :  \"\" )))) }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"tratar_dados\"].runIndex >= 0 ? $node[\"tratar_dados\"].json[\"telefone\"] : ($node[\"tratar_dados2\"].runIndex >= 0 ? $node[\"tratar_dados2\"].json[\"telefone\"] : ($node[\"tratar_dados4\"].runIndex >= 0 ? $node[\"tratar_dados4\"].json[\"telefone\"] : ($node[\"tratar_dados5\"].runIndex >= 0 ? $node[\"tratar_dados5\"].json[\"telefone\"] : ($node[\"tratar_dados6\"].runIndex >= 0 ? $node[\"tratar_dados6\"].json[\"telefone\"] : \"\" )))) }}"
+            },
+            {
+              "name": "nome_do_contarto",
+              "value": "={{ $node[\"tratar_dados\"].runIndex >= 0 ? $node[\"tratar_dados\"].json[\"IDform\"] : ($node[\"tratar_dados2\"].runIndex >= 0 ? $node[\"tratar_dados2\"].json[\"IDform\"] : ($node[\"tratar_dados4\"].runIndex >= 0 ? $node[\"tratar_dados4\"].json[\"IDform\"] : ($node[\"tratar_dados5\"].runIndex >= 0 ? $node[\"tratar_dados5\"].json[\"IDform\"] : ($node[\"tratar_dados6\"].runIndex >= 0 ? $node[\"tratar_dados6\"].json[\"IDform\"] :  \"\" )))) }}"
+            },
+            {
+              "name": "id_contrato_duplicado",
+              "value": "={{ $node[\"formata_contrato_automacoes\"].runIndex >= 0 ? $node[\"formata_contrato_automacoes\"].json[\"documentId\"] : ($node[\"formata_contrato_automacoes2\"].runIndex >= 0 ? $node[\"formata_contrato_automacoes2\"].json[\"documentId\"] : ($node[\"formata_contrato_automacoes3\"].runIndex >= 0 ? $node[\"formata_contrato_automacoes3\"].json[\"documentId\"] : ($node[\"formata_contrato_automacoes4\"].runIndex >= 0 ? $node[\"formata_contrato_automacoes4\"].json[\"documentId\"] : ($node[\"formata_contrato_automacoes5\"].runIndex >= 0 ? $node[\"formata_contrato_automacoes5\"].json[\"documentId\"] :  \"\" )))) }}"
+            },
+            {
+              "name": "ferramenta_de_contarto2",
+              "value": "Autentique Assinatura Digital"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c8eb972c-9f8b-498f-befa-c54ac4fff024",
+      "name": "infos_bc1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Cadastrar Leads - Memberkit",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "a74e95ca-0e60-4902-a2b1-d6a4dbe08a44",
+      "name": "entra_na_fila_memberkit",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        960
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1zft2gQa-aWnmYVaLQbUVT4VsSybuskSjLN5KGpa27wU",
+          "mode": "id"
+        },
+        "options": {
+          "name": "=Contrato Mentoria Modus Inovandi Inteira - {{ $node[\"variaveis\"].json[\"nome\"] }}",
+          "parents": [
+            "116xgYQEOXJ5iyRb06rYNrpX3QJKzIPdG"
+          ]
+        }
+      },
+      "name": "duplica_contrato_modus_inovandi",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        1220
+      ],
+      "id": "7a258058-8599-4e0d-9c8a-f4525f7811c2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "ferramenta_contrato",
+              "value": "Autentique Assinatura Digital"
+            },
+            {
+              "name": "Forma de Pagamento",
+              "value": "Cartão de Crédito / Transferência"
+            },
+            {
+              "name": "Valor",
+              "value": "={{ $node[\"tratar_dados\"].json[\"IDform\"].replace('vIqpVdJT','R$8.400,00') }}"
+            },
+            {
+              "name": "ID FORMS",
+              "value": "={{ $node[\"tratar_dados\"].json[\"IDform\"] }}"
+            },
+            {
+              "name": "DIA ",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2)}}"
+            },
+            {
+              "name": "MÊS",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "name": "ANO (DOIS DIGITOS)",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(-2)}}"
+            },
+            {
+              "name": "RG",
+              "value": "={{ $node[\"tratar_dados\"].json[\"RG\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $node[\"tratar_dados\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Email",
+              "value": "={{ $node[\"tratar_dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "CEP",
+              "value": "={{ $node[\"tratar_dados\"].json[\"CEP\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "CPF",
+              "value": "={{ $node[\"tratar_dados\"].json[\"CPF\"] }}"
+            },
+            {
+              "name": "Endereço",
+              "value": "={{ $json[\"Endereço\"] }}"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_giza_bot_conversa",
+              "value": "381310138"
+            },
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_paula_bot_conversa",
+              "value": "294282590"
+            },
+            {
+              "name": "id_notificacao_amanda_bot_conversa",
+              "value": "294280236"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1220
+      ],
+      "retryOnFail": true,
+      "id": "12bfd85e-0bd2-4298-ac80-20e3aeb9af97"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"variaveis\"].json[\"id_notificacao_lilian_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_modus_inovandi\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis\"].json[\"Email\"] }} pelo {{ $node[\"variaveis\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variaveis\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_lilian",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        1220
+      ],
+      "id": "7b4848b1-5859-459f-9c60-4b833ff324b3",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentURL": "={{ $node[\"duplica_contrato_modus_inovandi_start\"].json[\"id\"] }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{NOMECOMPLETO}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"nome\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPF}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ENDEREÇO}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"Endereço\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{RG}}",
+              "replaceText": "={{ $node[\"tratar_dados2\"].json[\"RG\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{VALOR}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"Valor\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FORMADEPAGAMENTO}}",
+              "replaceText": "={{ $node.variaveis1.json[\"Forma de Pagamento\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{DIA}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"DIA \"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{MESEXTENSO}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"MÊS\"].replace('01','Janeiro').replace('02','Fevereiro').replace('03','Março').replace('04','Abril').replace('05','Maio').replace('06','Junho').replace('07','Julho').replace('08','Agosto').replace('09','Setembro').replace('10','Outubro').replace('11','Novembro').replace('12','Dezembro') }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FIMDOANO}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"ANO (DOIS DIGITOS)\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPFCNPJ}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CEP}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"CEP\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{TELEFONE}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"Telefone\"] }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{EMAIL}}",
+              "replaceText": "={{ $node[\"variaveis1\"].json[\"Email\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "formata_contrato_automacoes2",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1420
+      ],
+      "id": "d9cd30a5-e267-4230-b3d6-8499670f4834",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "P3tS57NAKeMIdvgP",
+          "name": "[Google Docs] - Automagic Bots"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"mentoria_modus_inovandi_start\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para validar e formatar o CEP com pontos e traço\nfunction validarFormatoCEP(cep) {\n  // Remove caracteres não numéricos\n  cep = cep.replace(/\\D/g, '');\n\n  // Verifica se o CEP tem a quantidade correta de dígitos\n  if (cep.length === 8) {\n    // Formata para o padrão 00000-000\n    cep = cep.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Se não tiver 8 dígitos, considera inválido\n    cep = '00000-000';\n  }\n\n  return cep;\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n\n    // Função para formatar o CPF\nfunction formatCPF(cpf) {\n  // Remover caracteres não numéricos\n  cpf = cpf.replace(/\\D/g, '');\n\n  // Verificar se o CPF tem a quantidade correta de dígitos\n  if (cpf.length === 11) {\n    // Formata para o padrão 000.000.000-00\n    return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n  } else {\n    // Se não tiver 11 dígitos, considera inválido\n    return '000.000.000-00';\n  }\n}\n\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"mentoria_modus_inovandi_start\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "6b41d667-a741-4e4a-8adb-f935f36e2ddd",
+      "name": "tratar_dados2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "ferramenta_contrato",
+              "value": "Autentique Assinatura Digital"
+            },
+            {
+              "name": "Forma de Pagamento",
+              "value": "Cartão de Crédito / Transferência"
+            },
+            {
+              "name": "Valor",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"IDform\"].replace('g1qUQG0W','R$5.400,00') }}"
+            },
+            {
+              "name": "ID FORMS",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"IDform\"] }}"
+            },
+            {
+              "name": "DIA ",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2)}}"
+            },
+            {
+              "name": "MÊS",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "name": "ANO (DOIS DIGITOS)",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(-2)}}"
+            },
+            {
+              "name": "RG",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"RG\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Email",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"email\"] }}"
+            },
+            {
+              "name": "CEP",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"CEP\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "CPF",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"CPF\"] }}"
+            },
+            {
+              "name": "Endereço",
+              "value": "={{ $node[\"tratar_dados2\"].json[\"Endereço\"] }}"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_giza_bot_conversa",
+              "value": "381310138"
+            },
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_paula_bot_conversa",
+              "value": "294282590"
+            },
+            {
+              "name": "id_notificacao_amanda_bot_conversa",
+              "value": "294280236"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "variaveis1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1420
+      ],
+      "retryOnFail": true,
+      "id": "c071a92b-567c-4849-ade6-6294fce44c10"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"variaveis1\"].json[\"id_notificacao_lilian_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis1\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_modus_inovandi_start\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis1\"].json[\"Email\"] }} pelo {{ $node[\"variaveis1\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis1\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis1\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variaveis1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_lilian1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        1420
+      ],
+      "id": "0f83518f-07fa-4cb8-828b-2a581cfedf46",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1pUVypVt0A2FqGkHVNZHjtta2Bt-mLKlWBcRGfkDsFpY",
+          "mode": "id"
+        },
+        "options": {
+          "name": "=Contrato Mentoria Modus Inovandi Start - {{ $node[\"variaveis1\"].json[\"nome\"] }}",
+          "parents": [
+            "116xgYQEOXJ5iyRb06rYNrpX3QJKzIPdG"
+          ]
+        }
+      },
+      "name": "duplica_contrato_modus_inovandi_start",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        1420
+      ],
+      "id": "2fd540cf-5c38-4edd-b6a7-ee9ff8a37c42",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentURL": "={{ $node[\"duplica_contrato_metodo_modus_inovandi\"].json[\"id\"] }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{NOMECOMPLETO}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"nome\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPF}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ENDEREÇO}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"Endereço\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{RG}}",
+              "replaceText": "={{ $node[\"tratar_dados4\"].json[\"RG\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{VALOR}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"Valor\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FORMADEPAGAMENTO}}",
+              "replaceText": "={{ $node.variaveis2.json[\"Forma de Pagamento\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{DIA}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"DIA \"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{MESEXTENSO}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"MÊS\"].replace('01','Janeiro').replace('02','Fevereiro').replace('03','Março').replace('04','Abril').replace('05','Maio').replace('06','Junho').replace('07','Julho').replace('08','Agosto').replace('09','Setembro').replace('10','Outubro').replace('11','Novembro').replace('12','Dezembro') }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FIMDOANO}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"ANO (DOIS DIGITOS)\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPFCNPJ}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CEP}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"CEP\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{TELEFONE}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"Telefone\"] }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{EMAIL}}",
+              "replaceText": "={{ $node[\"variaveis2\"].json[\"Email\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "formata_contrato_automacoes3",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1600
+      ],
+      "id": "b2c672de-bc32-4ec4-b803-27d5fe7f4d3b",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "P3tS57NAKeMIdvgP",
+          "name": "[Google Docs] - Automagic Bots"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"metodo_modus_inovandi\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para validar e formatar o CEP com pontos e traço\nfunction validarFormatoCEP(cep) {\n  // Remove caracteres não numéricos\n  cep = cep.replace(/\\D/g, '');\n\n  // Verifica se o CEP tem a quantidade correta de dígitos\n  if (cep.length === 8) {\n    // Formata para o padrão 00000-000\n    cep = cep.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Se não tiver 8 dígitos, considera inválido\n    cep = '00000-000';\n  }\n\n  return cep;\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n\n    // Função para formatar o CPF\nfunction formatCPF(cpf) {\n  // Remover caracteres não numéricos\n  cpf = cpf.replace(/\\D/g, '');\n\n  // Verificar se o CPF tem a quantidade correta de dígitos\n  if (cpf.length === 11) {\n    // Formata para o padrão 000.000.000-00\n    return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n  } else {\n    // Se não tiver 11 dígitos, considera inválido\n    return '000.000.000-00';\n  }\n}\n\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"metodo_modus_inovandi\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "8dc0217a-0c1c-4768-8475-28d1f7be9346",
+      "name": "tratar_dados4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "ferramenta_contrato",
+              "value": "Autentique Assinatura Digital"
+            },
+            {
+              "name": "Forma de Pagamento",
+              "value": "Cartão de Crédito / Transferência"
+            },
+            {
+              "name": "Valor",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"IDform\"].replace('GH5fCnKX','R$2.400') }}"
+            },
+            {
+              "name": "ID FORMS",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"IDform\"] }}"
+            },
+            {
+              "name": "DIA ",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2)}}"
+            },
+            {
+              "name": "MÊS",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "name": "ANO (DOIS DIGITOS)",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(-2)}}"
+            },
+            {
+              "name": "RG",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"RG\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Email",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"email\"] }}"
+            },
+            {
+              "name": "CEP",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"CEP\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "CPF",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"CPF\"] }}"
+            },
+            {
+              "name": "Endereço",
+              "value": "={{ $node[\"tratar_dados4\"].json[\"Endereço\"] }}"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_giza_bot_conversa",
+              "value": "381310138"
+            },
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_paula_bot_conversa",
+              "value": "294282590"
+            },
+            {
+              "name": "id_notificacao_amanda_bot_conversa",
+              "value": "294280236"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "variaveis2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1600
+      ],
+      "retryOnFail": true,
+      "id": "b0689ece-99f5-4c53-bee0-a98ccf380276"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"variaveis2\"].json[\"id_notificacao_lilian_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis2\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis2\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_metodo_modus_inovandi\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis2\"].json[\"Email\"] }} pelo {{ $node[\"variaveis2\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis2\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis2\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis2\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variaveis2\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_lilian2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        1600
+      ],
+      "id": "c4755310-215b-4e8f-823a-ec875acdc76a",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1qduDFdS6dfRRsGjCxoZR8TYztkOJq2wdeiz1JsZQR2Y",
+          "mode": "id"
+        },
+        "options": {
+          "name": "=Contrato Método Modus Inovandi - {{ $node[\"variaveis2\"].json[\"nome\"] }}",
+          "parents": [
+            "116xgYQEOXJ5iyRb06rYNrpX3QJKzIPdG"
+          ]
+        }
+      },
+      "name": "duplica_contrato_metodo_modus_inovandi",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        1600
+      ],
+      "id": "407a08a1-89db-474e-b08b-18b97199ed7e",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "cd949248-ca8e-481e-810e-6b4ade6b84fa",
+      "name": "segundo_ou_mais_erro",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "89ffccec-86d9-4eec-8aca-d29223628c2e",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentURL": "={{ $node[\"duplica_contrato_mentoria-c-level\"].json[\"id\"] }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{NOMECOMPLETO}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"nome\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPF}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ENDEREÇO}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"Endereço\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{RG}}",
+              "replaceText": "={{ $node[\"tratar_dados5\"].json[\"RG\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{VALOR}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"Valor\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FORMADEPAGAMENTO}}",
+              "replaceText": "={{ $node.variaveis3.json[\"Forma de Pagamento\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{DIA}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"DIA \"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{MESEXTENSO}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"MÊS\"].replace('01','Janeiro').replace('02','Fevereiro').replace('03','Março').replace('04','Abril').replace('05','Maio').replace('06','Junho').replace('07','Julho').replace('08','Agosto').replace('09','Setembro').replace('10','Outubro').replace('11','Novembro').replace('12','Dezembro') }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FIMDOANO}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"ANO (DOIS DIGITOS)\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPFCNPJ}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CEP}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"CEP\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{EMAIL}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"Email\"] }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{TELEFONE}}",
+              "replaceText": "={{ $node[\"variaveis3\"].json[\"Telefone\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "formata_contrato_automacoes4",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1780
+      ],
+      "id": "60db57f1-43e0-4fd9-8cb0-d9484d566f34",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "P3tS57NAKeMIdvgP",
+          "name": "[Google Docs] - Automagic Bots"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"mentoria-c-level\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para validar e formatar o CEP com pontos e traço\nfunction validarFormatoCEP(cep) {\n  // Remove caracteres não numéricos\n  cep = cep.replace(/\\D/g, '');\n\n  // Verifica se o CEP tem a quantidade correta de dígitos\n  if (cep.length === 8) {\n    // Formata para o padrão 00000-000\n    cep = cep.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Se não tiver 8 dígitos, considera inválido\n    cep = '00000-000';\n  }\n\n  return cep;\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n\n    // Função para formatar o CPF\nfunction formatCPF(cpf) {\n  // Remover caracteres não numéricos\n  cpf = cpf.replace(/\\D/g, '');\n\n  // Verificar se o CPF tem a quantidade correta de dígitos\n  if (cpf.length === 11) {\n    // Formata para o padrão 000.000.000-00\n    return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n  } else {\n    // Se não tiver 11 dígitos, considera inválido\n    return '000.000.000-00';\n  }\n}\n\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"mentoria-c-level\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "57ee105b-e182-425d-a761-9274a1a8e90b",
+      "name": "tratar_dados5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1780
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "ferramenta_contrato",
+              "value": "Autentique Assinatura Digital"
+            },
+            {
+              "name": "Forma de Pagamento",
+              "value": "Cartão de Crédito / Transferência"
+            },
+            {
+              "name": "Valor",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"IDform\"].replace('StTjBpch','R$21.600') }}"
+            },
+            {
+              "name": "ID FORMS",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"IDform\"] }}"
+            },
+            {
+              "name": "DIA ",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2)}}"
+            },
+            {
+              "name": "MÊS",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "name": "ANO (DOIS DIGITOS)",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(-2)}}"
+            },
+            {
+              "name": "RG",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"RG\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Email",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"email\"] }}"
+            },
+            {
+              "name": "CEP",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"CEP\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "CPF",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"CPF\"] }}"
+            },
+            {
+              "name": "Endereço",
+              "value": "={{ $node[\"tratar_dados5\"].json[\"Endereço\"] }}"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_giza_bot_conversa",
+              "value": "381310138"
+            },
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_paula_bot_conversa",
+              "value": "294282590"
+            },
+            {
+              "name": "id_notificacao_amanda_bot_conversa",
+              "value": "294280236"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "variaveis3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1780
+      ],
+      "retryOnFail": true,
+      "id": "f28726ad-e1b3-45a0-af4a-f0ef783b65eb"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"variaveis3\"].json[\"id_notificacao_lilian_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis3\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis3\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_mentoria-c-level\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis3\"].json[\"Email\"] }} pelo {{ $node[\"variaveis3\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis3\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis3\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis3\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variaveis3\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_lilian3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        1780
+      ],
+      "id": "f74f925a-8f97-4dd8-9bdb-457135d8cefe",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"mentoria_minha_melhor_versao\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para formatar CEP\nfunction validarFormatoCEP(valor) {\n  if (!valor) {\n    return \"\"; // Retorna uma string vazia se o campo estiver vazio\n  }\n\n  valor = valor.toString().replace(/[^\\d]/g, ''); // Certifica-se de que o valor seja uma string e remove caracteres não numéricos\n\n  if (valor.length === 8) {\n    // Se o tamanho for 8, formata como CEP\n    return valor.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Caso contrário, retorna o valor original sem formatação\n    return valor;\n  }\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n\n    // Função para formatar o CPF\nfunction formatCPF(cpf) {\n  // Remover caracteres não numéricos\n  cpf = cpf.replace(/\\D/g, '');\n\n  // Verificar se o CPF tem a quantidade correta de dígitos\n  if (cpf.length === 11) {\n    // Formata para o padrão 000.000.000-00\n    return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n  } else {\n    // Se não tiver 11 dígitos, considera inválido\n    return '000.000.000-00';\n  }\n}\n\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"mentoria_minha_melhor_versao\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "e2682922-eb3b-4955-a522-af5ec0f33880",
+      "name": "tratar_dados6",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "ferramenta_contrato",
+              "value": "Autentique Assinatura Digital"
+            },
+            {
+              "name": "Forma de Pagamento",
+              "value": "Cartão de Crédito / Transferência"
+            },
+            {
+              "name": "Valor",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"IDform\"].replace('SLx7Bw2O','R$30.000') }}"
+            },
+            {
+              "name": "ID FORMS",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"IDform\"] }}"
+            },
+            {
+              "name": "DIA ",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2)}}"
+            },
+            {
+              "name": "MÊS",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "name": "ANO (DOIS DIGITOS)",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').slice(-2)}}"
+            },
+            {
+              "name": "RG",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"RG\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Email",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"email\"] }}"
+            },
+            {
+              "name": "CEP",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"CEP\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "CPF",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"CPF\"] }}"
+            },
+            {
+              "name": "Endereço",
+              "value": "={{ $node[\"tratar_dados6\"].json[\"Endereço\"] }}"
+            },
+            {
+              "name": "id_notificacao_lilian_bot_conversa",
+              "value": "239409865"
+            },
+            {
+              "name": "id_notificacao_giza_bot_conversa",
+              "value": "381310138"
+            },
+            {
+              "name": "API-KEY",
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+            },
+            {
+              "name": "id_notificacao_paula_bot_conversa",
+              "value": "294282590"
+            },
+            {
+              "name": "id_notificacao_amanda_bot_conversa",
+              "value": "294280236"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "variaveis4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1960
+      ],
+      "retryOnFail": true,
+      "id": "ae42bd38-b515-4ad4-88a2-17f4e3756d80"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"variaveis4\"].json[\"id_notificacao_lilian_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis4\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis4\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_mentoria_melhor_versao\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis4\"].json[\"Email\"] }} pelo {{ $node[\"variaveis4\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis4\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis4\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis4\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variaveis4\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_lilian4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        1960
+      ],
+      "id": "2d4a50cb-deb8-40a5-ada8-31e8d57e3463",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "f77c4af9-470f-4a4c-b535-773fa618c8e3",
+      "name": "segundo_ou_mais_erro4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "e4be0b3b-113d-414d-8bf9-bb213ca29a88",
+      "name": "segundo_ou_mais_erro3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1780
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "b245cf8c-db0d-4880-be8e-d900b89b7c5b",
+      "name": "segundo_ou_mais_erro2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "f86bc54e-f018-4da1-b0dc-f39a2e4bc512",
+      "name": "segundo_ou_mais_erro1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pegar o objeto JSON de entrada\nconst inputJSON = $node[\"mentoria_modus_inovandi\"].json;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Verifica se existem respostas\nif (items.length > 0) {\n  const response = items[0].json.body.form_response;\n\n  // Verifica se existem respostas no objeto form_response\n  if (response.answers && response.answers.length > 0) {\n    const answers = response.answers;\n    const questions = response.definition.fields;\n    const output = {};\n\n    // Itera sobre as respostas\n    for (let i = 0; i < answers.length; i++) {\n      const answer = answers[i];\n\n    // Verifica se o tipo de resposta é 'choice'\n      if (answer.type === 'choice') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'label'\n        const questionText = question.title;\n        const answerLabel = answer.choice.label;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerLabel;\n      } else if (answer.type === 'url') {\n        const question = questions[i];\n\n        // Extrai o texto da pergunta e o valor do campo 'url'\n        const questionText = question.title;\n        const answerUrl = answer.url;\n\n        // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerUrl;\n      } else if (answer.type === 'text') {\n        const question = questions[i];\n\n    // Extrai o texto da pergunta e o valor do campo 'text'\n        const questionText = question.title;\n        const answerText = answer.text;\n\n    // Define o texto da pergunta como nome do campo no objeto de saída\n        output[questionText] = answerText;\n      }\n    }\n\n    // Extrair as UTMs do objeto JSON de entrada\n    const utms = extractUTMs(inputJSON);\n\n\n    // Extrair o email usando a referência correta\n    const email = answers.find(\n      answer => answer.field.ref === \"953e6896-1afb-441d-89fa-86e1a0ccc0cb\"\n    )?.email;\n\n    // Extrair o telefone usando a referência correta\n    const telefone = answers.find(\n      answer => answer.field.ref === \"cec633f2-9f5b-487b-8402-cb44c9c4181c\"\n    )?.phone_number;\n\n    // Validar o DDD do telefone e remover nono dígito (caso necessário)\n    const telefoneFormatado1 = telefone.replace(/[\\+\\s-()]/g, '');\n    const ddi = telefoneFormatado1.slice(0, 2) || '';\n    const ddd = telefoneFormatado1.slice(2, 4) || '';\n    const telefone9digitos = telefoneFormatado1.slice(-9) || '';\n\n    // Verificar se o DDD é maior que 28 e remover o nono dígito, se necessário\n    let telefoneFormatado = telefone ? ddi + ddd + telefone9digitos : '';\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = telefone9digitos ? ddi + ddd + telefone9digitos.slice(-8) : '';\n    }\n\n    // Função para formatar a primeira letra de cada palavra em maiúsculo\n    function formatarPrimeiraLetraMaiuscula(str) {\n      if (str) {\n        const palavras = str.toLowerCase().split(\" \");\n\n        for (let i = 0; i < palavras.length; i++) {\n          palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n        }\n\n        return palavras.join(\" \");\n      }\n      return '';\n    }\n\n// Extrair o nome usando a referência correta\n    const nome = answers.find(\n      answer => answer.field.ref === \"01H8Z7RCMED4A0R07Z01KZVQ12\"\n    )?.text;\n\n// Extrair RG usando a referência correta\nconst rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n// Extrair RUA usando a referência correta    \nconst Endereço = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n   \nconst enderecoFormatado = formatarPrimeiraLetraMaiuscula(Endereço);\n            \n// Extrair o CPF usando a referência correta\n    const cpf = answers.find(\n      answer => answer.field.ref === \"7d9dc7b0-8d5a-4182-a59e-eb42672d76ae\"\n    )?.text;\n\n// Extrair CEP usando a referência correta\n        const cep = answers.find(\n      answer => answer.field.ref === \"08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf\"\n    )?.text;\n\n// Extrair RUA usando a referência correta\nconst Rua = answers.find(\n  answer => answer.field.ref === \"c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3\"\n)?.text;\n\n// Extrair CIDADE usando a referência correta\nconst Cidade = answers.find(\n  answer => answer.field.ref === \"2421a56d-963f-4416-adde-b635477d758c\"\n)?.text;\n\n// Extrair NUMERO usando a referência correta\nconst Numero = answers.find(\n  answer => answer.field.ref === \"e78be8ed-dbe4-451d-b6ed-52cd14def765\"\n)?.text;\n\n// Extrair BAIRRO usando a referência correta\nconst Bairro = answers.find(\n  answer => answer.field.ref === \"c3cbd01d-9f05-455f-9e66-1c997729906b\"\n)?.text;\n\n// Função para formatar o CPF\nfunction formatCPF(cpf) {\n  return cpf.replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/, \"$1.$2.$3-$4\");\n}\n\n// Função para validar e formatar o CEP com pontos e traço\nfunction validarFormatoCEP(cep) {\n  // Remove caracteres não numéricos\n  cep = cep.replace(/\\D/g, '');\n\n  // Verifica se o CEP tem a quantidade correta de dígitos\n  if (cep.length === 8) {\n    // Formata para o padrão 00000-000\n    cep = cep.replace(/(\\d{5})(\\d{3})/, '$1-$2');\n  } else {\n    // Se não tiver 8 dígitos, considera inválido\n    cep = '00000-000';\n  }\n\n  return cep;\n}\n\n    // Formatar o CEP\nconst cepFormatado = validarFormatoCEP(cep);\n\n\n// Extrair RG usando a referência correta    \nconst Rg = answers.find(\n  answer => answer.field.ref === \"5f7392a1-159c-48f5-a2fc-579272cd8df4\"\n)?.text;\n\n\n// Função para limpar caracteres especiais do RG\nfunction limparCaracteresRG(rg) {\n  // Remover caracteres especiais '.', '-' e 'x' (ou 'X')\n  return rg.replace(/[.-]/g, '').replace(/[^0-9xX]/g, '');\n}\n\n// Limpar caracteres especiais do RG\nconst rgLimpo = limparCaracteresRG(Rg);\n\n    // Chamada da função com os exemplos\nconst enderecoFinal = EnderecoFinal(Rua, Numero, Bairro, Cidade);\n\n\n// Função para criar o endereço final\nfunction EnderecoFinal(Rua, Numero, Bairro, Cidade) {\n  // Função para formatar a primeira letra de cada palavra em maiúsculo\n  function formatarPrimeiraLetraMaiuscula(str) {\n    if (str) {\n      const palavras = str.toLowerCase().split(\" \");\n\n      for (let i = 0; i < palavras.length; i++) {\n        palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n      }\n\n      return palavras.join(\" \");\n    }\n    return '';\n  }\n\n  // Verifica se todas as informações necessárias estão presentes\n  if (Rua && Numero && Bairro && Cidade) {\n    // Combina as informações na ordem desejada e formata a primeira letra em maiúsculo\n    const enderecoFinal = formatarPrimeiraLetraMaiuscula(`${Rua}, ${Numero} - ${Bairro}, ${Cidade}`);\n    return enderecoFinal;\n  } else {\n    // Retorna uma mensagem de erro caso alguma informação esteja ausente\n    return \"Informações de endereço incompletas\";\n  }\n}\n    \n\n    // Resultado final\n    const resultado = {\n      IDform: $node[\"mentoria_modus_inovandi\"].json[\"body\"][\"form_response\"][\"form_id\"] || '',\n      nome: nome,\n      email: email,\n      telefone: telefoneFormatado,\n      RG: rgLimpo,\n     // PorqueTeEscolher: PorqueTeEscolher,\n      CPF: formatCPF(cpf),\n      //CEP: CEP,\n      //CEP: cep,\n      CEP: cepFormatado,\n      RUA: Rua,\n      NUMERO: Numero,\n      CIDADE: Cidade,\n      BAIRRO: Bairro,\n      EndereçoCompleto: enderecoFormatado,\n      Endereço: enderecoFinal,\n      \n    };\n\n    return [resultado];\n  }\n}\n\n// Caso não haja respostas ou respostas de escolha, retorna vazio\nreturn [];\n"
+      },
+      "id": "52097243-c8f3-428d-8869-23c2a83620c1",
+      "name": "tratar_dados7",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "=+{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"infos_bc1\"].json[\"nome\"].split(' ')[0] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{$node[\"infos_bc1\"].json[\"nome\"].split(' ')[1] ? $node[\"infos_bc1\"].json[\"nome\"].split(' ').slice(1).join(\" \") : \".\"}}\n"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"infos_bc1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cadastrar_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        1540
+      ],
+      "id": "c3365072-a810-40b2-9cc4-c282f2cd75d2",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "15_VJoz06YcB2Idjm3x_4DU50XaryZPtySzMpxO_fTbA",
+          "mode": "id"
+        },
+        "options": {
+          "name": "=Contrato Mentoria C - Level - {{ $node[\"variaveis3\"].json[\"nome\"] }}",
+          "parents": [
+            "116xgYQEOXJ5iyRb06rYNrpX3QJKzIPdG"
+          ]
+        }
+      },
+      "name": "duplica_contrato_mentoria-c-level",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        1780
+      ],
+      "id": "4e59c692-7525-43aa-a6c0-7bae5fcd13e1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentURL": "={{ $node[\"duplica_contrato_mentoria_melhor_versao\"].json[\"id\"] }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{NOMECOMPLETO}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"nome\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPF}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ENDEREÇO}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"Endereço\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{RG}}",
+              "replaceText": "={{ $node[\"tratar_dados6\"].json[\"RG\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{VALOR}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"Valor\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FORMADEPAGAMENTO}}",
+              "replaceText": "={{ $node.variaveis4.json[\"Forma de Pagamento\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{DIA}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"DIA \"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{MESEXTENSO}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"MÊS\"].replace('01','Janeiro').replace('02','Fevereiro').replace('03','Março').replace('04','Abril').replace('05','Maio').replace('06','Junho').replace('07','Julho').replace('08','Agosto').replace('09','Setembro').replace('10','Outubro').replace('11','Novembro').replace('12','Dezembro') }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{FIMDOANO}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"ANO (DOIS DIGITOS)\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CPFCNPJ}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"CPF\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CEP}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"CEP\"] }}",
+              "matchCase": true
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{TELEFONE}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"Telefone\"] }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{EMAIL}}",
+              "replaceText": "={{ $node[\"variaveis4\"].json[\"Email\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "formata_contrato_automacoes5",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1960
+      ],
+      "id": "2ccdc1ba-a930-40d5-a3f5-ed4f3c5f478a",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "P3tS57NAKeMIdvgP",
+          "name": "[Google Docs] - Automagic Bots"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1SnRIf9bS1PcX22tpRZKqL7sy6BMA9VtvjfEYJoLyGcM",
+          "mode": "id"
+        },
+        "options": {
+          "name": "=Contrato Mentoria Melhor Versão - {{ $node[\"variaveis4\"].json[\"nome\"] }}",
+          "parents": [
+            "116xgYQEOXJ5iyRb06rYNrpX3QJKzIPdG"
+          ]
+        }
+      },
+      "name": "duplica_contrato_mentoria_melhor_versao",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        1960
+      ],
+      "id": "85131ec0-1663-411a-bfc8-b901961de635",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "c9113ae5-4a33-4b4e-a5e6-71497926ac8f",
+      "name": "Fim",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        400,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"infos_bc1\"].json[\"id_notificacao_giza_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOVO CONTRATO \"SEM DONO\"*\n\nO sistema acabou de gerar um contrato, mas não identificou de qual closer responsável pela ação, quando possível verifique com o time e encaminhe os dados dessa mensagem para o responsável.\n\nO cliente {{ $node[\"variaveis\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_modus_inovandi\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis\"].json[\"Email\"] }} pelo {{ $node[\"variaveis\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis\"].json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"infos_bc1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_giza4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        140,
+        1840
+      ],
+      "id": "d22aecfd-a335-4fc9-8d63-994cbeb3b71b",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mentoria-c-level",
+        "options": {}
+      },
+      "id": "1597fd57-1369-4e24-8974-b17dc7da193f",
+      "name": "mentoria-c-level",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1780
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "metodo-modus-inovandi",
+        "options": {}
+      },
+      "id": "bb4cf88a-8b30-46c0-8c8e-8bbc6b7b9a9e",
+      "name": "metodo_modus_inovandi",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1600
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mentoria-modus-inovandi",
+        "options": {}
+      },
+      "id": "9d3ae2a5-76fe-4cb4-9f7f-312e4aade3a2",
+      "name": "mentoria_modus_inovandi",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1220
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "melhor-versao",
+        "options": {}
+      },
+      "id": "c2d25030-dd72-4a69-916a-696c3a58bd80",
+      "name": "mentoria_minha_melhor_versao",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1960
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"cadastrar_contato\"].json[\"variables\"][\"IDCloserResponsavel\"] }}",
+              "value2": "28"
+            }
+          ]
+        }
+      },
+      "id": "bbb19385-c35a-4654-9a81-bd6cca756a9b",
+      "name": "closer_juliana",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"cadastrar_contato\"].json[\"variables\"][\"IDCloserResponsavel\"] }}",
+              "value2": "29"
+            }
+          ]
+        }
+      },
+      "id": "95580ca7-fb5a-4668-9f0a-5e17d213c35e",
+      "name": "closer_luiza",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mentoria-modus-inovandi-start",
+        "options": {}
+      },
+      "id": "6cb6ad61-93b6-41d8-af3d-e3da45bf1d66",
+      "name": "mentoria_modus_inovandi_start",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1420
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"infos_bc1\"].json[\"id_notificacao_juliana_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *REVISÃO DE CONTRATO - GIL*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} pelo {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"infos_bc1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_closer_juliana",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        1520
+      ],
+      "id": "7fb767f7-29f4-415f-9ea2-2ee41d4a0056",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"infos_bc1\"].json[\"id_notificacao_luiza_bot_conversa\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *REVISÃO DE CONTRATO - PAULA*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} pelo {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"infos_bc1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_closer_luiza",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        160,
+        1660
+      ],
+      "id": "adfb86a4-f50d-4ac9-9807-5ff6c8553a4c",
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {
+    "mentoria-c-level": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3434",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-caa35c8bdf970e762fc8f3290d031441-21b2bf505ab0c4eb-01",
+            "x-forwarded-for": "18.204.78.134",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "18.204.78.134"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01HW8TCAJEB3EE8E8HZ7QZ1E8D",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "StTjBpch",
+              "token": "08wqizo321meffgc08wqizox3g2e7b7x",
+              "landed_at": "2024-04-24T19:46:04Z",
+              "submitted_at": "2024-04-24T19:47:33Z",
+              "definition": {
+                "id": "StTjBpch",
+                "title": "Dados de Contrato - Mentoria C - Level",
+                "fields": [
+                  {
+                    "id": "GjcOElu0q58E",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "MftKgTTsHlI5",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "ARb0UhdaaBwQ",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "ql9wGzWRMiyt",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "zlLunyEqdzYX",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Q3uMbiSVBXUq",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "jABuIVNJH4iX",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "YtYwk6Lr957U",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "C9XwVuqBXnE7",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
+                    "type": "long_text",
+                    "title": "Digite seu bairro.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Un2AhJHhLphw",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "EZXuaecATINO",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "Obrigado por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Vitor Queiroz de Almeida",
+                  "field": {
+                    "id": "GjcOElu0q58E",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "vitorrqueiroztrafego@gmail.com",
+                  "field": {
+                    "id": "MftKgTTsHlI5",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5519984574874",
+                  "field": {
+                    "id": "ARb0UhdaaBwQ",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "57.581.231-X",
+                  "field": {
+                    "id": "ql9wGzWRMiyt",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "470.224.718-27",
+                  "field": {
+                    "id": "zlLunyEqdzYX",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Sol",
+                  "field": {
+                    "id": "Q3uMbiSVBXUq",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "222",
+                  "field": {
+                    "id": "jABuIVNJH4iX",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Campinas - SP",
+                  "field": {
+                    "id": "YtYwk6Lr957U",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Por do sol",
+                  "field": {
+                    "id": "C9XwVuqBXnE7",
+                    "type": "long_text",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "13674-098",
+                  "field": {
+                    "id": "Un2AhJHhLphw",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "EZXuaecATINO",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/mentoria-c-level",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "metodo_modus_inovandi": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3460",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-a51626925a44859428e87b7cc125e521-b5991347af671c28-01",
+            "x-forwarded-for": "18.204.78.134",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "18.204.78.134"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01HXA8XWQYPK7TQ6J4AZMC7AXW",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "GH5fCnKX",
+              "token": "shst6jnvdd7jecoshst5nzo2j2q4sxs3",
+              "landed_at": "2024-05-07T19:35:26Z",
+              "submitted_at": "2024-05-07T19:36:45Z",
+              "definition": {
+                "id": "GH5fCnKX",
+                "title": "✅Dados de Contrato - Método Modus Inovandi",
+                "fields": [
+                  {
+                    "id": "XQ00Gi2501Ag",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "1VoFUXpG5Wse",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "4wsNtPs3XXi9",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "UeXsomaFIMKA",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Qqe5iHRO9M6k",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "42rVtbNBxRgA",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "GWWolNtPUkvj",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "IZj2byspfycF",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "48taHT4T3ZbW",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
+                    "type": "long_text",
+                    "title": "Digite seu bairro.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "FDs1YOW1HLvS",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "kEbRhFd7oxkj",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "Obrigado por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Lídia Maria de Abreu Generoso",
+                  "field": {
+                    "id": "XQ00Gi2501Ag",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "generosolidia@gmail.com",
+                  "field": {
+                    "id": "1VoFUXpG5Wse",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5531984925557",
+                  "field": {
+                    "id": "4wsNtPs3XXi9",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "13820197",
+                  "field": {
+                    "id": "UeXsomaFIMKA",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "06536016629",
+                  "field": {
+                    "id": "Qqe5iHRO9M6k",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Rua Martins Alves",
+                  "field": {
+                    "id": "42rVtbNBxRgA",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "1025A",
+                  "field": {
+                    "id": "GWWolNtPUkvj",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Belo Horizonte - MG",
+                  "field": {
+                    "id": "IZj2byspfycF",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Nova Esperança",
+                  "field": {
+                    "id": "48taHT4T3ZbW",
+                    "type": "long_text",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "31230-410",
+                  "field": {
+                    "id": "FDs1YOW1HLvS",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "kEbRhFd7oxkj",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/metodo-modus-inovandi",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "mentoria_modus_inovandi": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3437",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-cff4720db1fa6d6d73cc9364ed436441-fbcca73d9672ae85-01",
+            "x-forwarded-for": "18.210.136.162",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "18.210.136.162"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01HW8QFH2GCD32T3WPN1Y3B7RM",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "vIqpVdJT",
+              "token": "ywhwjz2rjx896kkywhwtfp12za459vt5",
+              "landed_at": "2024-04-24T18:55:05Z",
+              "submitted_at": "2024-04-24T18:56:52Z",
+              "definition": {
+                "id": "vIqpVdJT",
+                "title": "🏆 Dados de Contrato - Mentoria Modus Inovandi",
+                "fields": [
+                  {
+                    "id": "bQKfjBS6QV6S",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "jqsOsTV4qDNC",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "IiJj8w5eGDxZ",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Guq0DiL0I6N7",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "4na9BAbwvXSi",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "jQWCIovTwUtx",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "oXJVD7I8Ccnm",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "VAe0NmE1cR2F",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "DkS4GhqBkjaA",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
+                    "type": "long_text",
+                    "title": "Digite seu bairro.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "VNNS3JwHPNBl",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "Ifk1UXqllnCu",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "Obrigado por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Vitor Queiroz",
+                  "field": {
+                    "id": "bQKfjBS6QV6S",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "vitorrqueiroztrafego@gmail.com",
+                  "field": {
+                    "id": "jqsOsTV4qDNC",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5519984574874",
+                  "field": {
+                    "id": "IiJj8w5eGDxZ",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "57.581.231-X",
+                  "field": {
+                    "id": "Guq0DiL0I6N7",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "470.224.718.27",
+                  "field": {
+                    "id": "4na9BAbwvXSi",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Sol",
+                  "field": {
+                    "id": "jQWCIovTwUtx",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "434",
+                  "field": {
+                    "id": "oXJVD7I8Ccnm",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Campinas - SP",
+                  "field": {
+                    "id": "VAe0NmE1cR2F",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Castelo Branco",
+                  "field": {
+                    "id": "DkS4GhqBkjaA",
+                    "type": "long_text",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "13049-077",
+                  "field": {
+                    "id": "VNNS3JwHPNBl",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "Ifk1UXqllnCu",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/mentoria-modus-inovandi",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "mentoria_minha_melhor_versao": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3176",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-ce2929354ddec132c91952ca8467ffab-2bba8d0fd54ba1a5-01",
+            "x-forwarded-for": "34.230.177.131",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "34.230.177.131"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01J15SDQ4R94EV70X4PMSNTKYV",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "SLx7Bw2O",
+              "token": "yf0n4b8nm5r794p426yf0n4eam3ip788",
+              "landed_at": "2024-06-24T18:50:03Z",
+              "submitted_at": "2024-06-24T18:51:36Z",
+              "definition": {
+                "id": "SLx7Bw2O",
+                "title": "✅Dados de Contrato - Mentoria Minha Melhor Versão",
+                "fields": [
+                  {
+                    "id": "FfPrcVC1bdaL",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "IAnqJjefwL9y",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "P7aTeO1r0bVg",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "n1g1316QkXfc",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "cmkcBB53iyfM",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "dXKWgn2FFnaE",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "gibT7Yu2weq4",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "3O56QmjM5Pz2",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Zrm2iSQMxU5O",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "rV5w2pQkNWfV",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "_Obrigado _por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Juliano Powidayko Alberici",
+                  "field": {
+                    "id": "FfPrcVC1bdaL",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "jpalberici@gmail.com",
+                  "field": {
+                    "id": "IAnqJjefwL9y",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+31621901937",
+                  "field": {
+                    "id": "P7aTeO1r0bVg",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "59820168",
+                  "field": {
+                    "id": "n1g1316QkXfc",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "04850441963",
+                  "field": {
+                    "id": "cmkcBB53iyfM",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Toermalijn",
+                  "field": {
+                    "id": "dXKWgn2FFnaE",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "7",
+                  "field": {
+                    "id": "gibT7Yu2weq4",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Rotterdam - ZH",
+                  "field": {
+                    "id": "3O56QmjM5Pz2",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "3162 TL",
+                  "field": {
+                    "id": "Zrm2iSQMxU5O",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "rV5w2pQkNWfV",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/melhor-versao",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "mentoria_modus_inovandi_start": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3446",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-af084e73a5e69998ab8b588c6ea68ad9-639ab98b8bde862b-01",
+            "x-forwarded-for": "18.204.78.134",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "18.204.78.134"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01J3ZCTZHQP91X5CHF57R639QW",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "g1qUQG0W",
+              "token": "u1xcfg3plsa4glu24wgvnpu1xcfg3pka",
+              "landed_at": "2024-07-29T14:01:40Z",
+              "submitted_at": "2024-07-29T14:03:18Z",
+              "definition": {
+                "id": "g1qUQG0W",
+                "title": "✅Dados de Contrato - Mentoria Modus Inovandi Start",
+                "fields": [
+                  {
+                    "id": "lGFxC0p4Np4v",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "MovTH4xRwb77",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "JXTgqXQGJgiM",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "hiuHQ4kSg5ei",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Uk49ewRJ0vm7",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "JsB89uUImU5f",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "t6VCNptoWrw6",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "pRFJsyYDk22s",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "1MYTYS3pUai0",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
+                    "type": "long_text",
+                    "title": "Digite seu bairro.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "QyfrymJrlMNu",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "bj3hQorHFZ9K",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "Obrigado por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Vitor Queiroz",
+                  "field": {
+                    "id": "lGFxC0p4Np4v",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "vitorrqueiroztrafego@gmail.com",
+                  "field": {
+                    "id": "MovTH4xRwb77",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5519984574874",
+                  "field": {
+                    "id": "JXTgqXQGJgiM",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "29.339.938-4",
+                  "field": {
+                    "id": "hiuHQ4kSg5ei",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "358.653.538-45",
+                  "field": {
+                    "id": "Uk49ewRJ0vm7",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Av Padre Guilherme Ary",
+                  "field": {
+                    "id": "JsB89uUImU5f",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "76",
+                  "field": {
+                    "id": "t6VCNptoWrw6",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Campinas",
+                  "field": {
+                    "id": "pRFJsyYDk22s",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Vila Saturnia",
+                  "field": {
+                    "id": "1MYTYS3pUai0",
+                    "type": "long_text",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "13031-090",
+                  "field": {
+                    "id": "QyfrymJrlMNu",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "bj3hQorHFZ9K",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/mentoria-modus-inovandi-start",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": {
+    "node:todo_dia_7:30am": {
+      "recurrencyRules": []
+    },
+    "node:a_cada_hora1": {
+      "recurrencyRules": []
+    },
+    "node:2 min antes dos horarios de call1": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 5,
+  "updatedAt": "2024-08-01T17:10:36.974Z",
+  "versionId": "d88fc75d-5fc1-4bb5-a8cf-9475946cef6f"
+}
