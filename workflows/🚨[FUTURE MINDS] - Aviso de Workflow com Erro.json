@@ -1,0 +1,59 @@
+{
+  "active": false,
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-23T23:47:12.143Z",
+  "id": "zRPVyGjtTGhPaWFr",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "🚨[FUTURE MINDS] - Aviso de Workflow com Erro",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9a5bc0fe-e50c-4c2a-ad15-0e2d405eba10",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1051557732941058118/bR9saqZ3PRvvbYzTDR9odD1sIKwiWkTnK_hx84LUjs2_wgbDThYfwaxIO4EoU-o-yzRU",
+        "text": "=🚨 **Workflow com erro no Future Minds - Hetzner**\n\nO Workflow **{{ $json[\"workflow\"][\"name\"] }}**, do **ID {{ $json[\"workflow\"][\"id\"] }}**, acabou de apresentar um erro.\n\nAssim que puder, dê uma conferida e ajuste o erro apresentado.",
+        "options": {}
+      },
+      "id": "f7ad3881-964e-4412-9144-6bbd653d5cd3",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        160
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-04-24T00:12:11.772Z",
+  "versionId": "03fca6f0-b886-417c-8f09-ff36cc51b534"
+}
