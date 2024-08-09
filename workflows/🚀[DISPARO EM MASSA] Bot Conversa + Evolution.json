@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "pesquisa_lead": {
       "main": [
@@ -110,36 +110,7 @@
       "main": [
         [
           {
-            "node": "telefone_esta_preenchido",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "le_planilha1": {
-      "main": [
-        [
-          {
-            "node": "separa_em_lotes1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "separa_em_lotes1": {
-      "main": [
-        [
-          {
-            "node": "Fim1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Replace Me1",
+            "node": "pesquisa_lead3",
             "type": "main",
             "index": 0
           }
@@ -235,7 +206,13 @@
     },
     "telefone_esta_preenchido": {
       "main": [
-        [],
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "separa_em_lotes",
@@ -254,46 +231,7 @@
             "index": 0
           }
         ],
-        [
-          {
-            "node": "le_planilha",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "verifica_data1": {
-      "main": [
-        [
-          {
-            "node": "le_planilha1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dispara as 17hs": {
-      "main": [
-        [
-          {
-            "node": "verifica_data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dispara as 17hs1": {
-      "main": [
-        [
-          {
-            "node": "verifica_data1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "nao_existe5": {
@@ -305,7 +243,13 @@
             "index": 0
           }
         ],
-        []
+        [
+          {
+            "node": "existe_id_bc",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "disparo_via_evolution": {
@@ -369,6 +313,108 @@
           }
         ]
       ]
+    },
+    "existe_id_bc": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead3": {
+      "main": [
+        [
+          {
+            "node": "nao_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "telefone_esta_preenchido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "verifica_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-08-08T14:13:49.145Z",
@@ -410,7 +456,7 @@
       "typeVersion": 2.1,
       "position": [
         1480,
-        520
+        780
       ],
       "credentials": {
         "mySql": {
@@ -432,14 +478,6 @@
           "mode": "list",
           "cachedResultName": "Bot Conversa - Dados Tratados",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1611415112"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "TELEFONE",
-              "lookupValue": "5519981141914"
-            }
-          ]
         },
         "options": {
           "returnAllMatches": "returnAllMatches"
@@ -487,7 +525,7 @@
       "typeVersion": 3,
       "position": [
         1700,
-        520
+        780
       ]
     },
     {
@@ -497,20 +535,20 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1040,
-        240
+        1060,
+        220
       ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"separa_em_lotes\"].json[\"Bot Conversa - ID\"] }}/send_flow/",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"pesquisa_lead1\"].json[\"id_botconversa\"] }}/send_flow/",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "API-KEY",
-              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
             }
           ]
         },
@@ -519,7 +557,7 @@
           "parameters": [
             {
               "name": "flow",
-              "value": "4679014"
+              "value": "4913090"
             }
           ]
         },
@@ -530,8 +568,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2180,
-        540
+        2440,
+        920
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -546,8 +584,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2360,
-        540
+        2620,
+        920
       ]
     },
     {
@@ -577,8 +615,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        2520,
-        540
+        2780,
+        920
       ]
     },
     {
@@ -591,8 +629,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2840,
-        520
+        3100,
+        900
       ],
       "webhookId": "13a457fe-8b56-48ec-967c-0570c3780daa"
     },
@@ -606,8 +644,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2840,
-        660
+        3100,
+        1040
       ],
       "webhookId": "a8dd76dd-7227-42c2-acf8-f38360290f83"
     },
@@ -621,8 +659,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2840,
-        800
+        3100,
+        1180
       ],
       "webhookId": "ca97c8a3-220d-4b88-b087-2f7e5d00146d"
     },
@@ -636,25 +674,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2840,
-        940
+        3100,
+        1320
       ],
       "webhookId": "e3c6c65c-a96e-4a67-a634-6440e2b2f51c"
-    },
-    {
-      "parameters": {
-        "content": "## BOT CONVERSA",
-        "height": 80,
-        "width": 370.6543151410579
-      },
-      "id": "f683972f-d553-4096-91b7-5c92b028db3a",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        260,
-        20
-      ]
     },
     {
       "parameters": {
@@ -687,8 +710,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1500,
-        200
+        1520,
+        -60
       ],
       "credentials": {
         "mySql": {
@@ -699,71 +722,6 @@
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1563730916,
-          "mode": "list",
-          "cachedResultName": "Evolution - Dados Tratados",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1563730916"
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
-      },
-      "id": "d3d410cf-c493-40d7-bd08-66127cff1d92",
-      "name": "le_planilha1",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 3,
-      "position": [
-        840,
-        1500
-      ],
-      "retryOnFail": true,
-      "maxTries": 5,
-      "waitBetweenTries": 5000
-    },
-    {
-      "parameters": {},
-      "id": "8bc6f34f-6332-4a4a-88fb-443d5c0adfa1",
-      "name": "Replace Me1",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1240,
-        1500
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "32eca820-97e5-4cdb-84fe-47b9bade14c2",
-      "name": "separa_em_lotes1",
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        1020,
-        1500
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "4b4cbf83-af5e-4818-9963-1d71c1c0ccc0",
-      "name": "Fim1",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1240,
-        1360
-      ]
-    },
-    {
-      "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
       "id": "1db2a1d1-771d-40e6-81aa-328ae37feedb",
@@ -771,8 +729,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2220,
-        -220
+        2680,
+        -240
       ]
     },
     {
@@ -802,8 +760,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        2380,
-        -220
+        2840,
+        -240
       ]
     },
     {
@@ -816,8 +774,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2680,
-        -420
+        3140,
+        -440
       ],
       "webhookId": "13a457fe-8b56-48ec-967c-0570c3780daa"
     },
@@ -831,8 +789,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2680,
-        -280
+        3140,
+        -300
       ],
       "webhookId": "a8dd76dd-7227-42c2-acf8-f38360290f83"
     },
@@ -846,8 +804,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2680,
-        -140
+        3140,
+        -160
       ],
       "webhookId": "ca97c8a3-220d-4b88-b087-2f7e5d00146d"
     },
@@ -861,36 +819,21 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2680,
-        0
+        3140,
+        -20
       ],
       "webhookId": "e3c6c65c-a96e-4a67-a634-6440e2b2f51c"
     },
     {
       "parameters": {
-        "content": "## EVOLUTION",
-        "height": 1041.5801759766769,
-        "width": 2317.546193087535
-      },
-      "id": "7f3b3a1c-9434-4c04-8e7e-d000c83113ff",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -520,
-        1360
-      ]
-    },
-    {
-      "parameters": {
         "method": "POST",
-        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/LilianCidreira",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "1gozy92fyg3hlty3wkv7f"
+              "value": "yavuatfpzpeefq82zhfbs"
             }
           ]
         },
@@ -899,7 +842,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "={{ $node[\"pesquisa_lead2\"].json[\"telefone\"] }}"
+              "value": "={{ $node[\"pesquisa_lead3\"].json[\"telefone\"] }}"
             },
             {
               "name": "textMessage.text",
@@ -936,8 +879,8 @@
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2020,
-        -220
+        2480,
+        -240
       ],
       "typeVersion": 4
     },
@@ -970,8 +913,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1720,
-        200
+        2140,
+        -60
       ]
     },
     {
@@ -986,7 +929,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "14/07/2024",
+              "rightValue": "08/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1010,77 +953,6 @@
     {
       "parameters": {
         "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "14/07/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "aac5d80e-b2a3-46e0-ade1-462c40ca26df",
-      "name": "verifica_data1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        600,
-        1520
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 17
-            }
-          ]
-        }
-      },
-      "id": "fc6350a0-39c0-4262-a3b1-3d30a9272901",
-      "name": "dispara as 17hs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        200,
-        420
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 17
-            }
-          ]
-        }
-      },
-      "id": "32f0997b-c2f3-4b62-85c2-c6ec3fcd0659",
-      "name": "dispara as 17hs1",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        380,
-        1520
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
           "boolean": [
             {
               "value1": "={{ $node[\"pesquisa_lead1\"].json[\"success\"] }}",
@@ -1094,8 +966,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1920,
-        520
+        1900,
+        780
       ]
     },
     {
@@ -1127,8 +999,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1040,
-        420
+        1080,
+        400
       ]
     },
     {
@@ -1138,8 +1010,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1320,
-        200
+        1340,
+        -60
       ]
     },
     {
@@ -1150,7 +1022,7 @@
       "typeVersion": 1,
       "position": [
         1300,
-        520
+        780
       ]
     },
     {
@@ -1160,8 +1032,86 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2920,
-        240
+        3380,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "673f6d37-6e1b-4253-811e-4a6772f743a5",
+              "leftValue": "={{ $node[\"nao_existe5\"].json[\"id_botconversa\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b4457a19-4907-41d8-8375-f12eef2149fd",
+      "name": "existe_id_bc",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "99bf5302-36ac-4ff9-a966-14abe1ed84bb",
+      "name": "pesquisa_lead3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1740,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead3\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "080ccdf4-57df-49ed-b469-6ef865f57e97",
+      "name": "nao_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        -60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "808e4f83-9cbd-4e1c-b64e-fa8743fb73a5",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        220,
+        420
       ]
     }
   ],
@@ -1172,9 +1122,13 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "zRPVyGjtTGhPaWFr"
   },
-  "staticData": null,
+  "staticData": {
+    "node:dispara as 17hs": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-08T15:11:24.889Z",
-  "versionId": "09e424e1-7fef-43aa-af93-ac7a5cdc7a7d"
+  "updatedAt": "2024-08-08T16:42:22.230Z",
+  "versionId": "ffd25157-cdd7-493c-9a00-5e9808675102"
 }
