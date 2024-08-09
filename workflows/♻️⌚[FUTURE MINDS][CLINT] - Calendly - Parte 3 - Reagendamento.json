@@ -1207,7 +1207,7 @@
       "main": [
         [
           {
-            "node": "é_reagendamento",
+            "node": "é_sala_secreta",
             "type": "main",
             "index": 0
           }
@@ -1319,6 +1319,24 @@
           }
         ]
       ]
+    },
+    "é_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_negocio_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "é_reagendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-06-29T01:59:46.668Z",
@@ -1355,7 +1373,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -2940,
+        -3320,
         1980
       ],
       "credentials": {
@@ -3313,7 +3331,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -4340,
+        -4720,
         1880
       ]
     },
@@ -3367,7 +3385,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3820,
+        -4200,
         1780
       ],
       "credentials": {
@@ -3396,7 +3414,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -3460,
+        -3840,
         1780
       ]
     },
@@ -3454,7 +3472,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3640,
+        -4020,
         1780
       ],
       "credentials": {
@@ -3480,7 +3498,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3660,
+        -4040,
         2060
       ]
     },
@@ -3500,7 +3518,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3820,
+        -4200,
         2140
       ]
     },
@@ -3520,7 +3538,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3840,
+        -4220,
         2620
       ]
     },
@@ -3540,7 +3558,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3640,
+        -4020,
         2540
       ]
     },
@@ -3589,7 +3607,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3460,
+        -3840,
         2140
       ],
       "credentials": {
@@ -3644,7 +3662,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3660,
+        -4040,
         2320
       ],
       "credentials": {
@@ -3699,7 +3717,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3440,
+        -3820,
         2460
       ],
       "credentials": {
@@ -3766,7 +3784,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3440,
+        -3820,
         2640
       ],
       "credentials": {
@@ -3825,7 +3843,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3640,
+        -4020,
         2760
       ],
       "credentials": {
@@ -3851,7 +3869,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3800,
+        -4180,
         3000
       ]
     },
@@ -3871,7 +3889,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3960,
+        -4340,
         3080
       ]
     },
@@ -3924,7 +3942,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3800,
+        -4180,
         3240
       ],
       "credentials": {
@@ -3979,7 +3997,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3600,
+        -3980,
         2920
       ],
       "credentials": {
@@ -4038,7 +4056,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3600,
+        -3980,
         3080
       ],
       "credentials": {
@@ -4064,7 +4082,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -4000,
+        -4380,
         2240
       ]
     },
@@ -4084,7 +4102,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -4160,
+        -4540,
         2320
       ]
     },
@@ -4105,7 +4123,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -3180,
+        -3560,
         2360
       ]
     },
@@ -4150,7 +4168,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3460,
+        -3840,
         1980
       ],
       "credentials": {
@@ -4194,7 +4212,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -4920,
+        -5300,
         1880
       ],
       "id": "d462d22d-8e09-4d23-9b34-c6a306438751",
@@ -4239,7 +4257,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -4680,
+        -5060,
         1880
       ],
       "credentials": {
@@ -4258,7 +4276,7 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        -4920,
+        -5300,
         1700
       ]
     },
@@ -4278,7 +4296,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -5140,
+        -5520,
         1880
       ]
     },
@@ -4304,7 +4322,7 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -5400,
+        -5780,
         1880
       ],
       "credentials": {
@@ -4639,7 +4657,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        -4520,
+        -4900,
         1880
       ]
     },
@@ -4775,7 +4793,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -2600,
+        -2940,
         1980
       ]
     },
@@ -5364,7 +5382,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2780,
+        -3160,
         1980
       ]
     },
@@ -5424,6 +5442,162 @@
       "typeVersion": 2,
       "position": [
         -2420,
+        1980
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "name": "banco_de_dados_id",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
+            },
+            {
+              "name": "bot_conversa_id",
+              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_do_evento",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}"
+            },
+            {
+              "name": "id_do_cliente",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+            },
+            {
+              "name": "data_do_agendamento",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}"
+            },
+            {
+              "name": "data_de_inicio",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}"
+            },
+            {
+              "name": "data_horario_inicio",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"] }}"
+            },
+            {
+              "name": "dia_da_semana",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }}"
+            },
+            {
+              "name": "email_responsavel",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Responsável\"] }}"
+            },
+            {
+              "name": "link_reuniao",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}"
+            },
+            {
+              "name": "link_reagendamento",
+              "value": "=https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+            },
+            {
+              "name": "link_cancelamento",
+              "value": "=https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+            },
+            {
+              "name": "data_termino",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split(' ')[0] }}"
+            },
+            {
+              "name": "data_horario_termino",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_fun",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}"
+            },
+            {
+              "name": "utm_var",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}"
+            },
+            {
+              "name": "dono_do_negocio",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Responsável\"] }}"
+            },
+            {
+              "name": "tipo_evento",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "351bf395-4a6f-42f8-8a0b-2be3fd21c283",
+      "name": "cria/atualiza_negocio_sala_secreta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -2440,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "398f17a8-ed5d-4cb6-9b40-3714dfda2dd8",
+              "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
+              "rightValue": "Sala Secreta",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "babf358e-c252-4543-9062-8bff1cf59397",
+      "name": "é_sala_secreta",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -2720,
         1980
       ]
     }
@@ -5515,6 +5689,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-05T17:23:13.012Z",
-  "versionId": "b4dec692-c47b-4309-a8d6-5703511d204d"
+  "updatedAt": "2024-08-08T16:23:16.679Z",
+  "versionId": "280c44e5-2ac2-4738-aed3-da9d5899595e"
 }
