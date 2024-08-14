@@ -331,7 +331,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian",
+            "node": "closer_responsavel",
             "type": "main",
             "index": 0
           }
@@ -418,18 +418,18 @@
         ]
       ]
     },
-    "notificacao_bc_lilian": {
+    "espera_15_minutos": {
       "main": [
         [
           {
-            "node": "verifica_vez",
+            "node": "pesquisa_agendamento_menos_de_15d",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "verifica_vez": {
+    "closer_responsavel": {
       "main": [
         [
           {
@@ -444,14 +444,10 @@
             "type": "main",
             "index": 0
           }
-        ]
-      ]
-    },
-    "espera_15_minutos": {
-      "main": [
+        ],
         [
           {
-            "node": "pesquisa_agendamento_menos_de_15d",
+            "node": "notificacao_bc_lilian",
             "type": "main",
             "index": 0
           }
@@ -1971,8 +1967,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        5760,
-        1220
+        6080,
+        1400
       ],
       "id": "0060d8b6-c25b-4bd1-9985-ffa1d18df142",
       "continueOnFail": true
@@ -2049,8 +2045,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        6200,
-        1300
+        6080,
+        1220
       ],
       "id": "419dae52-3ce8-4abe-bd91-9eba29611607",
       "continueOnFail": true
@@ -2086,8 +2082,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        6200,
-        1140
+        6080,
+        1060
       ],
       "id": "9a994660-4eca-4b87-8593-d4ee1503850f",
       "continueOnFail": true
@@ -2121,8 +2117,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        5940,
-        1220
+        6560,
+        1120
       ]
     },
     {
@@ -2154,6 +2150,93 @@
         1380
       ],
       "webhookId": "b8347fd4-a0f4-47c6-95a3-45bb9acd0ddb"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
+                    "rightValue": "Luiza Campos",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Luiza Campos"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "a5dbb41c-6143-492f-a322-aca8582bca5d",
+                    "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
+                    "rightValue": "Juliana",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Juliana"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "abb7f955-6b2f-45f5-bfed-4921b0982b55",
+                    "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
+                    "rightValue": "Lilian",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Lilian"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e94d18de-1f11-4d0e-becb-3234f599d2f0",
+      "name": "closer_responsavel",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        5760,
+        1220
+      ]
     }
   ],
   "pinData": {
@@ -2161,8 +2244,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-c67RYP7WV6UBXtiNl7lB1g",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-dRrClGCFwi5wHGh7zPUZJQ",
+            "deliveryTag": 2,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos Atualizado - Parte 5 - Qualificado - Clint"
@@ -2171,26 +2254,26 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Jonne",
-            "E-mail do Cliente": "jonnealves440@gmail.com",
-            "Telefone do Cliente - Formato BC": "+553492885238",
-            "Telefone do Cliente - Formato Z-API": "553492885238",
-            "utm_content": "",
-            "utm_source": "",
-            "utm_campaign": "",
-            "utm_medium": "",
-            "utm_term": "",
+            "Nome do Cliente": "Gisele",
+            "E-mail do Cliente": "gisele_fa@yahoo.com.br",
+            "Telefone do Cliente - Formato BC": "+5511985573955",
+            "Telefone do Cliente - Formato Z-API": "5511985573955",
+            "utm_content": "Anúncio [5.1].MP4",
+            "utm_source": "Facebook",
+            "utm_campaign": "[H1][OG]-[SESSÃO GRATUITA]-[CAPTAÇÃO EXTERNA] [NOVA]",
+            "utm_medium": "cpc",
+            "utm_term": "[OG]-[INTERESSES_ MIX_formção_universitaria]",
             "Instagram": "",
             "id_fluxo_nao_agendou_10_min": "",
             "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
-            "pergunta0": "Entre 4 e 6 anos",
-            "pergunta1": "Entre R$4.000 e R$4.999",
+            "pergunta0": "Mais de 6 anos",
+            "pergunta1": "Entre R$15.000 e R$19.999",
             "pergunta2": "",
-            "pergunta3": "Coordenador",
-            "pergunta5": "Graduação",
-            "pergunta6": "Ser promovido no meu emprego atual",
-            "pergunta7": "Falta de plano de carreira na empresa",
-            "pergunta8": 9,
+            "pergunta3": "Gerente",
+            "pergunta5": "Pós-graduação",
+            "pergunta6": "Aumentar o meu salário, continuando no mesmo cargo e empresa",
+            "pergunta7": "A empresa só valoriza quem vem do mercado",
+            "pergunta8": 10,
             "pergunta9": "",
             "pergunta10": "",
             "pergunta11": "",
@@ -2224,8 +2307,8 @@
             "id_campo_pergunta18_bot_conversa": "",
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
-            "id_da_vez": "Luiza Campos",
-            "id_ending_typeform": "Medio Qualificado",
+            "id_da_vez": "Lilian",
+            "id_ending_typeform": "556e0598-22b1-4627-894a-b41151197fd8",
             "id_campo_id_banco_de_dados_bot_conversa": "1333394",
             "id_campo_iddealac_bot_conversa": "1343862",
             "id_campo_idleadac_bot_conversa": "1343869",
@@ -2239,14 +2322,14 @@
             "id_campo_instagram_bot_conversa": "",
             "funil": "sessao estrategica",
             "variacao_do_funil": "aplicacao3_com_calendly",
-            "data_ultima_quinzena": "2024-07-09",
+            "data_ultima_quinzena": "2024-07-28",
             "id_campo_emailse_bot_conversa": "1139626",
             "id_tag_desqualificado_bot_conversa": "4929805",
             "id_tag_qualificado_bot_conversa": "4891807",
-            "data_resposta_type": "24/07/2024 12:31",
+            "data_resposta_type": "12/08/2024 19:26",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 5420,
-            "id_lead_bc": 512829095,
+            "id_lead_bd": 6172,
+            "id_lead_bc": 530679098,
             "id_fluxo_nao_agendou_10_min_desqualificados": ""
           }
         }
@@ -2278,6 +2361,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-02T21:51:10.708Z",
-  "versionId": "ee154f89-79bd-418e-b878-e6ce5a8e3b4c"
+  "updatedAt": "2024-08-13T18:08:37.913Z",
+  "versionId": "a675b751-939f-4131-992a-8e3be1c510d3"
 }
