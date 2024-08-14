@@ -936,7 +936,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=Se você não quer depender de Plano de Carreira para crescer, eu tenho um convite para te fazer. \n\nAqui é do time da Lilian Cidreira e no sábado, às 10h, a Lilian fará um encontro no Zoom, gratuito, exclusivo para quem preencheu nossa aplicação para a Sessão Sprint de Carreira.\n\nA gente vai se encontrar no Zoom pro Plano Carreira de Sucesso: \n\nPreparei uma apresentação que vai te mostrar:\n\n✅ Porque você está dependente de um plano de carreira da empresa;\n✅ Como avaliar se o melhor é seguir na empresa ou mudar de emprego;\n✅ A lógica para construir uma carreira de crescimento constante.\n\nSe você quiser participar desse encontro exclusivo e secreto, clique no link e reserve sua vaga.\n\nhttps://calendly.com/lilian-cidreira/sala-secreta "
+              "value": "=Se você sente que está sem direção porque sua empresa não oferece um plano de carreira, temos um convite especial para você.\n\nNeste sábado, às 10h, a Lilian fará um encontro ao vivo, gratuito, exclusivo para quem preencheu nossa aplicação para a Sessão Sprint de Carreira mas não conseguiu participar.\n\nO tema do encontro será Plano Carreira de Sucesso. A Lilian preparou uma apresentação que vai te mostrar:\n\n✅ Como criar seu próprio plano de carreira sem precisar necessariamente de um fornecido pela empresa;\n✅ Como avaliar se o melhor é seguir na empresa ou mudar de emprego; \n✅ A lógica para construir uma carreira de crescimento constante.\n\nSe você quiser tomar o controle do seu desenvolvimento profissional e participar desse encontro exclusivo, clique no link e reserve sua vaga.\n\nhttps://calendly.com/lilian-cidreira/sala-secreta"
             },
             {
               "name": "options.delay",
@@ -1019,7 +1019,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "09/08/2024",
+              "rightValue": "13/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1200,7 +1200,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        240,
+        260,
         420
       ]
     },
@@ -1376,6 +1376,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-09T13:05:21.927Z",
-  "versionId": "23e34abc-1b9b-40bf-87d7-2ebf473506cb"
+  "updatedAt": "2024-08-13T16:45:54.191Z",
+  "versionId": "cae700b4-9ef2-4b7a-8f27-b840d33be57e"
 }
