@@ -382,9 +382,9 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "colaboradores",
+          "value": "colaboradores2",
           "mode": "list",
-          "cachedResultName": "colaboradores"
+          "cachedResultName": "colaboradores2"
         },
         "limit": 1,
         "where": {
@@ -1571,6 +1571,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-07-23T21:17:56.773Z",
-  "versionId": "fe22065c-5509-46cd-a498-d22483a38c35"
+  "updatedAt": "2024-08-14T17:26:10.675Z",
+  "versionId": "945e23b3-a50e-49e9-b577-acbd4104436c"
 }
