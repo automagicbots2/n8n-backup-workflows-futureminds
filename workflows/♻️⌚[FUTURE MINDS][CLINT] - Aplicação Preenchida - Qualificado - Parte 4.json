@@ -646,7 +646,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2240,
+        2220,
         740
       ]
     },
@@ -2518,6 +2518,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-13T18:06:55.180Z",
-  "versionId": "bfc8b572-8a11-4cb4-834f-eed6d2d84438"
+  "updatedAt": "2024-08-14T17:31:06.042Z",
+  "versionId": "163b9d15-b9d6-479b-9375-0c6587ca83e4"
 }
