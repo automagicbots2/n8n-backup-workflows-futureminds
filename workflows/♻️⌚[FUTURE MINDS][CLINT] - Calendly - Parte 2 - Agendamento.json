@@ -4919,8 +4919,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-xJQiM6lU984PPcI_MA2g3A",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-nEcENEhX9TUR7eP-nE6UKw",
+            "deliveryTag": 45,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
@@ -4929,25 +4929,25 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz de Almeida",
+            "Nome do Cliente": "Vitor Queiroz",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
             "Tipo de Evento": "Sala Secreta",
-            "ID do Evento": "ac533abd-afbc-4eaa-b41f-0ada4c6ac68a",
+            "ID do Evento": "7116d54f-1b8d-44c6-b80e-6185b5450429",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "10/08/2024  10:00",
-            "Data em que foi feito o Agendamento": "08/08/2024  13:03",
-            "Data de Término": "10/08/2024  11:00",
+            "Data de Início": "17/08/2024  10:00",
+            "Data em que foi feito o Agendamento": "12/08/2024  19:53",
+            "Data de Término": "17/08/2024  11:00",
             "Dia da Semana de Início do Evento": "Sábado",
-            "Link da Reunião": "https://us02web.zoom.us/j/87278783202",
+            "Link da Reunião": "https://calendly.com/events/7116d54f-1b8d-44c6-b80e-6185b5450429/google_meet",
             "utm_source": null,
             "utm_campaign": null,
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
-            "ID do Cliente": "4b302b23-7f8b-4cd2-a0e7-8e00f2fb6b2f",
+            "ID do Cliente": "2a38a0b1-a7f8-4f6a-baf4-188647371a42",
             "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -4989,6 +4989,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-08T16:38:04.489Z",
-  "versionId": "29a04f77-f515-40e5-bb4b-f9a3de632b93"
+  "updatedAt": "2024-08-15T14:52:29.950Z",
+  "versionId": "020c5b2e-530b-43c6-bcfb-932a9fea2242"
 }
