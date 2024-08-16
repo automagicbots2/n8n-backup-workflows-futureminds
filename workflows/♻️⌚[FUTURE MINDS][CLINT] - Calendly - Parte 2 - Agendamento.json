@@ -1202,6 +1202,17 @@
           }
         ]
       ]
+    },
+    "cria/atualiza_negocio_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_closer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-06-28T17:42:34.794Z",
@@ -3958,7 +3969,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        1027,
+        1000,
         1200
       ]
     },
@@ -4877,8 +4888,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        3540,
-        840
+        3440,
+        680
       ]
     },
     {
@@ -4912,6 +4923,43 @@
         3240,
         1040
       ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastrar_contato\"].json[\"id\"] }}/send_message/",
+        "jsonParameters": "={{ false }}",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Olá {{ $node[\"cadastrar_contato\"].json[\"full_name\"] }}! Sua vaga na Sala Secreta está garantida! Parabéns por dar esse passo em prol da sua carreira! 📱\n\nA Sala Secreta será dia {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }},  {{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }} às {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[2] }}. \n\nNela, falaremos sobre como você pode construir uma carreira de sucesso sem depender de plano de carreira ou do gestor!\n\nAceite agora o e-mail de convite que chegou na sua caixa de entrada para você garantir que esse horário está reservado para o seu desenvolvimento profissional.\n\nAté breve 😉"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_closer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        3660,
+        680
+      ],
+      "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
+      "continueOnFail": true
     }
   ],
   "pinData": {
@@ -4989,6 +5037,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-15T14:52:29.950Z",
-  "versionId": "020c5b2e-530b-43c6-bcfb-932a9fea2242"
+  "updatedAt": "2024-08-15T17:46:32.355Z",
+  "versionId": "459b79dd-ac87-49c3-a3c2-52bd3a09fcf0"
 }
