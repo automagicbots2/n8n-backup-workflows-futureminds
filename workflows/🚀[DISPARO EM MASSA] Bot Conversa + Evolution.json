@@ -230,8 +230,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "nao_existe5": {
@@ -1020,7 +1019,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "14/08/2024",
+              "rightValue": "15/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1377,6 +1376,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-14T16:54:05.453Z",
-  "versionId": "9cb7e69d-64af-4118-b894-6dcf8cee3f23"
+  "updatedAt": "2024-08-15T22:17:44.412Z",
+  "versionId": "fc167c35-2dac-4c81-92fe-7d5fdeda0a25"
 }
