@@ -1019,7 +1019,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "15/08/2024",
+              "rightValue": "16/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1367,7 +1367,10 @@
     "executionOrder": "v1",
     "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+    "errorWorkflow": "zRPVyGjtTGhPaWFr",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true
   },
   "staticData": {
     "node:dispara as 17hs": {
@@ -1376,6 +1379,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-15T22:17:44.412Z",
-  "versionId": "fc167c35-2dac-4c81-92fe-7d5fdeda0a25"
+  "updatedAt": "2024-08-16T13:20:54.819Z",
+  "versionId": "2e956e5e-f144-4a1e-aa8c-f95ddc75c3c7"
 }
