@@ -3,17 +3,13 @@
   "connections": {
     "Webhook": {
       "main": [
-        []
-      ]
-    },
-    "dados": {
-      "main": [
-        []
-      ]
-    },
-    "Notion": {
-      "main": [
-        []
+        [
+          {
+            "node": "Notion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -24,62 +20,6 @@
   },
   "name": "[FUTURE MINDS] - Typeform para Notion",
   "nodes": [
-    {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "typeform-notion",
-        "options": {}
-      },
-      "id": "4cc0f745-5a29-45f1-8b61-29d3c16ec5be",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        600,
-        360
-      ],
-      "webhookId": "55d0ea5a-8309-44fc-b210-9e982cf8a327"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "79ae6674-5c89-44a3-be81-d713aaf5d61b",
-      "name": "dados",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.3,
-      "position": [
-        740,
-        600
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "database",
-        "databaseId": {
-          "__rl": true,
-          "value": "f10e148b-de97-4cae-8c21-5be2b75b1a58",
-          "mode": "list",
-          "cachedResultName": "Dados dos Mentorados",
-          "cachedResultUrl": "https://www.notion.so/f10e148bde974cae8c215be2b75b1a58"
-        },
-        "simple": false
-      },
-      "id": "56c17082-74a3-4583-bf01-8180bba88aa2",
-      "name": "Notion",
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2.2,
-      "position": [
-        940,
-        600
-      ],
-      "credentials": {
-        "notionApi": {
-          "id": "ei6fNre0driBHJ9X",
-          "name": "[Notion] - Future Minds"
-        }
-      }
-    },
     {
       "parameters": {
         "resource": "databasePage",
@@ -170,11 +110,63 @@
             },
             {
               "key": "Salário de entrada na Mentoria|number",
-              "numberValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"19\"][\"text\"] }}"
+              "numberValue": "={{ Number($json[\"body\"][\"form_response\"][\"answers\"][\"19\"][\"text\"]) }}"
             },
             {
               "key": "Nota do momento atual|select",
               "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"20\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "principal objetivo com a mentoria|multi_select",
+              "multiSelectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"21\"][\"choices\"][\"labels\"][\"0\"] }}"
+            },
+            {
+              "key": "Não sei bem quais são os sonhos que eu gostaria de realizar na minha carreira|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"22\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Tenho sonhos de carreira que eu tenho dificuldade em realizar|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"23\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Eu conheço minhas fortalezas e como elas me ajudam nos meus sonhos de carreira|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"24\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Eu tenho um planejamento de carreira de curto, médio e longo prazo (1)|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"25\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Você está satisfeito com a sua remuneração atual?|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"26\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Você está satisfeito com o seu cargo atual?|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"27\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Qual você considera ser o seu desafio hoje para ter uma carreira bem sucedida?|rich_text",
+              "textContent": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"28\"][\"text\"] }}"
+            },
+            {
+              "key": "Você faz o que você gosta?|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"29\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "Como você conheceu a Lilian Cidreira?|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"30\"][\"choice\"][\"label\"] }}"
+            },
+            {
+              "key": "O que fez você confiar na minha Mentoria para fazer sua inscrição?|rich_text",
+              "textContent": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"31\"][\"text\"] }}"
+            },
+            {
+              "key": "O que precisa acontecer até o final do seu período conosco para que a Mentoria tenha valido a pena?|rich_text",
+              "textContent": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"32\"][\"text\"] }}"
+            },
+            {
+              "key": "Qual é o seu nível de comprometimento em participar da Mentoria?|select",
+              "selectValue": "={{ $json[\"body\"][\"form_response\"][\"answers\"][\"34\"][\"choice\"][\"label\"] }}"
             }
           ]
         },
@@ -194,6 +186,22 @@
           "name": "[Notion] - Future Minds"
         }
       }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "typeform-notion",
+        "options": {}
+      },
+      "id": "4cc0f745-5a29-45f1-8b61-29d3c16ec5be",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        600,
+        360
+      ],
+      "webhookId": "55d0ea5a-8309-44fc-b210-9e982cf8a327"
     }
   ],
   "pinData": {
@@ -1658,6 +1666,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-16T20:45:37.991Z",
-  "versionId": "d97ee226-3cab-4d13-89a5-76f645e108aa"
+  "updatedAt": "2024-08-19T14:44:28.323Z",
+  "versionId": "e6b9287e-a56c-4c44-b83c-ddd08cf38904"
 }
