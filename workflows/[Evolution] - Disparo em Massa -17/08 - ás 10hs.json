@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "ler_planilha": {
       "main": [
@@ -877,6 +877,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-17T12:18:22.557Z",
+  "updatedAt": "2024-08-19T13:15:25.972Z",
   "versionId": "13c0e01b-b3c5-47a6-ba9d-4b0675e3e330"
 }
