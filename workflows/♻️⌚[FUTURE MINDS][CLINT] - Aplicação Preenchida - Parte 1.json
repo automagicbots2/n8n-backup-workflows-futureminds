@@ -423,7 +423,7 @@
             },
             {
               "name": "id_ending_typeform",
-              "value": "={{ $node[\"formata_dados3\"].json[\"endings\"].replace('5d42857f-570c-4bae-bd3b-bb2580f70361','Medio Qualificado').replace('985e3c20-4e29-4641-ad04-10c1d2a92817','Qualificado').replace('7aed75d3-c4ad-4d58-83e1-570729229053','Desqualificado') }}"
+              "value": "={{ $node[\"formata_dados3\"].json[\"endings\"].replace('5d42857f-570c-4bae-bd3b-bb2580f70361','Medio Qualificado').replace('985e3c20-4e29-4641-ad04-10c1d2a92817','Qualificado').replace('7aed75d3-c4ad-4d58-83e1-570729229053','Desqualificado').replace('53d30f3d-38ea-4a19-a891-fe0111a1d6e4','Desqualificado') }}"
             },
             {
               "name": "funil",
@@ -4065,6 +4065,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-05T14:22:01.992Z",
-  "versionId": "aad1e2fc-8777-4941-8b95-f11bb8413a60"
+  "updatedAt": "2024-08-21T13:19:42.743Z",
+  "versionId": "efe40655-b903-4788-956b-3e2880bf3a37"
 }
