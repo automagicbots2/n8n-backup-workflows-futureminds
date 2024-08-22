@@ -217,7 +217,7 @@
         ],
         [
           {
-            "node": "nada",
+            "node": "hot_seat_carreira",
             "type": "main",
             "index": 0
           }
@@ -327,6 +327,24 @@
         [
           {
             "node": "entra_na_fila1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "hot_seat_carreira": {
+      "main": [
+        [
+          {
+            "node": "É Reagendamento2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "nada",
             "type": "main",
             "index": 0
           }
@@ -1396,7 +1414,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1920,
+        1840,
         2020
       ]
     },
@@ -1417,7 +1435,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2080,
+        2000,
         2260
       ]
     },
@@ -1519,8 +1537,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2200,
-        2460
+        2260,
+        2660
       ]
     },
     {
@@ -1847,6 +1865,27 @@
       "position": [
         1360,
         2180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "=aplicacaoaplicacao",
+              "operation": "contains",
+              "value2": "carreira"
+            }
+          ]
+        }
+      },
+      "id": "69b54943-ef08-4207-8e10-eaea34dfcf06",
+      "name": "hot_seat_carreira",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        2440
       ]
     }
   ],
@@ -2623,7 +2662,7 @@
   },
   "staticData": {
     "node:Evento": {
-      "webhookId": 4980994
+      "webhookId": 5019769
     }
   },
   "tags": [
@@ -2641,6 +2680,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-05T17:23:51.119Z",
-  "versionId": "557a87c8-9733-429c-a8c3-5042297a655c"
+  "updatedAt": "2024-08-21T17:26:26.345Z",
+  "versionId": "ddd9558a-afe1-4873-8e58-4ddb5bb3ed8a"
 }
