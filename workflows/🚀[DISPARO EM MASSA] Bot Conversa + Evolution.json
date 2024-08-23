@@ -564,14 +564,12 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 1611415112,
+          "value": 510891260,
           "mode": "list",
-          "cachedResultName": "Bot Conversa - Dados Tratados",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1611415112"
+          "cachedResultName": "Lilian 22/08",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=510891260"
         },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
+        "options": {}
       },
       "id": "31f9fb59-b3ee-4339-8b34-2d1a74a4472d",
       "name": "le_planilha",
@@ -936,7 +934,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=Se você sente que está sem direção porque sua empresa não oferece um plano de carreira, temos um convite especial para você.\n\nNeste sábado, às 10h, a Lilian fará um encontro ao vivo, gratuito, exclusivo para quem preencheu nossa aplicação para a Sessão Sprint de Carreira mas não conseguiu participar.\n\nO tema do encontro será Plano Carreira de Sucesso. A Lilian preparou uma apresentação que vai te mostrar:\n\n✅ Como criar seu próprio plano de carreira sem precisar necessariamente de um fornecido pela empresa;\n✅ Como avaliar se o melhor é seguir na empresa ou mudar de emprego; \n✅ A lógica para construir uma carreira de crescimento constante.\n\nSe você quiser tomar o controle do seu desenvolvimento profissional e participar desse encontro exclusivo, clique no link e reserve sua vaga.\n\nhttps://calendly.com/lilian-cidreira/sala-secreta"
+              "value": "=Se você sente que está sem direção porque sua empresa não oferece um plano de carreira, temos um convite especial para você.\n\nNeste sábado, às 10h a Lilian fará um encontro ao vivo, gratuito, exclusivo para quem preencheu nossa aplicação para a Sessão Sprint de Carreira mas não conseguiu participar.\n\nO tema do encontro será Plano Carreira de Sucesso. A Lilian preparou uma apresentação que vai te mostrar:\n\n✅ Como criar seu próprio plano de carreira sem precisar necessariamente de um fornecido pela empresa; \n✅ Como avaliar se o melhor é seguir na empresa ou mudar de emprego; \n✅ A lógica para construir uma carreira de crescimento constante.\n\nSe você quiser tomar o controle do seu desenvolvimento profissional e participar desse encontro exclusivo, clique no link e reserve sua vaga.\n\nhttps://calendly.com/lilian-cidreira/sala-secreta"
             },
             {
               "name": "options.delay",
@@ -1019,7 +1017,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "16/08/2024",
+              "rightValue": "22/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1037,7 +1035,7 @@
       "typeVersion": 2,
       "position": [
         420,
-        420
+        440
       ]
     },
     {
@@ -1201,7 +1199,7 @@
       "typeVersion": 1,
       "position": [
         260,
-        420
+        440
       ]
     },
     {
@@ -1379,6 +1377,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-16T13:20:54.819Z",
-  "versionId": "2e956e5e-f144-4a1e-aa8c-f95ddc75c3c7"
+  "updatedAt": "2024-08-22T20:16:04.999Z",
+  "versionId": "a687e261-0e58-48c6-a9b7-a0c418d1e766"
 }
