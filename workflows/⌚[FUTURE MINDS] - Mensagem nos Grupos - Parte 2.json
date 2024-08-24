@@ -23,17 +23,6 @@
         ]
       ]
     },
-    "variaveis_grupo": {
-      "main": [
-        [
-          {
-            "node": "verifica_midias5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "entrou_no_grupo": {
       "main": [
         [],
@@ -264,6 +253,17 @@
         [
           {
             "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis_grupo": {
+      "main": [
+        [
+          {
+            "node": "verifica_midias5",
             "type": "main",
             "index": 0
           }
@@ -2031,19 +2031,21 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-YzANT1LGb6wk2cKWnKoCwg",
+            "consumerTag": "amq.ctag-XUY-Z9Vqus2i_9WtU-3zmQ",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
           },
-          "properties": {},
+          "properties": {
+            "headers": {}
+          },
           "content": {
             "destino": "Grupos",
-            "id_grupo": "120363307022792711@g.us",
-            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/ab10ee38-6f44-4285-b9c0-14303b777779/Depoimento%20Henry%20-%20Faturamento.mp4?view=open",
-            "copy": "🚀 Prepare-se! A Sala Secreta Está Chegando...\n\nQuem bom te ver por aqui!. Estou muito feliz em te receber neste dia 27 de agosto às 19h, na minha Sala Secreta.\n\nNessa sessão, vou revelar estratégias que podem transformar completamente o futuro do seu salão de beleza. \n\nSe você é um(a) dono(a) de salão visionário(a), comprometido(a) com o crescimento e busca mais liberdade, essa é a oportunidade que você estava esperando.\n\n🎥 Antes disso, assista ao depoimento do Reinaldo e sua equipe que já aplicaram as estratégias e transformaram o seu salão:\n\nQuer alcançar esses mesmos resultados? Não perca a Sala Secreta no dia 27/08! 🎯\n\nMarque essa data no seu calendário, porque você não vai querer perder!\"",
-            "valor_msg": "Vídeo"
+            "id_grupo": "120363322854193853@g.us",
+            "arquivo": "",
+            "copy": "✨🥂Reconhecimento, planejamento e ritual das cartas Hoje é a última sexta do mês e é hora de fazer uma revisão interior e exterior: \n\n1. Reconheça uma conquista deste mês e comemore: saia para jantar, coma aquele docinho, faça as unhas, assista a um episódio daquela série que você adiou a tempos… e mande uma foto pra gente! \n\n2. Escreva um bilhete para você mesma, remodelando as prioridades e planejamento do próximo mês. Essa carta só pode ser aberta pelo seu eu do futuro! \n\nE então, qual é o tema que você se compromete a cuidar nas próximas semanas? Compartilhe",
+            "valor_msg": "Texto"
           }
         }
       }
@@ -2061,6 +2063,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T00:46:27.343Z",
-  "versionId": "1361e1d7-118e-4192-8cf7-0560c9f2426d"
+  "updatedAt": "2024-08-23T20:46:11.942Z",
+  "versionId": "e3a04948-a3e6-40c6-991b-c46bbf09f1b9"
 }
