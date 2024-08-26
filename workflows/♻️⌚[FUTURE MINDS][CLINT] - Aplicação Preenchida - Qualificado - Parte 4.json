@@ -1590,7 +1590,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"] .replace('Juliana','juliana.lopes@futureminds.com.br').replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br') }}"
             }
           ]
         },
@@ -2411,10 +2411,10 @@
           },
           "content": {
             "verificacao_lead": true,
-            "Nome do Cliente": "Gisele",
-            "E-mail do Cliente": "gisele_fa@yahoo.com.br",
-            "Telefone do Cliente - Formato BC": "+5511985573955",
-            "Telefone do Cliente - Formato Z-API": "5511985573955",
+            "Nome do Cliente": "Vitor Queiroz",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5519984574874",
+            "Telefone do Cliente - Formato Z-API": "5519984574874",
             "utm_content": "Anúncio [5.1].MP4",
             "utm_source": "Facebook",
             "utm_campaign": "[H1][OG]-[SESSÃO GRATUITA]-[CAPTAÇÃO EXTERNA] [NOVA]",
@@ -2518,6 +2518,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-14T17:31:06.042Z",
-  "versionId": "163b9d15-b9d6-479b-9375-0c6587ca83e4"
+  "updatedAt": "2024-08-26T14:58:14.546Z",
+  "versionId": "69a7bf3a-6003-4348-b4cc-096fc4a3de3b"
 }
