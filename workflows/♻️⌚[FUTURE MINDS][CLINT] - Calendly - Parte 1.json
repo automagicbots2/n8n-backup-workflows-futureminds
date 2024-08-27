@@ -291,13 +291,7 @@
     },
     "Evento": {
       "main": [
-        [
-          {
-            "node": "sessao_estrategica",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados_do_cancelamento": {
@@ -2662,7 +2656,7 @@
   },
   "staticData": {
     "node:Evento": {
-      "webhookId": 5019769
+      "webhookId": 5030517
     }
   },
   "tags": [
@@ -2680,6 +2674,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-21T17:26:26.345Z",
-  "versionId": "ddd9558a-afe1-4873-8e58-4ddb5bb3ed8a"
+  "updatedAt": "2024-08-26T17:36:07.794Z",
+  "versionId": "8b38dfec-b69d-4fde-bf4f-d07e3baa7869"
 }
