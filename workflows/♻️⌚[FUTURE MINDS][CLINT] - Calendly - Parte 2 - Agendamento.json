@@ -977,7 +977,7 @@
       "main": [
         [
           {
-            "node": "pesquisa_lead2",
+            "node": "notificacao_bc_closer",
             "type": "main",
             "index": 0
           }
@@ -1156,6 +1156,29 @@
         ]
       ]
     },
+    "é_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_negocio_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "é_agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria/atualiza_negocio_sala_secreta": {
+      "main": [
+        []
+      ]
+    },
     "separa_eventos": {
       "main": [
         [
@@ -1179,35 +1202,6 @@
         [
           {
             "node": "envia_fluxo_de_confirmacao_de_agendamento",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "é_sala_secreta": {
-      "main": [
-        [
-          {
-            "node": "cria/atualiza_negocio_sala_secreta",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "é_agendamento",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "cria/atualiza_negocio_sala_secreta": {
-      "main": [
-        [
-          {
-            "node": "notificacao_bc_closer",
             "type": "main",
             "index": 0
           }
@@ -4310,7 +4304,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        847,
+        820,
         1200
       ],
       "credentials": {
@@ -4692,84 +4686,6 @@
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
-                    "rightValue": "[O] Onboarding Modus Inovandi",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "onboarding"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "9a5ac5c3-ae07-4b4c-acf1-a6a1753933cc",
-                    "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
-                    "rightValue": "Fechamento Mentoria",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "fechamento_mentoria"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "d5d5a09f-ff16-4d6e-9fb2-13a825a36a41",
-      "name": "separa_eventos",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3,
-      "position": [
-        3800,
-        1100
-      ]
-    },
-    {
-      "parameters": {
-        "amount": 10,
-        "unit": "minutes"
-      },
-      "id": "c90191ef-51ca-4360-ad10-01fe0d13a460",
-      "name": "espera_10_min",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1,
-      "position": [
-        11220,
-        1380
-      ],
-      "webhookId": "e372fa4f-d5a8-464b-8d09-2b2d595c793a"
-    },
-    {
-      "parameters": {
         "method": "POST",
         "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f",
         "sendBody": true,
@@ -4955,11 +4871,89 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        3660,
-        680
+        1000,
+        1000
       ],
       "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
+                    "rightValue": "[O] Onboarding Modus Inovandi",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "onboarding"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "9a5ac5c3-ae07-4b4c-acf1-a6a1753933cc",
+                    "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
+                    "rightValue": "Fechamento Mentoria",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "fechamento_mentoria"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d5d5a09f-ff16-4d6e-9fb2-13a825a36a41",
+      "name": "separa_eventos",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        3800,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "minutes"
+      },
+      "id": "5d539cce-aee6-402d-a862-9568fc4d3c12",
+      "name": "espera_10_min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        11220,
+        1400
+      ],
+      "webhookId": "e372fa4f-d5a8-464b-8d09-2b2d595c793a"
     }
   ],
   "pinData": {
@@ -4967,8 +4961,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-nEcENEhX9TUR7eP-nE6UKw",
-            "deliveryTag": 45,
+            "consumerTag": "amq.ctag-7TNwYsTGQ0Xncku3OCRoDw",
+            "deliveryTag": 2,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
@@ -4977,25 +4971,25 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz",
+            "Nome do Cliente": "Vitor",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "Tipo de Evento": "Sala Secreta",
-            "ID do Evento": "7116d54f-1b8d-44c6-b80e-6185b5450429",
+            "Tipo de Evento": "Fechamento Mentoria",
+            "ID do Evento": "330d9acf-10c3-4323-9107-f5c8a4fc5264",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "17/08/2024  10:00",
-            "Data em que foi feito o Agendamento": "12/08/2024  19:53",
-            "Data de Término": "17/08/2024  11:00",
-            "Dia da Semana de Início do Evento": "Sábado",
-            "Link da Reunião": "https://calendly.com/events/7116d54f-1b8d-44c6-b80e-6185b5450429/google_meet",
+            "Data de Início": "03/09/2024  15:00",
+            "Data em que foi feito o Agendamento": "26/08/2024  14:35",
+            "Data de Término": "03/09/2024  15:30",
+            "Dia da Semana de Início do Evento": "Terça",
+            "Link da Reunião": "https://us02web.zoom.us/j/86373828940",
             "utm_source": null,
             "utm_campaign": null,
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
-            "ID do Cliente": "2a38a0b1-a7f8-4f6a-baf4-188647371a42",
+            "ID do Cliente": "1167b965-2877-4ab8-82e7-6f05856b3c60",
             "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5037,6 +5031,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-15T17:46:32.355Z",
-  "versionId": "459b79dd-ac87-49c3-a3c2-52bd3a09fcf0"
+  "updatedAt": "2024-08-26T18:00:27.990Z",
+  "versionId": "32b62691-d494-4d2a-b3aa-253a51ac9472"
 }
