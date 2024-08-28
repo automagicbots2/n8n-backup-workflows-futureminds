@@ -977,7 +977,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_closer",
+            "node": "pesquisa_lead2",
             "type": "main",
             "index": 0
           }
@@ -1174,11 +1174,6 @@
         ]
       ]
     },
-    "cria/atualiza_negocio_sala_secreta": {
-      "main": [
-        []
-      ]
-    },
     "separa_eventos": {
       "main": [
         [
@@ -1202,6 +1197,17 @@
         [
           {
             "node": "envia_fluxo_de_confirmacao_de_agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria/atualiza_negocio_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_closer",
             "type": "main",
             "index": 0
           }
@@ -4871,8 +4877,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1000,
-        1000
+        3640,
+        680
       ],
       "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
       "continueOnFail": true
@@ -5031,6 +5037,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-26T18:00:27.990Z",
-  "versionId": "32b62691-d494-4d2a-b3aa-253a51ac9472"
+  "updatedAt": "2024-08-27T19:08:26.277Z",
+  "versionId": "9ee9be2d-6857-49c1-a94b-51890a0a284a"
 }
