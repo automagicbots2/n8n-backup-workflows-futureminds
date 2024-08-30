@@ -1123,17 +1123,6 @@
         ]
       ]
     },
-    "envia_tag_qualificado": {
-      "main": [
-        [
-          {
-            "node": "numeros_de_teste",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "rodizio_closer": {
       "main": [
         [
@@ -1208,6 +1197,17 @@
         [
           {
             "node": "notificacao_bc_closer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_tag_qualificado": {
+      "main": [
+        [
+          {
+            "node": "numeros_de_teste",
             "type": "main",
             "index": 0
           }
@@ -2509,7 +2509,7 @@
             },
             {
               "column": "hora_de_inicio",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}:00"
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[2] }}"
             },
             {
               "column": "link_reuniao",
@@ -2529,7 +2529,7 @@
             },
             {
               "column": "data_agendamento",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }} {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[1] }}:00"
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }} {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[1] }}"
             }
           ]
         },
@@ -2646,7 +2646,7 @@
             },
             {
               "column": "hora_de_inicio",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}:00"
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[2] }}"
             },
             {
               "column": "link_reuniao",
@@ -2666,7 +2666,7 @@
             },
             {
               "column": "data_agendamento",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }} {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[1] }}:00"
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }} {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[1] }}"
             }
           ]
         },
@@ -4967,8 +4967,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-7TNwYsTGQ0Xncku3OCRoDw",
-            "deliveryTag": 2,
+            "consumerTag": "amq.ctag-Q3OY05QbC6GXIbtnObRcbQ",
+            "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
@@ -4977,26 +4977,26 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Vitor",
+            "Nome do Cliente": "Vitor Queiroz",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "Tipo de Evento": "Fechamento Mentoria",
-            "ID do Evento": "330d9acf-10c3-4323-9107-f5c8a4fc5264",
-            "Responsável pelo Evento": "Future Minds",
+            "Tipo de Evento": "Sessão Sprint de Carreira",
+            "ID do Evento": "baf86b8e-7455-4a01-9313-ad6b490eefde",
+            "Responsável pelo Evento": "Lilian Cidreira",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "03/09/2024  15:00",
-            "Data em que foi feito o Agendamento": "26/08/2024  14:35",
-            "Data de Término": "03/09/2024  15:30",
-            "Dia da Semana de Início do Evento": "Terça",
-            "Link da Reunião": "https://us02web.zoom.us/j/86373828940",
-            "utm_source": null,
-            "utm_campaign": null,
-            "utm_term": null,
-            "utm_medium": null,
-            "utm_content": null,
-            "ID do Cliente": "1167b965-2877-4ab8-82e7-6f05856b3c60",
-            "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
+            "Data de Início": "29/08/2024  15:00",
+            "Data em que foi feito o Agendamento": "27/08/2024  19:17",
+            "Data de Término": "29/08/2024  15:45",
+            "Dia da Semana de Início do Evento": "Quinta",
+            "Link da Reunião": "https://calendly.com/events/baf86b8e-7455-4a01-9313-ad6b490eefca/google_meet",
+            "utm_source": "facebook",
+            "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
+            "utm_term": "[CARGO - ANALISTA] — Cópia",
+            "utm_medium": "cpc",
+            "utm_content": "Anúncio [5.1].MP4",
+            "ID do Cliente": "f952f568-c89a-452f-9b90-a4dfffe42654",
+            "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
             "id_campo_link_da_reuniao_bot_conversa": "1139628",
@@ -5037,6 +5037,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-27T19:08:26.277Z",
-  "versionId": "9ee9be2d-6857-49c1-a94b-51890a0a284a"
+  "updatedAt": "2024-08-30T14:20:05.181Z",
+  "versionId": "4cdd141f-ea4a-46b8-ba7f-78f7a7db3e37"
 }
