@@ -1002,17 +1002,6 @@
         ]
       ]
     },
-    "cadastrar_contato1": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_lead2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "pesquisa_lead2": {
       "main": [
         [
@@ -1280,17 +1269,6 @@
         ]
       ]
     },
-    "envia_tipo_serviço": {
-      "main": [
-        [
-          {
-            "node": "envia_fluxo_confirmacao_de_reagendamento",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "rodizio_closer": {
       "main": [
         [
@@ -1332,6 +1310,28 @@
         [
           {
             "node": "é_reagendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastrar_contato1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_tipo_serviço": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo_confirmacao_de_reagendamento",
             "type": "main",
             "index": 0
           }
@@ -1599,7 +1599,7 @@
       "typeVersion": 2.1,
       "position": [
         -820,
-        1900
+        1880
       ],
       "credentials": {
         "mySql": {
@@ -4180,46 +4180,6 @@
     },
     {
       "parameters": {
-        "requestMethod": "POST",
-        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
-        "options": {},
-        "bodyParametersUi": {
-          "parameter": [
-            {
-              "name": "phone",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}"
-            },
-            {
-              "name": "first_name",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].slice(0,1).toUpperCase() }}{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0].slice(1).toLowerCase() }}"
-            },
-            {
-              "name": "last_name",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}."
-            }
-          ]
-        },
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "API-KEY",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"API-KEY\"] }}"
-            }
-          ]
-        }
-      },
-      "name": "cadastrar_contato1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 2,
-      "position": [
-        -5300,
-        1880
-      ],
-      "id": "d462d22d-8e09-4d23-9b34-c6a306438751",
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
         "operation": "select",
         "table": {
           "__rl": true,
@@ -5035,7 +4995,7 @@
             },
             {
               "name": "bot_conversa_id",
-              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+              "value": "={{ $node[\"cadastrar_contato1\"].json[\"id\"] }}"
             },
             {
               "name": "id_do_evento",
@@ -5470,7 +5430,7 @@
             },
             {
               "name": "bot_conversa_id",
-              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+              "value": "={{ $node[\"cadastrar_contato1\"].json[\"id\"] }}"
             },
             {
               "name": "id_do_evento",
@@ -5600,6 +5560,46 @@
         -2720,
         1980
       ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].slice(0,1).toUpperCase() }}{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0].slice(1).toLowerCase() }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}."
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cadastrar_contato1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -5300,
+        1880
+      ],
+      "id": "7c76e1cf-344d-4eb9-b3cf-0f7e01de9e19",
+      "continueOnFail": true
     }
   ],
   "pinData": {
@@ -5607,55 +5607,57 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-byXWDutyxsbZyWMcAlHe4Q",
+            "consumerTag": "amq.ctag-xqdF-cPf2Gw0LeNra5K_bA",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Reagendamentos - Clint"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 237
+            }
           },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz De Almeida",
+            "Nome do Cliente": "Vitor Teste",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "ID do Evento": "358defd8-86e6-4c34-b1c7-aa111286e862",
+            "ID do Evento": "69527b9e-6d29-4ae2-97d0-4fce0840695e",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "19/08/2024 12:00",
-            "Data em que foi feito o Reagendamento": "2024-08-05",
-            "Data de Término": "19/08/2024 12:45",
-            "Dia da Semana de Início do Evento": "Segunda",
-            "utm_source": "source1",
-            "utm_campaign": "[\"campaign2\", \"campaign2\"]",
-            "utm_term": "[\"term5?utm_source=source1\", \"term5\"]",
-            "utm_medium": "[\"medium4\", \"medium4\"]",
-            "utm_content": "[\"content3\", \"content3\"]",
-            "Motivo do Reagendamento": "Reagendamento - Teste ",
-            "ID do Cliente": "19a4c964-bc29-4414-bed8-b9c2b9ed6c94",
-            "ID do Evento Antigo": "6ef49a16-8ce2-4954-8685-9b73acede37d",
+            "Data de Início": "04/09/2024 14:00",
+            "Data em que foi feito o Reagendamento": "2024-08-27",
+            "Data de Término": "04/09/2024 14:30",
+            "Dia da Semana de Início do Evento": "Quarta",
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_term": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "Motivo do Reagendamento": "Estou sem wifi (em viagem) e com a Internet do celular oscilando. Desculpe!",
+            "ID do Cliente": "788268bd-2044-49a7-a140-5228966a4d6f",
+            "ID do Evento Antigo": "8f257bf9-7f98-4b59-a8c4-069d0c408d7d",
             "Tipo de Evento": "Sessão Sprint de Carreira",
-            "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
+            "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "id_do_campo_inviteeid_bot_conversa": "1139629",
             "id_do_campo_horario_agendado_bot_conversa": "1139625",
             "id_campo_data_do_agendamento_bot_conversa": "1139612",
             "id_do_campo_dia_da_semana_do_agendamento_bot_conversa": "1139616",
             "fluxo_de_confirmacao_de_reagendamento": "2360303",
-            "Link da Reunião": "https://calendly.com/events/358defd8-86e6-4c34-b1c7-aa111286e862/google_meet",
-            "ID do Cliente Antigo": "e447f127-68f0-4407-a759-022ff91a42a7",
-            "data_de_inicio_antigo": "2024-08-12",
-            "hora_de_inicio_antigo": "12:00:00",
-            "Link da Reunião Antigo": "https://calendly.com/events/6ef49a16-8ce2-4954-8685-9b73acede37d/google_meet",
-            "Dia da Semana de Início do Evento Antigo": "Segunda",
-            "Data do Agendamento Antigo": "2024-08-05 13:46:49",
+            "Link da Reunião": null,
+            "ID do Cliente Antigo": "4b0dd2c0-c5d2-4848-ad36-3cbf53f2395c",
+            "data_de_inicio_antigo": "2024-08-27",
+            "hora_de_inicio_antigo": "14:00:00",
+            "Link da Reunião Antigo": "https://us02web.zoom.us/j/86904033885",
+            "Dia da Semana de Início do Evento Antigo": "Terça",
+            "Data do Agendamento Antigo": "2024-08-22 10:15:38",
             "Responsável pelo Evento Antigo": "Future Minds",
             "E-mail do Responsável Antigo": "lilian.cidreira@futureminds.com.br",
-            "data_de_inicio_novo": "2024-08-19",
-            "data_agendamento_novo": "2024-08-05 13:48:52",
-            "hora_de_inicio_novo": "12:00:00",
+            "data_de_inicio_novo": "2024-09-04",
+            "data_agendamento_novo": "2024-08-27 07:55:45",
+            "hora_de_inicio_novo": "14:00:00",
             "id_campo_id_banco_de_dados_bot_conversa": "1333394",
             "variacao_do_funil": "v1",
             "funil": "sessao_estrategica",
@@ -5689,6 +5691,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-08T16:23:16.679Z",
-  "versionId": "280c44e5-2ac2-4738-aed3-da9d5899595e"
+  "updatedAt": "2024-08-30T14:29:16.875Z",
+  "versionId": "392aa175-ebd4-4ec0-accf-1b29f0d1c593"
 }
