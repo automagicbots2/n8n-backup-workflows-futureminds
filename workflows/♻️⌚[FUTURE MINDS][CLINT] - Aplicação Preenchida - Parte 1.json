@@ -284,7 +284,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_campo_id_banco_de_dados_bot_conversa",
@@ -4065,6 +4065,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-21T13:19:42.743Z",
-  "versionId": "efe40655-b903-4788-956b-3e2880bf3a37"
+  "updatedAt": "2024-08-30T13:30:30.125Z",
+  "versionId": "88c0b982-f2d8-4d60-bc42-9f22446914e5"
 }
