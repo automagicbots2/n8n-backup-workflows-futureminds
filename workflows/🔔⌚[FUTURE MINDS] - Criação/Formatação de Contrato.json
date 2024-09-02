@@ -624,7 +624,7 @@
           "string": [
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_lilian_bot_conversa",
@@ -807,7 +807,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_paula_bot_conversa",
@@ -1055,7 +1055,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_paula_bot_conversa",
@@ -1334,7 +1334,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_paula_bot_conversa",
@@ -1646,7 +1646,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_paula_bot_conversa",
@@ -1792,7 +1792,7 @@
             },
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             },
             {
               "name": "id_notificacao_paula_bot_conversa",
@@ -3499,6 +3499,6 @@
   },
   "tags": [],
   "triggerCount": 5,
-  "updatedAt": "2024-08-01T17:10:36.974Z",
-  "versionId": "d88fc75d-5fc1-4bb5-a8cf-9475946cef6f"
+  "updatedAt": "2024-09-02T14:26:31.017Z",
+  "versionId": "fb61b056-2901-44f2-8caf-244f202c525f"
 }
