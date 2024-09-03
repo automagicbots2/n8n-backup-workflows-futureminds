@@ -362,17 +362,6 @@
         ]
       ]
     },
-    "mentoria_modus_inovandi_start": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "notificacao_bc_lilian2": {
       "main": [
         [
@@ -439,11 +428,11 @@
         ]
       ]
     },
-    "mentoria_modus_inovandi": {
+    "variaveis": {
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro",
+            "node": "duplica_contrato_modus_inovandi",
             "type": "main",
             "index": 0
           }
@@ -483,11 +472,22 @@
         ]
       ]
     },
-    "variaveis": {
+    "mentoria_modus_inovandi_start": {
       "main": [
         [
           {
-            "node": "duplica_contrato_modus_inovandi",
+            "node": "segundo_ou_mais_erro1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mentoria_modus_inovandi": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -2217,22 +2217,6 @@
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "metodo-modus-inovandi",
-        "options": {}
-      },
-      "id": "bb4cf88a-8b30-46c0-8c8e-8bbc6b7b9a9e",
-      "name": "metodo_modus_inovandi",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [
-        -2380,
-        1600
-      ],
-      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
-    },
-    {
-      "parameters": {
-        "httpMethod": "POST",
         "path": "mentoria-modus-inovandi",
         "options": {}
       },
@@ -2389,6 +2373,22 @@
       ],
       "id": "adfb86a4-f50d-4ac9-9807-5ff6c8553a4c",
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "metodo-modus-inovandi",
+        "options": {}
+      },
+      "id": "bb4cf88a-8b30-46c0-8c8e-8bbc6b7b9a9e",
+      "name": "metodo_modus_inovandi",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        1600
+      ],
+      "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
     }
   ],
   "pinData": {
@@ -2608,226 +2608,6 @@
             }
           },
           "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/mentoria-c-level",
-          "executionMode": "production"
-        }
-      }
-    ],
-    "metodo_modus_inovandi": [
-      {
-        "json": {
-          "headers": {
-            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
-            "user-agent": "Typeform Webhooks",
-            "content-length": "3460",
-            "accept-encoding": "gzip",
-            "content-type": "application/json",
-            "traceparent": "00-a51626925a44859428e87b7cc125e521-b5991347af671c28-01",
-            "x-forwarded-for": "18.204.78.134",
-            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
-            "x-forwarded-port": "443",
-            "x-forwarded-proto": "https",
-            "x-forwarded-server": "3fc641f1cb52",
-            "x-real-ip": "18.204.78.134"
-          },
-          "params": {},
-          "query": {},
-          "body": {
-            "event_id": "01HXA8XWQYPK7TQ6J4AZMC7AXW",
-            "event_type": "form_response",
-            "form_response": {
-              "form_id": "GH5fCnKX",
-              "token": "shst6jnvdd7jecoshst5nzo2j2q4sxs3",
-              "landed_at": "2024-05-07T19:35:26Z",
-              "submitted_at": "2024-05-07T19:36:45Z",
-              "definition": {
-                "id": "GH5fCnKX",
-                "title": "✅Dados de Contrato - Método Modus Inovandi",
-                "fields": [
-                  {
-                    "id": "XQ00Gi2501Ag",
-                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
-                    "type": "short_text",
-                    "title": "Qual é o seu nome completo?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "1VoFUXpG5Wse",
-                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
-                    "type": "email",
-                    "title": "Qual é o seu melhor e-mail?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "4wsNtPs3XXi9",
-                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
-                    "type": "phone_number",
-                    "title": "Qual é o seu telefone?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "UeXsomaFIMKA",
-                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
-                    "type": "short_text",
-                    "title": "Qual é o seu RG?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "Qqe5iHRO9M6k",
-                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
-                    "type": "short_text",
-                    "title": "Qual é o seu CPF?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "42rVtbNBxRgA",
-                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
-                    "type": "long_text",
-                    "title": "Digite o nome da sua rua.",
-                    "properties": {}
-                  },
-                  {
-                    "id": "GWWolNtPUkvj",
-                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
-                    "type": "long_text",
-                    "title": "Digite o número da sua residência.",
-                    "properties": {}
-                  },
-                  {
-                    "id": "IZj2byspfycF",
-                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
-                    "type": "long_text",
-                    "title": "Digite a cidade e o estado onde reside.",
-                    "properties": {}
-                  },
-                  {
-                    "id": "48taHT4T3ZbW",
-                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
-                    "type": "long_text",
-                    "title": "Digite seu bairro.",
-                    "properties": {}
-                  },
-                  {
-                    "id": "FDs1YOW1HLvS",
-                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
-                    "type": "short_text",
-                    "title": "Digite o seu CEP.",
-                    "properties": {}
-                  }
-                ],
-                "endings": [
-                  {
-                    "id": "kEbRhFd7oxkj",
-                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
-                    "title": "Obrigado por completar o formulário.",
-                    "type": "thankyou_screen",
-                    "properties": {
-                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
-                      "show_button": false,
-                      "share_icons": false,
-                      "button_mode": "default_redirect"
-                    }
-                  }
-                ]
-              },
-              "answers": [
-                {
-                  "type": "text",
-                  "text": "Lídia Maria de Abreu Generoso",
-                  "field": {
-                    "id": "XQ00Gi2501Ag",
-                    "type": "short_text",
-                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
-                  }
-                },
-                {
-                  "type": "email",
-                  "email": "generosolidia@gmail.com",
-                  "field": {
-                    "id": "1VoFUXpG5Wse",
-                    "type": "email",
-                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
-                  }
-                },
-                {
-                  "type": "phone_number",
-                  "phone_number": "+5531984925557",
-                  "field": {
-                    "id": "4wsNtPs3XXi9",
-                    "type": "phone_number",
-                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "13820197",
-                  "field": {
-                    "id": "UeXsomaFIMKA",
-                    "type": "short_text",
-                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "06536016629",
-                  "field": {
-                    "id": "Qqe5iHRO9M6k",
-                    "type": "short_text",
-                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Rua Martins Alves",
-                  "field": {
-                    "id": "42rVtbNBxRgA",
-                    "type": "long_text",
-                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "1025A",
-                  "field": {
-                    "id": "GWWolNtPUkvj",
-                    "type": "long_text",
-                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Belo Horizonte - MG",
-                  "field": {
-                    "id": "IZj2byspfycF",
-                    "type": "long_text",
-                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Nova Esperança",
-                  "field": {
-                    "id": "48taHT4T3ZbW",
-                    "type": "long_text",
-                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "31230-410",
-                  "field": {
-                    "id": "FDs1YOW1HLvS",
-                    "type": "short_text",
-                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
-                  }
-                }
-              ],
-              "ending": {
-                "id": "kEbRhFd7oxkj",
-                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
-              }
-            }
-          },
-          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/metodo-modus-inovandi",
           "executionMode": "production"
         }
       }
@@ -3475,6 +3255,226 @@
           "executionMode": "production"
         }
       }
+    ],
+    "metodo_modus_inovandi": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "3421",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-25abb4fc7b252a1e78d9d2dac56bdb4f-4cb6fe6be51e9a5b-01",
+            "x-forwarded-for": "34.230.177.131",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "34.230.177.131"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01J6NAS4W5GMZ6YBCW78K8JYXE",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "GH5fCnKX",
+              "token": "j73pxz1vbi3ja4umj73pxz5y6iqy0376",
+              "landed_at": "2024-08-31T22:58:31Z",
+              "submitted_at": "2024-08-31T23:02:02Z",
+              "definition": {
+                "id": "GH5fCnKX",
+                "title": "✅Dados de Contrato - Método Modus Inovandi",
+                "fields": [
+                  {
+                    "id": "XQ00Gi2501Ag",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12",
+                    "type": "short_text",
+                    "title": "Qual é o seu nome completo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "1VoFUXpG5Wse",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb",
+                    "type": "email",
+                    "title": "Qual é o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "4wsNtPs3XXi9",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c",
+                    "type": "phone_number",
+                    "title": "Qual é o seu telefone?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "UeXsomaFIMKA",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4",
+                    "type": "short_text",
+                    "title": "Qual é o seu RG?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Qqe5iHRO9M6k",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae",
+                    "type": "short_text",
+                    "title": "Qual é o seu CPF?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "42rVtbNBxRgA",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3",
+                    "type": "long_text",
+                    "title": "Digite o nome da sua rua.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "GWWolNtPUkvj",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765",
+                    "type": "long_text",
+                    "title": "Digite o número da sua residência.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "IZj2byspfycF",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c",
+                    "type": "long_text",
+                    "title": "Digite a cidade e o estado onde reside.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "48taHT4T3ZbW",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b",
+                    "type": "long_text",
+                    "title": "Digite seu bairro.",
+                    "properties": {}
+                  },
+                  {
+                    "id": "FDs1YOW1HLvS",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf",
+                    "type": "short_text",
+                    "title": "Digite o seu CEP.",
+                    "properties": {}
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "kEbRhFd7oxkj",
+                    "ref": "01H8Z7RCME6VHZD2ABACX636GG",
+                    "title": "Obrigado por completar o formulário.",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "Nossa equipe irá gerar o nosso contrato, e logo logo iniciaremos a Mentoria!",
+                      "show_button": false,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Glauber Santos",
+                  "field": {
+                    "id": "XQ00Gi2501Ag",
+                    "type": "short_text",
+                    "ref": "01H8Z7RCMED4A0R07Z01KZVQ12"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "glaubersantos954@gmail.com",
+                  "field": {
+                    "id": "1VoFUXpG5Wse",
+                    "type": "email",
+                    "ref": "953e6896-1afb-441d-89fa-86e1a0ccc0cb"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5511974257452",
+                  "field": {
+                    "id": "4wsNtPs3XXi9",
+                    "type": "phone_number",
+                    "ref": "cec633f2-9f5b-487b-8402-cb44c9c4181c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "42459724 X",
+                  "field": {
+                    "id": "UeXsomaFIMKA",
+                    "type": "short_text",
+                    "ref": "5f7392a1-159c-48f5-a2fc-579272cd8df4"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "33543276859",
+                  "field": {
+                    "id": "Qqe5iHRO9M6k",
+                    "type": "short_text",
+                    "ref": "7d9dc7b0-8d5a-4182-a59e-eb42672d76ae"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Alerta",
+                  "field": {
+                    "id": "42rVtbNBxRgA",
+                    "type": "long_text",
+                    "ref": "c5876eb6-82be-4ef1-9ef8-4cd170c3cdc3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "74",
+                  "field": {
+                    "id": "GWWolNtPUkvj",
+                    "type": "long_text",
+                    "ref": "e78be8ed-dbe4-451d-b6ed-52cd14def765"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Carapicuíba - SP",
+                  "field": {
+                    "id": "IZj2byspfycF",
+                    "type": "long_text",
+                    "ref": "2421a56d-963f-4416-adde-b635477d758c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Rosa",
+                  "field": {
+                    "id": "48taHT4T3ZbW",
+                    "type": "long_text",
+                    "ref": "c3cbd01d-9f05-455f-9e66-1c997729906b"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "06317170",
+                  "field": {
+                    "id": "FDs1YOW1HLvS",
+                    "type": "short_text",
+                    "ref": "08c8d1f3-5cb1-40bd-8dda-2fe5cd5e0ccf"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "kEbRhFd7oxkj",
+                "ref": "01H8Z7RCME6VHZD2ABACX636GG"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/metodo-modus-inovandi",
+          "executionMode": "production"
+        }
+      }
     ]
   },
   "settings": {
@@ -3499,6 +3499,6 @@
   },
   "tags": [],
   "triggerCount": 5,
-  "updatedAt": "2024-09-02T14:26:31.017Z",
-  "versionId": "fb61b056-2901-44f2-8caf-244f202c525f"
+  "updatedAt": "2024-09-02T18:56:26.072Z",
+  "versionId": "348a67fc-3e78-4cd0-ab83-e892afe925ac"
 }
