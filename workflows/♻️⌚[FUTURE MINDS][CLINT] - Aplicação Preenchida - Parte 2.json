@@ -280,8 +280,7 @@
               {
                 "key": "x-queue-type",
                 "value": "quorum"
-              },
-              {}
+              }
             ]
           },
           "acknowledge": "executionFinishesSuccessfully",
@@ -2525,6 +2524,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-07-18T18:03:36.409Z",
-  "versionId": "71def5fd-ed82-42c0-8c62-115c277f2fab"
+  "updatedAt": "2024-09-03T15:12:35.232Z",
+  "versionId": "d7a94c78-c910-4e9a-b5a4-37e473da4ae6"
 }
