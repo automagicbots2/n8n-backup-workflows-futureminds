@@ -1196,7 +1196,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_closer",
+            "node": "pesquisa_colaborador",
             "type": "main",
             "index": 0
           }
@@ -1207,7 +1207,65 @@
       "main": [
         [
           {
+            "node": "é_sala_secreta1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_sala_secreta1": {
+      "main": [
+        [
+          {
+            "node": "confirmacao_agendamento_webnario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "numeros_de_teste",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_webnario": {
+      "main": [
+        [
+          {
+            "node": "nao_existe4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe4": {
+      "main": [
+        [
+          {
+            "node": "insert_lead_webnario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_lead_webnario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "confirmacao_agendamento_webnario": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead_webnario",
             "type": "main",
             "index": 0
           }
@@ -1267,7 +1325,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        11020,
+        11160,
         1300
       ]
     },
@@ -1281,7 +1339,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        11220,
+        11360,
         1220
       ],
       "webhookId": "b8347fd4-a0f4-47c6-95a3-45bb9acd0ddb"
@@ -1472,7 +1530,7 @@
       "typeVersion": 2.1,
       "position": [
         1560,
-        1040
+        900
       ],
       "credentials": {
         "mySql": {
@@ -1600,7 +1658,7 @@
       "typeVersion": 2,
       "position": [
         1720,
-        1040
+        900
       ]
     },
     {
@@ -1654,7 +1712,7 @@
       "typeVersion": 2.1,
       "position": [
         1380,
-        1040
+        900
       ],
       "credentials": {
         "mySql": {
@@ -3707,7 +3765,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        11400,
+        11540,
         1300
       ],
       "retryOnFail": true,
@@ -3981,7 +4039,7 @@
       "typeVersion": 1.1,
       "position": [
         4280,
-        780
+        960
       ],
       "webhookId": "6b5f78e3-8f7a-452c-9aba-86412c993a2a"
     },
@@ -4260,7 +4318,7 @@
       "typeVersion": 4.1,
       "position": [
         4540,
-        780
+        960
       ]
     },
     {
@@ -4332,7 +4390,7 @@
       "typeVersion": 1,
       "position": [
         3720,
-        1260
+        1440
       ]
     },
     {
@@ -4366,7 +4424,7 @@
       "typeVersion": 2,
       "position": [
         4280,
-        960
+        1140
       ],
       "id": "eb13cf50-ddcc-4dd5-ad31-40316b0561e0",
       "continueOnFail": true
@@ -4379,7 +4437,7 @@
       "typeVersion": 1.1,
       "position": [
         4280,
-        1160
+        1340
       ],
       "webhookId": "6b5f78e3-8f7a-452c-9aba-86412c993a2a"
     },
@@ -4508,7 +4566,7 @@
       "typeVersion": 4.1,
       "position": [
         4540,
-        1160
+        1340
       ]
     },
     {
@@ -4519,7 +4577,7 @@
       "typeVersion": 1,
       "position": [
         4080,
-        780
+        960
       ]
     },
     {
@@ -4530,7 +4588,7 @@
       "typeVersion": 1,
       "position": [
         4080,
-        1160
+        1340
       ]
     },
     {
@@ -4693,7 +4751,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f\n",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -4810,8 +4868,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        3440,
-        680
+        4540,
+        780
       ]
     },
     {
@@ -4845,43 +4903,6 @@
         3240,
         1040
       ]
-    },
-    {
-      "parameters": {
-        "requestMethod": "POST",
-        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastrar_contato\"].json[\"id\"] }}/send_message/",
-        "jsonParameters": "={{ false }}",
-        "options": {},
-        "bodyParametersUi": {
-          "parameter": [
-            {
-              "name": "type",
-              "value": "text"
-            },
-            {
-              "name": "value",
-              "value": "=Olá {{ $node[\"cadastrar_contato\"].json[\"full_name\"] }}! Sua vaga na Sala Secreta está garantida! Parabéns por dar esse passo em prol da sua carreira! 📱\n\nA Sala Secreta será dia {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }},  {{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }} às {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[2] }}. \n\nNela, falaremos sobre como você pode construir uma carreira de sucesso sem depender de plano de carreira ou do gestor!\n\nAceite agora o e-mail de convite que chegou na sua caixa de entrada para você garantir que esse horário está reservado para o seu desenvolvimento profissional.\n\nAté breve 😉"
-            }
-          ]
-        },
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "API-KEY",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"API-KEY\"] }}"
-            }
-          ]
-        }
-      },
-      "name": "notificacao_bc_closer",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 2,
-      "position": [
-        3640,
-        680
-      ],
-      "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
-      "continueOnFail": true
     },
     {
       "parameters": {
@@ -4943,7 +4964,7 @@
       "typeVersion": 3,
       "position": [
         3800,
-        1100
+        1280
       ]
     },
     {
@@ -4956,10 +4977,236 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        11220,
+        11360,
         1400
       ],
       "webhookId": "e372fa4f-d5a8-464b-8d09-2b2d595c793a"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "398f17a8-ed5d-4cb6-9b40-3714dfda2dd8",
+              "leftValue": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}",
+              "rightValue": "Sala Secreta",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "601d529b-55a8-49a5-8060-1b0a98dd1264",
+      "name": "é_sala_secreta1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        10900,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastrar_contato\"].json[\"id\"] }}/send_message/",
+        "jsonParameters": "={{ false }}",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Olá {{ $node[\"cadastrar_contato\"].json[\"full_name\"] }}! Sua vaga na Sala Secreta está garantida! Parabéns por dar esse passo em prol da sua carreira! 📱\n\nA Sala Secreta será dia {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }},  {{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }} às {{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[2] }}. \n\nNela, falaremos sobre como você pode construir uma carreira de sucesso sem depender de plano de carreira ou do gestor!\n\nAceite agora o e-mail de convite que chegou na sua caixa de entrada para você garantir que esse horário está reservado para o seu desenvolvimento profissional.\n\nAté breve 😉"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "confirmacao_agendamento_webnario",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        11160,
+        860
+      ],
+      "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "webinario_leads",
+          "mode": "list",
+          "cachedResultName": "webinario_leads"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data_cadastro",
+              "value": "={{ $now.toFormat('dd/MM/yyyy').split('/')[2] }}-{{ $now.toFormat('dd/MM/yyyy').split('/')[1] }}-{{ $now.toFormat('dd/MM/yyyy').split('/')[0] }}"
+            },
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
+            },
+            {
+              "column": "utm_fun",
+              "value": "sessao estrategica"
+            },
+            {
+              "column": "utm_var",
+              "value": "webnario_semanal"
+            },
+            {
+              "column": "agendou_webnario",
+              "value": "Sim"
+            },
+            {
+              "column": "data_agendamento",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }}"
+            },
+            {
+              "column": "semana_webnario",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "20792610-240b-4c3e-805d-24168608696c",
+      "name": "insert_lead_webnario",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        11740,
+        740
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "webinario_leads",
+          "mode": "list",
+          "cachedResultName": "webinario_leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d88b820d-e34e-4850-a317-6bd4eb01f117",
+      "name": "pesquisa_lead_webnario",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        11360,
+        860
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "webinario_leads",
+          "mode": "list",
+          "cachedResultName": "webinario_leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "agendou_webnario",
+              "value": "Sim"
+            },
+            {
+              "column": "data_agendamento",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0].split('/')[0] }}"
+            },
+            {
+              "column": "semana_webnario",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5941663b-8598-4de2-a74e-2259b1070b2a",
+      "name": "atualiza_lead_webnario",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        11740,
+        980
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead_webnario\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "a6f77ae5-eff7-4ec7-8ec7-bbbf36d578bc",
+      "name": "nao_existe4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        11540,
+        860
+      ]
     }
   ],
   "pinData": {
@@ -4967,7 +5214,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-Q3OY05QbC6GXIbtnObRcbQ",
+            "consumerTag": "amq.ctag-Mk3kXo3CPkug4dWVU0KUIw",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -4977,25 +5224,25 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz",
+            "Nome do Cliente": "Vitor Teste",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "Tipo de Evento": "Sessão Sprint de Carreira",
-            "ID do Evento": "baf86b8e-7455-4a01-9313-ad6b490eefde",
-            "Responsável pelo Evento": "Lilian Cidreira",
+            "Tipo de Evento": "Sala Secreta",
+            "ID do Evento": "8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53",
+            "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "29/08/2024  15:00",
-            "Data em que foi feito o Agendamento": "27/08/2024  19:17",
-            "Data de Término": "29/08/2024  15:45",
-            "Dia da Semana de Início do Evento": "Quinta",
-            "Link da Reunião": "https://calendly.com/events/baf86b8e-7455-4a01-9313-ad6b490eefca/google_meet",
-            "utm_source": "facebook",
-            "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
-            "utm_term": "[CARGO - ANALISTA] — Cópia",
-            "utm_medium": "cpc",
-            "utm_content": "Anúncio [5.1].MP4",
-            "ID do Cliente": "f952f568-c89a-452f-9b90-a4dfffe42654",
+            "Data de Início": "07/09/2024  11:00",
+            "Data em que foi feito o Agendamento": "03/09/2024  14:28",
+            "Data de Término": "07/09/2024  12:00",
+            "Dia da Semana de Início do Evento": "Sábado",
+            "Link da Reunião": "https://calendly.com/events/8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53/google_meet",
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_term": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "ID do Cliente": "393ad2fc-fe53-4b89-ad1a-f72918159ba4",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5037,6 +5284,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T14:20:05.181Z",
-  "versionId": "4cdd141f-ea4a-46b8-ba7f-78f7a7db3e37"
+  "updatedAt": "2024-09-03T18:45:08.213Z",
+  "versionId": "eba8d724-f647-4cba-b52c-5dc4215e322b"
 }
