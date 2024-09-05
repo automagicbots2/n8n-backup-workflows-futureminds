@@ -949,7 +949,7 @@
       "main": [
         [
           {
-            "node": "fluxo_confirmacao_cancelamento",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -961,6 +961,17 @@
         [
           {
             "node": "pesquisa_agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "fluxo_confirmacao_cancelamento",
             "type": "main",
             "index": 0
           }
@@ -2053,7 +2064,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9080,
+        9300,
         2620
       ],
       "retryOnFail": true,
@@ -3735,6 +3746,17 @@
         4880,
         1820
       ]
+    },
+    {
+      "parameters": {},
+      "id": "66d3279d-83c6-48a7-aa11-be515d117f50",
+      "name": "Limit",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        9100,
+        2620
+      ]
     }
   ],
   "pinData": {
@@ -3813,6 +3835,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T13:40:06.236Z",
-  "versionId": "2a9faf48-b2d1-4daa-926e-ed8fc3dcde26"
+  "updatedAt": "2024-09-05T12:38:02.975Z",
+  "versionId": "1a90532e-e6d1-4e5a-9477-9ad0f91c65dc"
 }
