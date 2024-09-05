@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "infos_bot_conversa": {
       "main": [
@@ -1003,6 +1003,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T14:56:30.606Z",
+  "updatedAt": "2024-09-04T19:52:58.693Z",
   "versionId": "b4e275cf-e982-4a71-aa6f-01d8e4e11287"
 }
