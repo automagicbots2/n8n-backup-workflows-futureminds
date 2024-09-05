@@ -1271,6 +1271,50 @@
           }
         ]
       ]
+    },
+    "atualiza_lead_webnario": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_webanrio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_lead_webnario": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_webanrio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe5": {
+      "main": [
+        [
+          {
+            "node": "insert_lead_webnario1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_data_webanrio": {
+      "main": [
+        [
+          {
+            "node": "nao_existe5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-06-28T17:42:34.794Z",
@@ -4751,7 +4795,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f\n",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/99bfa44f-befc-4895-9030-851299cde64f",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -5207,6 +5251,102 @@
         11540,
         860
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_data_webanrio\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "a8760ae7-a169-43fd-9d55-f8db0347e456",
+      "name": "nao_existe5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        12160,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "funis",
+          "mode": "list",
+          "cachedResultName": "funis"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "sala_secreta"
+            },
+            {
+              "column": "data_webnario",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b021bd01-0307-4462-b780-89d21ba3da64",
+      "name": "insert_lead_webnario1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        12400,
+        720
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "funis",
+          "mode": "list",
+          "cachedResultName": "funis"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "sala_secreta"
+            },
+            {
+              "column": "data_webnario",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[2] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0].split('/')[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "49beaff3-8ba4-49df-a466-75c2a7d9e5fb",
+      "name": "pesquisa_data_webanrio",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        11980,
+        860
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
     }
   ],
   "pinData": {
@@ -5214,8 +5354,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-Mk3kXo3CPkug4dWVU0KUIw",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-TTdvjPHRMohE7epqdm8f7Q",
+            "deliveryTag": 9,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
@@ -5224,15 +5364,15 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Vitor Teste",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5519984574874",
-            "Telefone do Cliente - Formato Z-API": "5519984574874",
+            "Nome do Cliente": "ANDERSON Vieira",
+            "E-mail do Cliente": "anderzon19756@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5521973234850",
+            "Telefone do Cliente - Formato Z-API": "5521973234850",
             "Tipo de Evento": "Sala Secreta",
             "ID do Evento": "8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "07/09/2024  11:00",
+            "Data de Início": "14/09/2024  11:00",
             "Data em que foi feito o Agendamento": "03/09/2024  14:28",
             "Data de Término": "07/09/2024  12:00",
             "Dia da Semana de Início do Evento": "Sábado",
@@ -5242,7 +5382,7 @@
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
-            "ID do Cliente": "393ad2fc-fe53-4b89-ad1a-f72918159ba4",
+            "ID do Cliente": "11907475-ee42-4a89-b142-11b87afd24a5",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5284,6 +5424,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-03T18:45:08.213Z",
-  "versionId": "eba8d724-f647-4cba-b52c-5dc4215e322b"
+  "updatedAt": "2024-09-05T14:46:25.058Z",
+  "versionId": "b28868db-93d2-473a-a9e1-0d9aac592d03"
 }
