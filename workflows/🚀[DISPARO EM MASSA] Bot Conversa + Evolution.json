@@ -566,7 +566,7 @@
           "__rl": true,
           "value": 510891260,
           "mode": "list",
-          "cachedResultName": "Lilian 22/08",
+          "cachedResultName": "Sala Secreta API OFICIAL",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=510891260"
         },
         "options": {}
@@ -636,7 +636,7 @@
           "parameters": [
             {
               "name": "API-KEY",
-              "value": "e9072792-f5ae-4bce-8b48-f3e70109c213"
+              "value": "1ce1633c-7f94-487a-ad21-62ed7b079427"
             }
           ]
         },
@@ -934,7 +934,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=Oi {{ $node[\"separa_em_lotes\"].json[\"NOME\"].split (' ')[0] }}, você já refletiu se sua carreira realmente reflete seus objetivos pessoais? Muitas vezes, seguimos planos que atendem mais à empresa do que a nós mesmos, levando à estagnação.\n\nVeja o Victor: em 4 meses de mentoria, ele conquistou uma carreira internacional e um aumento de 136% no salário.\nNo sábado, 24 de agosto, às 10h, teremos a Sala Secreta com Lilian Cidreira. É sua chance de alinhar sua carreira com seus objetivos pessoais.\n\nInscreva-se gratuitamente: https://calendly.com/lilian-cidreira/sala-secreta\n\nEsperamos por você!\n\nAbraços,\nLilian Cidreira"
+              "value": "=Se você sente que está sem direção porque sua empresa não oferece um plano de carreira, temos um convite especial para você.\n\n*Neste sábado, às 11h* a Lilian Cidreira fará um encontro *ao vivo, gratuito, exclusivo* para quem preencheu nossa aplicação para a Sessão Sprint de Carreira mas não conseguiu participar.\n\nO tema do encontro será *Os 3 elementos fundamentais para ser promovido todo ano*. A Lilian preparou uma apresentação que vai te mostrar:\n\n✅ Como criar seu próprio plano de carreira sem precisar de um fornecido pela empresa;\n\n✅ Como avaliar se o melhor é seguir na empresa ou mudar de emprego;\n\n✅ A lógica para construir uma carreira de crescimento constante.\n\nSe você quiser tomar o controle do seu desenvolvimento profissional e participar desse encontro exclusivo, clique no link e reserve sua vaga.\n\nhttps://calendly.com/lilian-cidreira/sala-secreta"
             },
             {
               "name": "options.delay",
@@ -1017,7 +1017,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "23/08/2024",
+              "rightValue": "04/09/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1377,6 +1377,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-23T14:33:59.394Z",
-  "versionId": "6941138c-c7a7-4882-95b6-0815676336f8"
+  "updatedAt": "2024-09-04T18:34:46.602Z",
+  "versionId": "59311523-0c57-4645-a72e-bfc0c528ac41"
 }
