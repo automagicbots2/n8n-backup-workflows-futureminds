@@ -227,7 +227,7 @@
       "main": [
         [
           {
-            "node": "cria/atualiza_negocio1",
+            "node": "aplicacao_direta",
             "type": "main",
             "index": 0
           }
@@ -238,7 +238,7 @@
       "main": [
         [
           {
-            "node": "pesquisa_lead5",
+            "node": "segundo_ou_mais_erro3",
             "type": "main",
             "index": 0
           }
@@ -339,6 +339,35 @@
           }
         ]
       ]
+    },
+    "cria/atualiza_negocio_aplicacao_direta": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aplicacao_direta": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_negocio_aplicacao_direta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria/atualiza_negocio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-06-27T16:19:35.813Z",
@@ -410,7 +439,7 @@
       "typeVersion": 1,
       "position": [
         860,
-        980
+        1080
       ]
     },
     {
@@ -467,7 +496,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2020,
+        1860,
         1080
       ]
     },
@@ -504,7 +533,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2580,
+        2420,
         1340
       ],
       "credentials": {
@@ -530,7 +559,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2340,
+        2180,
         860
       ]
     },
@@ -568,7 +597,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2580,
+        2420,
         940
       ],
       "credentials": {
@@ -594,7 +623,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2340,
+        2180,
         1240
       ]
     },
@@ -627,7 +656,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2580,
+        2420,
         1120
       ],
       "credentials": {
@@ -730,7 +759,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2580,
+        2420,
         740
       ],
       "credentials": {
@@ -1444,81 +1473,13 @@
       ]
     },
     {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "d81a0185-de96-483f-ac82-95041e340b4c",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
-              "rightValue": "vitorrqueiroztrafego@gmail.com",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            },
-            {
-              "id": "e4aabebf-acdc-4405-99da-9dafe0de9c69",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}",
-              "rightValue": "+5519984574874",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            },
-            {
-              "id": "ce2f2b85-3346-4749-a333-3b38c81dc099",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}",
-              "rightValue": "+5519982022213",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            },
-            {
-              "id": "b493249f-4354-4d44-9d46-3fe42e74eb6b",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
-              "rightValue": "5519982022213",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            },
-            {
-              "id": "7663af05-6403-4994-88e6-f8da492ec3d1",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
-              "rightValue": "5519984574874",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            }
-          ],
-          "combinator": "or"
-        },
-        "options": {}
-      },
-      "id": "4aba6a87-f504-4fce-ba52-56ffff4720c9",
-      "name": "eventos_de_teste",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        1860,
-        940
-      ]
-    },
-    {
       "parameters": {},
       "id": "efc70a3a-f09f-46e0-9946-4d4dedc0bb19",
       "name": "aguarda_5s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3460,
+        3280,
         1060
       ],
       "webhookId": "6b5f78e3-8f7a-452c-9aba-86412c993a2a"
@@ -1627,7 +1588,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        3040,
+        2880,
         1060
       ]
     },
@@ -1740,7 +1701,7 @@
       "typeVersion": 4.1,
       "position": [
         3640,
-        1060
+        1160
       ]
     },
     {
@@ -1975,7 +1936,139 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3260,
+        3080,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/37bae7aa-d642-40af-9179-ae552276149b",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "name": "banco_de_dados_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}"
+            },
+            {
+              "name": "bot_conversa_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "name": "tempo_de_emprego",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "name": "salario_atual",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "name": "ultima_remuneracao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "name": "cargo_atual",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "name": "escolaridade",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "name": "objetivo_este_ano",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "name": "impede_objetivo",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "name": "resolver_desafio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_fun",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}"
+            },
+            {
+              "name": "utm_var",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}"
+            },
+            {
+              "name": "data_aplicacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_resposta_type\"].split(' ')[0] }}"
+            },
+            {
+              "name": "dono_do_negocio",
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"] .replace('Juliana','juliana.lopes@futureminds.com.br').replace('Luiza Campos','luiza.campos@futureminds.com.br') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "71aadca4-dd52-485e-8acb-74ece665493d",
+      "name": "cria/atualiza_negocio_aplicacao_direta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3640,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
+              "value2": "aplicacao_direta"
+            }
+          ]
+        }
+      },
+      "id": "ac7a97f2-3937-4e43-ac9a-c91998747391",
+      "name": "aplicacao_direta",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3440,
         1060
       ]
     }
@@ -1985,7 +2078,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-cDIo01cwZPjm1B9MHoviBg",
+            "consumerTag": "amq.ctag-qqqGjjSXdBhHF9wyCDSTcw",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -1996,25 +2089,25 @@
           },
           "content": {
             "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Queiroz",
+            "Nome do Cliente": "Vitor Almeida",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "utm_content": "Story",
-            "utm_source": "Meta",
-            "utm_campaign": "MA4",
-            "utm_medium": "Quente",
-            "utm_term": "AD01",
+            "utm_content": "content3",
+            "utm_source": "source1",
+            "utm_campaign": "campaign2",
+            "utm_medium": "medium4",
+            "utm_term": "term5",
             "Instagram": "",
             "id_fluxo_nao_agendou_10_min": "",
-            "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
-            "pergunta0": "Entre 1 e 2 anos",
-            "pergunta1": "Até R$3.999",
+            "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
+            "pergunta0": "",
+            "pergunta1": "Até R$4.999",
             "pergunta2": "",
-            "pergunta3": "Especialista",
-            "pergunta5": "Pós-graduação",
-            "pergunta6": "Ser promovido no meu emprego atual",
-            "pergunta7": "Não sei e não consigo ser promovido",
+            "pergunta3": "Estagiário",
+            "pergunta5": "Ensino Médio",
+            "pergunta6": "Mudar de área de atuação no meu emprego ou em um novo emprego",
+            "pergunta7": "",
             "pergunta8": 10,
             "pergunta9": "",
             "pergunta10": "",
@@ -2062,14 +2155,14 @@
             "id_campo_utm_var_bot_conversa": "1374335",
             "id_campo_instagram_bot_conversa": "",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "aplicacao3_com_calendly",
-            "data_ultima_quinzena": "2024-06-17",
+            "variacao_do_funil": "aplicacao_direta",
+            "data_ultima_quinzena": "2024-08-21",
             "id_campo_emailse_bot_conversa": "1139626",
             "id_tag_desqualificado_bot_conversa": "4929805",
             "id_tag_qualificado_bot_conversa": "4891807",
-            "data_resposta_type": "02/07/2024 14:35",
+            "data_resposta_type": "05/09/2024 16:19",
             "qualificacao": "Desqualificado",
-            "id_lead_bd": 4545,
+            "id_lead_bd": 6019,
             "id_lead_bc": 445130242,
             "id_fluxo_nao_agendou_10_min_desqualificados": ""
           }
@@ -2102,6 +2195,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T14:21:46.975Z",
-  "versionId": "a03af68c-4229-4aac-97e1-4b62ae02c8ea"
+  "updatedAt": "2024-09-05T19:30:13.430Z",
+  "versionId": "68b968f2-93f6-4843-aecb-c23cb0b6b063"
 }
