@@ -995,17 +995,6 @@
         ]
       ]
     },
-    "entra_na_fila": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "notificacao_bc_diana_onboarding": {
       "main": [
         [
@@ -1310,6 +1299,17 @@
         [
           {
             "node": "nao_existe5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -5354,25 +5354,27 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-TTdvjPHRMohE7epqdm8f7Q",
-            "deliveryTag": 9,
+            "consumerTag": "amq.ctag-7tscMgdrLoKCBjqaSM1SWA",
+            "deliveryTag": 2,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 9870
+            }
           },
           "content": {
-            "Nome do Cliente": "ANDERSON Vieira",
-            "E-mail do Cliente": "anderzon19756@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5521973234850",
-            "Telefone do Cliente - Formato Z-API": "5521973234850",
+            "Nome do Cliente": "Marcio Gawenda",
+            "E-mail do Cliente": "marciogavenda@hotmail.com",
+            "Telefone do Cliente - Formato BC": "+554591489824",
+            "Telefone do Cliente - Formato Z-API": "554591489824",
             "Tipo de Evento": "Sala Secreta",
             "ID do Evento": "8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "14/09/2024  11:00",
+            "Data de Início": "07/09/2024  11:00",
             "Data em que foi feito o Agendamento": "03/09/2024  14:28",
             "Data de Término": "07/09/2024  12:00",
             "Dia da Semana de Início do Evento": "Sábado",
@@ -5382,7 +5384,7 @@
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
-            "ID do Cliente": "11907475-ee42-4a89-b142-11b87afd24a5",
+            "ID do Cliente": "77976bd2-8674-4b85-a644-cdc4ff888f5c",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5424,6 +5426,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T14:46:25.058Z",
-  "versionId": "b28868db-93d2-473a-a9e1-0d9aac592d03"
+  "updatedAt": "2024-09-05T19:55:23.224Z",
+  "versionId": "4333abbb-ab19-4480-bd63-699d19ed4803"
 }
