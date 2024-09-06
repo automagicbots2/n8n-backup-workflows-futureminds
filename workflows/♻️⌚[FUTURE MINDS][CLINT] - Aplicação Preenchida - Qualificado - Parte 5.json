@@ -440,13 +440,6 @@
         ],
         [
           {
-            "node": "notificacao_bc_closer",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
             "node": "notificacao_bc_lilian",
             "type": "main",
             "index": 0
@@ -2186,30 +2179,6 @@
                 },
                 "conditions": [
                   {
-                    "id": "a5dbb41c-6143-492f-a322-aca8582bca5d",
-                    "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
-                    "rightValue": "Juliana",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Juliana"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
                     "id": "abb7f955-6b2f-45f5-bfed-4921b0982b55",
                     "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
                     "rightValue": "Lilian",
@@ -2244,8 +2213,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-dRrClGCFwi5wHGh7zPUZJQ",
-            "deliveryTag": 2,
+            "consumerTag": "amq.ctag-igK6rOeB5dAKGkmSPGyzMw",
+            "deliveryTag": 74,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos Atualizado - Parte 5 - Qualificado - Clint"
@@ -2254,25 +2223,25 @@
             "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Gisele",
-            "E-mail do Cliente": "gisele_fa@yahoo.com.br",
-            "Telefone do Cliente - Formato BC": "+5511985573955",
-            "Telefone do Cliente - Formato Z-API": "5511985573955",
-            "utm_content": "Anúncio [5.1].MP4",
-            "utm_source": "Facebook",
-            "utm_campaign": "[H1][OG]-[SESSÃO GRATUITA]-[CAPTAÇÃO EXTERNA] [NOVA]",
-            "utm_medium": "cpc",
-            "utm_term": "[OG]-[INTERESSES_ MIX_formção_universitaria]",
+            "Nome do Cliente": "Vitor Teste 2",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5519984574874",
+            "Telefone do Cliente - Formato Z-API": "5519984574874",
+            "utm_content": "xxxxx",
+            "utm_source": "xxxxx",
+            "utm_campaign": "xxxxx",
+            "utm_medium": "xxxxx",
+            "utm_term": "xxxxx",
             "Instagram": "",
             "id_fluxo_nao_agendou_10_min": "",
-            "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
-            "pergunta0": "Mais de 6 anos",
-            "pergunta1": "Entre R$15.000 e R$19.999",
-            "pergunta2": "",
-            "pergunta3": "Gerente",
-            "pergunta5": "Pós-graduação",
-            "pergunta6": "Aumentar o meu salário, continuando no mesmo cargo e empresa",
-            "pergunta7": "A empresa só valoriza quem vem do mercado",
+            "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
+            "pergunta0": "",
+            "pergunta1": "",
+            "pergunta2": "Entre R$7.500 e R$8.999",
+            "pergunta3": "Analista",
+            "pergunta5": "Graduação",
+            "pergunta6": "Estou desempregado, preciso me recolocar no mercado de trabalho",
+            "pergunta7": "",
             "pergunta8": 10,
             "pergunta9": "",
             "pergunta10": "",
@@ -2307,8 +2276,8 @@
             "id_campo_pergunta18_bot_conversa": "",
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
-            "id_da_vez": "Lilian",
-            "id_ending_typeform": "556e0598-22b1-4627-894a-b41151197fd8",
+            "id_da_vez": "Luiza Campos",
+            "id_ending_typeform": "Medio Qualificado",
             "id_campo_id_banco_de_dados_bot_conversa": "1333394",
             "id_campo_iddealac_bot_conversa": "1343862",
             "id_campo_idleadac_bot_conversa": "1343869",
@@ -2321,15 +2290,15 @@
             "id_campo_utm_var_bot_conversa": "1374335",
             "id_campo_instagram_bot_conversa": "",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "aplicacao3_com_calendly",
-            "data_ultima_quinzena": "2024-07-28",
+            "variacao_do_funil": "aplicacao_direta",
+            "data_ultima_quinzena": "2024-08-21",
             "id_campo_emailse_bot_conversa": "1139626",
             "id_tag_desqualificado_bot_conversa": "4929805",
             "id_tag_qualificado_bot_conversa": "4891807",
-            "data_resposta_type": "12/08/2024 19:26",
+            "data_resposta_type": "05/09/2024 15:23",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 6172,
-            "id_lead_bc": 530679098,
+            "id_lead_bd": 6019,
+            "id_lead_bc": 445130242,
             "id_fluxo_nao_agendou_10_min_desqualificados": ""
           }
         }
@@ -2361,6 +2330,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-26T14:58:40.713Z",
-  "versionId": "4aa4353f-4feb-41ef-a049-00431ac6debf"
+  "updatedAt": "2024-09-05T19:06:28.588Z",
+  "versionId": "2bc61e3e-ad51-4ce3-bb5f-9ab10d0c330a"
 }
