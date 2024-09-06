@@ -378,7 +378,9 @@
     },
     {
       "parameters": {
-        "recipientPhoneNumber": "=+{{ $node[\"existe_telefone\"].json[\"telefone\"] }}"
+        "phoneNumberId": "439027139283658",
+        "recipientPhoneNumber": "=+{{ $node[\"existe_telefone\"].json[\"telefone\"] }}",
+        "template": "convite_sala_secreta|pt_BR"
       },
       "id": "c65eb356-a92c-4605-81ac-7b777fe1645d",
       "name": "WhatsApp Business Cloud",
@@ -446,6 +448,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-08-21T14:44:26.054Z",
-  "versionId": "ddc833af-6185-404d-841d-c0d0f596885f"
+  "updatedAt": "2024-09-05T21:11:59.678Z",
+  "versionId": "9d91af7c-d952-4a3f-ba46-693e05d82117"
 }
