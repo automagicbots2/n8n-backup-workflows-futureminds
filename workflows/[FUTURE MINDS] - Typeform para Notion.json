@@ -22,6 +22,22 @@
   "nodes": [
     {
       "parameters": {
+        "httpMethod": "POST",
+        "path": "typeform-notion",
+        "options": {}
+      },
+      "id": "4cc0f745-5a29-45f1-8b61-29d3c16ec5be",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        600,
+        360
+      ],
+      "webhookId": "55d0ea5a-8309-44fc-b210-9e982cf8a327"
+    },
+    {
+      "parameters": {
         "resource": "databasePage",
         "databaseId": {
           "__rl": true,
@@ -186,22 +202,6 @@
           "name": "[Notion] - Future Minds"
         }
       }
-    },
-    {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "typeform-notion",
-        "options": {}
-      },
-      "id": "4cc0f745-5a29-45f1-8b61-29d3c16ec5be",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        600,
-        360
-      ],
-      "webhookId": "55d0ea5a-8309-44fc-b210-9e982cf8a327"
     }
   ],
   "pinData": {
@@ -211,27 +211,27 @@
           "headers": {
             "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "26678",
+            "content-length": "26883",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-503a1e4ad3c511fc263bb4e056c946e6-dabab6bc83d4e52b-01",
-            "x-forwarded-for": "34.230.177.131",
+            "traceparent": "00-5f6022faa9e80aff44ddb3330b50e520-a8ebcff1e3d364ef-01",
+            "x-forwarded-for": "18.204.78.134",
             "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "3fc641f1cb52",
-            "x-real-ip": "34.230.177.131"
+            "x-real-ip": "18.204.78.134"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01J5ECCYS8DXZ421P3SNP873J5",
+            "event_id": "01J814AYKVGMXR3APY6Q2NMW02",
             "event_type": "form_response",
             "form_response": {
               "form_id": "CaUZXXpl",
-              "token": "4a6oksuw24c35m14a3i8hypl1krz4mtd",
-              "landed_at": "2024-08-16T19:56:11Z",
-              "submitted_at": "2024-08-16T19:59:56Z",
+              "token": "ploiv8q0umq1b51wf2fploiv546zfiin",
+              "landed_at": "2024-09-17T23:00:38Z",
+              "submitted_at": "2024-09-17T23:16:00Z",
               "definition": {
                 "id": "CaUZXXpl",
                 "title": "⌚ Forms Mentorados | Autoavaliação do Momento Inicial",
@@ -1242,7 +1242,7 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "Mateus Diniz",
+                  "text": "Raquel Calazans",
                   "field": {
                     "id": "qz6hUbeVrOV5",
                     "type": "short_text",
@@ -1251,7 +1251,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "00888766165 e 4192268",
+                  "text": "CPF: 06158840599. RG: 1332382452",
                   "field": {
                     "id": "S0XvObkFARJ8",
                     "type": "short_text",
@@ -1260,7 +1260,7 @@
                 },
                 {
                   "type": "file_url",
-                  "file_url": "https://api.typeform.com/responses/files/2bd83477ea15b550aa9adbadf7b14f92daa567a4b030eedc496cd1cbd7af4218/avatar_cabeca_perfil_silhueta_chamada_centro_masculino_foto_700_151766550.jpg",
+                  "file_url": "https://api.typeform.com/responses/files/f5fae10fb70a806a406f295419c97d9484d2993e0259e5aa9a1a6624e5622efe/IMG_1854.jpeg",
                   "field": {
                     "id": "64josQim53gc",
                     "type": "file_upload",
@@ -1269,7 +1269,7 @@
                 },
                 {
                   "type": "phone_number",
-                  "phone_number": "+5562981196678",
+                  "phone_number": "+5531995245060",
                   "field": {
                     "id": "p9Gq7SRfVlNS",
                     "type": "phone_number",
@@ -1278,7 +1278,7 @@
                 },
                 {
                   "type": "email",
-                  "email": "mateusdiniz@automagicbots.com.br",
+                  "email": "raqcalazans@gmail.com",
                   "field": {
                     "id": "lqhU5PJ6NfWH",
                     "type": "email",
@@ -1287,7 +1287,7 @@
                 },
                 {
                   "type": "number",
-                  "number": 36,
+                  "number": 29,
                   "field": {
                     "id": "N0fSmdZRgjwF",
                     "type": "number",
@@ -1297,9 +1297,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "Sba97xqMUifI",
-                    "label": "Masculino",
-                    "ref": "b96c5583-5296-4505-acaf-68bf42686e07"
+                    "id": "jxRuniCRFLnz",
+                    "label": "Feminino",
+                    "ref": "9b59fe20-5c80-4cd8-a1d2-0de2905e58fd"
                   },
                   "field": {
                     "id": "SfJ5cIlIQuzs",
@@ -1310,9 +1310,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "xJ3R1P71Q8kw",
-                    "label": "Graduação Completo",
-                    "ref": "9338055b-a0a7-4469-9ca4-54b828574c66"
+                    "id": "Aj9hVhm961gx",
+                    "label": "Graduação Incompleto",
+                    "ref": "b687c6ba-52ed-4178-9d18-c68fa4d809da"
                   },
                   "field": {
                     "id": "WOhU36ZsQ9Zn",
@@ -1322,7 +1322,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "teste",
+                  "text": "http://linkedin.com/in/raqcalazans",
                   "field": {
                     "id": "rbYH3f0MiLFv",
                     "type": "short_text",
@@ -1332,9 +1332,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "p7QYb3jk2WtQ",
-                    "label": "Tenho uma empresa",
-                    "ref": "99519b78-0eec-41d4-a783-8a8feb84c32e"
+                    "id": "A3xWNVAL3eo4",
+                    "label": "Sou empregado(a) no setor privado numa empresa",
+                    "ref": "a74b5f2c-f658-43f0-bc72-e25174abfc1d"
                   },
                   "field": {
                     "id": "ETzPAiN6WZRu",
@@ -1345,9 +1345,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "EiPLIylaSVuz",
-                    "label": "Santa Catarina",
-                    "ref": "bd962f19-a53e-49c1-8754-3b6197e45c6a"
+                    "id": "W3EJbyDp2CTY",
+                    "label": "Minas Gerais",
+                    "ref": "4bee143c-f9eb-45c3-93d9-104150cb447f"
                   },
                   "field": {
                     "id": "UBKRwXmE1ZrW",
@@ -1358,9 +1358,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "l6yZsRYV0rZi",
-                    "label": "Marketing",
-                    "ref": "40e259bc-5fb4-4d8a-8daa-83797070b26c"
+                    "id": "1qbN9WjKkwqW",
+                    "label": "Engenharia",
+                    "ref": "4a153cac-65b7-47fb-80a3-edffe7563cd4"
                   },
                   "field": {
                     "id": "u7n7W8XNlYvI",
@@ -1383,7 +1383,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "Automações",
+                  "text": "Desenvolvimento de software",
                   "field": {
                     "id": "QjAaoM3Rpqce",
                     "type": "short_text",
@@ -1406,9 +1406,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "UvQPZt2jCF2W",
-                    "label": "Há menos de 6 meses",
-                    "ref": "06ffc119-b349-4954-8662-3925780d3e5d"
+                    "id": "GnkxugqbNKZV",
+                    "label": "Há menos de 1 ano",
+                    "ref": "f2628b23-be07-4a87-a00c-e88465e564fc"
                   },
                   "field": {
                     "id": "yd8KhIO9Xf13",
@@ -1419,9 +1419,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "vL6RGvf74kFM",
-                    "label": "Entre 6 meses e 1 ano",
-                    "ref": "36b422ab-fb0a-4677-add4-387b03958c29"
+                    "id": "5XUX4xUN4QxW",
+                    "label": "Entre 2 e 4 anos",
+                    "ref": "f714b6b9-7c3e-46b8-8bef-b72ce6543e3f"
                   },
                   "field": {
                     "id": "DtQB4JfKAZ9h",
@@ -1431,7 +1431,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "Automagic Bots",
+                  "text": "Localiza",
                   "field": {
                     "id": "wTZad7TW0tEd",
                     "type": "short_text",
@@ -1440,7 +1440,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "teste automação",
+                  "text": "Aumento de salário",
                   "field": {
                     "id": "adj2z6pY2D10",
                     "type": "long_text",
@@ -1449,7 +1449,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "4000",
+                  "text": "6000",
                   "field": {
                     "id": "9KaVQyugyF27",
                     "type": "short_text",
@@ -1459,9 +1459,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "nCKQcIR1rC8z",
-                    "label": "4",
-                    "ref": "2464810f-04cf-4db3-95dc-757aedfe7a81"
+                    "id": "UNvNFIUoKIkO",
+                    "label": "2",
+                    "ref": "540acf66-1478-4b23-af27-f56c4492ce85"
                   },
                   "field": {
                     "id": "6Ck3sN9OjxM3",
@@ -1473,13 +1473,13 @@
                   "type": "choices",
                   "choices": {
                     "ids": [
-                      "Eq29YdwJPn7v"
+                      "SVLmdSCGrUz4"
                     ],
                     "labels": [
-                      "Quero mudar de profissão e não sei como fazer"
+                      "Quero mudar de emprego porque onde estou eu não vejo possibilidades de crescimento"
                     ],
                     "refs": [
-                      "f406fa78-94ec-440e-b157-00095189ed1b"
+                      "e006715c-39c4-404a-a79b-f3db668ce9a4"
                     ]
                   },
                   "field": {
@@ -1504,9 +1504,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "3buf8Gx9HoAs",
-                    "label": "3",
-                    "ref": "98075670-a8f4-42b4-a0a8-f35102e30357"
+                    "id": "RlfG6Xnbdxi5",
+                    "label": "4",
+                    "ref": "1bc68f2f-17db-455a-971c-181e2f24e0a2"
                   },
                   "field": {
                     "id": "JtkcjnGQhyWd",
@@ -1530,9 +1530,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "kPdTFqpy4226",
-                    "label": "4",
-                    "ref": "4ac788a2-2b04-4254-b580-f64dea7d8db1"
+                    "id": "DCfA5WNTKnBG",
+                    "label": "3",
+                    "ref": "b8b56610-c87f-4d57-a1f9-d20cd9aed9c8"
                   },
                   "field": {
                     "id": "1TatD2QlGNg2",
@@ -1568,7 +1568,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "testandoooooo",
+                  "text": "Salário compatível com meu valor",
                   "field": {
                     "id": "qQUwar2BCRDN",
                     "type": "short_text",
@@ -1591,9 +1591,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "NujgfPiscPQU",
-                    "label": "Indicação de amigo",
-                    "ref": "82bdc330-0530-421d-817b-53a9996ddff5"
+                    "id": "g87ZQEw9Su0A",
+                    "label": "Instagram",
+                    "ref": "1b90771e-10cc-46cf-94bc-abac34c6509d"
                   },
                   "field": {
                     "id": "b5VfnRi7JKfC",
@@ -1603,7 +1603,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "teste",
+                  "text": "Me identifiquei muito",
                   "field": {
                     "id": "aqNKWo969k5u",
                     "type": "long_text",
@@ -1612,7 +1612,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "123456",
+                  "text": "Conseguir uma oportunidade em outra empresa com um salário de R$10.000,00 em uma empresa com desafios interessantes e perspectiva de crescimento.",
                   "field": {
                     "id": "9bX6GYoXlXgC",
                     "type": "long_text",
@@ -1621,7 +1621,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "654321",
+                  "text": "Valores",
                   "field": {
                     "id": "fhRw2kXFIHgC",
                     "type": "long_text",
@@ -1666,6 +1666,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-19T14:44:28.323Z",
-  "versionId": "e6b9287e-a56c-4c44-b83c-ddd08cf38904"
+  "updatedAt": "2024-09-20T00:23:52.579Z",
+  "versionId": "4586acbf-3bf6-457c-8448-b7958fbe10c4"
 }
