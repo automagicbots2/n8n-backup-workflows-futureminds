@@ -1138,7 +1138,7 @@
       "main": [
         [
           {
-            "node": "cria/atualiza_negocio_sala_secreta",
+            "node": "create_contact",
             "type": "main",
             "index": 0
           }
@@ -1315,6 +1315,28 @@
           }
         ]
       ]
+    },
+    "create_contact": {
+      "main": [
+        [
+          {
+            "node": "add_tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_negocio_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-06-28T17:42:34.794Z",
@@ -1369,7 +1391,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        11160,
+        11380,
         1300
       ]
     },
@@ -1383,7 +1405,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        11360,
+        11580,
         1220
       ],
       "webhookId": "b8347fd4-a0f4-47c6-95a3-45bb9acd0ddb"
@@ -2342,7 +2364,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7940,
+        8160,
         620
       ],
       "credentials": {
@@ -2379,7 +2401,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7100,
+        7320,
         1200
       ],
       "credentials": {
@@ -2406,7 +2428,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7280,
+        7500,
         1200
       ]
     },
@@ -2439,7 +2461,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7980,
+        8200,
         1380
       ],
       "credentials": {
@@ -2466,7 +2488,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7740,
+        7960,
         700
       ]
     },
@@ -2504,7 +2526,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7940,
+        8160,
         780
       ],
       "credentials": {
@@ -2531,7 +2553,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7780,
+        8000,
         1500
       ]
     },
@@ -2568,7 +2590,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7980,
+        8200,
         1580
       ],
       "credentials": {
@@ -2644,7 +2666,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        6160,
+        6380,
         940
       ],
       "credentials": {
@@ -2682,7 +2704,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5100,
+        5320,
         1040
       ],
       "credentials": {
@@ -2708,7 +2730,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5280,
+        5500,
         1040
       ]
     },
@@ -2781,7 +2803,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        6220,
+        6440,
         1360
       ],
       "credentials": {
@@ -2808,7 +2830,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        6420,
+        6640,
         1360
       ]
     },
@@ -2829,7 +2851,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        6740,
+        6960,
         940
       ]
     },
@@ -2860,7 +2882,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        6900,
+        7120,
         1200
       ],
       "credentials": {
@@ -2925,7 +2947,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        6540,
+        6760,
         940
       ],
       "credentials": {
@@ -2951,7 +2973,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7500,
+        7720,
         1000
       ]
     },
@@ -2972,7 +2994,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7720,
+        7940,
         1140
       ]
     },
@@ -3006,7 +3028,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7920,
+        8140,
         1220
       ],
       "credentials": {
@@ -3023,7 +3045,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        7920,
+        8140,
         1020
       ]
     },
@@ -3043,7 +3065,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7540,
+        7760,
         1640
       ]
     },
@@ -3064,7 +3086,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        7760,
+        7980,
         1920
       ]
     },
@@ -3097,7 +3119,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        7960,
+        8180,
         2000
       ],
       "credentials": {
@@ -3114,7 +3136,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        7960,
+        8180,
         1800
       ]
     },
@@ -3145,7 +3167,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5460,
+        5680,
         980
       ],
       "credentials": {
@@ -3171,7 +3193,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5620,
+        5840,
         980
       ]
     },
@@ -3209,7 +3231,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5780,
+        6000,
         840
       ],
       "credentials": {
@@ -3256,7 +3278,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5780,
+        6000,
         1040
       ],
       "credentials": {
@@ -3283,7 +3305,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        5960,
+        6180,
         840
       ]
     },
@@ -3304,7 +3326,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        5960,
+        6180,
         1040
       ]
     },
@@ -3335,7 +3357,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5460,
+        5680,
         1380
       ],
       "credentials": {
@@ -3361,7 +3383,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5620,
+        5840,
         1380
       ]
     },
@@ -3399,7 +3421,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5780,
+        6000,
         1240
       ],
       "credentials": {
@@ -3446,7 +3468,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        5780,
+        6000,
         1440
       ],
       "credentials": {
@@ -3473,7 +3495,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        5960,
+        6180,
         1240
       ]
     },
@@ -3494,7 +3516,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        5960,
+        6180,
         1440
       ]
     },
@@ -3531,7 +3553,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        8640,
+        8860,
         1300
       ],
       "retryOnFail": true,
@@ -3571,7 +3593,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        8840,
+        9060,
         1300
       ],
       "retryOnFail": true,
@@ -3611,7 +3633,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9060,
+        9280,
         1300
       ],
       "retryOnFail": true,
@@ -3650,7 +3672,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9260,
+        9480,
         1300
       ],
       "retryOnFail": true,
@@ -3690,7 +3712,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9480,
+        9700,
         1300
       ],
       "retryOnFail": true,
@@ -3731,7 +3753,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9680,
+        9900,
         1300
       ],
       "retryOnFail": true,
@@ -3772,7 +3794,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        9920,
+        10140,
         1300
       ],
       "retryOnFail": true,
@@ -3809,7 +3831,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        11540,
+        11760,
         1300
       ],
       "retryOnFail": true,
@@ -3881,7 +3903,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        8440,
+        8660,
         1300
       ],
       "retryOnFail": true,
@@ -3921,7 +3943,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        10120,
+        10340,
         1300
       ],
       "retryOnFail": true,
@@ -3962,7 +3984,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        10320,
+        10540,
         1300
       ],
       "retryOnFail": true,
@@ -3997,7 +4019,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        6360,
+        6580,
         940
       ],
       "credentials": {
@@ -4016,7 +4038,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        7460,
+        7680,
         1440
       ]
     },
@@ -4053,7 +4075,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        10520,
+        10740,
         1300
       ],
       "retryOnFail": true,
@@ -4082,7 +4104,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4280,
+        4500,
         960
       ],
       "webhookId": "6b5f78e3-8f7a-452c-9aba-86412c993a2a"
@@ -4231,7 +4253,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        4900,
+        5120,
         1040
       ],
       "credentials": {
@@ -4361,7 +4383,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4540,
+        4760,
         960
       ]
     },
@@ -4467,7 +4489,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        4280,
+        4500,
         1140
       ],
       "id": "eb13cf50-ddcc-4dd5-ad31-40316b0561e0",
@@ -4480,7 +4502,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4280,
+        4500,
         1340
       ],
       "webhookId": "6b5f78e3-8f7a-452c-9aba-86412c993a2a"
@@ -4609,7 +4631,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4540,
+        4760,
         1340
       ]
     },
@@ -4620,7 +4642,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4080,
+        4300,
         960
       ]
     },
@@ -4631,7 +4653,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4080,
+        4300,
         1340
       ]
     },
@@ -4692,7 +4714,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3560,
+        3780,
         1060
       ]
     },
@@ -4716,7 +4738,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        10700,
+        10920,
         1300
       ],
       "retryOnFail": true,
@@ -4889,7 +4911,7 @@
             },
             {
               "name": "utm_fun",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}"
+              "value": "=sala-secreta"
             },
             {
               "name": "utm_var",
@@ -4912,8 +4934,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4540,
-        780
+        4760,
+        760
       ]
     },
     {
@@ -5007,7 +5029,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3,
       "position": [
-        3800,
+        4020,
         1280
       ]
     },
@@ -5021,7 +5043,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        11360,
+        11580,
         1400
       ],
       "webhookId": "e372fa4f-d5a8-464b-8d09-2b2d595c793a"
@@ -5054,7 +5076,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        10900,
+        11120,
         1300
       ]
     },
@@ -5089,7 +5111,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        11160,
+        11380,
         860
       ],
       "id": "f78ba632-e912-46a7-ba0b-0e584aeb9db1",
@@ -5143,7 +5165,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        11740,
+        11960,
         740
       ],
       "credentials": {
@@ -5177,7 +5199,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        11360,
+        11580,
         860
       ],
       "credentials": {
@@ -5222,7 +5244,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        11740,
+        11960,
         980
       ],
       "credentials": {
@@ -5248,7 +5270,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        11540,
+        11760,
         860
       ]
     },
@@ -5268,7 +5290,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        12160,
+        12380,
         860
       ]
     },
@@ -5300,7 +5322,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        12400,
+        12620,
         720
       ],
       "credentials": {
@@ -5338,13 +5360,55 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        11980,
+        12200,
         860
       ],
       "credentials": {
         "mySql": {
           "id": "JtvnOichfjUUmLAo",
           "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "email": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "updateIfExists": true,
+        "additionalFields": {}
+      },
+      "id": "c6680eae-564d-4887-b65c-ea0cfc4f6144",
+      "name": "create_contact",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        4380,
+        760
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactTag",
+        "tagId": "247",
+        "contactId": "={{ $node[\"create_contact\"].json[\"id\"] }}"
+      },
+      "id": "caa1b5dd-e3ce-40ec-b79f-df9409e5901a",
+      "name": "add_tag",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        4560,
+        760
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
         }
       }
     }
@@ -5354,37 +5418,35 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-7tscMgdrLoKCBjqaSM1SWA",
-            "deliveryTag": 2,
+            "consumerTag": "amq.ctag-l6qlMLeUuZ8b5aSLY0YUtA",
+            "deliveryTag": 65,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
           },
           "properties": {
-            "headers": {
-              "x-delivery-count": 9870
-            }
+            "headers": {}
           },
           "content": {
-            "Nome do Cliente": "Marcio Gawenda",
-            "E-mail do Cliente": "marciogavenda@hotmail.com",
-            "Telefone do Cliente - Formato BC": "+554591489824",
-            "Telefone do Cliente - Formato Z-API": "554591489824",
+            "Nome do Cliente": "Luis Andrade",
+            "E-mail do Cliente": "contato.luisf.andrade@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5521967294501",
+            "Telefone do Cliente - Formato Z-API": "5521967294501",
             "Tipo de Evento": "Sala Secreta",
-            "ID do Evento": "8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53",
+            "ID do Evento": "f0623bd9-a4c4-479f-bdb5-c891df1a611e",
             "Responsável pelo Evento": "Future Minds",
             "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Data de Início": "07/09/2024  11:00",
-            "Data em que foi feito o Agendamento": "03/09/2024  14:28",
-            "Data de Término": "07/09/2024  12:00",
+            "Data de Início": "28/09/2024  11:00",
+            "Data em que foi feito o Agendamento": "24/09/2024  12:42",
+            "Data de Término": "28/09/2024  12:00",
             "Dia da Semana de Início do Evento": "Sábado",
-            "Link da Reunião": "https://calendly.com/events/8f92e10a-cd2a-4a2d-9e60-0c2b3f9cdb53/google_meet",
-            "utm_source": null,
-            "utm_campaign": null,
-            "utm_term": null,
+            "Link da Reunião": "https://calendly.com/events/f0623bd9-a4c4-479f-bdb5-c891df1a611e/google_meet",
+            "utm_source": "email",
+            "utm_campaign": "sala-secreta",
+            "utm_term": "lista-de-convidados",
             "utm_medium": null,
-            "utm_content": null,
-            "ID do Cliente": "77976bd2-8674-4b85-a644-cdc4ff888f5c",
+            "utm_content": "email4-convite",
+            "ID do Cliente": "b897f4f5-a718-4741-8987-c495721e031d",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5426,6 +5488,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T19:55:23.224Z",
-  "versionId": "4333abbb-ab19-4480-bd63-699d19ed4803"
+  "updatedAt": "2024-09-24T15:49:07.545Z",
+  "versionId": "fc713385-6030-4da6-b7a6-40149c1a2239"
 }
