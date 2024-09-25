@@ -2195,52 +2195,52 @@
           "event": "invitee.created",
           "payload": {
             "event_type": {
-              "uuid": "63a1756a-0987-4bb3-9c54-2369c0adaf1e",
-              "kind": "Round Robin",
-              "slug": null,
-              "name": "Sessão Sprint de Carreira",
-              "duration": 45,
+              "uuid": "fddfcad2-0bf2-4e48-ab2f-69b6f8e69a83",
+              "kind": "Group",
+              "slug": "sala-secreta",
+              "name": "Sala Secreta",
+              "duration": 60,
               "owner": {
-                "type": "organizations",
-                "uuid": null
+                "type": "users",
+                "uuid": "4f8be891-24ad-45fb-b235-b3940c4cb5e1"
               }
             },
             "event": {
-              "uuid": "baf86b8e-7455-4a01-9313-ad6b490eefca",
+              "uuid": "f0623bd9-a4c4-479f-bdb5-c891df1a611e",
               "assigned_to": [
-                "Luiza Campos"
+                "Future Minds"
               ],
               "extended_assigned_to": [
                 {
-                  "name": "Lilian Cidreira",
+                  "name": "Future Minds",
                   "email": "lilian.cidreira@futureminds.com.br",
                   "primary": true
                 }
               ],
-              "start_time": "2024-08-29T15:00:00-03:00",
-              "start_time_pretty": "03:00pm - Thursday, August 29, 2024",
-              "invitee_start_time": "2024-08-29T15:00:00-03:00",
-              "invitee_start_time_pretty": "03:00pm - Thursday, August 29, 2024",
-              "end_time": "2024-08-29T15:45:00-03:00",
-              "end_time_pretty": "03:45pm - Thursday, August 29, 2024",
-              "invitee_end_time": "2024-08-29T15:45:00-03:00",
-              "invitee_end_time_pretty": "03:45pm - Thursday, August 29, 2024",
-              "created_at": "2024-08-27T19:17:00-03:00",
-              "location": "https://calendly.com/events/baf86b8e-7455-4a01-9313-ad6b490eefca/google_meet",
+              "start_time": "2024-09-28T11:00:00-03:00",
+              "start_time_pretty": "11:00am - Saturday, September 28, 2024",
+              "invitee_start_time": "2024-09-28T11:00:00-03:00",
+              "invitee_start_time_pretty": "11:00am - Saturday, September 28, 2024",
+              "end_time": "2024-09-28T12:00:00-03:00",
+              "end_time_pretty": "12:00pm - Saturday, September 28, 2024",
+              "invitee_end_time": "2024-09-28T12:00:00-03:00",
+              "invitee_end_time_pretty": "12:00pm - Saturday, September 28, 2024",
+              "created_at": "2024-09-24T12:42:22-03:00",
+              "location": "https://calendly.com/events/f0623bd9-a4c4-479f-bdb5-c891df1a611e/google_meet",
               "canceled": false,
               "canceler_name": null,
               "cancel_reason": null,
               "canceled_at": null
             },
             "invitee": {
-              "uuid": "f952f568-c89a-452f-9b90-a4dfffe42643",
+              "uuid": "b897f4f5-a718-4741-8987-c495721e031d",
               "first_name": null,
               "last_name": null,
-              "name": "Adriana",
-              "email": "adrianavlucena@hotmail.com",
+              "name": "Luis Andrade",
+              "email": "contato.luisf.andrade@gmail.com",
               "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2024-08-27T19:17:00-03:00",
+              "created_at": "2024-09-24T12:42:22-03:00",
               "is_reschedule": false,
               "payments": [],
               "canceled": false,
@@ -2250,20 +2250,20 @@
             },
             "questions_and_answers": [
               {
-                "question": "Telefone com WhatsApp",
-                "answer": "+55 11 97435-8659"
+                "question": "Qual é o seu telefone?",
+                "answer": "+55 21 96729-4501"
               }
             ],
             "questions_and_responses": {
-              "1_question": "Telefone com WhatsApp",
-              "1_response": "+55 11 97435-8659"
+              "1_question": "Qual é o seu telefone?",
+              "1_response": "+55 21 96729-4501"
             },
             "tracking": {
-              "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
-              "utm_source": "facebook",
-              "utm_medium": "cpc",
-              "utm_content": "Anúncio [5.1].MP4",
-              "utm_term": "[CARGO - ANALISTA] — Cópia",
+              "utm_campaign": "sala-secreta",
+              "utm_source": "email",
+              "utm_medium": null,
+              "utm_content": "email4-convite",
+              "utm_term": "lista-de-convidados",
               "salesforce_uuid": null
             },
             "old_event": null,
@@ -2271,7 +2271,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2024-08-27T22:17:01Z"
+          "time": "2024-09-24T15:42:23Z"
         }
       }
     ],
@@ -2621,7 +2621,7 @@
   },
   "staticData": {
     "node:Evento": {
-      "webhookId": 5041270
+      "webhookId": 5097730
     }
   },
   "tags": [
@@ -2639,6 +2639,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T14:11:53.897Z",
-  "versionId": "558e9be8-6d5c-41bc-b093-4810fbd60785"
+  "updatedAt": "2024-09-24T15:42:47.353Z",
+  "versionId": "4b066f0c-7658-485c-be08-ee908b1e338a"
 }
