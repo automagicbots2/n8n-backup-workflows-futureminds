@@ -1,0 +1,730 @@
+{
+  "active": false,
+  "connections": {
+    "formatar metricas": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "metricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "listar paginas conectadas": {
+      "main": [
+        [
+          {
+            "node": "listar contas de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separar contas de anuncio": {
+      "main": [
+        [
+          {
+            "node": "pegar conta de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pegar conta de anuncio": {
+      "main": [
+        [],
+        [
+          {
+            "node": "listar anuncios da conta de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "listar anuncios da conta de anuncio": {
+      "main": [
+        [
+          {
+            "node": "rodou anuncio ontem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pegar metricas do anuncio": {
+      "main": [
+        [
+          {
+            "node": "formatar metricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pegar anuncio": {
+      "main": [
+        [
+          {
+            "node": "pegar conta de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pegar metricas do anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "listar contas de anuncio": {
+      "main": [
+        [
+          {
+            "node": "separar contas de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separar anuncios": {
+      "main": [
+        [
+          {
+            "node": "pegar anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rodou anuncio ontem": {
+      "main": [
+        [
+          {
+            "node": "separar anuncios",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pegar conta de anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "listar paginas conectadas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "metricas": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "pegar anuncio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "metricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-19T13:37:08.620Z",
+  "id": "efK8wxQmCUEhqArA",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Extração de métricas diárias do meta ads",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Pega os dados do \"body\" do input\nlet data = $json.data[0]; // Acessa o primeiro item do array \"data\"\n\n// Cria um novo objeto para armazenar os resultados\nlet result = {};\n\n// Adiciona ao resultado todas as propriedades do \"data\", exceto \"actions\"\nfor (let key in data) {\n  if (key !== \"actions\") {\n    result[key] = data[key];\n  }\n}\n\n// Pega os dados de \"actions\"\nlet actions = data.actions;\n\n// Faz o loop sob cada uma das propriedades de \"actions\"\nfor (let i in actions) {\n  let actionItem = actions[i];\n  let actionType = actionItem.action_type;\n  let value = actionItem.value;\n\n  // Cria uma nova propriedade no resultado com o nome da \"action\" e o valor do \"value\"\n  result[actionType] = value;\n}\n\n// Remove \"data\" e \"paging\" do JSON original\ndelete $json[\"data\"];\ndelete $json[\"paging\"];\n\n// Adiciona os novos campos ao input\nObject.assign($json, result);\n\n// Retorna o input com os novos campos\nreturn $json;"
+      },
+      "id": "cf5286b6-4361-4429-8fae-15c2fdf3ee7b",
+      "name": "formatar metricas",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3195.3305539011326,
+        545.7984657788849
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "86fdd843-b198-458a-8bca-f59e05fefbb2",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3415.3305539011326,
+        545.7984657788849
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v21.0/me/accounts?limit=1",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"variaveis\"].json[\"access_token_permanente\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0b53e2a9-5bb0-4ee7-b33a-dd47d1fbd791",
+      "name": "listar paginas conectadas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "necessário para pegar o access_token,, precisa utilizar o token do usuário do sistema",
+        "height": 278.58226565976645,
+        "width": 207.2424061941624
+      },
+      "id": "95f436d9-f913-49c2-bd4c-af5741910cbe",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "99c62131-af29-4867-89e7-0a7df6d8cb6b",
+      "name": "separar contas de anuncio",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1695.3305539011324,
+        425.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "92eae74f-77f2-46ac-b67b-f4ee094dc802",
+      "name": "pegar conta de anuncio",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1935.3305539011324,
+        425.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"pegar conta de anuncio\"].json[\"id\"] }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
+            },
+            {
+              "name": "time_range",
+              "value": "{'since':'2024-10-17','until':'2024-10-17'}"
+            },
+            {
+              "name": "fields",
+              "value": "ad_id,campaign_name,adset_name,ad_name,spend,impressions,inline_link_clicks,frequency"
+            },
+            {
+              "name": "level",
+              "value": "ad"
+            },
+            {
+              "name": "breakdowns",
+              "value": "device_platform, publisher_platform, platform_position"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e7ba0051-c9d6-4dd7-a771-ebb9a286cec3",
+      "name": "listar anuncios da conta de anuncio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2155.3305539011326,
+        545.7984657788849
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v21.0/{{ $json[\"ad_id\"] }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
+            },
+            {
+              "name": "time_range",
+              "value": "={'since':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}','until':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}'}"
+            },
+            {
+              "name": "fields",
+              "value": "account_id,account_name,campaign_id,campaign_name,adset_id,adset_name,ad_id,ad_name,spend,impressions,inline_link_clicks,unique_clicks,objective,reach,attribution_setting,buying_type,action_values,account_currency,ad_impression_actions,canvas_avg_view_percent,canvas_avg_view_time,conversion_values,conversions,frequency,full_view_impressions,full_view_reach,inline_link_click_ctr,inline_post_engagement,instant_experience_clicks_to_open,optimization_goal,outbound_clicks,social_spend,video_30_sec_watched_actions"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6b022c06-4d5f-4e52-9598-41bb359c9576",
+      "name": "pegar metricas do anuncio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2995.3305539011326,
+        545.7984657788849
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": "={{ $node[\"pegar anuncio\"].context[\"done\"] }}"
+        }
+      },
+      "id": "2b6a590a-aa18-4ffa-83e1-0d93bdc7bc3d",
+      "name": "pegar anuncio",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2795.3305539011326,
+        425.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "content": "lista as contas de anuncios, precisa utilizar o token do usuário do sistema",
+        "height": 256.7837998808816,
+        "width": 207.2424061941624
+      },
+      "id": "63246af3-5a5e-4b14-a11c-989664d698e8",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v21.0/me/adaccounts?fields=id,name,account_status&limit=100",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"variaveis\"].json[\"access_token_permanente\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2f002b04-a596-4365-989c-4cd63cdc5f9f",
+      "name": "listar contas de anuncio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1480,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "access_token do usuário do sistema",
+        "height": 241.49582016006065,
+        "width": 207.2424061941624
+      },
+      "id": "d4f78d47-82f5-423a-aefb-79ab4f13f144",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        940,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "content": "remove as contas de anuncio do array",
+        "height": 230.9853341019966,
+        "width": 178.57744421762334
+      },
+      "id": "f6ebe636-6ef4-4a87-b1f1-55fc84b47bb9",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1655.3305539011324,
+        365.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "content": "cria loop para verificar se as contas de anuncio tem anuncios ativos ontem",
+        "height": 266.3387872063946,
+        "width": 178.57744421762334
+      },
+      "id": "3450a6b5-8838-4777-98ad-2a9ed47cc2fe",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1895.3305539011324,
+        330.44501267448703
+      ]
+    },
+    {
+      "parameters": {
+        "content": "lista todos os anuncios de ontem da conta de anuncio do loop",
+        "height": 244.3623163577149,
+        "width": 178.57744421762334
+      },
+      "id": "09503a59-7250-4ced-95a9-22187dc3dfee",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2115.3305539011326,
+        467.77493662756456
+      ]
+    },
+    {
+      "parameters": {
+        "content": "só avança se existir anuncio ontem",
+        "height": 244.3623163577149,
+        "width": 178.57744421762334
+      },
+      "id": "32bdd7a0-421a-4a09-8144-90f425346595",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2335.3305539011326,
+        465.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "content": "separa os anuncios de ontem do array",
+        "height": 206.142367055663,
+        "width": 178.57744421762334
+      },
+      "id": "f0539c6d-86d9-4854-9127-2c044200f76c",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2535.3305539011326,
+        364.0184150809366
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "46806b27-285c-4b67-aa91-183b22e0b2ec",
+      "name": "separar anuncios",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2575.3305539011326,
+        425.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "content": "coloca os anuncios em loop",
+        "height": 206.142367055663,
+        "width": 178.57744421762334
+      },
+      "id": "48fcd210-c892-420d-b9ba-cb14a7d678b9",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2755.3305539011326,
+        365.79846577888486
+      ]
+    },
+    {
+      "parameters": {
+        "content": "busca metricas do anuncio atual do loop",
+        "height": 226.20784043924027,
+        "width": 178.57744421762334
+      },
+      "id": "859646e6-f871-4155-a2b8-650e1cfd89de",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2955.3305539011326,
+        481.0209721161283
+      ]
+    },
+    {
+      "parameters": {
+        "content": "formata metricas do anuncio atual do loop",
+        "height": 205.1868683231118,
+        "width": 178.57744421762334
+      },
+      "id": "34426338-a054-4cc3-8eb8-99625018cecd",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3155.3305539011326,
+        486.81943789501327
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "d1cf8835-6a2c-482b-879a-a880fb7a4a61",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "a0c5fbb9-bff3-4bb9-bce7-a5479585cfae",
+              "leftValue": "={{ $node[\"listar anuncios da conta de anuncio\"].json[\"data\"][\"0\"][\"ad_id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8e0aa61c-f189-46cd-bfb0-c074ace70fab",
+      "name": "rodou anuncio ontem",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2380,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f187b61c-3275-48af-a250-3801cf18a671",
+              "name": "access_token_permanente",
+              "value": "EAAQg5m7iaAEBOZBopx1UWbT1b3rWWdhUCp7sQsphaI5cHIBQMpx5GJ5ig5H2TCCdvwIzFdeK56yiMy0Op9suBHrqs0vbCn0h6uHp0gEiKnrDu9MwWsEOfO9dOY8Y2iWqBMONZCjCCiMxzDtOWJfQpKwZBqfgZCYIOqrS1x9CHXJ19lriJHZC1EuRAZA51e9bitzwZDZD",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f0911d70-7f50-44bd-962d-bb7cfc76e946",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1000,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ {...$node[\"pegar anuncio\"].json,...$node[\"formatar metricas\"].json } }}",
+        "options": {}
+      },
+      "id": "0aaa3eb6-1e09-4072-a5c6-ca10753b4207",
+      "name": "metricas",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3620,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1hR0SgRJ9iWNXlzllWDuwDo4P2ShGUqBrWT02rsWGfz4",
+          "mode": "list",
+          "cachedResultName": "Metricas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hR0SgRJ9iWNXlzllWDuwDo4P2ShGUqBrWT02rsWGfz4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hR0SgRJ9iWNXlzllWDuwDo4P2ShGUqBrWT02rsWGfz4/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "98d4c85b-92a6-41e5-ab05-bbfdcc540592",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        3820,
+        540
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0wKqGDQJCImgvSMI",
+          "name": "[Sheets] automagicbots.auth2"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "id": "a6e5a1e0-db44-47f9-b64d-97d76c1075e9",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3960,
+        720
+      ],
+      "webhookId": "1e008a57-92d9-4a6e-be76-6031434a8e40"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-10-19T14:58:55.226Z",
+  "versionId": "60b031ea-1461-4a2e-944e-214203cb850c"
+}
