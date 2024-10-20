@@ -57,28 +57,6 @@
         ]
       ]
     },
-    "listar anuncios da conta de anuncio": {
-      "main": [
-        [
-          {
-            "node": "rodou anuncio ontem",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "pegar metricas do anuncio": {
-      "main": [
-        [
-          {
-            "node": "formatar metricas",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "pegar anuncio": {
       "main": [
         [
@@ -170,6 +148,17 @@
         ]
       ]
     },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "metricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Google Sheets": {
       "main": [
         [
@@ -188,11 +177,22 @@
         ]
       ]
     },
-    "Wait": {
+    "pegar metricas do anuncio": {
       "main": [
         [
           {
-            "node": "metricas",
+            "node": "formatar metricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "listar anuncios da conta de anuncio": {
+      "main": [
+        [
+          {
+            "node": "rodou anuncio ontem",
             "type": "main",
             "index": 0
           }
@@ -295,76 +295,6 @@
       "position": [
         1935.3305539011324,
         425.79846577888486
-      ]
-    },
-    {
-      "parameters": {
-        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"pegar conta de anuncio\"].json[\"id\"] }}/insights",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "access_token",
-              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
-            },
-            {
-              "name": "time_range",
-              "value": "{'since':'2024-10-17','until':'2024-10-17'}"
-            },
-            {
-              "name": "fields",
-              "value": "ad_id,campaign_name,adset_name,ad_name,spend,impressions,inline_link_clicks,frequency"
-            },
-            {
-              "name": "level",
-              "value": "ad"
-            },
-            {
-              "name": "breakdowns",
-              "value": "device_platform, publisher_platform, platform_position"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "e7ba0051-c9d6-4dd7-a771-ebb9a286cec3",
-      "name": "listar anuncios da conta de anuncio",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2155.3305539011326,
-        545.7984657788849
-      ]
-    },
-    {
-      "parameters": {
-        "url": "=https://graph.facebook.com/v21.0/{{ $json[\"ad_id\"] }}/insights",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "access_token",
-              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
-            },
-            {
-              "name": "time_range",
-              "value": "={'since':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}','until':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}'}"
-            },
-            {
-              "name": "fields",
-              "value": "account_id,account_name,campaign_id,campaign_name,adset_id,adset_name,ad_id,ad_name,spend,impressions,inline_link_clicks,unique_clicks,objective,reach,attribution_setting,buying_type,action_values,account_currency,ad_impression_actions,canvas_avg_view_percent,canvas_avg_view_time,conversion_values,conversions,frequency,full_view_impressions,full_view_reach,inline_link_click_ctr,inline_post_engagement,instant_experience_clicks_to_open,optimization_goal,outbound_clicks,social_spend,video_30_sec_watched_actions"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "6b022c06-4d5f-4e52-9598-41bb359c9576",
-      "name": "pegar metricas do anuncio",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2995.3305539011326,
-        545.7984657788849
       ]
     },
     {
@@ -659,7 +589,21 @@
     },
     {
       "parameters": {
-        "operation": "appendOrUpdate",
+        "amount": 10
+      },
+      "id": "a6e5a1e0-db44-47f9-b64d-97d76c1075e9",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4020,
+        800
+      ],
+      "webhookId": "1e008a57-92d9-4a6e-be76-6031434a8e40"
+    },
+    {
+      "parameters": {
+        "operation": "append",
         "documentId": {
           "__rl": true,
           "value": "1hR0SgRJ9iWNXlzllWDuwDo4P2ShGUqBrWT02rsWGfz4",
@@ -677,8 +621,301 @@
         "columns": {
           "mappingMode": "autoMapInputData",
           "value": {},
-          "matchingColumns": [],
-          "schema": []
+          "matchingColumns": [
+            "ad_id"
+          ],
+          "schema": [
+            {
+              "id": "ad_id",
+              "displayName": "ad_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "campaign_name",
+              "displayName": "campaign_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "adset_name",
+              "displayName": "adset_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ad_name",
+              "displayName": "ad_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "spend",
+              "displayName": "spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "impressions",
+              "displayName": "impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "frequency",
+              "displayName": "frequency",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_start",
+              "displayName": "date_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_stop",
+              "displayName": "date_stop",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "device_platform",
+              "displayName": "device_platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publisher_platform",
+              "displayName": "publisher_platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "platform_position",
+              "displayName": "platform_position",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "account_id",
+              "displayName": "account_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "account_name",
+              "displayName": "account_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "campaign_id",
+              "displayName": "campaign_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "adset_id",
+              "displayName": "adset_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "inline_link_clicks",
+              "displayName": "inline_link_clicks",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "unique_clicks",
+              "displayName": "unique_clicks",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "objective",
+              "displayName": "objective",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reach",
+              "displayName": "reach",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "buying_type",
+              "displayName": "buying_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "account_currency",
+              "displayName": "account_currency",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "full_view_impressions",
+              "displayName": "full_view_impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "full_view_reach",
+              "displayName": "full_view_reach",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "inline_link_click_ctr",
+              "displayName": "inline_link_click_ctr",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "inline_post_engagement",
+              "displayName": "inline_post_engagement",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "optimization_goal",
+              "displayName": "optimization_goal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "social_spend",
+              "displayName": "social_spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "video_30_sec_watched_actions",
+              "displayName": "video_30_sec_watched_actions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
         },
         "options": {
           "cellFormat": "USER_ENTERED"
@@ -705,17 +942,73 @@
     },
     {
       "parameters": {
-        "amount": 10
+        "url": "=https://graph.facebook.com/v21.0/{{ $json[\"ad_id\"] }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
+            },
+            {
+              "name": "time_range",
+              "value": "={'since':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}','until':'{{ $node[\"pegar anuncio\"].json[\"date_start\"] }}'}"
+            },
+            {
+              "name": "fields",
+              "value": "account_id,account_name,campaign_id,campaign_name,adset_id,adset_name,ad_id,ad_name,spend,impressions,inline_link_clicks,unique_clicks,objective,reach,attribution_setting,buying_type,action_values,account_currency,ad_impression_actions,canvas_avg_view_percent,canvas_avg_view_time,conversion_values,conversions,frequency,full_view_impressions,full_view_reach,inline_link_click_ctr,inline_post_engagement,instant_experience_clicks_to_open,optimization_goal,outbound_clicks,social_spend,video_30_sec_watched_actions"
+            }
+          ]
+        },
+        "options": {}
       },
-      "id": "a6e5a1e0-db44-47f9-b64d-97d76c1075e9",
-      "name": "Wait",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
+      "id": "6b022c06-4d5f-4e52-9598-41bb359c9576",
+      "name": "pegar metricas do anuncio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        3960,
-        720
-      ],
-      "webhookId": "1e008a57-92d9-4a6e-be76-6031434a8e40"
+        2995.3305539011326,
+        545.7984657788849
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"pegar conta de anuncio\"].json[\"id\"] }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $node[\"listar paginas conectadas\"].json[\"data\"][\"0\"][\"access_token\"] }}"
+            },
+            {
+              "name": "time_range",
+              "value": "{'since':'2024-10-17','until':'2024-10-17'}"
+            },
+            {
+              "name": "fields",
+              "value": "ad_id,campaign_name,adset_name,ad_name,spend,impressions,inline_link_clicks,frequency"
+            },
+            {
+              "name": "level",
+              "value": "ad"
+            },
+            {
+              "name": "breakdowns",
+              "value": "device_platform, publisher_platform, platform_position"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e7ba0051-c9d6-4dd7-a771-ebb9a286cec3",
+      "name": "listar anuncios da conta de anuncio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2160,
+        540
+      ]
     }
   ],
   "pinData": {},
@@ -725,6 +1018,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-19T14:58:55.226Z",
-  "versionId": "60b031ea-1461-4a2e-944e-214203cb850c"
+  "updatedAt": "2024-10-19T17:52:37.362Z",
+  "versionId": "9912f7e4-c1ab-480b-995a-5bfbdbd1ee16"
 }
