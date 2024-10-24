@@ -311,7 +311,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "37 18 * * *"
+              "expression": "19 8 * * *"
             }
           ]
         }
@@ -322,7 +322,7 @@
       "typeVersion": 1.1,
       "position": [
         980,
-        417
+        420
       ]
     },
     {
@@ -588,7 +588,7 @@
             },
             {
               "name": "time_range",
-              "value": "={'since':'2024-10-01','until':'2024-10-22'}"
+              "value": "={{ `{'since':'${$now.minus(3, 'days').format('yyyy-MM-dd')}','until':'${$now.minus(1, 'days').format('yyyy-MM-dd')}'}` }}"
             },
             {
               "name": "fields",
@@ -1337,6 +1337,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-10-23T21:36:41.914Z",
-  "versionId": "88060010-9f58-47e6-8e97-6a760c7ca431"
+  "updatedAt": "2024-10-24T11:18:30.892Z",
+  "versionId": "97190bfc-1de1-4592-9769-c6102ab45271"
 }
