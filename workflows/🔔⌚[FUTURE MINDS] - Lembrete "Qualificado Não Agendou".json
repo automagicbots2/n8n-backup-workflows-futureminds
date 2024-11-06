@@ -215,13 +215,7 @@
     },
     "só_lead_luiza": {
       "main": [
-        [
-          {
-            "node": "contador_de_leads1",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "contador_de_leads",
@@ -900,6 +894,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T12:57:25.408Z",
-  "versionId": "b493446a-d61e-493c-8025-774d3ff51ee3"
+  "updatedAt": "2024-11-06T14:09:25.049Z",
+  "versionId": "6ee4f512-c7c0-4907-b8b3-a0ab21ae5bc4"
 }
