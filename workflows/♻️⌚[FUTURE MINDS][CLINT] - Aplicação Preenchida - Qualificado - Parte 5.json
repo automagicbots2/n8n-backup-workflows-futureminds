@@ -433,7 +433,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_closer",
+            "node": "notificacao_bc_felipe",
             "type": "main",
             "index": 0
           }
@@ -441,6 +441,13 @@
         [
           {
             "node": "notificacao_bc_lilian",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "notificacao_bc_felipe",
             "type": "main",
             "index": 0
           }
@@ -2038,47 +2045,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        6080,
+        6380,
         1220
       ],
       "id": "419dae52-3ce8-4abe-bd91-9eba29611607",
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "requestMethod": "POST",
-        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/508598335/send_message/",
-        "jsonParameters": "={{ false }}",
-        "options": {},
-        "bodyParametersUi": {
-          "parameter": [
-            {
-              "name": "type",
-              "value": "text"
-            },
-            {
-              "name": "value",
-              "value": "=🔔 *LEAD QUALIFICADO NÃO AGENDOU*\n\nO cliente {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}, finalizou a aplicação e não agendou.\n\n🚨 Entre em contato com o Lead e ajude-o a realizar o agendamento assim que possível.\n\n.................................\n*Nome do Cliente:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\n*Telefone do Cliente:* +{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\n*E-mail do Cliente:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            }
-          ]
-        },
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "API-KEY",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
-            }
-          ]
-        }
-      },
-      "name": "notificacao_bc_closer",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 2,
-      "position": [
-        6080,
-        1060
-      ],
-      "id": "9a994660-4eca-4b87-8593-d4ee1503850f",
       "continueOnFail": true
     },
     {
@@ -2146,6 +2116,43 @@
     },
     {
       "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/551913417/send_message/",
+        "jsonParameters": "={{ false }}",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *LEAD QUALIFICADO NÃO AGENDOU*\n\nO cliente {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}, finalizou a aplicação e não agendou.\n\n🚨 Entre em contato com o Lead e ajude-o a realizar o agendamento assim que possível.\n\n.................................\n*Nome do Cliente:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\n*Telefone do Cliente:* +{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\n*E-mail do Cliente:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_bc_felipe",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        6080,
+        1060
+      ],
+      "id": "9a994660-4eca-4b87-8593-d4ee1503850f",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
         "rules": {
           "values": [
             {
@@ -2193,6 +2200,29 @@
               },
               "renameOutput": true,
               "outputKey": "Lilian"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "be47a34e-6f86-43a7-970b-c3fa85383edc",
+                    "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_da_vez\"] }}",
+                    "rightValue": "Felipe",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Felipe"
             }
           ]
         },
@@ -2330,6 +2360,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T19:06:28.588Z",
-  "versionId": "2bc61e3e-ad51-4ce3-bb5f-9ab10d0c330a"
+  "updatedAt": "2024-11-06T14:39:26.849Z",
+  "versionId": "65eaad12-a2cd-4a8c-9b53-66353b30f38d"
 }
