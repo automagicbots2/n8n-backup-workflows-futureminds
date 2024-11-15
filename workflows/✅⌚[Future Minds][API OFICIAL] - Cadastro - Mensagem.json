@@ -1,0 +1,274 @@
+{
+  "active": true,
+  "connections": {
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "entrou_no_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entrou_no_grupo": {
+      "main": [
+        [
+          {
+            "node": "envia_msg_entrou_no_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "saiu_do_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "saiu_do_grupo": {
+      "main": [
+        [
+          {
+            "node": "envia_msg_saiu_do_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "envia_msg_cadastro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-11-14T19:38:23.391Z",
+  "id": "IvB457o5a0TcEpUl",
+  "meta": null,
+  "name": "✅⌚[Future Minds][API OFICIAL] - Cadastro - Mensagem",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "WEB001 - API Oficial",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "7a85c052-5586-4c23-bda6-b4784ae7602d",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        140,
+        580
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "439027139283658",
+        "recipientPhoneNumber": "=+{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}",
+        "template": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+      },
+      "id": "16d8f932-713f-4fb5-9304-1162dfd2fe15",
+      "name": "envia_msg_cadastro",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        680,
+        780
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "7knKCf47LIvmRxue",
+          "name": "[WhatsApp] - Future Minds"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8476c441-b8c1-4fc6-8ff5-4e5d70af5670",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Entrou no Grupo",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cf2d3e20-be52-4409-b565-44d27f203d9e",
+      "name": "entrou_no_grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        300,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8476c441-b8c1-4fc6-8ff5-4e5d70af5670",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Saiu do Grupo",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1b749f65-6471-4b6b-8d15-ce13cabfc301",
+      "name": "saiu_do_grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        460,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "403307409539437",
+        "recipientPhoneNumber": "=+{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}",
+        "template": "black_november_1x1|pt_BR"
+      },
+      "id": "92498aeb-c00b-44bb-99f3-cac9657c9ca8",
+      "name": "envia_msg_entrou_no_grupo",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ],
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "403307409539437",
+        "recipientPhoneNumber": "=+{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}",
+        "template": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+      },
+      "id": "71c0f067-b778-4fb9-a537-f23a653aa9fc",
+      "name": "envia_msg_saiu_do_grupo",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        680,
+        600
+      ],
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-AcUCFEJjsVuLvAT9-c6UTg",
+            "deliveryTag": 3,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "WEB001 - API Oficial"
+          },
+          "properties": {
+            "headers": {}
+          },
+          "content": {
+            "nome": "Mateus",
+            "sobrenome": "Diniz",
+            "email": "mateusdiniz@automagicbots.com.br",
+            "telefone": "5562981196678",
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "utm_fun": null,
+            "utm_var": null,
+            "nome_do_evento": "Webinario",
+            "edicao_do_evento": "1",
+            "form_id": "1010271_1_1730910567672b99674ce20993256331",
+            "form_name": "Cadastro Webinário - Publico Frio-pq",
+            "id_cadastro": "5",
+            "id_user": "2",
+            "arquivo": "",
+            "copy": "grupo_webinario_msg1|pt_BR",
+            "valor_msg": "",
+            "funil": "11",
+            "instagram": "https://www.instagram.com//"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-11-14T18:59:36.969Z",
+      "updatedAt": "2024-11-14T18:59:36.969Z",
+      "id": "5HB3AqYVP1IhO2Iu",
+      "name": "[WEB001]"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-11-14T23:04:43.069Z",
+  "versionId": "537e9014-c3b4-4d84-bb9f-d83403011160"
+}
