@@ -41,6 +41,24 @@
         ],
         [
           {
+            "node": "é_Publico Quente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_Publico Quente": {
+      "main": [
+        [
+          {
+            "node": "envia_msg_cadastro1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "envia_msg_cadastro",
             "type": "main",
             "index": 0
@@ -97,8 +115,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        680,
-        780
+        960,
+        900
       ],
       "credentials": {
         "whatsAppApi": {
@@ -202,10 +220,65 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        680,
+        720,
         600
       ],
       "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "bd2e6008-f9c8-4325-a9fd-a0c735547b6f",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"form_name\"] }}",
+              "rightValue": "Cadastro Webinário - https://links.liliancidreira.com.br/cap-webinar-pq",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ad4737b9-32e5-4df6-939a-543e8bb9cd91",
+      "name": "é_Publico Quente",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        720,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "439027139283658",
+        "recipientPhoneNumber": "=+{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}",
+        "template": "grupo_webinario_msg1pq|pt_BR"
+      },
+      "id": "5787738e-9ca1-4aa1-ac1e-b9249c0594e7",
+      "name": "envia_msg_cadastro1",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        960,
+        740
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "7knKCf47LIvmRxue",
+          "name": "[WhatsApp] - Future Minds"
+        }
+      },
       "onError": "continueRegularOutput"
     }
   ],
@@ -269,6 +342,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-14T23:04:43.069Z",
-  "versionId": "537e9014-c3b4-4d84-bb9f-d83403011160"
+  "updatedAt": "2024-11-22T17:56:10.693Z",
+  "versionId": "302a4ef1-6302-4845-b35a-0918ad594475"
 }
