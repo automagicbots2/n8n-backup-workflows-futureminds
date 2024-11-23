@@ -176,7 +176,7 @@
             {
               "id": "d6775cb8-6322-4b46-b33e-ceb237ad1b2e",
               "name": "form_name",
-              "value": "={{ $node[\"formata_dados\"].json[\"form_name\"] }} - {{ $node[\"formata_dados\"].json[\"link_pagina\"].replace('https://links.liliancidreira.com.br/cap-webinar','Publico Frio').replace('https://links.liliancidreira.com.br/cap-webinar-pg','Publico Quente') }}",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_name\"] }} - {{ $node[\"formata_dados\"].json[\"link_pagina\"] }}",
               "type": "string"
             },
             {
@@ -221,44 +221,44 @@
         "json": {
           "headers": {
             "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
-            "content-length": "596",
+            "content-length": "513",
             "accept-encoding": "gzip",
             "cdn-loop": "cloudflare; subreqs=1",
             "cf-connecting-ip": "2a06:98c0:3600::103",
-            "cf-ray": "8e29b1bd93462c9e-DFW",
+            "cf-ray": "8e6a99f7a5d3eac5-DFW",
             "cf-visitor": "{\"scheme\":\"https\"}",
             "cf-worker": "greatsoftwares.workers.dev",
             "content-type": "application/x-www-form-urlencoded",
-            "great-auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJncGFnZXMtcjItcGFnZXMtaW50ZWdyYXRpb25zIiwiYXVkIjoic2VydmljZSIsImlhdCI6MTczMTYxNTU0M30.1vTNCFl5gSY5VlPRQAwGjSgnG49dTpoS65KXEZnlADM",
+            "great-auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJncGFnZXMtcjItcGFnZXMtaW50ZWdyYXRpb25zIiwiYXVkIjoic2VydmljZSIsImlhdCI6MTczMjI5NjE0NH0.xWC0GbmM-aE44qV6kCmk5uzFHO8vMJGYrvtf1JdsDIE",
             "great-server": "GreatApps",
             "great-service": "gpages-r2-pages-integrations",
-            "x-forwarded-for": "172.71.167.58",
+            "x-forwarded-for": "172.71.170.18",
             "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "3fc641f1cb52",
-            "x-real-ip": "172.71.167.58"
+            "x-real-ip": "172.71.170.18"
           },
           "params": {},
           "query": {},
           "body": {
-            "name": "Mateus Diniz",
-            "Digite_seu_melhor_e_mail": "mateusdiniz@automagicbots.com.br",
-            "DDD_Celular_Opcional": "(62) 9811-96678",
+            "name": "Gabriel",
+            "Digite_seu_melhor_e_mail": "gabriel130103@gmail.com",
+            "DDD_Celular_Opcional": "(55) 9912-26171",
             "UTM_SOURCE": "",
             "UTM_MEDIUM": "",
             "UTM_CAMPAIGN": "",
             "UTM_TERM": "",
             "UTM_CONTENT": "",
-            "Referral_Source": "https://app.greatpages.com.br/",
+            "Referral_Source": "Acesso direto",
             "Dispositivo": "Desktop",
             "URL": "https://links.liliancidreira.com.br/cap-webinar-pq",
-            "IP_do_usuario": "2804:1a90:200f:e800:e34b:dd17:f2e7:8140",
-            "Data_da_conversao": "2024-11-14 20:18:58",
+            "IP_do_usuario": "186.237.219.107",
+            "Data_da_conversao": "2024-11-22 17:22:16",
             "Id_do_formulario": "1010271_1_1730910567672b99674ce20993256331",
             "Pais_do_usuario": "BR",
-            "Regiao_do_usuario": "Santa Catarina",
-            "Cidade_do_usuario": "Criciúma",
+            "Regiao_do_usuario": "Goiás",
+            "Cidade_do_usuario": "Silvânia",
             "Id_da_pagina": "1010271"
           },
           "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/web001-cadastro-lp",
@@ -285,6 +285,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-19T21:12:57.316Z",
-  "versionId": "f0c79109-ea22-4e48-8e0f-184c302b3e0a"
+  "updatedAt": "2024-11-22T17:54:44.635Z",
+  "versionId": "c1d803d9-8b7b-4507-a1d4-a5977d4b3dc2"
 }
