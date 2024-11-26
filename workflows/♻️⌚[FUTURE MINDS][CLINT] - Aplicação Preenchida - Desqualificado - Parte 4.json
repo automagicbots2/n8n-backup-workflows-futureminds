@@ -238,7 +238,7 @@
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro3",
+            "node": "pesquisa_lead5",
             "type": "main",
             "index": 0
           }
@@ -439,7 +439,7 @@
       "typeVersion": 1,
       "position": [
         860,
-        1080
+        900
       ]
     },
     {
@@ -2195,6 +2195,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-06T20:14:03.204Z",
-  "versionId": "7916d984-55c6-4efc-95d0-1e9571d6d3a7"
+  "updatedAt": "2024-11-26T13:36:16.640Z",
+  "versionId": "a2c343e0-c2fc-498a-b955-2ed2e044184f"
 }
