@@ -505,6 +505,10 @@
             {
               "column": "status_atividade",
               "value": "Y"
+            },
+            {
+              "column": "funcao",
+              "value": "={{ $node[\"consulta_time\"].json[\"body\"][\"time\"] }}"
             }
           ]
         },
@@ -558,7 +562,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1780,
+        2000,
         2320
       ],
       "alwaysOutputData": true,
@@ -789,7 +793,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1100,
+        1160,
         2420
       ],
       "credentials": {
@@ -826,8 +830,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1340,
-        2580
+        1580,
+        2560
       ],
       "credentials": {
         "mySql": {
@@ -896,8 +900,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1520,
-        2760
+        1580,
+        2740
       ],
       "credentials": {
         "mySql": {
@@ -942,8 +946,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1340,
-        2760
+        1400,
+        2740
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -996,7 +1000,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1960,
+        2180,
         2180
       ]
     },
@@ -1517,26 +1521,26 @@
       {
         "json": {
           "headers": {
-            "host": "n8nwebhookjumarques.automagicbots.com.br",
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "user-agent": "axios/1.6.7",
-            "content-length": "26",
+            "content-length": "27",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
             "x-forwarded-for": "172.18.0.1",
-            "x-forwarded-host": "n8nwebhookjumarques.automagicbots.com.br",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
-            "x-forwarded-server": "8d715749cb3a",
+            "x-forwarded-server": "3fc641f1cb52",
             "x-real-ip": "172.18.0.1"
           },
           "params": {},
           "query": {},
           "body": {
-            "user": "19",
+            "user": "199",
             "time": "SDR"
           },
-          "webhookUrl": "https://n8nwebhookjumarques.automagicbots.com.br/webhook/consulta-colaborador",
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/consulta-colaborador",
           "executionMode": "production"
         }
       }
@@ -1571,6 +1575,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-14T20:23:35.417Z",
-  "versionId": "7844fe9d-d16e-486f-a098-e88d9db0fb12"
+  "updatedAt": "2024-11-26T13:02:40.235Z",
+  "versionId": "0e5c18b1-3391-4f18-b08d-7eeafc4a3f25"
 }
