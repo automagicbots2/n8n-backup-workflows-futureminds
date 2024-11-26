@@ -1305,17 +1305,6 @@
         ]
       ]
     },
-    "entra_na_fila": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "create_contact": {
       "main": [
         [
@@ -1332,6 +1321,17 @@
         [
           {
             "node": "cria/atualiza_negocio_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato",
             "type": "main",
             "index": 0
           }
@@ -1426,8 +1426,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        380,
-        1200
+        360,
+        1040
       ]
     },
     {
@@ -5418,35 +5418,37 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-xJc-dgD9-Gg_INiFW97RMg",
-            "deliveryTag": 74,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-vSUdIweQN8d8yYexeBfmrA",
+            "deliveryTag": 5,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica - Clint"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 1125
+            }
           },
           "content": {
-            "Nome do Cliente": "Lucas",
-            "E-mail do Cliente": "lukas.vargas@live.com",
-            "Telefone do Cliente - Formato BC": "+5517992302000",
-            "Telefone do Cliente - Formato Z-API": "5517992302000",
+            "Nome do Cliente": "Paulo",
+            "E-mail do Cliente": "paulohenriquecic@gmail.com",
+            "Telefone do Cliente - Formato BC": "+556284872769",
+            "Telefone do Cliente - Formato Z-API": "556284872769",
             "Tipo de Evento": "Sessão Sprint de Carreira",
-            "ID do Evento": "e55ac165-0089-4814-ac73-58a5212490d1",
-            "Responsável pelo Evento": "Felipe Matheus",
-            "E-mail do Responsável": "eu@felipematheus.com.br",
-            "Data de Início": "16/10/2024  12:15",
-            "Data em que foi feito o Agendamento": "14/10/2024  12:48",
-            "Data de Término": "16/10/2024  13:00",
-            "Dia da Semana de Início do Evento": "Quarta",
-            "Link da Reunião": null,
+            "ID do Evento": "ebbd3ba7-b119-4604-b65f-b0f23a672a3f",
+            "Responsável pelo Evento": "Fernando Ruoso",
+            "E-mail do Responsável": "fernando.ruoso@futureminds.com.br",
+            "Data de Início": "26/11/2024  17:00",
+            "Data em que foi feito o Agendamento": "25/11/2024  22:11",
+            "Data de Término": "26/11/2024  17:45",
+            "Dia da Semana de Início do Evento": "Terça",
+            "Link da Reunião": "https://calendly.com/events/ebbd3ba7-b119-4604-b65f-b0f23a672a3f/google_meet",
             "utm_source": "facebook",
             "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
-            "utm_term": "[CARGO - Dados]",
+            "utm_term": "[CARGO - ASSISTENTE]",
             "utm_medium": "cpc",
             "utm_content": "Anúncio [5.1].MP4",
-            "ID do Cliente": "3f69d81b-872e-4efd-a44c-67e36bffc0cd",
+            "ID do Cliente": "4533add4-bd2b-421e-9a84-65515dada588",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5488,6 +5490,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-14T18:15:41.816Z",
-  "versionId": "76155bbc-d300-4de9-8596-61f9f58ddb9b"
+  "updatedAt": "2024-11-26T13:12:13.780Z",
+  "versionId": "b1d00da5-0b68-4276-ba81-143de63becf0"
 }
