@@ -96,17 +96,6 @@
         ]
       ]
     },
-    "aplicacao_dados_finais_com_calendly": {
-      "main": [
-        [
-          {
-            "node": "formata_dados3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "formata_dados": {
       "main": [
         [
@@ -134,6 +123,17 @@
         [
           {
             "node": "entra_na_fila2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aplicacao_dados_finais_com_calendly": {
+      "main": [
+        [
+          {
+            "node": "formata_dados3",
             "type": "main",
             "index": 0
           }
@@ -1213,22 +1213,6 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "aplicacao_dados_finais_com_calendly_clint",
-        "options": {}
-      },
-      "id": "fd666557-2615-4867-9b5f-02710c92dc4a",
-      "name": "aplicacao_dados_finais_com_calendly",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        1360,
-        440
-      ],
-      "webhookId": "227701d1-6702-47ea-824a-f7fb20f3500b"
-    },
-    {
-      "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n\n//Formatar número Internacional\nfunction formatarTelefone(telefone) {\n  const telefoneLimpo = telefone.replace(/[^\\d]/g, '');\n\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else {\n    // Se o DDI for diferente de 55, manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${ano}-${mes}-${dia}`;\n}\n\n// Função para formatação de usernames do Instagram\nfunction formatarInstagram(username) {\n  if (username) {\n    // Remover espaços em branco extras\n    const usernameSemEspacos = username.trim();\n\n    // Converter para minúsculas\n    const usernameFormatado = usernameSemEspacos.toLowerCase();\n\n    return usernameFormatado;\n  }\n  return '';\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// UTMS\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Função para formatação de emails\nfunction formatarEmail(email) {\n  // Remover espaços em branco extras\n  const emailSemEspacos = email.trim();\n\n  // Converter para minúsculas\n  const emailFormatado = emailSemEspacos.toLowerCase();\n\n  return emailFormatado;\n}\n\n// Função para formatação de nomes\nfunction formatarNome(nome) {\n  if (nome) {\n    const palavras = nome.trim().split(/\\s+/);\n\n    const palavrasMinusculas = ['de', 'dos', 'da', 'e', 'do', 'das', 'di', 'du', 'o', 'a', 'u'];\n\n    for (let i = 0; i < palavras.length; i++) {\n      const palavraAtual = palavras[i].toLowerCase();\n      if (i === 0 || i === palavras.length - 1 || !palavrasMinusculas.includes(palavraAtual)) {\n        palavras[i] = palavraAtual.charAt(0).toUpperCase() + palavraAtual.slice(1);\n      } else {\n        palavras[i] = palavraAtual;\n      }\n    }\n\n    return palavras.join(\" \");\n  }\n  return '';\n}\n\n// Função para remover todas as aspas e parênteses de um texto\nfunction removerAspasEParenteses(texto) {\n    // Substitui todas as ocorrências de aspas (\"\") por nada\n    let textoSemAspas = texto.replace(/\"/g, '');\n    // Substitui todas as ocorrências de parênteses () por nada\n    textoSemAspas = textoSemAspas.replace(/\\([^()]*\\)/g, '');\n    return textoSemAspas;\n}\n\n\n// Data da aplicação em milissefundos\nconst dataAtualEmMilissegundos = new Date().getTime();\n\n// INFORMAÇÕES PESSOAIS\nconst nome = formatarNome($node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"answers\"][\"5\"][\"text\"]) || \"\";\n\nconst telefone = formatarTelefone($node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"answers\"][\"6\"][\"phone_number\"]) || '';\n\n//const instagram = formatarInstagram($node[\"aplicacao_direta\"].json[\"body\"][\"InstagramOuSite\"]) || '';\n\nconst email = formatarEmail($node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"answers\"][\"7\"][\"email\"]) || \"\";\n\n//PERGUNTAS\nconst pergunta0 = respostas.find(answer => answer.field.ref === \"49ebca80-de07-4e85-980a-0b5bf062c736\")?.choice.label || '';\nconst pergunta1 = respostas.find(answer => answer.field.ref === \"2f10d945-b3b8-4756-9531-ab9653dee655\")?.choice.label || '';\nconst pergunta2 = respostas.find(answer => answer.field.ref === \"c48b3996-b09c-4bc5-a7c0-45cac61cc498\")?.choice.label || '';\nconst pergunta3 = respostas.find(answer => answer.field.ref === \"cca09df1-643d-41ca-b5e6-aef45d7d3f42\")?.choice.label || '';\n//const pergunta4 = $node[\"aplicacao_direta\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual dessas opções você acredita que mais tem atrapalhado alcançar seus objetivos profissionais?\"] || '';\nconst pergunta5 = respostas.find(answer => answer.field.ref === \"396b0194-96fe-4041-ae90-f9307e876241\")?.choice.label || '';\n\n//const pergunta6 = respostas.find(answer => answer.field.ref === \"1c5bedbb-6918-492b-8a95-3df9b8853aab\")?.text || '';\n\n//const pergunta6 = removerAspasEParenteses(respostas.find(answer => answer.field.ref === \"1c5bedbb-6918-492b-8a95-3df9b8853aab\")?.choice.label || '';\n\nconst pergunta6 = respostas.find(answer => answer.field.ref === \"1c5bedbb-6918-492b-8a95-3df9b8853aab\")?.choice.label || '';\n\n\nconst pergunta7 = respostas.find(answer => answer.field.ref === \"4b67740f-820a-4d80-a30c-e53943cedca2\")?.choice.label || '';\n\nconst pergunta8 = respostas.find(answer => answer.field.ref === \"66071908-94ec-444b-83b7-b0691b6dd906\")?.number || '';\n\nconst pergunta9 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta9\"] || '';\nconst pergunta10 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta10\"] || '';\nconst pergunta11 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta11\"] || '';\nconst pergunta12 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta12\"] || '';\nconst pergunta13 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta13\"] || '';\nconst pergunta14 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta14\"] || '';\nconst pergunta15 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta15\"] || '';\nconst pergunta16 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta16\"] || '';\nconst pergunta17 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta17\"] || '';\nconst pergunta18 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta18\"] || '';\nconst pergunta19 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta19\"] || '';\nconst pergunta20 = $node[\"aplicacao_direta\"].json[\"body\"][\"pergunta20\"] || '';\n\n//const qualificacao = $node[\"aplicacao_direta\"].json[\"body\"][\"respondent\"][\"score\"] || '';\nconst data_aplicacao_completa = $node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"submitted_at\"] || '';\nconst pontuacao = $node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"variables\"][\"3\"][\"number\"] || '';\nconst endings = $node[\"aplicacao_direta\"].json[\"body\"][\"form_response\"][\"ending\"][\"ref\"] || '';\n\n// EXTRAS */\n//const produto = $node[\"aplicacao_direta\"].json[\"body\"][\"\"] || '';\n//const funil = $node[\"aplicacao_direta\"].json[\"body\"][\"\"] || '';\n//const status_lead = $node[\"aplicacao_direta\"].json[\"body\"][\"\"] || '';\n//const modelo_call = $node[\"aplicacao_direta\"].json[\"body\"][\"\"] || '';\n//const analise_seller = $node[\"aplicacao_direta\"].json[\"body\"][\"\"] || '';  \n\n// Montar o objeto de output\nconst output = {\n \"Nome do Cliente\": nome,\n \"E-mail do Cliente\": email,\n \"Telefone do Cliente - Formato BC\": '+' + telefone,\n \"Telefone do Cliente - Formato Z-API\": telefone,\n  //instagram,\n  pergunta0,\n  pergunta1,\n  pergunta2,\n  pergunta3,\n  //pergunta4,\n  pergunta5,\n  pergunta6,\n  pergunta7,\n  pergunta8,\n  pergunta9,\n  pergunta10,\n  pergunta11,\n  pergunta12,\n  pergunta13,\n  pergunta14,\n  pergunta15,\n  pergunta16,\n  pergunta17,\n  pergunta18,\n  pergunta19,\n  pergunta20,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  pontuacao: pontuacao,\n  endings:endings,\n  data_aplicacao_completa: data_aplicacao_completa,\n  data_ultima_quinzena: getDataMenos15Dias(),\n  //qualificacao: qualificacao,\n  data_aplicacao: dataAtualEmMilissegundos\n};\n\nreturn [output];"
       },
       "id": "1ba30e56-67fe-4377-a38d-6d638cc49412",
@@ -1546,6 +1530,22 @@
         1740,
         620
       ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aplicacao_dados_finais_com_calendly_clint",
+        "options": {}
+      },
+      "id": "fd666557-2615-4867-9b5f-02710c92dc4a",
+      "name": "aplicacao_dados_finais_com_calendly",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        440
+      ],
+      "webhookId": "227701d1-6702-47ea-824a-f7fb20f3500b"
     },
     {
       "parameters": {
@@ -4848,6 +4848,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2024-09-05T19:09:32.188Z",
-  "versionId": "5736fd8e-5648-4ddb-9e86-f8c31558c79d"
+  "updatedAt": "2024-11-27T18:43:17.274Z",
+  "versionId": "fcd0cc47-506a-4eb7-b477-473680481c73"
 }
