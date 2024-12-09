@@ -1648,7 +1648,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             }
           ]
         },
@@ -2091,7 +2091,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "lilian.cidreira@futureminds.com.br"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             },
             {
               "name": "utm_var_tag",
@@ -2553,7 +2553,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "lilian.cidreira@futureminds.com.br"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             },
             {
               "name": "utm_var_tag",
@@ -2669,7 +2669,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "lilian.cidreira@futureminds.com.br"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             },
             {
               "name": "utm_var_tag",
@@ -2760,8 +2760,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-bAzdoGi0MKRd9iR2IdYSTQ",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-blJ0BNtkw2b5JwOLsdivww",
+            "deliveryTag": 63,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos Atualizado - Sessão - Parte 4 - Qualificado - Clint"
@@ -2770,27 +2770,27 @@
             "headers": {}
           },
           "content": {
-            "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Teste 2",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5519984574874",
-            "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "utm_content": "xxxxx",
-            "utm_source": "xxxxx",
-            "utm_campaign": "xxxxx",
-            "utm_medium": "xxxxx",
-            "utm_term": "xxxxx",
+            "verificacao_lead": true,
+            "Nome do Cliente": "Alessandra",
+            "E-mail do Cliente": "ale.luz0607@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5521964052719",
+            "Telefone do Cliente - Formato Z-API": "5521964052719",
+            "utm_content": "Anúncio [5.1].MP4",
+            "utm_source": "facebook",
+            "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
+            "utm_medium": "cpc",
+            "utm_term": "[CARGO - DIRETOR]",
             "Instagram": "",
             "id_fluxo_nao_agendou_10_min": "",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
-            "pergunta0": "",
-            "pergunta1": "",
-            "pergunta2": "Entre R$7.500 e R$8.999",
-            "pergunta3": "Analista",
-            "pergunta5": "Graduação",
-            "pergunta6": "Estou desempregado, preciso me recolocar no mercado de trabalho",
-            "pergunta7": "",
-            "pergunta8": 10,
+            "pergunta0": "Entre 2 e 4 anos",
+            "pergunta1": "Entre R$10.000 e R$14.999",
+            "pergunta2": "",
+            "pergunta3": "Especialista",
+            "pergunta5": "Pós-graduação",
+            "pergunta6": "Mudar de emprego para uma empresa com oportunidades de crescimento",
+            "pergunta7": "A empresa só valoriza quem vem do mercado",
+            "pergunta8": 8,
             "pergunta9": "",
             "pergunta10": "",
             "pergunta11": "",
@@ -2837,16 +2837,17 @@
             "id_campo_utm_var_bot_conversa": "1374335",
             "id_campo_instagram_bot_conversa": "",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "aplicacao_direta",
-            "data_ultima_quinzena": "2024-08-21",
+            "variacao_do_funil": "aplicacao3_com_calendly",
+            "data_ultima_quinzena": "2024-11-24",
             "id_campo_emailse_bot_conversa": "1139626",
             "id_tag_desqualificado_bot_conversa": "4929805",
             "id_tag_qualificado_bot_conversa": "4891807",
-            "data_resposta_type": "05/09/2024 15:23",
+            "data_resposta_type": "09/12/2024 07:07",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 6019,
-            "id_lead_bc": 445130242,
-            "id_fluxo_nao_agendou_10_min_desqualificados": ""
+            "id_lead_bd": 8123,
+            "id_lead_bc": 632112142,
+            "id_fluxo_nao_agendou_10_min_desqualificados": "",
+            "id_campo_data_da_aplicacao_bot_conversa": "2249943"
           }
         }
       }
@@ -2877,6 +2878,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-26T13:36:26.715Z",
-  "versionId": "0dbe63c4-857a-4c2e-b55e-b860f54f90b9"
+  "updatedAt": "2024-12-09T13:09:34.363Z",
+  "versionId": "8c58b2e8-f4e9-4cf7-b0b2-43e5cc5f83d2"
 }
