@@ -1689,7 +1689,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"] .replace('Juliana','juliana.lopes@futureminds.com.br').replace('Luiza Campos','luiza.campos@futureminds.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             }
           ]
         },
@@ -2037,7 +2037,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"] .replace('Juliana','juliana.lopes@futureminds.com.br').replace('Luiza Campos','luiza.campos@futureminds.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
             }
           ]
         },
@@ -2195,6 +2195,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-26T13:36:16.640Z",
-  "versionId": "a2c343e0-c2fc-498a-b955-2ed2e044184f"
+  "updatedAt": "2024-12-09T13:12:22.569Z",
+  "versionId": "432f3933-8112-4ff7-8e1c-e160af245189"
 }
