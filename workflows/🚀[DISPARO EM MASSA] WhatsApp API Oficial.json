@@ -12,26 +12,9 @@
         ]
       ]
     },
-    "le_planilha": {
-      "main": [
-        [
-          {
-            "node": "separa_em_lotes",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "separa_em_lotes": {
       "main": [
-        [
-          {
-            "node": "Fim",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "API Oficial",
@@ -96,7 +79,7 @@
       "main": [
         [
           {
-            "node": "verifica_data",
+            "node": "excluir_enviados",
             "type": "main",
             "index": 0
           }
@@ -127,16 +110,61 @@
     },
     "existe_telefone": {
       "main": [
+        [],
         [
           {
-            "node": "WhatsApp Business Cloud",
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "excluir_enviados": {
+      "main": [
+        [
+          {
+            "node": "verifica_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_linhas": {
+      "main": [
+        [
+          {
+            "node": "Fim",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "separa_em_lotes",
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha": {
+      "main": [
+        [
+          {
+            "node": "separa_em_linhas",
             "type": "main",
             "index": 0
           }
@@ -147,7 +175,7 @@
       "main": [
         [
           {
-            "node": "2s",
+            "node": "separa_em_linhas",
             "type": "main",
             "index": 0
           }
@@ -205,40 +233,6 @@
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1uMQZ9heg06Zi3bjD4lnrB2XW1QK70Apla0VOFYsmIXU",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 555312768,
-          "mode": "list",
-          "cachedResultName": "24 DE AGOSTO",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uMQZ9heg06Zi3bjD4lnrB2XW1QK70Apla0VOFYsmIXU/edit#gid=555312768"
-        },
-        "options": {}
-      },
-      "id": "71bd4d35-4290-46d0-a785-99d30900bb7d",
-      "name": "le_planilha",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 3,
-      "position": [
-        640,
-        420
-      ],
-      "retryOnFail": true,
-      "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "rYo7W2RpqP0vZrDP",
-          "name": "[Sheets] - Automagic Bots"
-        }
-      }
-    },
-    {
-      "parameters": {
         "options": {}
       },
       "id": "109d3baf-8ad0-45c9-8c2e-03f24391980c",
@@ -271,8 +265,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1060,
-        220
+        1660,
+        760
       ]
     },
     {
@@ -287,7 +281,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "21/08/2024",
+              "rightValue": "12/12/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -304,8 +298,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        420,
-        440
+        980,
+        880
       ]
     },
     {
@@ -346,8 +340,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        260,
-        440
+        600,
+        880
       ]
     },
     {
@@ -375,27 +369,6 @@
         420
       ],
       "webhookId": "a9b3d6c3-a701-42e4-bf46-3309a5174ef9"
-    },
-    {
-      "parameters": {
-        "phoneNumberId": "439027139283658",
-        "recipientPhoneNumber": "=+{{ $node[\"existe_telefone\"].json[\"telefone\"] }}",
-        "template": "convite_sala_secreta|pt_BR"
-      },
-      "id": "c65eb356-a92c-4605-81ac-7b777fe1645d",
-      "name": "WhatsApp Business Cloud",
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        2100,
-        420
-      ],
-      "credentials": {
-        "whatsAppApi": {
-          "id": "7knKCf47LIvmRxue",
-          "name": "[WhatsApp] - Future Minds"
-        }
-      }
     },
     {
       "parameters": {
@@ -429,6 +402,183 @@
         1860,
         440
       ]
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "disparos_em_massa",
+          "mode": "list",
+          "cachedResultName": "disparos_em_massa"
+        },
+        "deleteCommand": "delete",
+        "options": {}
+      },
+      "id": "1b74fa72-96d5-4557-b772-c76261af5e2f",
+      "name": "excluir_enviados",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        880
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f95ed8af-a10a-44a5-bd98-df308e3811b8",
+      "name": "separa_em_linhas",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1420,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtém os contatos do campo \"Contatos\"\nconst contatos = $node[\"separa_em_linhas\"].json[\"Número de telefone\"] ? $node[\"separa_em_linhas\"].json[\"Número de telefone\"] .toString() : \"\";\n\n// Divide o campo \"Contatos\" em partes com base no espaço entre o e-mail e o telefone\nconst partesContatos = contatos.split(\" \");\n\n// Encontra a última parte que será o telefone\nconst telefoneOriginal = partesContatos[partesContatos.length - 1];\n\n// Removendo caracteres não numéricos do telefone\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI e DDD padrão\nconst ddiPadrao = '55';\nconst dddPadrao = '48';\n\n// Verifica o comprimento do telefone e ajusta DDI e DDD se necessário\nlet telefoneFinal;\nif (telefoneLimpo.length === 8) {\n    // Telefone sem DDD e sem DDI, adiciona ambos\n    telefoneFinal = ddiPadrao + dddPadrao + telefoneLimpo;\n} else if (telefoneLimpo.length === 9) {\n    // Telefone sem DDD, adiciona apenas DDD\n    telefoneFinal = ddiPadrao + dddPadrao + telefoneLimpo;\n} else if (telefoneLimpo.length === 10) {\n    // Telefone com DDD, sem DDI\n    telefoneFinal = ddiPadrao + telefoneLimpo;\n} else if (telefoneLimpo.length === 11 && !telefoneLimpo.startsWith(ddiPadrao)) {\n    // Telefone com DDD e sem DDI, adiciona o DDI\n    telefoneFinal = ddiPadrao + telefoneLimpo;\n} else if (telefoneLimpo.length === 12 && telefoneLimpo.startsWith(ddiPadrao)) {\n    // Telefone já tem DDI e DDD\n    telefoneFinal = telefoneLimpo;\n} else {\n    // Caso o número não caia em nenhuma das categorias, retorna o telefone como está\n    telefoneFinal = telefoneLimpo;\n}\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "70a3b3f9-fbfa-45a8-9b2a-6f035dd2aa8a",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "disparos_em_massa",
+          "mode": "list",
+          "cachedResultName": "disparos_em_massa"
+        },
+        "returnAll": true,
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "2e69a2cb-db9a-4df8-9d58-f0d81bba4a6d",
+      "name": "puxa_lista",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        1900,
+        1160
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16tYE9M6c_5LLd4ujP4Y-MtRCgDDbOGrxbzQ-g8DdPls",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1252996585,
+          "mode": "list",
+          "cachedResultName": "webinario_frio",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16tYE9M6c_5LLd4ujP4Y-MtRCgDDbOGrxbzQ-g8DdPls/edit#gid=1252996585"
+        },
+        "options": {}
+      },
+      "id": "71bd4d35-4290-46d0-a785-99d30900bb7d",
+      "name": "le_planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1200,
+        860
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "rYo7W2RpqP0vZrDP",
+          "name": "[Sheets] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "disparos_em_massa",
+          "mode": "list",
+          "cachedResultName": "disparos_em_massa"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"Code\"].json[\"telefonefinal\"] }}"
+            },
+            {
+              "column": "nome",
+              "value": "={{ $node[\"separa_em_linhas\"].json[\"Nome\"].split (\" \")[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1007769e-c96d-4c42-a329-a1d2e4848b39",
+      "name": "insere_telefone",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        2320,
+        940
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "439027139283658",
+        "recipientPhoneNumber": "=+{{ $node[\"Code\"].json[\"telefonefinal\"] }}",
+        "template": "webinario_20h_frio|pt_BR"
+      },
+      "id": "c65eb356-a92c-4605-81ac-7b777fe1645d",
+      "name": "WhatsApp Business Cloud",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        940
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "7knKCf47LIvmRxue",
+          "name": "[WhatsApp] - Future Minds"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -448,6 +598,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-09-05T21:11:59.678Z",
-  "versionId": "9d91af7c-d952-4a3f-ba46-693e05d82117"
+  "updatedAt": "2024-12-12T23:25:10.125Z",
+  "versionId": "183037b1-58fa-4aee-a831-56e0da2bbfdc"
 }
