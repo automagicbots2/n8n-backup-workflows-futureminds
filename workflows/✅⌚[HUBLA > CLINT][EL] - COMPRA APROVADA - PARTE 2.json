@@ -1,0 +1,1025 @@
+{
+  "active": true,
+  "connections": {
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastra_contato": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cadastra_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe2": {
+      "main": [
+        [
+          {
+            "node": "cria_lead_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dias_para_conversao1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead6": {
+      "main": [
+        [
+          {
+            "node": "nao_existe2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados1": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dias_para_conversao1": {
+      "main": [
+        [
+          {
+            "node": "dados1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados2": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_lead_bd1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dias_para_conversao2": {
+      "main": [
+        [
+          {
+            "node": "dados2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead1": {
+      "main": [
+        [
+          {
+            "node": "dias_para_conversao2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-18T21:49:17.525Z",
+  "id": "RLjgwRztp1BMpToW",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "✅⌚[HUBLA > CLINT][EL] - COMPRA APROVADA - PARTE 2",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "Compra Aprovada EL - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "a88cd6f2-0e2f-4dfb-a64f-6b6d40207f10",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        500
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{$node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[1] ? $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ').slice(1).join(\" \") : \".\"}}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cadastra_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        600,
+        520
+      ],
+      "id": "ca691ca7-2a94-4be9-b6f7-182ba825302e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "c146a116-8664-4e89-8a1b-caef6ba728f2",
+      "name": "segundo_ou_mais_erro",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        400,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "80683e5f-f67b-4a81-af3f-1afa75d779dd",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        600,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead6\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "bbbc7f96-c950-42aa-8207-1d0f86ff44a3",
+      "name": "nao_existe2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] || '-------------------------------'}}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] || '-------------------------------' }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] || '-------------------------------' }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] || '-------------------------------' }}"
+            },
+            {
+              "column": "cpf_cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"CPF/CNPJ do Cliente\"] || '-------------------------------' }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "c7d9ac36-c9ba-4a0b-b6b6-468cb63390e6",
+      "name": "pesquisa_lead6",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        800,
+        520
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "Compra Aprovada EL - Parte 3",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "e4de53a2-4bfe-4ed2-a35d-a781c453a44a",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        640
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "id_lead_bc",
+              "value": "={{ $node[\"cadastra_contato\"].json[\"id\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_email_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            },
+            {
+              "name": "link_pagamento_pix",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_pix\"] }}"
+            },
+            {
+              "name": "link_pagamento_boleto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            },
+            {
+              "name": "dias_para_conversao",
+              "value": "={{ $node[\"dias_para_conversao1\"].json[\"diffEmDias\"] }}"
+            },
+            {
+              "name": "id_campo_cpf_cnpj_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+            },
+            {
+              "name": "cpf/cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
+            },
+            {
+              "name": "id_campo_id_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "name": "offer_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
+            },
+            {
+              "name": "gateway_comission",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            },
+            {
+              "name": "currency",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
+            },
+            {
+              "name": "payment_method",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
+            },
+            {
+              "name": "trans_status",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "name": "warranty_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
+            },
+            {
+              "name": "conversion_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "nome_produto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
+            },
+            {
+              "name": "installments",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
+            },
+            {
+              "name": "linha_digitavel_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"linha_digitavel_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "email_bd",
+              "value": "={{ $node[\"pesquisa_lead6\"].json[\"email\"] }}"
+            },
+            {
+              "name": "telefone_bd",
+              "value": "={{ $node[\"pesquisa_lead6\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "id_lead_bd",
+              "value": "={{ $node[\"pesquisa_lead6\"].json[\"id_lead\"] }}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "verificacao_lead"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a8f4426b-58f6-4db2-8180-666c90e74312",
+      "name": "dados1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let dataEntradaLead = $node[\"pesquisa_lead6\"].json[\"data_de_entrada\"]; // Data de entrada da lead (no formato YYYY-MM-DD HH:mm:ss)\nlet dataCompra = $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] ? $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(6,10) + '-' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(3,5) + '-' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(0,2) + ' ' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(11,16) + ':00' : ''; // Nova Data da compra (no formato YYYY-MM-DD HH:mm:ss)\n\n\n// Converter as datas para objetos Date\nlet dataEntradaLeadObj = new Date(dataEntradaLead);\nlet dataCompraObj = new Date(dataCompra);\n\n// Calcular a diferença em milissegundos entre as datas\nlet diff = dataCompraObj - dataEntradaLeadObj;\n\n// Calcular a diferença em dias\nlet diffEmDias = Math.floor(diff / (1000 * 60 * 60 * 24));\n\n// Se a diferença for negativa, significa que a data de entrada é posterior à data de conversão\n// Nesse caso, ajustamos para zero, já que não há diferença em dias\nif (diffEmDias < 0) {\n  diffEmDias = 0;\n}\n\n// Retornar o resultado incluindo a diferença em dias\nreturn [{ \n  diffEmDias: diffEmDias\n}];\n"
+      },
+      "id": "f95d73da-3de0-493e-a99c-443472e0264f",
+      "name": "dias_para_conversao1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Compra Aprovada EL - Parte 4",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "06797742-2eba-4312-8d28-4cb86425e0ec",
+      "name": "entra_na_fila1",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        420
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "id_lead_bc",
+              "value": "={{ $node[\"cadastra_contato\"].json[\"id\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            },
+            {
+              "name": "link_pagamento_pix",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_pix\"] }}"
+            },
+            {
+              "name": "link_pagamento_boleto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            },
+            {
+              "name": "dias_para_conversao",
+              "value": "={{ $node[\"dias_para_conversao2\"].json[\"diffEmDias\"] }}"
+            },
+            {
+              "name": "id_campo_cpf_cnpj_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+            },
+            {
+              "name": "cpf/cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
+            },
+            {
+              "name": "id_campo_id_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "name": "offer_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
+            },
+            {
+              "name": "gateway_comission",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            },
+            {
+              "name": "currency",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
+            },
+            {
+              "name": "payment_method",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
+            },
+            {
+              "name": "trans_status",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "name": "warranty_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
+            },
+            {
+              "name": "conversion_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "nome_produto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
+            },
+            {
+              "name": "installments",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
+            },
+            {
+              "name": "id_lead_bd",
+              "value": "={{ $node[\"cria_lead_bd1\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
+            },
+            {
+              "name": "id_campo_id_da_transacao_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_transacao_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_cpf_cnpj_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_email_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "verificacao_lead",
+              "value": "={{ $node[\"pesquisa_lead6\"].json[\"success\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "553b752f-9fd6-4218-9852-d2c4ca68d18c",
+      "name": "dados2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"cadastra_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "cpf_cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "95e9889d-7269-4c1a-a537-7bdfd97d6798",
+      "name": "cria_lead_bd1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let dataEntradaLead = $node[\"pesquisa_lead1\"].json[\"data_de_entrada\"]; // Data de entrada da lead (no formato YYYY-MM-DD HH:mm:ss)\nlet dataCompra = $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] ? $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(6,10) + '-' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(3,5) + '-' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(0,2) + ' ' + $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].slice(11,16) + ':00' : ''; // Nova Data da compra (no formato YYYY-MM-DD HH:mm:ss)\n\n// Converter as datas para objetos Date\nlet dataEntradaLeadObj = new Date(dataEntradaLead);\nlet dataCompraObj = new Date(dataCompra);\n\n// Calcular a diferença em milissegundos entre as datas\nlet diff = dataCompraObj - dataEntradaLeadObj;\n\n// Calcular a diferença em dias\nlet diffEmDias = Math.floor(diff / (1000 * 60 * 60 * 24));\n\n// Se a diferença for negativa, significa que a data de entrada é posterior à data de conversão\n// Nesse caso, ajustamos para zero, já que não há diferença em dias\nif (diffEmDias < 0) {\n  diffEmDias = 0;\n}\n\n// Retornar o resultado incluindo a diferença em dias\nreturn [{ \n  diffEmDias: diffEmDias\n}];\n"
+      },
+      "id": "7886651f-c596-44b1-976f-f7ba9e257560",
+      "name": "dias_para_conversao2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"cria_lead_bd1\"].json[\"data\"][\"insertId\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "fa041584-381a-4fe3-ac4d-1a3ce1dc501b",
+      "name": "pesquisa_lead1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1380,
+        420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-b6ax-DeJk56eMxrMutBrQw",
+            "deliveryTag": 1,
+            "redelivered": true,
+            "exchange": "",
+            "routingKey": "Compra Aprovada HD - Parte 2"
+          },
+          "properties": {
+            "headers": {
+              "x-delivery-count": 677798
+            }
+          },
+          "content": {
+            "Nome do Cliente": "Daniel Bragatto Cruz",
+            "E-mail do Cliente": "bragatto-daniel@hotmail.com",
+            "Telefone do Cliente - Formato BC": "+5527999668725",
+            "cpf/cnpj": "095.572.517-86",
+            "nome_produto": "Mentoria Hackeando Drop - 4 Meses R$ 5.000",
+            "transaction_id": 3734443,
+            "product_id": 13109,
+            "value": 5000,
+            "offer_code": "JrrdWZ",
+            "payment_method": "CREDIT_CARD",
+            "trans_status": "paid",
+            "conversion_date": "06/11/2024 19:42",
+            "warranty_date": 30,
+            "installments": 12,
+            "ddd": "99",
+            "cep": "29702-225",
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "utm_term": "",
+            "gateway_comission": 200.5,
+            "client_id": 2352974,
+            "seller_balance": 4319.55,
+            "warrant_date": "13/11/2024",
+            "code_pix": null,
+            "qrcode_pix": null,
+            "zipcode": "29702-225",
+            "street": "Rua Ângelo Meneghelli",
+            "number": "152",
+            "complement": "Casa dos fundos",
+            "neighborhood": "Maria Esmênia",
+            "city": "Colatina",
+            "uf": "ES",
+            "cpf_cnpj": "095.572.517-86",
+            "Telefone do Cliente - Formato Z-API": "027999668725",
+            "API-KEY": "b92e6ee2-4672-44af-ae8d-ffd9e9952ef2",
+            "id_campo_email_da_compra_bot_conversa": "1079928",
+            "id_campo_cpf_cnpj_bot_conversa": "976438",
+            "id_campo_id_da_transacao_bot_conversa": "1079931",
+            "id_fluxo_compra_aprovada": "",
+            "id_campo_link_pagamento_pix_bot_conversa": "976440",
+            "id_campo_link_pagamento_boleto_bot_conversa": "976442",
+            "id_campo_linha_digitavel_boleto_bot_conversa": "976443",
+            "id_campo_linha_digitavel_pix_bot_conversa": "976441",
+            "currency": "BRL",
+            "id_campo_id_da_compra_bot_conversa": "1079931",
+            "link_pagamento_boleto": null,
+            "link_pagamento_pix": null,
+            "id_campo_id_banco_de_dados_bot_conversa": "1375549",
+            "id_campo_utm_content_bot_conversa": "1146799",
+            "id_campo_utm_term_bot_conversa": "1146796",
+            "id_campo_utm_campaign_bot_conversa": "1146800",
+            "id_campo_utm_source_bot_conversa": "1146795",
+            "id_campo_utm_medium_bot_conversa": "1146797",
+            "linha_digitavel_boleto_bot_conversa": null,
+            "linha_digitavel_pix_bot_conversa": null,
+            "dono_negocio": "alexandre07closer@gmail.com"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-12-18T21:55:39.498Z",
+  "versionId": "196d5e64-2ea8-4132-9842-7675e0d8d8b2"
+}
