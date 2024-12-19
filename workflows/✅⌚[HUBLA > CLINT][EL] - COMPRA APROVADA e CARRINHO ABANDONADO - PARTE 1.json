@@ -71,6 +71,28 @@
           }
         ]
       ]
+    },
+    "cria_ou_atualiza_contato_na_clint": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastrar_contato1": {
+      "main": [
+        [
+          {
+            "node": "envia_tag_comprou",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-18T19:23:14.105Z",
@@ -663,6 +685,74 @@
           "name": "[RabbitMQ] - Future Minds"
         }
       }
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"dados_da_compra\"].json[\"Telefone do Cliente - Formato BC\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"dados_da_compra\"].json[\"Nome do Cliente\"].slice(0,1).toUpperCase() }}{{ $node[\"dados_da_compra\"].json[\"Nome do Cliente\"].split(' ')[0].slice(1).toLowerCase() }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"dados_da_compra\"].json[\"Nome do Cliente\"].split(' ')[1] ? $node[\"dados_da_compra\"].json[\"Nome do Cliente\"].split(' ').slice(1).join(\" \") : \".\"}}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"dados_da_compra\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cadastrar_contato1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        420
+      ],
+      "id": "edcacb11-26b9-48ec-930b-6041302a1d3a",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastrar_contato1\"].json[\"id\"] }}/tags/12174493/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"dados_da_compra\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d51ae5cf-0f7e-40c5-9f27-4e349c6d5bf2",
+      "name": "envia_tag_comprou",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1480,
+        420
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
     }
   ],
   "pinData": {
@@ -899,6 +989,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-12-18T22:45:55.079Z",
-  "versionId": "a61ac887-c740-4f0e-b418-9ded84ec7f0a"
+  "updatedAt": "2024-12-19T12:45:45.377Z",
+  "versionId": "e2242abf-60f4-457e-a7e2-777b18bb6813"
 }
