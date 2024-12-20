@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "dados": {
       "main": [
         [
@@ -96,6 +85,22 @@
           }
         ]
       ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todos_assinaram": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2024-12-19T14:17:40.439Z",
@@ -140,35 +145,23 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "contrato-assinado-autentique-hetzner",
-        "options": {}
-      },
-      "id": "25bf5525-497a-45e9-9ee5-92570c2e517f",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        620,
-        340
-      ],
-      "webhookId": "5a729aa7-c391-4c07-80b7-a339e1df8def"
-    },
-    {
-      "parameters": {
         "values": {
           "string": [
             {
               "name": "Nome do Cliente",
-              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"partes[1][nome]\"] }}"
+              "value": "={{ $json[\"body\"][\"partes\"][\"1\"][\"nome\"] }}"
             },
             {
               "name": "E-mail do Cliente",
-              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"partes[1][email]\"] }}"
+              "value": "={{ $json[\"body\"][\"partes\"][\"1\"][\"email\"] }}"
             },
             {
               "name": "Contrato",
-              "value": "={{ $json[\"body\"][\"documento[nome]\"] }}"
+              "value": "={{ $json[\"body\"][\"documento\"][\"nome\"] }}"
+            },
+            {
+              "name": "Celular do Cliente",
+              "value": "={{ $json[\"body\"][\"partes\"][\"1\"][\"celular\"] }}"
             }
           ]
         },
@@ -210,11 +203,11 @@
           "values": [
             {
               "column": "email",
-              "value": "={{ $json[\"E-mail do Cliente\"]  || '-----------------------'}}"
+              "value": "={{ $node[\"dados\"].json[\"E-mail do Cliente\"]  || '-----------------------'}}"
             },
             {
               "column": "email2",
-              "value": "={{ $json[\"E-mail do Cliente\"] || '-----------------------'}}"
+              "value": "={{ $node[\"dados\"].json[\"E-mail do Cliente\"] || '-----------------------'}}"
             }
           ]
         },
@@ -297,7 +290,7 @@
       "typeVersion": 2.1,
       "position": [
         1520,
-        280
+        240
       ],
       "credentials": {
         "mySql": {
@@ -317,7 +310,7 @@
       "typeVersion": 3,
       "position": [
         1700,
-        280
+        240
       ]
     },
     {
@@ -350,8 +343,24 @@
       "typeVersion": 2,
       "position": [
         1880,
-        280
+        240
       ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "contrato-assinado-autentique-hetzner",
+        "options": {}
+      },
+      "id": "25bf5525-497a-45e9-9ee5-92570c2e517f",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        620,
+        340
+      ],
+      "webhookId": "5a729aa7-c391-4c07-80b7-a339e1df8def"
     }
   ],
   "pinData": {
@@ -359,102 +368,156 @@
       {
         "json": {
           "headers": {
-            "host": "n8nwebhook.resenhadocafe.com.br",
-            "user-agent": "GuzzleHttp/6.5.5 curl/7.58.0 PHP/7.4.33",
-            "content-length": "4407",
-            "content-type": "application/x-www-form-urlencoded",
-            "x-forwarded-for": "107.178.236.144",
-            "x-forwarded-host": "n8nwebhook.resenhadocafe.com.br",
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "GuzzleHttp/7",
+            "content-length": "2402",
+            "content-type": "application/json",
+            "x-forwarded-for": "34.34.233.160",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
-            "x-forwarded-server": "9f3874b4f703",
-            "x-real-ip": "107.178.236.144",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "34.34.233.160",
             "accept-encoding": "gzip"
           },
           "params": {},
           "query": {},
           "body": {
-            "partes[0][uuid]": "5503e33f4ab411efa9b542010a2b60e0",
-            "partes[0][nome]": "Mateus Soares Diniz",
-            "partes[0][email]": "mateus@resenhadocafe.com.br",
-            "partes[0][cpf]": "00888766165",
-            "partes[0][nascimento]": "1987-10-19",
-            "partes[0][empresa]": "Assad & Diniz Services",
-            "partes[0][ordem]": "0",
-            "partes[0][assinatura][formato]": "s",
-            "partes[0][assinatura][imagem]": "",
-            "partes[0][funcao]": "assinar",
-            "partes[0][created]": "2024-07-25 15:33:05",
-            "partes[0][visualizado][created]": "2024-07-25 15:33:05",
-            "partes[0][visualizado][ipv4]": "179.216.21.71",
-            "partes[0][visualizado][geotrack][country]": "Brazil",
-            "partes[0][visualizado][geotrack][countryISO]": "BR",
-            "partes[0][visualizado][geotrack][state]": "Santa Catarina",
-            "partes[0][visualizado][geotrack][stateISO]": "SC",
-            "partes[0][visualizado][geotrack][city]": "Criciúma",
-            "partes[0][visualizado][geotrack][latitude]": "-28.6752",
-            "partes[0][visualizado][geotrack][longitude]": "-49.3686",
-            "partes[0][assinado][created]": "2024-07-25 15:33:07",
-            "partes[0][assinado][ipv4]": "179.216.21.71",
-            "partes[0][assinado][geotrack][country]": "Brazil",
-            "partes[0][assinado][geotrack][countryISO]": "BR",
-            "partes[0][assinado][geotrack][state]": "Santa Catarina",
-            "partes[0][assinado][geotrack][stateISO]": "SC",
-            "partes[0][assinado][geotrack][city]": "Criciúma",
-            "partes[0][assinado][geotrack][latitude]": "-28.6752",
-            "partes[0][assinado][geotrack][longitude]": "-49.3686",
-            "partes[1][uuid]": "550884354ab411efa9b542010a2b60e0",
-            "partes[1][nome]": "Luana Danieli Adam",
-            "partes[1][email]": "luanaadam123@gmail.com",
-            "partes[1][cpf]": "04369784077",
-            "partes[1][nascimento]": "2002-03-12",
-            "partes[1][ordem]": "1",
-            "partes[1][assinatura][formato]": "d",
-            "partes[1][assinatura][imagem]": "",
-            "partes[1][funcao]": "assinar",
-            "partes[1][created]": "2024-07-25 15:33:05",
-            "partes[1][visualizado][created]": "2024-07-25 15:40:27",
-            "partes[1][visualizado][ipv4]": "45.187.41.25",
-            "partes[1][visualizado][geotrack][country]": "Brazil",
-            "partes[1][visualizado][geotrack][countryISO]": "BR",
-            "partes[1][visualizado][geotrack][state]": "Rio Grande do Sul",
-            "partes[1][visualizado][geotrack][stateISO]": "RS",
-            "partes[1][visualizado][geotrack][city]": "Três Coroas",
-            "partes[1][visualizado][geotrack][zipcode]": "95660",
-            "partes[1][visualizado][geotrack][latitude]": "-29.466",
-            "partes[1][visualizado][geotrack][longitude]": "-50.7768",
-            "partes[1][assinado][created]": "2024-07-25 15:40:27",
-            "partes[1][assinado][ipv4]": "45.187.41.25",
-            "partes[1][assinado][geotrack][country]": "Brazil",
-            "partes[1][assinado][geotrack][countryISO]": "BR",
-            "partes[1][assinado][geotrack][state]": "Rio Grande do Sul",
-            "partes[1][assinado][geotrack][stateISO]": "RS",
-            "partes[1][assinado][geotrack][city]": "Três Coroas",
-            "partes[1][assinado][geotrack][zipcode]": "95660",
-            "partes[1][assinado][geotrack][latitude]": "-29.466",
-            "partes[1][assinado][geotrack][longitude]": "-50.7768",
-            "partes[1][mail][sent]": "2024-07-25 15:33:06",
-            "partes[1][mail][delivered]": "2024-07-25 15:33:08",
-            "documento[uuid]": "8a6313c5f4400a2d3aac7f1f4bc80e5fabbfd32e9378f173b",
-            "documento[nome]": "Contrato Automação - Luana Danieli Adam",
-            "documento[rejeitavel]": "0",
-            "documento[ordenavel]": "0",
-            "documento[created]": "2024-07-25 15:33:05",
-            "documento[updated]": "2024-07-25 15:40:27",
-            "documento[transacao]": "0",
-            "documento[pendente]": "0",
-            "documento[publicado]": "2024-07-25 15:33:05",
-            "documento[disponivel]": "1",
-            "organizacao": "1",
-            "remetente[nome]": "Mateus Soares Diniz",
-            "remetente[empresa]": "Assad & Diniz Services",
-            "remetente[email]": "mateus@resenhadocafe.com.br",
-            "remetente[cpf]": "00888766165",
-            "remetente[nascimento]": "1987-10-19",
-            "arquivo[original]": "https://storage.googleapis.com/d6e/fb0eb4576654c56665998221249b732a/ezzUydVP7pnFV0SFvl7vEKJy56RZNeLJUwZE8sCl.original.pdf",
-            "arquivo[assinado]": "https://api.autentique.com.br/documentos/8a6313c5f4400a2d3aac7f1f4bc80e5fabbfd32e9378f173b/assinado.pdf"
+            "partes": [
+              {
+                "0": true,
+                "uuid": "6498fad7be2d11ef9d0342010a2b610d",
+                "nome": "Automagic Bots",
+                "email": "acessos@automagicbots.com.br",
+                "celular": null,
+                "cpf": "47022471827",
+                "nascimento": "2002-03-29",
+                "empresa": null,
+                "escavador": null,
+                "ordem": 0,
+                "posicao": [
+                  {
+                    "x": "40.6801007556675",
+                    "y": "55.98831548198636",
+                    "z": 8,
+                    "angle": 0,
+                    "element": "signature"
+                  }
+                ],
+                "assinatura": {
+                  "formato": "s",
+                  "imagem": ""
+                },
+                "funcao": "assinar",
+                "created": "2024-12-19 14:19:24",
+                "visualizado": {
+                  "created": "2024-12-19 14:19:24",
+                  "motivo": null,
+                  "ipv4": "179.216.21.112",
+                  "geotrack": {
+                    "country": "Brazil",
+                    "countryISO": "BR",
+                    "state": "Santa Catarina",
+                    "stateISO": "SC",
+                    "city": "Criciúma",
+                    "zipcode": null,
+                    "latitude": -28.6752,
+                    "longitude": -49.3686
+                  }
+                },
+                "assinado": {
+                  "created": "2024-12-19 14:19:33",
+                  "motivo": null,
+                  "ipv4": "179.216.21.112",
+                  "geotrack": {
+                    "country": "Brazil",
+                    "countryISO": "BR",
+                    "state": "Santa Catarina",
+                    "stateISO": "SC",
+                    "city": "Criciúma",
+                    "zipcode": null,
+                    "latitude": -28.6752,
+                    "longitude": -49.3686
+                  }
+                },
+                "rejeitado": {},
+                "mail": {
+                  "sent": null,
+                  "opened": null,
+                  "refused": null,
+                  "delivered": null,
+                  "reason": null
+                },
+                "anterior": null
+              },
+              {
+                "0": true,
+                "uuid": "649cd6b8be2d11ef9d0342010a2b610d",
+                "nome": null,
+                "email": "mateusdiniz@automagicbots.com.br",
+                "celular": null,
+                "cpf": null,
+                "nascimento": null,
+                "empresa": null,
+                "escavador": null,
+                "ordem": 1,
+                "posicao": [
+                  {
+                    "x": "41.687657430730475",
+                    "y": "46.640701071080784",
+                    "z": 8,
+                    "angle": 0,
+                    "element": "signature"
+                  }
+                ],
+                "assinatura": {
+                  "formato": "s",
+                  "imagem": ""
+                },
+                "funcao": "assinar",
+                "created": "2024-12-19 14:19:24",
+                "visualizado": {},
+                "assinado": {},
+                "rejeitado": {},
+                "mail": {
+                  "sent": "2024-12-19 14:19:24",
+                  "opened": null,
+                  "refused": null,
+                  "delivered": "2024-12-19 14:19:28",
+                  "reason": null
+                },
+                "anterior": null
+              }
+            ],
+            "documento": {
+              "uuid": "ba663f75c620a02606db871b60d260cfe62f2c2fce2ea7d46",
+              "nome": "2024_Contrato de Mentoria - Lilian Cidreira.docx",
+              "rejeitavel": false,
+              "ordenavel": false,
+              "created": "2024-12-19 14:19:24",
+              "updated": "2024-12-19 14:19:33",
+              "excluido": null,
+              "transacao": false,
+              "funcao": null,
+              "pendente": 1,
+              "assinatura": null,
+              "publicado": "2024-12-19 14:19:24",
+              "disponivel": true
+            },
+            "organizacao": true,
+            "remetente": {
+              "nome": "Automagic Bots",
+              "empresa": null,
+              "email": "acessos@automagicbots.com.br",
+              "cpf": "47022471827",
+              "nascimento": "2002-03-29"
+            },
+            "arquivo": {
+              "original": "https://storage.googleapis.com/d6e/58d93b9776e407db27ff4471df4b0c40/zBSZZItEBxEToGMDKk4tOhZfVRilIO2hvpOdw60K.original.pdf",
+              "assinado": "https://api.autentique.com.br/documentos/ba663f75c620a02606db871b60d260cfe62f2c2fce2ea7d46/assinado.pdf"
+            }
           },
-          "webhookUrl": "https://n8nwebhook.resenhadocafe.com.br/webhook/contrato-assinado",
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/contrato-assinado-autentique-hetzner",
           "executionMode": "production"
         }
       }
@@ -466,6 +529,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-19T14:37:23.971Z",
-  "versionId": "88f349e1-00c1-49d0-b401-a9c9bb045b77"
+  "updatedAt": "2024-12-19T20:46:27.392Z",
+  "versionId": "21346af5-0b28-4cbf-a243-61e3ac654746"
 }
