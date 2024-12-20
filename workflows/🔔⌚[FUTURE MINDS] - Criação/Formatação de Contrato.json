@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian",
+            "node": "converte_to_PDF",
             "type": "main",
             "index": 0
           }
@@ -49,7 +49,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian1",
+            "node": "converte_to_PDF1",
             "type": "main",
             "index": 0
           }
@@ -93,7 +93,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian2",
+            "node": "converte_to_PDF2",
             "type": "main",
             "index": 0
           }
@@ -155,7 +155,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian3",
+            "node": "converte_to_PDF3",
             "type": "main",
             "index": 0
           }
@@ -282,7 +282,7 @@
       "main": [
         [
           {
-            "node": "closer_juliana",
+            "node": "notificacao_lead",
             "type": "main",
             "index": 0
           }
@@ -304,7 +304,7 @@
       "main": [
         [
           {
-            "node": "notificacao_bc_lilian4",
+            "node": "converte_to_PDF4",
             "type": "main",
             "index": 0
           }
@@ -493,6 +493,229 @@
           }
         ]
       ]
+    },
+    "converte_to_PDF": {
+      "main": [
+        [
+          {
+            "node": "envia_no_autentique",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_no_autentique": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "converte_to_PDF1": {
+      "main": [
+        [
+          {
+            "node": "envia_no_autentique1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_no_autentique1": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "converte_to_PDF2": {
+      "main": [
+        [
+          {
+            "node": "envia_no_autentique2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_no_autentique2": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "converte_to_PDF3": {
+      "main": [
+        [
+          {
+            "node": "envia_no_autentique3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_no_autentique3": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "converte_to_PDF4": {
+      "main": [
+        [
+          {
+            "node": "envia_no_autentique4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_no_autentique4": {
+      "main": [
+        [
+          {
+            "node": "notificacao_bc_lilian4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificacao_lead": {
+      "main": [
+        [
+          {
+            "node": "closer_juliana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead2": {
+      "main": [
+        [
+          {
+            "node": "lead_não_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_não_existe": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cadastra_agendamento_verificacoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user1": {
+      "main": [
+        [
+          {
+            "node": "user_não_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fim": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "user_não_existe": {
+      "main": [
+        [
+          {
+            "node": "insere_dados2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cadastra_agendamento_verificacoes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insere_dados2": {
+      "main": [
+        [
+          {
+            "node": "cadastra_agendamento_verificacoes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-04-24T16:40:15.806Z",
@@ -671,8 +894,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -660,
-        1540
+        -420,
+        1600
       ]
     },
     {
@@ -846,7 +1069,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_modus_inovandi\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis\"].json[\"Email\"] }} pelo {{ $node[\"variaveis\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis\"].json[\"Telefone\"] }}"
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link: https://drive.google.com/file/d/{{ $node[\"converte_to_PDF\"].json[\"documentId\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"variaveis\"].json[\"ferramenta_contrato\"] }} e enviado para o cliente no e-mail {{ $node[\"variaveis\"].json[\"Email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis\"].json[\"Telefone\"] }}"
             }
           ]
         },
@@ -863,7 +1086,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -760,
         1220
       ],
       "id": "7b4848b1-5859-459f-9c60-4b833ff324b3",
@@ -1094,7 +1317,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis1\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_modus_inovandi_start\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis1\"].json[\"Email\"] }} pelo {{ $node[\"variaveis1\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis1\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis1\"].json[\"Telefone\"] }}"
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis1\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://drive.google.com/file/d/{{ $node[\"converte_to_PDF1\"].json[\"documentId\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"variaveis1\"].json[\"ferramenta_contrato\"] }} e enviado para o cliente no e-mail {{ $node[\"variaveis1\"].json[\"Email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis1\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis1\"].json[\"Telefone\"] }}"
             }
           ]
         },
@@ -1111,7 +1334,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -740,
         1420
       ],
       "id": "0f83518f-07fa-4cb8-828b-2a581cfedf46",
@@ -1373,7 +1596,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis2\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis2\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_metodo_modus_inovandi\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis2\"].json[\"Email\"] }} pelo {{ $node[\"variaveis2\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis2\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis2\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis2\"].json[\"Telefone\"] }}"
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis2\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis2\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://drive.google.com/file/d/{{ $node[\"converte_to_PDF2\"].json[\"documentId\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"variaveis2\"].json[\"ferramenta_contrato\"] }} e enviado para o cliente no e-mail {{ $node[\"variaveis2\"].json[\"Email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis2\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis2\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis2\"].json[\"Telefone\"] }}"
             }
           ]
         },
@@ -1390,7 +1613,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -720,
         1600
       ],
       "id": "c4755310-215b-4e8f-823a-ec875acdc76a",
@@ -1685,7 +1908,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis3\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis3\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_mentoria-c-level\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis3\"].json[\"Email\"] }} pelo {{ $node[\"variaveis3\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis3\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis3\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis3\"].json[\"Telefone\"] }}"
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis3\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis3\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://drive.google.com/file/d/{{ $node[\"converte_to_PDF3\"].json[\"documentId\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"variaveis3\"].json[\"ferramenta_contrato\"] }} e enviado para o cliente no e-mail {{ $node[\"variaveis3\"].json[\"Email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis3\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis3\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis3\"].json[\"Telefone\"] }}"
             }
           ]
         },
@@ -1702,7 +1925,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -720,
         1780
       ],
       "id": "f74f925a-8f97-4dd8-9bdb-457135d8cefe",
@@ -1831,7 +2054,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis4\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis4\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"duplica_contrato_mentoria_melhor_versao\"].json[\"id\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"variaveis4\"].json[\"Email\"] }} pelo {{ $node[\"variaveis4\"].json[\"ferramenta_contrato\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis4\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis4\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis4\"].json[\"Telefone\"] }}"
+              "value": "=🔔 *NOVO CONTRATO*\n\nO cliente {{ $node[\"variaveis4\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"variaveis4\"].json[\"ID FORMS\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://drive.google.com/file/d/{{ $node[\"converte_to_PDF4\"].json[\"documentId\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"variaveis4\"].json[\"ferramenta_contrato\"] }} e enviado para o cliente no e-mail {{ $node[\"variaveis4\"].json[\"Email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"variaveis4\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"variaveis4\"].json[\"Telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"variaveis4\"].json[\"Telefone\"] }}"
             }
           ]
         },
@@ -1848,7 +2071,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -720,
         1960
       ],
       "id": "2d4a50cb-deb8-40a5-ada8-31e8d57e3463",
@@ -1981,8 +2204,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -460,
-        1540
+        -240,
+        1600
       ],
       "id": "c3365072-a810-40b2-9cc4-c282f2cd75d2",
       "continueOnFail": true
@@ -2158,8 +2381,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        400,
-        1520
+        780,
+        1580
       ]
     },
     {
@@ -2192,8 +2415,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        140,
-        1840
+        200,
+        1980
       ],
       "id": "d22aecfd-a335-4fc9-8d63-994cbeb3b71b",
       "continueOnFail": true
@@ -2262,8 +2485,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -260,
-        1540
+        120,
+        1600
       ]
     },
     {
@@ -2282,8 +2505,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -40,
-        1680
+        340,
+        1780
       ]
     },
     {
@@ -2315,7 +2538,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *REVISÃO DE CONTRATO - GIL*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} pelo {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+              "value": "=🔔 *REVISÃO DE CONTRATO - GIL*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }} e enviado para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
             }
           ]
         },
@@ -2332,8 +2555,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -40,
-        1520
+        340,
+        1580
       ],
       "id": "7fb767f7-29f4-415f-9ea2-2ee41d4a0056",
       "continueOnFail": true
@@ -2351,7 +2574,7 @@
             },
             {
               "name": "value",
-              "value": "=🔔 *REVISÃO DE CONTRATO - PAULA*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo para subir e enviar para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} pelo {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }}.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+              "value": "=🔔 *REVISÃO DE CONTRATO - PAULA*\n\nO cliente {{ $node[\"infos_bc1\"].json[\"nome\"] }}, acabou de preencher o contrato da {{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}. O arquivo foi gerado no link:  https://docs.google.com/document/d/{{ $node[\"infos_bc1\"].json[\"id_contrato_duplicado\"] }}/edit\n\n🚨 Confira se está tudo certo pois o contrato já foi subido no {{ $node[\"infos_bc1\"].json[\"ferramenta_de_contarto2\"] }} e enviado para o cliente no e-mail {{ $node[\"infos_bc1\"].json[\"email\"] }} para assinar.\n\n.................................\n*Nome do Cliente:* {{ $node[\"infos_bc1\"].json[\"nome\"] }}\n*Telefone do Cliente:* +{{ $node[\"infos_bc1\"].json[\"telefone\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
             }
           ]
         },
@@ -2368,8 +2591,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        160,
-        1660
+        560,
+        1720
       ],
       "id": "adfb86a4-f50d-4ac9-9807-5ff6c8553a4c",
       "continueOnFail": true
@@ -2389,6 +2612,822 @@
         1600
       ],
       "webhookId": "c1751a5b-f78f-419f-be85-b895f944204e"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node[\"formata_contrato_automacoes\"].json[\"documentId\"] }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf",
+              "sheetsToFormat": "application/pdf"
+            }
+          },
+          "fileName": "Contrato.pdf"
+        }
+      },
+      "name": "converte_to_PDF",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        1220
+      ],
+      "id": "9fb76cb5-a91e-47a7-9301-01330f0cf19e",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer 42fbd86da0bab9284cb3f417ceba6d851661c617004b944a270293b95ac8d10a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operations",
+              "value": "={\"query\":\"mutation CreateDocumentMutation($document: DocumentInput!, $signers: [SignerInput!]!, $file: Upload!) {createDocument(sandbox: false, document: $document, signers: $signers, file: $file) {id name refusable sortable created_at signatures { public_id name email created_at action { name } link { short_link } user { id name email }}}}\", \"variables\":{\"document\": {\"name\": \"{{ $node[\"variaveis\"].json[\"nome\"].toUpperCase() }} - {{ $node[\"duplica_contrato_modus_inovandi\"].json[\"name\"] }}.toUpperCase() }}\"},\"signers\": [{\"email\": \"{{ $node[\"tratar_dados\"].json[\"email\"] }}\",\"action\": \"SIGN\"}],\"file\": \"https://drive.google.com/file/d/{{ $node[\"converte_to_PDF\"].json[\"documentId\"] }}/\"}}"
+            },
+            {
+              "name": "map",
+              "value": "{\"file\": [\"variables.file\"]}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "c2cb8678-791d-4705-affc-05a5072e4920",
+      "name": "envia_no_autentique",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -960,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node[\"formata_contrato_automacoes2\"].json[\"documentId\"] }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf",
+              "sheetsToFormat": "application/pdf"
+            }
+          },
+          "fileName": "Contrato.pdf"
+        }
+      },
+      "name": "converte_to_PDF1",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        1420
+      ],
+      "id": "a2469ce2-c375-421a-b3bf-28802ce2e344",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer 42fbd86da0bab9284cb3f417ceba6d851661c617004b944a270293b95ac8d10a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operations",
+              "value": "={\"query\":\"mutation CreateDocumentMutation($document: DocumentInput!, $signers: [SignerInput!]!, $file: Upload!) {createDocument(sandbox: false, document: $document, signers: $signers, file: $file) {id name refusable sortable created_at signatures { public_id name email created_at action { name } link { short_link } user { id name email }}}}\", \"variables\":{\"document\": {\"name\": \"{{ $node[\"variaveis1\"].json[\"nome\"].toUpperCase() }} - {{ $node[\"duplica_contrato_modus_inovandi_start\"].json[\"name\"] }}.toUpperCase() }}\"},\"signers\": [{\"email\": \"{{ $node[\"tratar_dados2\"].json[\"email\"] }}\",\"action\": \"SIGN\"}],\"file\": \"https://drive.google.com/file/d/{{ $node[\"converte_to_PDF1\"].json[\"documentId\"] }}/\"}}"
+            },
+            {
+              "name": "map",
+              "value": "{\"file\": [\"variables.file\"]}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "48a628cc-97b6-45a0-b4f4-bfc3a5b4c5bc",
+      "name": "envia_no_autentique1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -960,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node[\"formata_contrato_automacoes3\"].json[\"documentId\"] }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf",
+              "sheetsToFormat": "application/pdf"
+            }
+          },
+          "fileName": "Contrato.pdf"
+        }
+      },
+      "name": "converte_to_PDF2",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        1600
+      ],
+      "id": "b0f6bd21-5052-472b-9efb-be82f4ab2514",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer 42fbd86da0bab9284cb3f417ceba6d851661c617004b944a270293b95ac8d10a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operations",
+              "value": "={\"query\":\"mutation CreateDocumentMutation($document: DocumentInput!, $signers: [SignerInput!]!, $file: Upload!) {createDocument(sandbox: false, document: $document, signers: $signers, file: $file) {id name refusable sortable created_at signatures { public_id name email created_at action { name } link { short_link } user { id name email }}}}\", \"variables\":{\"document\": {\"name\": \"{{ $node[\"variaveis2\"].json[\"nome\"].toUpperCase() }} - {{ $node[\"duplica_contrato_metodo_modus_inovandi\"].json[\"name\"] }}.toUpperCase() }}\"},\"signers\": [{\"email\": \"{{ $node[\"tratar_dados4\"].json[\"email\"] }}\",\"action\": \"SIGN\"}],\"file\": \"https://drive.google.com/file/d/{{ $node[\"converte_to_PDF2\"].json[\"documentId\"] }}/\"}}"
+            },
+            {
+              "name": "map",
+              "value": "{\"file\": [\"variables.file\"]}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "753e35b8-12af-45f9-99ba-ce2cf1afdab2",
+      "name": "envia_no_autentique2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -960,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node[\"formata_contrato_automacoes4\"].json[\"documentId\"] }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf",
+              "sheetsToFormat": "application/pdf"
+            }
+          },
+          "fileName": "Contrato.pdf"
+        }
+      },
+      "name": "converte_to_PDF3",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        1780
+      ],
+      "id": "72348f24-6a66-4465-a97e-47f9dfa9cc6a",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer 42fbd86da0bab9284cb3f417ceba6d851661c617004b944a270293b95ac8d10a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operations",
+              "value": "={\"query\":\"mutation CreateDocumentMutation($document: DocumentInput!, $signers: [SignerInput!]!, $file: Upload!) {createDocument(sandbox: false, document: $document, signers: $signers, file: $file) {id name refusable sortable created_at signatures { public_id name email created_at action { name } link { short_link } user { id name email }}}}\", \"variables\":{\"document\": {\"name\": \"{{ $node[\"variaveis3\"].json[\"nome\"].toUpperCase() }} - {{ $node[\"duplica_contrato_mentoria-c-level\"].json[\"name\"] }}.toUpperCase() }}\"},\"signers\": [{\"email\": \"{{ $node[\"tratar_dados5\"].json[\"email\"] }}\",\"action\": \"SIGN\"}],\"file\": \"https://drive.google.com/file/d/{{ $node[\"converte_to_PDF3\"].json[\"documentId\"] }}/\"}}"
+            },
+            {
+              "name": "map",
+              "value": "{\"file\": [\"variables.file\"]}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "db5598ab-f5a5-4d32-8583-88b108feb75f",
+      "name": "envia_no_autentique3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -960,
+        1780
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $node[\"formata_contrato_automacoes5\"].json[\"documentId\"] }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf",
+              "sheetsToFormat": "application/pdf"
+            }
+          },
+          "fileName": "Contrato.pdf"
+        }
+      },
+      "name": "converte_to_PDF4",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        1960
+      ],
+      "id": "c6deb258-1ec2-4aff-8a08-a07b33c27216",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "8oagOOdGXxrWgoeK",
+          "name": "[Google Drive] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer 42fbd86da0bab9284cb3f417ceba6d851661c617004b944a270293b95ac8d10a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operations",
+              "value": "={\"query\":\"mutation CreateDocumentMutation($document: DocumentInput!, $signers: [SignerInput!]!, $file: Upload!) {createDocument(sandbox: false, document: $document, signers: $signers, file: $file) {id name refusable sortable created_at signatures { public_id name email created_at action { name } link { short_link } user { id name email }}}}\", \"variables\":{\"document\": {\"name\": \"{{ $node[\"variaveis4\"].json[\"nome\"].toUpperCase() }} - {{ $node[\"duplica_contrato_mentoria_melhor_versao\"].json[\"name\"] }}.toUpperCase() }}\"},\"signers\": [{\"email\": \"{{ $node[\"tratar_dados6\"].json[\"email\"] }}\",\"action\": \"SIGN\"}],\"file\": \"https://drive.google.com/file/d/{{ $node[\"converte_to_PDF4\"].json[\"documentId\"] }}/\"}}"
+            },
+            {
+              "name": "map",
+              "value": "{\"file\": [\"variables.file\"]}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "f7b52246-5fae-4825-8721-6418d852a0ba",
+      "name": "envia_no_autentique4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -960,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastrar_contato\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Seu contrato já está disponivel para assinatura. \n\nAcesse seu e-mail, foi enviado lá as instruções para assinatura do seu contrato."
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"infos_bc1\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "notificacao_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -60,
+        1600
+      ],
+      "id": "5377d97d-1c66-489c-98cf-a8117f7ce764",
+      "disabled": true,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "6fddedbd-0666-4b34-8bc1-939628d3aaf7",
+      "name": "pesquisa_lead2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1140,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "=+{{ $node[\"infos_bc1\"].json[\"email\"]  || '-----------------------'}}"
+            },
+            {
+              "column": "email2",
+              "value": "=+{{ $node[\"infos_bc1\"].json[\"email\"]  || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "a0569461-9d2a-4504-a5d8-1601b9ea72ed",
+      "name": "pesquisa_lead",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        1580
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "08b9ba4c-3b6e-4e6d-81e8-4bcd6291f5a9",
+              "leftValue": "={{ $node[\"pesquisa_lead\"].json[\"success\"] }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ed5c8eaf-8913-48fa-bdc2-3cb4241aab81",
+      "name": "lead_não_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "=+{{ $node[\"infos_bc1\"].json[\"email\"]  || '-----------------------'}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a63f1fc3-e316-4b9b-91d0-45fe121dc5b5",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1520,
+        1500
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "bc5f3ada-a325-4213-8cdb-c831f5339cb0",
+      "name": "pesquisa_user1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1700,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "08b9ba4c-3b6e-4e6d-81e8-4bcd6291f5a9",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"success\"] }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "60b95f50-d9db-4ac1-b4a4-44eb115cbaab",
+      "name": "user_não_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1880,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "agendamento_verificacoes",
+          "mode": "list",
+          "cachedResultName": "agendamento_verificacoes"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
+            },
+            {
+              "column": "nome_contrato",
+              "value": "={{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}"
+            },
+            {
+              "column": "assinou",
+              "value": "N"
+            },
+            {
+              "column": "data",
+              "value": "={{ $now.plus({ days: 1 }).toFormat('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e33f457f-bed1-480f-a658-b3ba1ce5500c",
+      "name": "cadastra_agendamento_verificacoes",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.3,
+      "position": [
+        1520,
+        1760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "agendamento_verificacoes",
+          "mode": "list",
+          "cachedResultName": "agendamento_verificacoes"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_user",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"id\"] }}"
+            },
+            {
+              "column": "nome_contrato",
+              "value": "={{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}"
+            },
+            {
+              "column": "assinou",
+              "value": "N"
+            },
+            {
+              "column": "data",
+              "value": "={{ $now.plus({ days: 1 }).toFormat('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b0519c71-e079-4c0a-bcd5-d1b6a21b11c0",
+      "name": "cadastra_agendamento_verificacoes1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.3,
+      "position": [
+        2140,
+        1640
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"infos_bc1\"].json[\"nome\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"infos_bc1\"].json[\"email\"] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"infos_bc1\"].json[\"telefone\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{$node[\"infos_bc1\"].json[\"nome\"].split(' ')[1] ? $node[\"infos_bc1\"].json[\"nome\"].split(' ').slice(1).join(\" \") : \".\"}}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "fbfb800d-98ea-46bb-abee-125e5932a7be",
+      "name": "insere_dados2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2140,
+        1380
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "agendamento_verificacoes",
+          "mode": "list",
+          "cachedResultName": "agendamento_verificacoes"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"insere_dados2\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "column": "nome_contrato",
+              "value": "={{ $node[\"infos_bc1\"].json[\"nome_do_contarto\"].replace('vIqpVdJT','Mentoria Modus Inovandi (Inteira)').replace('g1qUQG0W','Mentoria Modus Inovandi Start').replace('GH5fCnKX','Método Modus Inovandi').replace('StTjBpch','Mentoria C - Level').replace('SLx7Bw2O','Mentoria Minha Melhor Versão') }}"
+            },
+            {
+              "column": "assinou",
+              "value": "N"
+            },
+            {
+              "column": "data",
+              "value": "={{ $now.plus({ days: 1 }).toFormat('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4165b9dc-5130-4e4e-8545-3fe4205eb4da",
+      "name": "cadastra_agendamento_verificacoes2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.3,
+      "position": [
+        2320,
+        1380
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
     }
   ],
   "pinData": {
@@ -3499,6 +4538,6 @@
   },
   "tags": [],
   "triggerCount": 5,
-  "updatedAt": "2024-09-02T18:56:26.072Z",
-  "versionId": "348a67fc-3e78-4cd0-ab83-e892afe925ac"
+  "updatedAt": "2024-12-19T20:28:03.231Z",
+  "versionId": "5fa2c77f-fef0-4c20-9184-7beb59a55172"
 }
