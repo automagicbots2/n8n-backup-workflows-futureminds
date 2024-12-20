@@ -444,7 +444,7 @@
       "typeVersion": 1,
       "position": [
         -80,
-        220
+        180
       ],
       "credentials": {
         "clickUpOAuth2Api": {
@@ -465,6 +465,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T13:35:13.902Z",
-  "versionId": "e2f113e6-43d4-4477-9fa1-b9a15bd33b58"
+  "updatedAt": "2024-12-20T14:34:54.911Z",
+  "versionId": "e74a8985-e803-496c-aaa0-b38178cb2fdd"
 }
