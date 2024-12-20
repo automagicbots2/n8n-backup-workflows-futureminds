@@ -293,8 +293,8 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        620,
-        680
+        560,
+        660
       ],
       "credentials": {
         "rabbitmq": {
@@ -332,8 +332,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        800,
-        680
+        740,
+        660
       ]
     },
     {
@@ -2524,6 +2524,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-03T15:12:35.232Z",
-  "versionId": "d7a94c78-c910-4e9a-b5a4-37e473da4ae6"
+  "updatedAt": "2024-12-19T17:34:26.960Z",
+  "versionId": "a9112183-fde3-45c2-87df-7c87cdc04a34"
 }
