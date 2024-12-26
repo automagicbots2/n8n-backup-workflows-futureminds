@@ -725,8 +725,7 @@
               "rightValue": "Pesquisa Preenchida",
               "operator": {
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "operation": "contains"
               }
             }
           ],
@@ -753,6 +752,34 @@
               {
                 "field": "=221",
                 "value": "Sim"
+              },
+              {
+                "field": "197",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+              },
+              {
+                "field": "199",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+              },
+              {
+                "field": "195",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+              },
+              {
+                "field": "196",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+              },
+              {
+                "field": "=224",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+              },
+              {
+                "field": "=225",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+              },
+              {
+                "field": "=226",
+                "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
               }
             ]
           },
@@ -848,8 +875,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-EoIfaMYgg4mHw-mHqhrY8Q",
-            "deliveryTag": 7,
+            "consumerTag": "amq.ctag-pzEY5BpM1eiJrr7X7Ycojw",
+            "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "WEB001 - Criação ActiveCampaign"
@@ -861,12 +888,19 @@
             "nome": "Mateus",
             "sobrenome": "Diniz",
             "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "5562981196678",
+            "telefone": "556281196678",
             "nome_do_evento": "Webinario",
             "edicao_do_evento": "1",
-            "id_user": "2",
-            "situacao": "Entrou no Grupo",
-            "funil": "11"
+            "id_user": "1535",
+            "situacao": "Pesquisa Preenchida - Quente",
+            "funil": "11",
+            "pergunta1": "Coordenador",
+            "pergunta2": "Graduação",
+            "pergunta3": "Entre R$7.500 e R$8.999",
+            "pergunta4": "Não usei",
+            "pergunta5": "Iniciante",
+            "pergunta6": "teste",
+            "pergunta7": null
           }
         }
       }
@@ -2371,6 +2405,30 @@
               "cdate": "2024-11-14T12:44:11-06:00",
               "links": [],
               "id": "288"
+            },
+            {
+              "field": "224",
+              "relid": "0",
+              "dorder": "0",
+              "cdate": "2024-12-25T13:53:19-06:00",
+              "links": [],
+              "id": "289"
+            },
+            {
+              "field": "225",
+              "relid": "0",
+              "dorder": "0",
+              "cdate": "2024-12-25T13:53:35-06:00",
+              "links": [],
+              "id": "290"
+            },
+            {
+              "field": "226",
+              "relid": "0",
+              "dorder": "0",
+              "cdate": "2024-12-25T13:53:41-06:00",
+              "links": [],
+              "id": "291"
             }
           ],
           "fields": [
@@ -7796,10 +7854,97 @@
                 "relations": "https://futureminds14016.api-us1.com/api/3/fields/223/relations"
               },
               "id": "223"
+            },
+            {
+              "title": "Você já usou o Linkedin pra conseguir algum emprego ou promoção?",
+              "descript": "",
+              "type": "text",
+              "isrequired": "0",
+              "perstag": "VOC_J_USOU_O_LINKEDIN_PRA_CONSEGUIR_ALGUM_EMPREGO_OU_PROMOO",
+              "defval": "",
+              "show_in_list": "0",
+              "rows": "0",
+              "cols": "0",
+              "visible": "1",
+              "service": "",
+              "ordernum": "172",
+              "cdate": "2024-12-25T13:53:18-06:00",
+              "udate": "2024-12-25T13:53:18-06:00",
+              "created_timestamp": "2024-12-25 13:53:18",
+              "updated_timestamp": "2024-12-25 13:53:18",
+              "created_by": "14",
+              "updated_by": "14",
+              "options": [],
+              "relations": [
+                "289"
+              ],
+              "links": {
+                "options": "https://futureminds14016.api-us1.com/api/3/fields/224/options",
+                "relations": "https://futureminds14016.api-us1.com/api/3/fields/224/relations"
+              },
+              "id": "224"
+            },
+            {
+              "title": "Quando o assunto é Linkedin, Qual nível de conhecimento você está?",
+              "descript": "",
+              "type": "text",
+              "isrequired": "0",
+              "perstag": "QUANDO_O_ASSUNTO_LINKEDIN_QUAL_NVEL_DE_CONHECIMENTO_VOC_EST",
+              "defval": "",
+              "show_in_list": "0",
+              "rows": "0",
+              "cols": "0",
+              "visible": "1",
+              "service": "",
+              "ordernum": "173",
+              "cdate": "2024-12-25T13:53:35-06:00",
+              "udate": "2024-12-25T13:53:35-06:00",
+              "created_timestamp": "2024-12-25 13:53:35",
+              "updated_timestamp": "2024-12-25 13:53:35",
+              "created_by": "14",
+              "updated_by": "14",
+              "options": [],
+              "relations": [
+                "290"
+              ],
+              "links": {
+                "options": "https://futureminds14016.api-us1.com/api/3/fields/225/options",
+                "relations": "https://futureminds14016.api-us1.com/api/3/fields/225/relations"
+              },
+              "id": "225"
+            },
+            {
+              "title": "Se você tivesse 1h comigo para tirar suas dúvidas, qual a principal coisa que gostaria que eu te ajudasse?",
+              "descript": "",
+              "type": "text",
+              "isrequired": "0",
+              "perstag": "SE_VOC_TIVESSE_1H_COMIGO_PARA_TIRAR_SUAS_DVIDAS_QUAL_A_PRINCIPAL_COISA_QUE_GOSTARIA_QUE_EU_TE_AJUDASSE",
+              "defval": "",
+              "show_in_list": "0",
+              "rows": "0",
+              "cols": "0",
+              "visible": "1",
+              "service": "",
+              "ordernum": "174",
+              "cdate": "2024-12-25T13:53:41-06:00",
+              "udate": "2024-12-25T13:53:41-06:00",
+              "created_timestamp": "2024-12-25 13:53:41",
+              "updated_timestamp": "2024-12-25 13:53:41",
+              "created_by": "14",
+              "updated_by": "14",
+              "options": [],
+              "relations": [
+                "291"
+              ],
+              "links": {
+                "options": "https://futureminds14016.api-us1.com/api/3/fields/226/options",
+                "relations": "https://futureminds14016.api-us1.com/api/3/fields/226/relations"
+              },
+              "id": "226"
             }
           ],
           "meta": {
-            "total": "187",
+            "total": "190",
             "selected": null
           }
         }
@@ -7824,6 +7969,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-15T01:15:57.335Z",
-  "versionId": "e8b27aa6-cd7a-4558-bb47-eba16cd65bcf"
+  "updatedAt": "2024-12-25T20:03:55.236Z",
+  "versionId": "72961e59-c421-4e15-b48d-9526fbb8c730"
 }
