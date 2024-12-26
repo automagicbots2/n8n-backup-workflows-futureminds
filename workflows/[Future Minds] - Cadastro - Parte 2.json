@@ -1068,7 +1068,7 @@
           "values": [
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
             },
             {
               "column": "id_funil",
@@ -1170,7 +1170,7 @@
           "values": [
             {
               "column": "email",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || '-----------------------' }}"
             }
           ]
         },
@@ -1240,7 +1240,7 @@
           "values": [
             {
               "column": "id",
-              "value": "={{ $node[\"pesquisa_email\"].json[\"id_user\"] }}"
+              "value": "={{ $node[\"pesquisa_email\"].json[\"id_user\"] || '-----------------------'}}"
             }
           ]
         },
@@ -1541,7 +1541,7 @@
           "values": [
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
             },
             {
               "column": "id_funil",
@@ -1642,7 +1642,7 @@
           "values": [
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{ $node[\"pesquisa_user1\"].runIndex >= 0    ?    $node[\"pesquisa_user1\"].json[\"id\"]  :  $node[\"pesquisa_user\"].json[\"id\"] }}"
             },
             {
               "column": "id_funil",
@@ -1743,7 +1743,7 @@
           "values": [
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
             },
             {
               "column": "telefone",
@@ -1796,7 +1796,7 @@
             },
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
             }
           ]
         },
@@ -1835,7 +1835,7 @@
           "values": [
             {
               "column": "id_user",
-              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id_user\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id_user\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
+              "value": "={{\n  $node[\"pesquisa_user1\"].runIndex >= 0 \n    ? $node[\"pesquisa_user1\"].json[\"id\"]\n    : $node[\"pesquisa_user2\"].runIndex >= 0 \n      ? $node[\"pesquisa_user2\"].json[\"id\"]    : $node[\"insere_lead_na_tabela_users\"].runIndex >= 0 \n      ? $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"]\n              : null\n}}"
             },
             {
               "column": "id_funil",
@@ -3525,31 +3525,33 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-7kiNhClJogz3nmT5Rz68-w",
-            "deliveryTag": 2,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-onGOGXM-1_xx51PnMAPa-g",
+            "deliveryTag": 94,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "WEB001 - Captação - Parte 2"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 797018
+            }
           },
           "content": {
-            "nome": "Mateus",
-            "sobrenome": "Diniz",
-            "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "5562981196678",
-            "utm_source": "",
-            "utm_campaign": "",
-            "utm_term": "",
-            "utm_medium": "",
-            "utm_content": "",
+            "nome": "Jéssica",
+            "sobrenome": "",
+            "email": "jessicagoncalvesrj@yahoo.com.br",
+            "telefone": "5521988416951",
+            "utm_source": "facebook",
+            "utm_campaign": "🍊[OG][CAPTAÇÃO+INTERNA][WEBNÁRIO]15/11/24",
+            "utm_term": "[OG]-[MIX+Envolvimento+-+30D]",
+            "utm_medium": "cpc",
+            "utm_content": "VG02+-+Webnário",
             "utm_fun": null,
             "utm_var": null,
             "nome_do_evento": "Webinario",
             "edicao_do_evento": "1",
             "form_id": "1010271_1_1730910567672b99674ce20993256331",
-            "form_name": "Cadastro Webinário - Publico Frio-pq",
+            "form_name": "Cadastro Webinário - https://links.liliancidreira.com.br/cap-webinar-pq/?utm_source=facebook&utm_medium=cpc&utm_campaign=%F0%9F%8D%8A%5BOG%5D%5BCAPTA%C3%87%C3%83O+INTERNA%5D%5BWEBN%C3%81RIO%5D15%2F11%2F24&utm_term=%5BOG%5D-%5BMIX+Envolvimento+-+30D%5D&utm_content=VG02+-+Webn%C3%A1rio&fbclid=IwZXh0bgNhZW0BMABhZGlkAasW4xCpL6gBHTwRX5niq576Gv_BbhLok2bNHDzV_ir07PbaPOEX9b_gtFm5eYBZ-pharg_aem_jvmBpkIw3SrFf3JoyMribQ&utm_id=120214460352830616_v2_s02",
             "tag_do_lancamento": "WEB001"
           }
         }
@@ -3574,6 +3576,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-19T21:12:35.230Z",
-  "versionId": "68532014-fe66-4798-809b-e15cdaa37057"
+  "updatedAt": "2024-12-25T17:26:14.953Z",
+  "versionId": "bb49a6dc-fe59-4976-b84c-af7579ca57a4"
 }
