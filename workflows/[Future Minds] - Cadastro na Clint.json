@@ -96,7 +96,7 @@
       "main": [
         [
           {
-            "node": "atualiza_deal2",
+            "node": "é_frio",
             "type": "main",
             "index": 0
           }
@@ -126,6 +126,24 @@
         [
           {
             "node": "atualiza_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_frio": {
+      "main": [
+        [
+          {
+            "node": "atualiza_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_deal4",
             "type": "main",
             "index": 0
           }
@@ -257,14 +275,20 @@
             },
             {
               "id": "47a4947f-7caf-4bf3-93eb-eb440acad120",
-              "name": "webhook_clint_deal_pesquisa",
-              "value": "",
+              "name": "webhook_clint_deal_pesquisa_frio",
+              "value": "https://functions-api.clint.digital/endpoints/integration/webhook/e5a9d96b-1b47-45ad-b36c-a1544e577d7a",
               "type": "string"
             },
             {
               "id": "7da1eb5b-1426-4ec1-9442-bd9c8c9893b1",
               "name": "webhook_clint_deal_ingresso",
               "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1e0842d0-ed2e-4b7b-afb7-6db92776c30a",
+              "name": "webhook_clint_deal_pesquisa_quente",
+              "value": "https://functions-api.clint.digital/endpoints/integration/webhook/6e3ceadd-4ea2-451b-bef3-db966faf462a",
               "type": "string"
             }
           ]
@@ -597,8 +621,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        460,
-        460
+        520,
+        500
       ]
     },
     {
@@ -616,8 +640,7 @@
               "rightValue": "Pesquisa Preenchida",
               "operator": {
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "operation": "contains"
               }
             }
           ],
@@ -637,7 +660,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $node[\"variaveis\"].json[\"webhook_clint_deal_pesquisa\"] }}",
+        "url": "={{ $node[\"variaveis\"].json[\"webhook_clint_deal_pesquisa_frio\"] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -684,6 +707,14 @@
             {
               "name": "pergunta5",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "name": "pergunta6",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "name": "pergunta7",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
             }
           ]
         },
@@ -694,8 +725,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        640,
-        460
+        920,
+        420
       ]
     },
     {
@@ -758,8 +789,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        640,
-        620
+        680,
+        800
       ]
     },
     {
@@ -802,8 +833,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        820,
-        620
+        860,
+        800
       ]
     },
     {
@@ -838,6 +869,110 @@
         460,
         820
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "667ec0c4-a4e0-4a01-bc3a-9c59679d69bb",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Frio",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8f7124ba-2d77-4832-95b4-a3376a36ccad",
+      "name": "é_frio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        700,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"webhook_clint_deal_pesquisa_quente\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] }} {{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "=+{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "link_chatwoot",
+              "value": "={{ $node[\"variaveis\"].json[\"url_base_chatwoot\"] }}app/accounts/{{ $node[\"variaveis\"].json[\"id_conta_chatwoot\"] }}/contacts/{{ $node[\"pesquisa_user\"].json[\"id_chatwoot\"] }}/"
+            },
+            {
+              "name": "responsavel",
+              "value": "={{ $node[\"consulta_colaborador\"].json[\"id_crm\"] }}"
+            },
+            {
+              "name": "preencheu_pesquisa",
+              "value": "Sim"
+            },
+            {
+              "name": "pergunta1",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "name": "pergunta2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "name": "pergunta3",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "name": "pergunta4",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "name": "pergunta5",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "name": "pergunta6",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "name": "pergunta7",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f46c6002-a331-4f76-8364-02cbb8f6a527",
+      "name": "atualiza_deal4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        920,
+        580
+      ]
     }
   ],
   "pinData": {
@@ -845,7 +980,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-lNr0H6rm3fYZ6GjXa6Dizg",
+            "consumerTag": "amq.ctag-GuarAuKSMTXWqjMnWcEQ0A",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -858,22 +993,19 @@
             "nome": "Mateus",
             "sobrenome": "Diniz",
             "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "5562981196678",
-            "utm_source": "",
-            "utm_campaign": "",
-            "utm_term": "",
-            "utm_medium": "",
-            "utm_content": "",
-            "utm_fun": null,
-            "utm_var": null,
+            "telefone": "556281196678",
             "nome_do_evento": "Webinario",
             "edicao_do_evento": "1",
-            "form_id": "1010271_1_1730910567672b99674ce20993256331",
-            "form_name": "Cadastro Webinário - Publico Frio-pq",
-            "id_cadastro": "3",
-            "id_user": "1",
+            "id_user": "1535",
+            "situacao": "Pesquisa Preenchida",
             "funil": "11",
-            "instagram": "https://www.instagram.com//"
+            "pergunta1": "Desempregado",
+            "pergunta2": "Graduação",
+            "pergunta3": null,
+            "pergunta4": "Não usei",
+            "pergunta5": "Iniciante",
+            "pergunta6": "teste",
+            "pergunta7": "Entre R$5.000 e R$5.999"
           }
         }
       }
@@ -897,6 +1029,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-14T20:24:43.585Z",
-  "versionId": "09244c2d-e47b-4a95-b6e8-43629ff3354f"
+  "updatedAt": "2024-12-25T19:28:43.436Z",
+  "versionId": "50a809f5-a49f-4daa-a02d-798b77367738"
 }
