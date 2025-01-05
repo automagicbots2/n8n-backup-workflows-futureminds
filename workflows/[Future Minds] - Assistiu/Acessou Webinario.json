@@ -990,10 +990,6 @@
               "value": "={{ $node[\"dados\"].json[\"nome\"] }} {{ $node[\"dados\"].json[\"sobrenome\"] }}"
             },
             {
-              "name": "telefone",
-              "value": "=+{{ $node[\"dados\"].json[\"telefone\"] }}"
-            },
-            {
               "name": "data_do_cadastro",
               "value": "={{ $now.toFormat('dd/MM/yyyy HH:mm') }}"
             }
@@ -1024,10 +1020,6 @@
             {
               "name": "nome",
               "value": "={{ $node[\"dados\"].json[\"nome\"] }} {{ $node[\"dados\"].json[\"sobrenome\"] }}"
-            },
-            {
-              "name": "telefone",
-              "value": "=+{{ $node[\"dados\"].json[\"telefone\"] }}"
             },
             {
               "name": "assistiu_webinario",
@@ -1196,6 +1188,17 @@
       }
     },
     {
+      "parameters": {},
+      "id": "b76d9918-c1c1-48e0-aef6-c5bddb51f65c",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        360
+      ]
+    },
+    {
       "parameters": {
         "httpMethod": "POST",
         "path": "=hotwebinar",
@@ -1268,6 +1271,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-03T11:39:29.182Z",
-  "versionId": "33ab67c0-b725-41a0-a3bd-74cfd2dba6ee"
+  "updatedAt": "2025-01-04T20:53:44.949Z",
+  "versionId": "b9d659ff-108f-4233-87fe-fbc8c5f3c32f"
 }
