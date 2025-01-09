@@ -273,7 +273,8 @@
     "saveDataSuccessExecution": "all",
     "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+    "errorWorkflow": "zRPVyGjtTGhPaWFr",
+    "saveExecutionProgress": true
   },
   "staticData": null,
   "tags": [
@@ -285,6 +286,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-16T13:26:29.506Z",
-  "versionId": "5b322497-832e-4f6b-bafe-b8af5d069e50"
+  "updatedAt": "2025-01-09T14:53:45.043Z",
+  "versionId": "4cc5171a-f41b-4d33-bd21-87af399863d6"
 }
