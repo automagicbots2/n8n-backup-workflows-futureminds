@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "chega_da_fila": {
-      "main": [
-        [
-          {
-            "node": "variaveis",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "variaveis": {
       "main": [
         [
@@ -182,6 +171,17 @@
           }
         ]
       ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-11-14T18:26:37.506Z",
@@ -213,7 +213,7 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -100,
+        -140,
         1260
       ],
       "credentials": {
@@ -7969,6 +7969,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-25T20:03:55.236Z",
-  "versionId": "72961e59-c421-4e15-b48d-9526fbb8c730"
+  "updatedAt": "2025-01-09T17:15:31.956Z",
+  "versionId": "83e9ea54-c754-4a52-8a5b-8bdd4701238e"
 }
