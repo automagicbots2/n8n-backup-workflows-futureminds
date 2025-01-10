@@ -1198,6 +1198,14 @@
             {
               "column": "data_cadastro",
               "value": "={{ $now }}"
+            },
+            {
+              "column": "form_name",
+              "value": "=Pesquisa Preenchida - {{ $node[\"formata_dados\"].json[\"form_id\"].replace ('IGRjFLTf','Frio').replace ('WVOJrm74','Quente') }}"
+            },
+            {
+              "column": "form_id",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}"
             }
           ]
         },
@@ -1666,7 +1674,7 @@
             {
               "id": "1ac9cf61-6fd0-4332-a542-123045b6dbea",
               "name": "situacao",
-              "value": "Pesquisa Preenchida",
+              "value": "=Pesquisa Preenchida - {{ $node[\"formata_dados\"].json[\"form_id\"].replace ('IGRjFLTf','Frio').replace ('WVOJrm74','Quente') }}",
               "type": "string"
             },
             {
@@ -2145,7 +2153,7 @@
             {
               "id": "32ca90fd-f0e8-4ceb-90e5-2fb2c2d0332a",
               "name": "situacao",
-              "value": "Pesquisa Preenchida",
+              "value": "=Pesquisa Preenchida - {{ $node[\"formata_dados\"].json[\"form_id\"].replace ('IGRjFLTf','Frio').replace ('WVOJrm74','Quente') }}",
               "type": "string"
             },
             {
@@ -2234,7 +2242,7 @@
             {
               "id": "32ca90fd-f0e8-4ceb-90e5-2fb2c2d0332a",
               "name": "situacao",
-              "value": "Pesquisa Preenchida",
+              "value": "=Pesquisa Preenchida - {{ $node[\"formata_dados\"].json[\"form_id\"].replace ('IGRjFLTf','Frio').replace ('WVOJrm74','Quente') }}",
               "type": "string"
             },
             {
@@ -2845,6 +2853,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-25T19:46:31.622Z",
-  "versionId": "0145f1dd-9f92-4bb4-b6ea-a5acee19d75f"
+  "updatedAt": "2025-01-09T17:47:11.839Z",
+  "versionId": "a10e23fd-0fac-4ec1-8f38-4d137935e15f"
 }
