@@ -1,124 +1,201 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "Quinta - 19:30": {
+    "atualiza_contato1": {
       "main": [
         [
           {
-            "node": "pesquisa_lead2",
+            "node": "atualiza_deal2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "pesquisa_lead2": {
+    "pesquisa_user": {
       "main": [
         [
           {
-            "node": "Loop",
+            "node": "encontrou_user",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop": {
+    "encontrou_user": {
       "main": [
         [
           {
-            "node": "Não faz nada",
+            "node": "atualiza_contato1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "envia_msg",
+            "node": "pesquisa_email",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "envia_msg": {
+    "pesquisa_email": {
       "main": [
         [
           {
-            "node": "1s",
+            "node": "encontrou_email",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "1s": {
+    "encontrou_email": {
       "main": [
         [
           {
-            "node": "Loop",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "pesquisa_lead": {
-      "main": [
-        [
-          {
-            "node": "Loop1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "envia_msg1": {
-      "main": [
-        [
-          {
-            "node": "1s1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Loop1": {
-      "main": [
-        [
-          {
-            "node": "Não faz nada1",
+            "node": "pesquisa_user1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "envia_msg1",
+            "node": "insere_lead_na_tabela_users",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "1s1": {
+    "pesquisa_user1": {
       "main": [
         [
           {
-            "node": "Loop1",
+            "node": "atualiza_contato",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Quinta - 20hrs": {
+    "insere_lead_na_tabela_users": {
       "main": [
         [
           {
-            "node": "pesquisa_lead",
+            "node": "insere_lead_na_tabela_cadastros",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insere_lead_na_tabela_cadastros": {
+      "main": [
+        [
+          {
+            "node": "insere_lead_na_tabela_emails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_contato": {
+      "main": [
+        [
+          {
+            "node": "atualiza_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados2": {
+      "main": [
+        [
+          {
+            "node": "fila_activecampaign",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_deal": {
+      "main": [
+        [
+          {
+            "node": "dados2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_contato2": {
+      "main": [
+        [
+          {
+            "node": "atualiza_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_deal1": {
+      "main": [
+        [
+          {
+            "node": "dados3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados3": {
+      "main": [
+        [
+          {
+            "node": "fila_activecampaign1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insere_lead_na_tabela_emails": {
+      "main": [
+        [
+          {
+            "node": "atualiza_contato2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "hotwebinar": {
+      "main": [
+        [
+          {
+            "node": "dados",
             "type": "main",
             "index": 0
           }
@@ -126,8 +203,8 @@
       ]
     }
   },
-  "createdAt": "2025-01-09T14:27:13.508Z",
-  "id": "QBBXQYtibqZGplXc",
+  "createdAt": "2024-12-25T20:30:19.337Z",
+  "id": "RgO70ZdseMYPjdSz",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -135,42 +212,244 @@
   "nodes": [
     {
       "parameters": {
-        "rule": {
-          "interval": [
+        "assignments": {
+          "assignments": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                4
-              ],
-              "triggerAtHour": 19,
-              "triggerAtMinute": 30
+              "id": "0cbdcad1-4920-4e7d-a6f9-437108ecded2",
+              "name": "nome",
+              "value": "={{ $node[\"hotwebinar\"].json[\"body\"][\"nome\"].split (' ')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "05fd8409-f450-4cd2-88b0-9e201c4d8dc7",
+              "name": "sobrenome",
+              "value": "={{ $node[\"hotwebinar\"].json[\"body\"][\"nome\"].split (' ')[1] }}.",
+              "type": "string"
+            },
+            {
+              "id": "850bacff-b62b-484a-a48d-8a1832562e45",
+              "name": "email",
+              "value": "={{ $node[\"hotwebinar\"].json[\"body\"][\"email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "2669a334-987d-4801-b9d6-a4fd4dcd4b1d",
+              "name": "telefone",
+              "value": "={{ $node[\"hotwebinar\"].json[\"body\"][\"telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "51d3c9fc-4672-4a9b-8ce4-33c6d5512cd2",
+              "name": "utm_source",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_source\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "b9957f57-607a-43cf-8298-2afcb7bde489",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_campaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "645a7f52-1b16-4174-b43c-76c7a4e0efae",
+              "name": "utm_term",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_term\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5ca4d777-4e3b-4c9f-805d-2d03f4a73f3e",
+              "name": "utm_medium",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_medium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "6cd09c13-e31f-4f8d-9bf9-2e227499d366",
+              "name": "utm_content",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_content\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "11026780-520c-4115-ac67-7d3ddb1c1234",
+              "name": "utm_fun",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_fun\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "d167d246-fee0-4122-986d-882fd3a4a2ae",
+              "name": "utm_var",
+              "value": "={{ $node[\"hotwebinar\"].json[\"utm_var\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "2ec68456-3f2e-41f1-9164-67e381d536a6",
+              "name": "nome_do_evento",
+              "value": "Webinario",
+              "type": "string"
+            },
+            {
+              "id": "181210bf-6719-4a45-8cdd-9987e6a9f7f9",
+              "name": "edicao_do_evento",
+              "value": "1",
+              "type": "string"
+            },
+            {
+              "id": "9f8c1e98-d212-478d-9e87-d6948151cd72",
+              "name": "tag_do_lancamento",
+              "value": "WEB001",
+              "type": "string"
+            },
+            {
+              "id": "e2bb383c-1e71-4d4f-8524-954a69a4254d",
+              "name": "tag_hotwebinar",
+              "value": "={{ $node[\"hotwebinar\"].json[\"body\"][\"tag\"] }}",
+              "type": "string"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "713219c6-ff42-41c3-84b5-e4dc5c1b1076",
-      "name": "Quinta - 19:30",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
+      "id": "0f60580e-b97c-4379-a340-af84e18255d1",
+      "name": "dados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
       "position": [
-        620,
-        240
+        880,
+        260
       ]
     },
     {
       "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT \n    c.id,\n    c.nome,\n    c.sobrenome,\n    c.email,\n    c.telefone,\n    c.data_cadastro,\n    c.form_name\nFROM \n    cadastros c\nINNER JOIN (\n    SELECT \n        email, -- Agrupando pelo e-mail (identificador único do cliente)\n        MAX(data_cadastro) AS max_data_cadastro -- Data mais recente de cada cliente\n    FROM \n        cadastros\n    WHERE \n        data_cadastro >= CURDATE() - INTERVAL 6 DAY -- Últimos 6 dias\n    GROUP BY \n        email\n) m ON c.email = m.email AND c.data_cadastro = m.max_data_cadastro;\n",
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/3546a454-6b3c-4c13-886a-54b154e69ba4",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"nome\"] }} {{ $node[\"pesquisa_user\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "=+{{ $node[\"pesquisa_user\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "data_do_cadastro",
+              "value": "={{ $now.toFormat('dd/MM/yyyy HH:mm') }}"
+            }
+          ]
+        },
         "options": {}
       },
-      "id": "a3ffd7b1-15c1-4a76-9cb2-4d3d14cd7a56",
-      "name": "pesquisa_lead2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
+      "id": "7178be3a-e300-44ad-bdbb-68f59088515a",
+      "name": "atualiza_contato1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
       "position": [
-        800,
-        240
+        1440,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/59f96524-273c-49f8-a24a-31cdd12c7a7b",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"nome\"] }} {{ $node[\"pesquisa_user\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "=+{{ $node[\"pesquisa_user\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "assistiu_webinario",
+              "value": "Sim"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a53ee4b3-0d04-40d1-88d3-bbe8222b99df",
+      "name": "atualiza_deal2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1620,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "dd359e72-da78-43bb-84a7-1b0911d82aa5",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a30c4933-bad7-44e5-aa9f-37f90ab1f0dc",
+      "name": "encontrou_user",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3bdd8e64-02ca-4651-b925-3957739cea1e",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.3,
+      "position": [
+        1080,
+        260
       ],
+      "alwaysOutputData": true,
       "credentials": {
         "mySql": {
           "id": "JtvnOichfjUUmLAo",
@@ -179,79 +458,35 @@
       }
     },
     {
-      "parameters": {},
-      "id": "189d3565-5b6c-4ac3-9dcb-8f13a9173222",
-      "name": "Não faz nada",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1260,
-        200
-      ]
-    },
-    {
       "parameters": {
-        "phoneNumberId": "439027139283658",
-        "recipientPhoneNumber": "=+{{ $node[\"Loop\"].json[\"telefone\"] }}",
-        "template": "webinario_19_30hrs|pt_BR"
-      },
-      "id": "1e12c1e6-f180-492d-b1d5-be7e719d84af",
-      "name": "envia_msg",
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        1260,
-        360
-      ],
-      "credentials": {
-        "whatsAppApi": {
-          "id": "7knKCf47LIvmRxue",
-          "name": "[WhatsApp] - Future Minds"
-        }
-      },
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "emails",
+          "mode": "list",
+          "cachedResultName": "emails"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"]  || '-----------------------' }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
         "options": {}
       },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        1020,
-        240
-      ],
-      "id": "8983d06c-bd00-4301-8ee1-41b695ef9ff7",
-      "name": "Loop"
-    },
-    {
-      "parameters": {
-        "amount": 1
-      },
-      "id": "1f250a77-f71d-49fc-96a1-9510e1d19fb3",
-      "name": "1s",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        1480,
-        360
-      ],
-      "webhookId": "2f7e9139-1716-4094-9ca1-937786ab9808"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT \n    c.id,\n    c.nome,\n    c.sobrenome,\n    c.email,\n    c.telefone,\n    c.data_cadastro,\n    c.form_name\nFROM \n    cadastros c\nINNER JOIN (\n    SELECT \n        email, -- Agrupando pelo e-mail (identificador único do cliente)\n        MAX(data_cadastro) AS max_data_cadastro -- Data mais recente de cada cliente\n    FROM \n        cadastros\n    WHERE \n        data_cadastro >= CURDATE() - INTERVAL 6 DAY -- Últimos 6 dias\n    GROUP BY \n        email\n) m ON c.email = m.email AND c.data_cadastro = m.max_data_cadastro;\n",
-        "options": {}
-      },
-      "id": "81b05cfe-b4e7-489b-8e62-e0274aba6d85",
-      "name": "pesquisa_lead",
+      "id": "7f6479d1-b7ac-4988-a39c-ec03fc068f67",
+      "name": "pesquisa_email",
       "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        800,
-        620
+        1440,
+        400
       ],
+      "alwaysOutputData": true,
       "credentials": {
         "mySql": {
           "id": "JtvnOichfjUUmLAo",
@@ -260,90 +495,764 @@
       }
     },
     {
-      "parameters": {},
-      "id": "b4e0f522-54ca-4213-b568-1343a032b777",
-      "name": "Não faz nada1",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1260,
-        580
-      ]
-    },
-    {
       "parameters": {
-        "phoneNumberId": "439027139283658",
-        "recipientPhoneNumber": "=+{{ $node[\"Loop1\"].json[\"telefone\"] }}",
-        "template": "webinario_19_30hrs|pt_BR"
-      },
-      "id": "1a66daf1-34bf-464d-90e4-1a72b4892733",
-      "name": "envia_msg1",
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        1260,
-        740
-      ],
-      "credentials": {
-        "whatsAppApi": {
-          "id": "7knKCf47LIvmRxue",
-          "name": "[WhatsApp] - Future Minds"
-        }
-      },
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "dd359e72-da78-43bb-84a7-1b0911d82aa5",
+              "leftValue": "={{ $node[\"pesquisa_email\"].json[\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
         "options": {}
       },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
+      "id": "4b108a82-fc79-48cb-b438-f26b6616c38a",
+      "name": "encontrou_email",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
       "position": [
-        1020,
-        620
-      ],
-      "id": "42609c7a-45ea-4451-a5ed-f90eb9d07ee3",
-      "name": "Loop1"
+        1620,
+        400
+      ]
     },
     {
       "parameters": {
-        "amount": 1
-      },
-      "id": "b16d8404-c80b-4d5e-8d01-b1db79a53a8d",
-      "name": "1s1",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        1480,
-        740
-      ],
-      "webhookId": "2f7e9139-1716-4094-9ca1-937786ab9808"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                4
-              ],
-              "triggerAtHour": 20
+              "column": "id",
+              "value": "={{ $node[\"pesquisa_email\"].json[\"id_user\"] || '-----------------------'}}"
             }
           ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "b1c14f66-393f-4182-b575-d12de1cfeba8",
+      "name": "pesquisa_user1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        1800,
+        300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data_de_entrada",
+              "value": "={{ $now }}"
+            },
+            {
+              "column": "nome",
+              "value": "={{ $node[\"dados\"].json[\"nome\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"dados\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
         }
       },
-      "id": "d0b1c10a-9845-4f83-b98c-f3f7762c7f5f",
-      "name": "Quinta - 20hrs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
+      "id": "0d2c8b0b-6b5f-4d3f-9084-892cb8ab3ec1",
+      "name": "insere_lead_na_tabela_users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
       "position": [
-        620,
-        620
+        1800,
+        500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "cadastros",
+          "mode": "list",
+          "cachedResultName": "cadastros"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_user",
+              "value": "={{ $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "column": "id_funil",
+              "value": "=11"
+            },
+            {
+              "column": "nome",
+              "value": "={{ $node[\"dados\"].json[\"nome\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"dados\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "utm_source",
+              "value": "={{ $node[\"dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "column": "utm_campaign",
+              "value": "={{ $node[\"dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "column": "utm_term",
+              "value": "={{ $node[\"dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "column": "utm_medium",
+              "value": "={{ $node[\"dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "column": "utm_content",
+              "value": "={{ $node[\"dados\"].json[\"utm_content\"] }}"
+            },
+            {
+              "column": "utm_fun",
+              "value": "={{ $node[\"dados\"].json[\"utm_fun\"] }}"
+            },
+            {
+              "column": "utm_var",
+              "value": "={{ $node[\"dados\"].json[\"utm_var\"] }}"
+            },
+            {
+              "column": "data_cadastro",
+              "value": "={{ $now }}"
+            },
+            {
+              "column": "form_id",
+              "value": "=HotWebinar"
+            },
+            {
+              "column": "form_name",
+              "value": "=HotWebinar"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "94f0d530-8ea2-46cc-adab-039bc06df820",
+      "name": "insere_lead_na_tabela_cadastros",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        2000,
+        500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "emails",
+          "mode": "list",
+          "cachedResultName": "emails"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "data_criacao",
+              "value": "={{ $now }}"
+            },
+            {
+              "column": "id_user",
+              "value": "={{ $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "replaceEmptyStrings": true,
+          "detailedOutput": true,
+          "skipOnConflict": true
+        }
+      },
+      "id": "8dcfde6a-8d3e-4298-bc3b-cd262527794b",
+      "name": "insere_lead_na_tabela_emails",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        2200,
+        500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/3546a454-6b3c-4c13-886a-54b154e69ba4",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"nome\"] }} {{ $node[\"pesquisa_user1\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "=+{{ $node[\"pesquisa_user1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "data_do_cadastro",
+              "value": "={{ $now.toFormat('dd/MM/yyyy HH:mm') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2f88143c-4ddc-4bf0-b94e-3f1155381efb",
+      "name": "atualiza_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2000,
+        300
       ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/59f96524-273c-49f8-a24a-31cdd12c7a7b",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"nome\"] }} {{ $node[\"pesquisa_user1\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "=+{{ $node[\"pesquisa_user1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "assistiu_webinario",
+              "value": "Sim"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b20d2188-b1ce-4004-9896-27eccd40793c",
+      "name": "atualiza_deal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c74589e2-452e-44a5-8a49-b98c6fcdeca8",
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"nome\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f17267b5-65b0-4c2b-b9f5-d719193bb457",
+              "name": "sobrenome",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"sobrenome\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "79edcf9f-8602-409f-8d04-ced41c06d16f",
+              "name": "email",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "93103cc7-1870-4962-bb01-59462196b4de",
+              "name": "telefone",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4750507c-f44a-45d5-b5ce-2a681d5a5581",
+              "name": "utm_source",
+              "value": "={{ $node[\"dados\"].json[\"utm_source\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a68b8a08-b2d1-4352-affb-0a6f4045cf4a",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"dados\"].json[\"utm_campaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "71c74ec7-51b3-422e-a2d5-ae7bbf3bd1b0",
+              "name": "utm_term",
+              "value": "={{ $node[\"dados\"].json[\"utm_term\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "57aa10ae-6631-4352-8925-35138b1c9b7a",
+              "name": "utm_medium",
+              "value": "={{ $node[\"dados\"].json[\"utm_medium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4e84ee54-3122-48e4-92d9-1f9db59e0b94",
+              "name": "utm_content",
+              "value": "={{ $node[\"dados\"].json[\"utm_content\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "14a9c5a1-2f3f-416c-a06d-3f8e331366d7",
+              "name": "utm_fun",
+              "value": "={{ $node[\"dados\"].json[\"utm_fun\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "416c7356-388c-4592-87be-d9f29b670bad",
+              "name": "utm_var",
+              "value": "={{ $node[\"dados\"].json[\"utm_var\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "866136ed-0c9b-4e19-8a6f-1e716d408e4c",
+              "name": "nome_do_evento",
+              "value": "={{ $node[\"dados\"].json[\"nome_do_evento\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "eed1579a-31b8-4dc0-8ad5-8919857b8516",
+              "name": "edicao_do_evento",
+              "value": "={{ $node[\"dados\"].json[\"edicao_do_evento\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "66f8191a-dd73-4773-b3f7-a63076f8686b",
+              "name": "form_id",
+              "value": "=Hotwebinar",
+              "type": "string"
+            },
+            {
+              "id": "bb839055-124b-4671-99e9-d13293daa8c7",
+              "name": "form_name",
+              "value": "=Hotwebinar",
+              "type": "string"
+            },
+            {
+              "id": "957ee3f2-d099-4bee-a2f1-df34d030e983",
+              "name": "id_user",
+              "value": "={{ $node[\"pesquisa_user1\"].json[\"id\"]  }}",
+              "type": "string"
+            },
+            {
+              "id": "5c29136e-1149-4996-8836-9a268279e93d",
+              "name": "funil",
+              "value": "=11",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1c847764-3ecc-47ef-9c45-9997701959c8",
+      "name": "dados2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "={{ $node[\"dados\"].json[\"tag_do_lancamento\"] }} - Criação ActiveCampaign",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "1359b649-680b-4b06-b473-f53726d1bca4",
+      "name": "fila_activecampaign",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        300
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/3546a454-6b3c-4c13-886a-54b154e69ba4",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"dados\"].json[\"nome\"] }} {{ $node[\"dados\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "data_do_cadastro",
+              "value": "={{ $now.toFormat('dd/MM/yyyy HH:mm') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fb3587a4-9870-48ce-9861-6b5835833332",
+      "name": "atualiza_contato2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2420,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://functions-api.clint.digital/endpoints/integration/webhook/59f96524-273c-49f8-a24a-31cdd12c7a7b",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"dados\"].json[\"nome\"] }} {{ $node[\"dados\"].json[\"sobrenome\"] }}"
+            },
+            {
+              "name": "assistiu_webinario",
+              "value": "Sim"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "05c43d85-2d4c-4273-88c7-b8010656ea5d",
+      "name": "atualiza_deal1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2620,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c74589e2-452e-44a5-8a49-b98c6fcdeca8",
+              "name": "nome",
+              "value": "={{ $node[\"dados\"].json[\"nome\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f17267b5-65b0-4c2b-b9f5-d719193bb457",
+              "name": "sobrenome",
+              "value": "={{ $node[\"dados\"].json[\"sobrenome\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "79edcf9f-8602-409f-8d04-ced41c06d16f",
+              "name": "email",
+              "value": "={{ $node[\"dados\"].json[\"email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "93103cc7-1870-4962-bb01-59462196b4de",
+              "name": "telefone",
+              "value": "={{ $node[\"dados\"].json[\"telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4750507c-f44a-45d5-b5ce-2a681d5a5581",
+              "name": "utm_source",
+              "value": "={{ $node[\"dados\"].json[\"utm_source\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a68b8a08-b2d1-4352-affb-0a6f4045cf4a",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"dados\"].json[\"utm_campaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "71c74ec7-51b3-422e-a2d5-ae7bbf3bd1b0",
+              "name": "utm_term",
+              "value": "={{ $node[\"dados\"].json[\"utm_term\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "57aa10ae-6631-4352-8925-35138b1c9b7a",
+              "name": "utm_medium",
+              "value": "={{ $node[\"dados\"].json[\"utm_medium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4e84ee54-3122-48e4-92d9-1f9db59e0b94",
+              "name": "utm_content",
+              "value": "={{ $node[\"dados\"].json[\"utm_content\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "14a9c5a1-2f3f-416c-a06d-3f8e331366d7",
+              "name": "utm_fun",
+              "value": "={{ $node[\"dados\"].json[\"utm_fun\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "416c7356-388c-4592-87be-d9f29b670bad",
+              "name": "utm_var",
+              "value": "={{ $node[\"dados\"].json[\"utm_var\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "866136ed-0c9b-4e19-8a6f-1e716d408e4c",
+              "name": "nome_do_evento",
+              "value": "={{ $node[\"dados\"].json[\"nome_do_evento\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "eed1579a-31b8-4dc0-8ad5-8919857b8516",
+              "name": "edicao_do_evento",
+              "value": "={{ $node[\"dados\"].json[\"edicao_do_evento\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "66f8191a-dd73-4773-b3f7-a63076f8686b",
+              "name": "form_id",
+              "value": "=Hotwebinar",
+              "type": "string"
+            },
+            {
+              "id": "bb839055-124b-4671-99e9-d13293daa8c7",
+              "name": "form_name",
+              "value": "=Hotwebinar",
+              "type": "string"
+            },
+            {
+              "id": "957ee3f2-d099-4bee-a2f1-df34d030e983",
+              "name": "id_user",
+              "value": "={{ $node[\"insere_lead_na_tabela_users\"].json[\"data\"][\"insertId\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5c29136e-1149-4996-8836-9a268279e93d",
+              "name": "funil",
+              "value": "=11",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5e092e3-083c-4b17-8dda-153c9716f269",
+      "name": "dados3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2840,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "={{ $node[\"dados\"].json[\"tag_do_lancamento\"] }} - Criação ActiveCampaign",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "55dcef91-ec9e-4740-b68a-64b12bc2988b",
+      "name": "fila_activecampaign1",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        500
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "b76d9918-c1c1-48e0-aef6-c5bddb51f65c",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "=hotwebinar",
+        "options": {}
+      },
+      "id": "dc07f1e8-fb4b-4159-a576-d91f95da6f22",
+      "name": "hotwebinar",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        680,
+        260
+      ],
+      "webhookId": "d4e19da4-fc8d-4d15-9522-255420821013"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "hotwebinar": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "axios/0.19.2",
+            "content-length": "93",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json;charset=utf-8",
+            "traceparent": "00-6777be8b000000006e37c3f16794b7d9-6e37c3f16794b7d9-01",
+            "tracestate": "dd=t.tid:6777be8b00000000;t.dm:-1;s:1;p:6e37c3f16794b7d9",
+            "x-datadog-parent-id": "7942031909483493337",
+            "x-datadog-sampling-priority": "1",
+            "x-datadog-tags": "_dd.p.tid=6777be8b00000000,_dd.p.dm=-1",
+            "x-datadog-trace-id": "7942031909483493337",
+            "x-forwarded-for": "34.238.162.249",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "34.238.162.249",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "nome": "Bianca",
+            "email": "biancabenin@hotmail.com",
+            "telefone": "{{TELEFONE}}",
+            "tag": "acessou"
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/hotwebinar",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1",
     "saveDataErrorExecution": "all",
@@ -361,7 +1270,7 @@
       "name": "[WEB001]"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-01-09T14:43:55.959Z",
-  "versionId": "7044b0ca-c8e0-488c-8b4f-3213135b824b"
+  "triggerCount": 1,
+  "updatedAt": "2025-01-04T20:53:44.949Z",
+  "versionId": "b9d659ff-108f-4233-87fe-fbc8c5f3c32f"
 }
