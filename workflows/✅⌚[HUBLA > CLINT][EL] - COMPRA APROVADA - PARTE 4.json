@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro3",
+            "node": "pesquisa_lead6",
             "type": "main",
             "index": 0
           }
@@ -470,7 +470,7 @@
       "typeVersion": 1,
       "position": [
         -300,
-        620
+        480
       ]
     },
     {
@@ -1627,6 +1627,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-18T22:09:55.999Z",
-  "versionId": "4fa4f045-1928-44cd-896e-fda1141fd428"
+  "updatedAt": "2025-01-09T17:13:27.748Z",
+  "versionId": "958e153e-ae06-4354-b071-a3986eb18d6b"
 }
