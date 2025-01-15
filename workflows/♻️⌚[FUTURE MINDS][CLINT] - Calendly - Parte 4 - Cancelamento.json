@@ -3618,7 +3618,7 @@
     {
       "parameters": {
         "content": "## ADICIONA/ATUALIZA NA CLINT",
-        "height": 219.3778559847803,
+        "height": 263.6691015370111,
         "width": 622.6572941241393
       },
       "id": "7dcff875-9aa7-4297-a7bf-e31058f24b74",
@@ -3627,7 +3627,7 @@
       "typeVersion": 1,
       "position": [
         5280,
-        1780
+        1735.708754447769
       ]
     },
     {
@@ -3835,6 +3835,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T12:38:02.975Z",
-  "versionId": "1a90532e-e6d1-4e5a-9477-9ad0f91c65dc"
+  "updatedAt": "2025-01-14T20:08:24.153Z",
+  "versionId": "5a7db6fb-ae8c-4b06-b848-e5b7f0618095"
 }
