@@ -351,7 +351,8 @@
       "position": [
         1440,
         140
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -363,14 +364,6 @@
             {
               "name": "email",
               "value": "={{ $node[\"pesquisa_user\"].json[\"email\"] }}"
-            },
-            {
-              "name": "nome",
-              "value": "={{ $node[\"pesquisa_user\"].json[\"nome\"] }} {{ $node[\"pesquisa_user\"].json[\"sobrenome\"] }}"
-            },
-            {
-              "name": "telefone",
-              "value": "=+{{ $node[\"pesquisa_user\"].json[\"telefone\"] }}"
             },
             {
               "name": "assistiu_webinario",
@@ -787,7 +780,8 @@
       "position": [
         2000,
         300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -799,14 +793,6 @@
             {
               "name": "email",
               "value": "={{ $node[\"pesquisa_user1\"].json[\"email\"] }}"
-            },
-            {
-              "name": "nome",
-              "value": "={{ $node[\"pesquisa_user1\"].json[\"nome\"] }} {{ $node[\"pesquisa_user1\"].json[\"sobrenome\"] }}"
-            },
-            {
-              "name": "telefone",
-              "value": "=+{{ $node[\"pesquisa_user1\"].json[\"telefone\"] }}"
             },
             {
               "name": "assistiu_webinario",
@@ -1271,6 +1257,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-04T20:53:44.949Z",
-  "versionId": "b9d659ff-108f-4233-87fe-fbc8c5f3c32f"
+  "updatedAt": "2025-01-17T12:51:52.949Z",
+  "versionId": "eeab9090-19b6-4786-966d-0c136e00c374"
 }
