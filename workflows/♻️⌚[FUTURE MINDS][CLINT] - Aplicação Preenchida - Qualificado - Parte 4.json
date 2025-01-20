@@ -1648,7 +1648,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"email\"] }}"
             }
           ]
         },
@@ -2091,7 +2091,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"email\"] }}"
             },
             {
               "name": "utm_var_tag",
@@ -2553,7 +2553,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"email\"] }}"
             },
             {
               "name": "utm_var_tag",
@@ -2669,7 +2669,7 @@
             },
             {
               "name": "dono_do_negocio",
-              "value": "={{ $node[\"rodizio_closer\"].json[\"nome\"].replace('Luiza Campos','luiza.campos@futureminds.com.br').replace('Lilian Cidreira','lilian.cidreira@futureminds.com.br').replace('Fernando','fernando.ruoso@futureminds.com.br').replace('Felipe Matheus','eu@felipematheus.com.br') }}"
+              "value": "={{ $node[\"rodizio_closer\"].json[\"email\"] }}"
             },
             {
               "name": "utm_var_tag",
@@ -2760,8 +2760,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-blJ0BNtkw2b5JwOLsdivww",
-            "deliveryTag": 63,
+            "consumerTag": "amq.ctag-S1rHCUZIzU_br5irqxl0Kg",
+            "deliveryTag": 6742,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos Atualizado - Sessão - Parte 4 - Qualificado - Clint"
@@ -2771,26 +2771,26 @@
           },
           "content": {
             "verificacao_lead": true,
-            "Nome do Cliente": "Alessandra",
-            "E-mail do Cliente": "ale.luz0607@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5521964052719",
-            "Telefone do Cliente - Formato Z-API": "5521964052719",
-            "utm_content": "Anúncio [5.1].MP4",
+            "Nome do Cliente": "Dyellen",
+            "E-mail do Cliente": "dyellenmartins@yahoo.com.br",
+            "Telefone do Cliente - Formato BC": "+5519998725435",
+            "Telefone do Cliente - Formato Z-API": "5519998725435",
+            "utm_content": "CV M.A.A 01",
             "utm_source": "facebook",
-            "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
+            "utm_campaign": "[OG][CADASTRO TYPEFORM][CAPTAÇÃO EXTERNA]",
             "utm_medium": "cpc",
-            "utm_term": "[CARGO - DIRETOR]",
+            "utm_term": "[OG]-[INTERESSES_ MIX_LINGUAS]",
             "Instagram": "",
             "id_fluxo_nao_agendou_10_min": "",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
-            "pergunta0": "Entre 2 e 4 anos",
-            "pergunta1": "Entre R$10.000 e R$14.999",
+            "pergunta0": "",
+            "pergunta1": "Entre R$15.000 e R$19.999",
             "pergunta2": "",
             "pergunta3": "Especialista",
             "pergunta5": "Pós-graduação",
-            "pergunta6": "Mudar de emprego para uma empresa com oportunidades de crescimento",
-            "pergunta7": "A empresa só valoriza quem vem do mercado",
-            "pergunta8": 8,
+            "pergunta6": "Ser promovido para o meu primeiro cargo de liderança, tanto na empresa atual como em uma nova empresa",
+            "pergunta7": "",
+            "pergunta8": 4,
             "pergunta9": "",
             "pergunta10": "",
             "pergunta11": "",
@@ -2824,7 +2824,7 @@
             "id_campo_pergunta18_bot_conversa": "",
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
-            "id_ending_typeform": "Medio Qualificado",
+            "id_ending_typeform": "Qualificado",
             "id_campo_id_banco_de_dados_bot_conversa": "1333394",
             "id_campo_iddealac_bot_conversa": "1343862",
             "id_campo_idleadac_bot_conversa": "1343869",
@@ -2837,15 +2837,15 @@
             "id_campo_utm_var_bot_conversa": "1374335",
             "id_campo_instagram_bot_conversa": "",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "aplicacao3_com_calendly",
-            "data_ultima_quinzena": "2024-11-24",
+            "variacao_do_funil": "aplicacao_direta",
+            "data_ultima_quinzena": "2025-01-05",
             "id_campo_emailse_bot_conversa": "1139626",
             "id_tag_desqualificado_bot_conversa": "4929805",
             "id_tag_qualificado_bot_conversa": "4891807",
-            "data_resposta_type": "09/12/2024 07:07",
+            "data_resposta_type": "20/01/2025 07:22",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 8123,
-            "id_lead_bc": 632112142,
+            "id_lead_bd": 8749,
+            "id_lead_bc": 659921883,
             "id_fluxo_nao_agendou_10_min_desqualificados": "",
             "id_campo_data_da_aplicacao_bot_conversa": "2249943"
           }
@@ -2878,6 +2878,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-09T13:09:34.363Z",
-  "versionId": "8c58b2e8-f4e9-4cf7-b0b2-43e5cc5f83d2"
+  "updatedAt": "2025-01-20T13:53:37.016Z",
+  "versionId": "feebef07-e2f7-406c-b10c-0fe86b69f781"
 }
