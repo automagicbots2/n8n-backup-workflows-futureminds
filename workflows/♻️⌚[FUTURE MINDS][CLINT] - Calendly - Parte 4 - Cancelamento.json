@@ -927,7 +927,7 @@
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro",
+            "node": "cadastrar_contato",
             "type": "main",
             "index": 0
           }
@@ -2350,8 +2350,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2080,
-        2100
+        2060,
+        1920
       ]
     },
     {
@@ -3835,6 +3835,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-14T20:08:24.153Z",
-  "versionId": "5a7db6fb-ae8c-4b06-b848-e5b7f0618095"
+  "updatedAt": "2025-01-21T11:56:13.770Z",
+  "versionId": "4a196402-2bb8-46e5-b8a0-3b6ff244a0ed"
 }
