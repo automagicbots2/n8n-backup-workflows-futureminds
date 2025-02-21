@@ -1547,8 +1547,8 @@
           "params": {},
           "query": {},
           "body": {
-            "user": "199",
-            "time": "SDR"
+            "user": "3369",
+            "time": "Closer"
           },
           "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/consulta-colaborador",
           "executionMode": "production"
@@ -1585,6 +1585,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-21T11:55:28.356Z",
-  "versionId": "ba94f9a4-41a3-44ba-9e1e-fc84147ca067"
+  "updatedAt": "2025-02-21T14:44:26.556Z",
+  "versionId": "62e87a60-0e60-49e3-93b7-9aaadc895716"
 }
