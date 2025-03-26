@@ -1,0 +1,875 @@
+{
+  "active": true,
+  "connections": {
+    "formata_campos_deal": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendamento": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "qualificacao_preenchida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificacao_preenchida": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_json_fields_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal3": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal2": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "cria_ou_atualiza_deal_na_clint",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "FIM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "formata_campos_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_ou_atualiza_deal_na_clint": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "2s",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T19:05:59.969Z",
+  "id": "Y8B6I9HUbf1u8NoG",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Clint] - Cria ou Atualiza Deals",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        800
+      ],
+      "id": "c684e2a1-82d4-43c9-be9c-ebe8287695f3",
+      "name": "formata_campos_deal"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"Loop Over Items\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados do body do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"] || {}; \n\n// **Função para formatar CPF e CNPJ corretamente**\nfunction formatarCpfCnpj(valor) {\n  if (!valor) return \"\";\n  const cpfCnpj = valor.replace(/\\D/g, \"\"); // Remove tudo que não for número\n\n  if (cpfCnpj.length === 11) {\n    return `${cpfCnpj.slice(0, 3)}.${cpfCnpj.slice(3, 6)}.${cpfCnpj.slice(6, 9)}-${cpfCnpj.slice(9, 11)}`;\n  } else if (cpfCnpj.length === 14) {\n    return `${cpfCnpj.slice(0, 2)}.${cpfCnpj.slice(2, 5)}.${cpfCnpj.slice(5, 8)}/${cpfCnpj.slice(8, 12)}-${cpfCnpj.slice(12, 14)}`;\n  }\n  return valor; // Retorna o valor original caso não seja CPF ou CNPJ válido\n}\n\n// **Função para formatar valores numéricos corretamente**\nfunction formatarValor(valor) {\n  if (valor === null || valor === undefined || valor === \"\") return \"\";\n  \n  let numero = parseFloat(valor); // Converte para número\n  if (isNaN(numero)) return \"\"; // Retorna vazio se não for um número válido\n\n  return numero.toFixed(2); // Retorna sempre com duas casas decimais\n}\n\n// **Função para substituir os placeholders no template**\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    let valor = data[key];\n\n    // **Verifica e trata valores específicos**\n    if (key === \"cpf\" || key === \"cnpj\") {\n      valor = formatarCpfCnpj(valor || \"\"); // Formata CPF/CNPJ\n    }\n    if (key === \"metodo_pagamento\") {\n      valor = data[\"payment_method\"] || \"\"; // Corrige chave do método de pagamento\n    }\n    if (key === \"parcelas\") {\n      valor = data[\"installments\"] || \"\"; // Corrige chave do número de parcelas\n    }\n    if (key === \"produto\") {\n      valor = data[\"product_name\"] || \"\"; // Corrige chave do nome do produto\n    }\n    if (key === \"valor\") {\n      valor = formatarValor(data[\"value\"]); // Formata valor corretamente\n    }\n    if (key === \"nome\") {\n      valor = data[\"nome_completo\"] || data[\"nome\"] || \"\"; // Pega nome completo, senão o primeiro nome\n    }\n\n    return valor !== undefined ? valor : \"\"; // Retorna o valor ou string vazia\n  });\n\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado formatado\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        200
+      ],
+      "id": "7ecc2ef3-9f52-493d-ba8c-0a39a991a77f",
+      "name": "formata_campos_deal1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal2\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados do body do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"] || {}; \n\n// **Função para formatar CPF e CNPJ corretamente**\nfunction formatarCpfCnpj(valor) {\n  if (!valor) return \"\";\n  const cpfCnpj = valor.replace(/\\D/g, \"\"); // Remove tudo que não for número\n\n  if (cpfCnpj.length === 11) {\n    return `${cpfCnpj.slice(0, 3)}.${cpfCnpj.slice(3, 6)}.${cpfCnpj.slice(6, 9)}-${cpfCnpj.slice(9, 11)}`;\n  } else if (cpfCnpj.length === 14) {\n    return `${cpfCnpj.slice(0, 2)}.${cpfCnpj.slice(2, 5)}.${cpfCnpj.slice(5, 8)}/${cpfCnpj.slice(8, 12)}-${cpfCnpj.slice(12, 14)}`;\n  }\n  return valor; // Retorna o valor original caso não seja CPF ou CNPJ válido\n}\n\n// **Função para formatar valores numéricos corretamente**\nfunction formatarValor(valor) {\n  if (valor === null || valor === undefined || valor === \"\") return \"\";\n  \n  let numero = parseFloat(valor); // Converte para número\n  if (isNaN(numero)) return \"\"; // Retorna vazio se não for um número válido\n\n  return numero.toFixed(2); // Retorna sempre com duas casas decimais\n}\n\n// **Função para substituir os placeholders no template**\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    let valor = data[key];\n\n    // **Verifica e trata valores específicos**\n    if (key === \"cpf\" || key === \"cnpj\") {\n      valor = formatarCpfCnpj(valor || \"\"); // Formata CPF/CNPJ\n    }\n    if (key === \"metodo_pagamento\") {\n      valor = data[\"payment_method\"] || \"\"; // Corrige chave do método de pagamento\n    }\n    if (key === \"parcelas\") {\n      valor = data[\"installments\"] || \"\"; // Corrige chave do número de parcelas\n    }\n    if (key === \"produto\") {\n      valor = data[\"product_name\"] || \"\"; // Corrige chave do nome do produto\n    }\n    if (key === \"valor\") {\n      valor = formatarValor(data[\"value\"]); // Formata valor corretamente\n    }\n    if (key === \"nome\") {\n      valor = data[\"nome_completo\"] || data[\"nome\"] || \"\"; // Pega nome completo, senão o primeiro nome\n    }\n\n    return valor !== undefined ? valor : \"\"; // Retorna o valor ou string vazia\n  });\n\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado formatado\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        980
+      ],
+      "id": "53fd5688-5b36-43ba-8cfa-7d87232733df",
+      "name": "formata_campos_deal2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal3\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        520
+      ],
+      "id": "d2c1503d-a154-4865-91ee-085a223c54a2",
+      "name": "formata_campos_deal3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ee7fb004-97a9-4c7b-8739-fc2a240271a9",
+      "name": "checkout",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -1300,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5f2c0de4-0550-496c-8c2e-659bb448a08f",
+      "name": "agendamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -1100,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e1214919-e3dd-466b-9408-ed72168d3c37",
+      "name": "qualificacao_preenchida",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -900,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_agendamento",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_agendamento\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "83e94f05-0a71-4d44-b138-677895dc6caa",
+      "name": "pesquisa_json_fields_deal3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -420,
+        520
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fffac832-dc67-4c19-9da7-78cd1488ed78",
+      "name": "pesquisa_json_fields_deal",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -420,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage_2",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage_2"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bf1662b4-e899-4f55-8b4d-5367426cb375",
+      "name": "pesquisa_json_fields_deal2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -420,
+        980
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "418802c4-a500-44db-9887-5c4df7a9de89",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "077538ab-f011-4ca5-851f-c00821fa00c5",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        460,
+        500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "={{ \n  $node[\"pesquisa_etapa_funil\"].json[\"nome\"]\n    .replace('Cadastro','Closer')\n    .replace('Aplicação','SDR')\n    .replace('Agendamento','Closer')\n    .replace('Pesquisa','SDR')\n    .replace('Checkout', \n      $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"trans_status\"] === \"Compra Aprovada\" ? \"CS\" : \"Closer\"\n    ) \n}}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            },
+            {
+              "name": "email_colaborador",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"email_responsavel\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        500
+      ],
+      "id": "6a15692e-d926-47b5-9ff5-979220317ad6",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage_2",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage_2"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "710b5ca8-8187-4cb1-8cc0-84f8c56d23e3",
+      "name": "pesquisa_json_fields_deal1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -420,
+        180
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_json_fields_deal\"].runIndex >= 0 ? $node[\"pesquisa_json_fields_deal\"].json[\"webhook\"] \n          : $node[\"pesquisa_json_fields_deal1\"].runIndex >= 0 \n            ?  $node[\"Loop Over Items\"].json[\"webhook\"]  : $node[\"pesquisa_json_fields_deal2\"].runIndex >= 0 \n            ? $node[\"pesquisa_json_fields_deal2\"].json[\"webhook\"] : $node[\"pesquisa_json_fields_deal3\"].runIndex >= 0 \n            ? $node[\"pesquisa_json_fields_deal3\"].json[\"webhook\"] : null }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ ($node[\"formata_campos_deal\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal1\"].runIndex >= 0 \n        ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n        : $node[\"formata_campos_deal2\"].runIndex >= 0 \n          ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) \n          : $node[\"formata_campos_deal3\"].runIndex >= 0 \n            ? JSON.stringify($node[\"formata_campos_deal3\"].json[\"custom_fields_values\"]) \n            : \"{}\" // Garante um JSON válido caso nenhum nó tenha dados\n    ).slice(0, -1) + ', \"dono\":\"' + $node[\"consulta_sdr\"].json[\"email\"] + '\"}' \n}}\n",
+        "options": {}
+      },
+      "id": "b0ca98a6-8c99-4cc4-a0be-165b87fb42ce",
+      "name": "cria_ou_atualiza_deal_na_clint",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        880,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "feedb3d6-9916-4033-908d-4218e9d60aef",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -220,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "297b2cd7-ceaf-4a99-acd7-067f5bb22e97",
+      "name": "Replace Me",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "b1e33f88-aa17-46bf-976f-4ba433a28cca",
+              "leftValue": "={{\n  $node[\"Loop Over Items\"].runIndex >= 0 \n    ? true : false\n}}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7506e49b-1b29-47d2-98c7-e299bf3900a5",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        1100,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "id": "7f4f889d-f742-417d-92b5-efa19098e70b",
+      "name": "2s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        300
+      ],
+      "webhookId": "6982b982-ffd5-448c-98ea-b31657221782"
+    },
+    {
+      "parameters": {},
+      "id": "5c80e3e3-5ddf-425a-a664-0f09087c1542",
+      "name": "FIM",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "path": "add_update_deal_clint",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1520,
+        520
+      ],
+      "id": "337ecda5-f307-4deb-97bf-22ae64b41aea",
+      "name": "fluxo_chamado",
+      "webhookId": "2569ab90-da1d-4483-9a5d-5059d0790846"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8npamellabrandao.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "1233",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8npamellabrandao.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "d4ad76bf4c9b",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 3,
+            "id_funil": "5",
+            "id_user": 9805,
+            "payload": {
+              "nome": "Fabiana",
+              "sobrenome": "Nonato Batista",
+              "nome_completo": "Fabiana Nonato Batista",
+              "email": "fabiana.gtbbatista2016@gmail.com",
+              "telefone": "553182562575",
+              "cpf": "720.464.226-00",
+              "utm_source": "WhatsApp",
+              "utm_campaign": "ds-launch25",
+              "utm_term": "",
+              "utm_medium": "GruposWA",
+              "utm_content": "checkout",
+              "form_id": "X4LV2cK",
+              "form_name": "",
+              "value": 104.36,
+              "transaction_id": "136a64f3-c006-44bb-8520-a46b28249c0e",
+              "net_value": "",
+              "trans_status": "Compra Cancelada",
+              "payment_method": "Cartão de Crédito",
+              "refund_date": "",
+              "event_date": "2025-02-13 21:13:00",
+              "payment_date": "",
+              "product_type": "Cobrança única",
+              "product_id": "01151180-e978-11ef-b2e6-9ba99a8ad544",
+              "product_name": "Apostila Português Decifrado",
+              "warranty_date": "",
+              "offer_code": "",
+              "discount_coupon": "",
+              "street": "",
+              "address_number": "",
+              "country": "",
+              "district": "",
+              "address_complement": "",
+              "city": "",
+              "address_state": "",
+              "zipcode": "",
+              "affiliate_value": "",
+              "gateway_comission": 11.21,
+              "billet_barcode": "",
+              "currency": "BRL",
+              "bankslip": "",
+              "recurrenceExpirationDate": "",
+              "cancelledDate": "",
+              "id_funil": "5",
+              "tipo_forms": "Checkout",
+              "cnpj": "",
+              "id_forms": "17",
+              "installments": 4,
+              "billetExpirationDate": ""
+            },
+            "id_situacao_checkout": 8,
+            "qualificacao": ""
+          },
+          "webhookUrl": "https://n8npamellabrandao.automagicbots.com.br/webhook/add_update_deal_clint",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T19:06:36.769Z",
+  "versionId": "51e7b7d3-1063-4741-84d0-a1a3e02879db"
+}
