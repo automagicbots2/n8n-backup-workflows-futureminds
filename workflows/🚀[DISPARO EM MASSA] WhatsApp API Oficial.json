@@ -1480,19 +1480,24 @@
       "recurrencyRules": []
     },
     "node:08/01 - 10hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:08/01 - 18hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:09/01 - 10hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:09/01 - 16hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:09/01 - 19hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [],
