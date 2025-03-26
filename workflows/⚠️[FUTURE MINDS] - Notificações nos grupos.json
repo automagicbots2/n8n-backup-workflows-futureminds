@@ -360,7 +360,8 @@
   },
   "staticData": {
     "node:quinta-feira_11:30h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [],
