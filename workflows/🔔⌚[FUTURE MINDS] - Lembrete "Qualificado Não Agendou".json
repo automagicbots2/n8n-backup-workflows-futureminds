@@ -882,7 +882,8 @@
       "recurrencyRules": []
     },
     "node:23h59": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [
