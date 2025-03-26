@@ -1032,7 +1032,8 @@
   },
   "staticData": {
     "node:15_em_15_min": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [
