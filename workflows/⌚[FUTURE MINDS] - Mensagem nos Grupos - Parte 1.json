@@ -460,7 +460,8 @@
   },
   "staticData": {
     "node:todo_min": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [],
