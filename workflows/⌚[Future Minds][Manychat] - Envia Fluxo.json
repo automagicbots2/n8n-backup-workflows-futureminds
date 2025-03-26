@@ -1,0 +1,239 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_variavel_n8n_fluxo_api_oficial": {
+      "main": [
+        [
+          {
+            "node": "consulta_chip_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_chip_api_oficial": {
+      "main": [
+        [
+          {
+            "node": "busca_fluxo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_fluxo": {
+      "main": [
+        [
+          {
+            "node": "envia_template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T18:11:52.738Z",
+  "id": "Fum1FhLGOgZYcZiN",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Manychat] - Envia Fluxo",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de API Oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "7f52127e-c849-4551-be86-f6aacdada019",
+      "name": "pesquisa_variavel_n8n_fluxo_api_oficial",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_api_oficial\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "647909ea-e433-41b1-81c6-8a26ca9ef5aa",
+      "name": "consulta_chip_api_oficial"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/sending/sendFlow",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $node[\"consulta_chip_api_oficial\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "subscriber_id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_manychat\"] }}"
+            },
+            {
+              "name": "flow_ns",
+              "value": "={{ $node[\"busca_fluxo\"].json[\"id_fluxo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b6219df7-cd03-4c2d-a097-1c872d5a8ea2",
+      "name": "envia_template",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        900,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "path": "envia-fluxo-manychat",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "571dd53c-cfb2-4372-8fde-a656f692139a",
+      "name": "fluxo_chamado",
+      "webhookId": "b90b9788-6a0b-4ade-8c95-213c9d8415c3"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT f.*\nFROM fluxo_wpp_etapas_funil f\nJOIN chips_api_oficial c ON f.id_chip_oficial = c.id\nWHERE c.telefone = '{{ $node[\"consulta_chip_api_oficial\"].json[\"telefone\"] }}'\nAND f.id_etapa_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }};\n",
+        "options": {}
+      },
+      "id": "3f720d53-0b32-4a7a-b290-93f1ff20034d",
+      "name": "busca_fluxo",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        680,
+        0
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.zkgge2.easypanel.host",
+            "user-agent": "axios/1.7.4",
+            "content-length": "63",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8n-n8n.zkgge2.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "4fe238010f60",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 7,
+            "id_user": 16272,
+            "id_manychat": "1887213184"
+          },
+          "webhookUrl": "https://n8n-n8n.zkgge2.easypanel.host/webhook/envia-fluxo-manychat",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T18:12:53.864Z",
+  "versionId": "99a531d3-0a2c-4926-9950-3ef6b8c87616"
+}
