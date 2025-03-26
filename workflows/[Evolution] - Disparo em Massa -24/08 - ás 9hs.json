@@ -878,7 +878,8 @@
       "recurrencyRules": []
     },
     "node:sabado - 9hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [],
