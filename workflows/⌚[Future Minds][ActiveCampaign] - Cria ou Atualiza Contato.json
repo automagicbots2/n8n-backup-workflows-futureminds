@@ -1,0 +1,1193 @@
+{
+  "active": true,
+  "connections": {
+    "formata_campos_deal": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendamento": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "qualificacao_preenchida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificacao_preenchida": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_json_fields_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal2": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal3": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_base_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal1": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "update_contact_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "search_by_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "existe_no_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_id_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "retorna_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "contact_existe": {
+      "main": [
+        [
+          {
+            "node": "update_id_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "search_by_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_by_email": {
+      "main": [
+        [
+          {
+            "node": "existe_no_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "update_contact_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "search_by_phone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_by_phone": {
+      "main": [
+        [
+          {
+            "node": "existe_no_email_marketing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_email_marketing2": {
+      "main": [
+        [
+          {
+            "node": "update_contact_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria_contact_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_contact_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "update_id_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contact_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "contact_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_payload": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "formata_payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T18:07:49.079Z",
+  "id": "qIwcAyjDB4w6xqul",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][ActiveCampaign] - Cria ou Atualiza Contato",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        920
+      ],
+      "id": "d1a7a77e-1304-4a46-b087-e80cd8118688",
+      "name": "formata_campos_deal"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal2\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  try {\n    template = JSON.parse(template); // Converte a string JSON em um objeto\n  } catch (error) {\n    throw new Error(\"Erro ao converter template para JSON: \" + error.message);\n  }\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para sanitizar valores e substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  \n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      // Sanitiza valores: remove caracteres problemáticos e escapa aspas\n      return String(data[key])\n        .replace(/[\\r\\n\\t]/g, \" \") // Remove quebras de linha e tabulações\n        .replace(/\"/g, '\\\\\"'); // Escapa aspas duplas\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`);\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n\n  try {\n    return JSON.parse(replaced); // Converte de volta para JSON\n  } catch (error) {\n    throw new Error(\"Erro ao converter replaced para JSON: \" + error.message);\n  }\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1100
+      ],
+      "id": "642f6e40-6170-46a3-bd91-030166305b77",
+      "name": "formata_campos_deal2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal3\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        640
+      ],
+      "id": "ed4a144d-6163-4cc4-884f-edf9ddf76d0c",
+      "name": "formata_campos_deal3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "90f8e755-92c0-4264-aec8-743872d3ffda",
+      "name": "agendamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        100,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "769b8807-e1a6-41d1-af1a-ff9cb6fefa63",
+      "name": "qualificacao_preenchida",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        300,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ce6213a0-ea7e-4076-8a16-d35b9d5219c3",
+      "name": "pesquisa_json_fields_deal",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        560,
+        920
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_email_marketing_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_email_marketing_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "101c341c-4857-44b9-af00-b6e3046c7ff4",
+      "name": "pesquisa_json_fields_deal2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        560,
+        1100
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://aimportacaodescomplicada.api-us1.com/api/3/fields",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "1000"
+            },
+            {
+              "name": "search",
+              "value": "utm_"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "3009aaee00ffb883b84819b0c39d9dcdcdac7dc8b3c9ba8e83898314722db3dc01defac5"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c2298ca9-d79d-47e7-8147-23e555d2c408",
+      "name": "searchByEmail1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -200,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_agendamento",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_agendamento\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0d39c93f-1bd0-4364-a059-8c5e94c87c61",
+      "name": "pesquisa_json_fields_deal3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        540,
+        640
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do Email Marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "ad70c194-ab4f-4edf-9a68-307519831457",
+      "name": "pesquisa_url_base_email_marketing",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -320,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0519696b-2133-487b-a91b-badd6666ea62",
+      "name": "checkout",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -100,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_email_marketing_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_email_marketing_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ef65108b-9220-437f-9559-8166a004f212",
+      "name": "pesquisa_json_fields_deal1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        540,
+        440
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal1\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        440
+      ],
+      "id": "b6238854-7cb2-4ae7-99f0-57363f069e54",
+      "name": "formata_campos_deal1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "28eb50c2-b98c-4109-b500-f3d09aefb5e2",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1340,
+        580
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "b43206d1-5b83-4dcc-ab5b-efe4588915fa",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_email_mkt\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d99bda80-a420-44dd-8ee9-d221c0c9b44f",
+      "name": "existe_no_email_marketing",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        1760,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "a9858296-b77a-4dfc-8e7e-88547aa33b3b",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1540,
+        580
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE users\nSET \n    id_email_mkt = '{{ $node[\"cria_contact_email_marketing\"].runIndex >= 0      ?   $node[\"cria_contact_email_marketing\"].json[\"contact\"][\"id\"]  : $node[\"update_contact_email_marketing1\"].runIndex >= 0      ?   $node[\"update_contact_email_marketing1\"].json[\"contact\"][\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_email_mkt\"] : null }}',     -- Substitua 67890 pelo valor desejado para o campo id_contact_crm\n      data_atualizacao = CURRENT_TIMESTAMP -- Define a data/hora atual no formato TIMESTAMP\nWHERE \n    id = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }};                    -- Substitua 1 pelo ID do lead específico",
+        "options": {}
+      },
+      "id": "25ccdf37-ba9a-4781-b211-6239410e156f",
+      "name": "update_id_email_marketing",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3160,
+        460
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "41487899-9afe-4a75-980a-e25a254ef80b",
+              "name": "id_contact_crm",
+              "value": "={{ $node[\"cria_contact_email_marketing\"].runIndex >= 0      ?   $node[\"cria_contact_email_marketing\"].json[\"contact\"][\"id\"]  : $node[\"update_contact_email_marketing1\"].runIndex >= 0      ?   $node[\"update_contact_email_marketing1\"].json[\"contact\"][\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_email_mkt\"] : null }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3340,
+        460
+      ],
+      "id": "380cc668-c33b-4a30-8830-cbba70cb4294",
+      "name": "retorna_dados"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c08a6bc8-53d2-4003-ab97-dc0f3137375c",
+              "leftValue": "={{ $node[\"update_contact_email_marketing1\"].json[\"contact\"][\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "16648da9-0a78-4587-b6cb-11f6b5d686e3",
+      "name": "contact_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_email_marketing\"].json[\"valor_variavel\"] }}/api/3/contacts",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || \"--------\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f44029ea-2329-49d2-b311-aa923ee9c8cf",
+      "name": "search_by_email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        680
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "b43206d1-5b83-4dcc-ab5b-efe4588915fa",
+              "leftValue": "={{ $node[\"search_by_email\"].json[\"contacts\"][\"0\"][\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d0c4779c-8b40-4344-868e-bf81b943ab7a",
+      "name": "existe_no_email_marketing1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        2160,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_email_marketing\"].json[\"valor_variavel\"] }}/api/3/contacts",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] || \"-----------\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5a465c0-c81e-4aa6-84bd-aa851ac4295c",
+      "name": "search_by_phone",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2400,
+        800
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "b43206d1-5b83-4dcc-ab5b-efe4588915fa",
+              "leftValue": "={{ $node[\"search_by_phone\"].json[\"contacts\"][\"0\"][\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f358b4e2-89cd-47bb-9d94-3c2965bc1ad5",
+      "name": "existe_no_email_marketing2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        2600,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_email_marketing\"].json[\"valor_variavel\"] }}/api/3/contacts",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contact\": {\n    \"email\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || \"\" }}\",\n    \"firstName\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] || \"\" }}\",\n    \"lastName\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] || \"\" }}\",\n    \"phone\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] || \"\" }}\",\n    \"fieldValues\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : $node[\"formata_campos_deal3\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal3\"].json[\"custom_fields_values\"]) : null }}\n  }\n}",
+        "options": {}
+      },
+      "id": "f45026e0-98a0-48fd-887f-75b375981129",
+      "name": "cria_contact_email_marketing",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2900,
+        900
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "={{ $node[\"pesquisa_url_base_email_marketing\"].json[\"valor_variavel\"] }}/api/3/contacts/{{ $node[\"search_by_phone\"].runIndex >= 0      ?   $node[\"search_by_phone\"].json[\"contacts\"][\"0\"][\"id\"] : $node[\"existe_no_email_marketing1\"].runIndex >= 0      ?   $node[\"search_by_email\"].json[\"contacts\"][\"0\"][\"id\"]  : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_email_mkt\"] : null }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contact\": {\n    \"email\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || $node[\"search_by_phone\"].json[\"contacts\"][\"0\"][\"email\"] || \"\" }}\",\n    \"firstName\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] || \"\" }}\",\n    \"lastName\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] || \"\" }}\",\n    \"phone\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] || \"\" }}\",\n    \"fieldValues\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : $node[\"formata_campos_deal3\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal3\"].json[\"custom_fields_values\"]) : null }}\n  }\n}",
+        "options": {}
+      },
+      "id": "83cd4dcd-c58c-43f2-9ace-0b1d9cf2e5a7",
+      "name": "update_contact_email_marketing1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        440
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter payload do fluxo\nlet payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"];\n\n// Função para formatar a data para o formato ISO 8601 com fuso horário -03:00\nfunction formatToISO(dateString) {\n    if (!dateString) return \"\"; // Retorna vazio se não houver data\n\n    // Verifica se já está no formato correto\n    if (/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-03:00$/.test(dateString)) {\n        return dateString;\n    }\n\n    // Formata a data corretamente\n    return dateString.replace(\" \", \"T\") + \"-03:00\";\n}\n\n// Formatar o parâmetro \"payment_date\"\nif (payload.payment_date) {\n    payload.payment_date = formatToISO(payload.payment_date);\n}\n\n// Retornar payload atualizado\nreturn payload;\n"
+      },
+      "id": "4eb726b7-18df-4a22-b4d3-cda8036e5f25",
+      "name": "formata_payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "path": "create-update-contact-email-marketing",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -780,
+        620
+      ],
+      "id": "bcca4e95-8dcc-47df-bc94-99fd05eaefeb",
+      "name": "fluxo_chamado",
+      "webhookId": "d6fc03ca-a4ba-4e0c-90d9-a7117cad574b"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.zkgge2.easypanel.host",
+            "user-agent": "axios/1.7.4",
+            "content-length": "1304",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8n-n8n.zkgge2.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "4fe238010f60",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "email": "teste@automagicbots.com.br",
+            "telefone": "553185711260",
+            "nome": "Gabriel",
+            "sobrenome": "",
+            "id_user": 16272,
+            "id_etapa_funil": 7,
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "",
+              "email": "teste@automagicbots.com.br",
+              "telefone": "553185711260",
+              "instagram": "",
+              "data_aplicacao": "2025-02-27 13:51:05",
+              "id_forms": "54",
+              "id_ferramenta_forms": "pesquisa-passariano-mar25",
+              "utm_source": "",
+              "utm_campaign": "",
+              "utm_term": "",
+              "utm_medium": "",
+              "utm_content": "",
+              "idade": "Entre 26 e 35 anos",
+              "profissao": "Autônomo(a)",
+              "importacao": "Já faço importações por CNPJ via aérea (simplificada)",
+              "salario": "Entre R$ 10 mil e R$ 20 mil",
+              "capital": "Entre R$ 10.000 e R$ 20.000",
+              "resultado": "Aprender a importar legalmente e vender com Nota Fiscal e altas margens de lucro",
+              "tempo_conhece": "De 6 a 12 meses",
+              "como_conheceu": "YouTube",
+              "pergunta": "teste",
+              "tipo_forms": "Pesquisa",
+              "pontuacao": "825",
+              "id_funil": "3",
+              "perguntas_respostas": {
+                "idade": "Entre 26 e 35 anos",
+                "profissao": "Autônomo(a)",
+                "importacao": "Já faço importações por CNPJ via aérea (simplificada)",
+                "salario": "Entre R$ 10 mil e R$ 20 mil",
+                "capital": "Entre R$ 10.000 e R$ 20.000",
+                "resultado": "Aprender a importar legalmente e vender com Nota Fiscal e altas margens de lucro",
+                "tempo_conhece": "De 6 a 12 meses",
+                "como_conheceu": "YouTube",
+                "pergunta": "teste",
+                "pontuacao": 825
+              }
+            }
+          },
+          "webhookUrl": "https://n8n-n8n.zkgge2.easypanel.host/webhook/create-update-contact-email-marketing",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T18:08:40.229Z",
+  "versionId": "dca52a90-9f53-49a9-9f00-632948284731"
+}
