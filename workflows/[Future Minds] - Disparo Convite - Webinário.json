@@ -1334,25 +1334,32 @@
       "recurrencyRules": []
     },
     "node:Terça - 18h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Terça - 22h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quarta - 10h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quarta - 18h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quinta- 10h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quinta - 16h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quinta- 19h": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [
