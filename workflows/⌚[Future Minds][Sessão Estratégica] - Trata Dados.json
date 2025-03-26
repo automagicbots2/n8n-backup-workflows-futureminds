@@ -1,0 +1,909 @@
+{
+  "active": true,
+  "connections": {
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "fila_acoes_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_funil": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_funis": {
+      "main": [
+        [
+          {
+            "node": "busca_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T19:08:33.253Z",
+  "id": "2XI7M9VFLiZLFtEm",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Sessão Estratégica] - Trata Dados",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\n\n// Criar um objeto para armazenar as perguntas e respostas usando os IDs como chaves\nconst perguntas_respostas = {};\n\n// Função para extrair múltiplas respostas e juntá-las por vírgula\nfunction extractMultipleChoices(answerId) {\n    const resposta = respostas.find(answer => answer.field.ref === answerId);\n    if (resposta && Array.isArray(resposta.choice?.label)) {\n        const respostaFormatada = resposta.choice.label.map(choice => choice.label).join(', ');\n        perguntas_respostas[answerId] = respostaFormatada;\n        return respostaFormatada;\n    }\n    return '';\n}\n\n/// Função para adicionar a resposta ao objeto perguntas_respostas\nfunction adicionarResposta(answerId, resposta) {\n    // Aqui agora vai aceitar valores vazios também, mas nunca undefined ou null\n    if (resposta !== undefined && resposta !== null) {\n        perguntas_respostas[answerId] = resposta;\n    }\n}\n\n// Mapeamento de perguntas com seus respectivos IDs\nconst perguntasMap = {\n    \"01H8HD3WP1JTDJD2AY10938JSB\": \"fullName\",\n    \"baacab46-eec7-4f32-8e5e-0f8c887ad696\": \"email\",\n    \"40d2eeb9-e3cc-46a2-90c9-ee11983fedf6\": \"telefone\",\n    \"66071908-94ec-444b-83b7-b0691b6dd906\": \"incomodacao\",\n    \"4b67740f-820a-4d80-a30c-e53943cedca2\": \"obstaculo\",\n    \"bf599283-3edd-4773-bb3f-211bd4ecb51f\": \"remuneracao_anterior\",\n    \"49ebca80-de07-4e85-980a-0b5bf062c736\": \"tempo_emprego\",\n    \"cca09df1-643d-41ca-b5e6-aef45d7d3f42\": \"cargo\",\n    \"1c5bedbb-6918-492b-8a95-3df9b8853aab\": \"objetivo\",\n    \"396b0194-96fe-4041-ae90-f9307e876241\": \"escolaridade\",\n    \"2f10d945-b3b8-4756-9531-ab9653dee655\": \"salario\",\n    \"utm_source\": \"utm_source\",\n    \"utm_campaign\": \"utm_campaign\",\n    \"utm_term\": \"utm_term\",\n    \"utm_medium\": \"utm_medium\",\n    \"utm_content\": \"utm_content\"\n};\n\n// Onde os UTM estão\nconst hiddenFields = inputData.body.form_response?.hidden || {};\n\n\n// Processar cada pergunta e armazenar no objeto perguntas_respostas\nfor (const [id, key] of Object.entries(perguntasMap)) {\n    if (key.startsWith(\"utm_\")) {\n        // Sempre define a UTM, mesmo que esteja vazia\n        const valorUtm = hiddenFields[key] ?? ''; // Se undefined, assume string vazia\n        adicionarResposta(id, valorUtm);\n    } else {\n        // Resposta comum, pega da lista de respostas do formulário\n        const respostaObj = respostas.find(answer => answer.field.ref === id);\n        const resposta = respostaObj?.text ||\n                         respostaObj?.email ||\n                         respostaObj?.phone_number ||\n                         respostaObj?.number ||\n                         respostaObj?.choice?.label || '';\n        adicionarResposta(id, resposta);\n    }\n}\n\nconst fullNameAnswer = respostas.find(answer => answer.field.ref === \"01H8HD3WP1JTDJD2AY10938JSB\")?.text || '';\nconst emailAnswer = respostas.find(answer => answer.field.ref === \"baacab46-eec7-4f32-8e5e-0f8c887ad696\")?.email || \"\";\nconst telefoneClienteOriginal = respostas.find(answer => answer.field.ref === \"40d2eeb9-e3cc-46a2-90c9-ee11983fedf6\")?.phone_number || \"\";\nconst instagramAnswer = respostas.find(answer => answer.field.ref === \"64b2b8478450603b76de7e5a\")?.t || \"\";\n\nconst pergunta1 = respostas.find(answer => answer.field.ref === \"66071908-94ec-444b-83b7-b0691b6dd906\")?.number || ''; // De 0 a 10, sendo 0 nada incomodado e 10 extremamente incomodado, como você se sente por ainda não ter alcançado esse objetivo profissional?\nconst pergunta2 = respostas.find(answer => answer.field.ref === \"4b67740f-820a-4d80-a30c-e53943cedca2\")?.choice.label || ''; // Qual dessas opções você acredita que te impede de alcançar esse objetivo profissional?\nconst pergunta3 = respostas.find(answer => answer.field.ref === \"bf599283-3edd-4773-bb3f-211bd4ecb51f\")?.choice.label || ''; // Se você respondeu que está desempregado, qual era a sua última remuneração?\nconst pergunta4 = respostas.find(answer => answer.field.ref === \"49ebca80-de07-4e85-980a-0b5bf062c736\")?.choice.label || ''; // Há quanto tempo você está no seu emprego?\nconst pergunta5 = respostas.find(answer => answer.field.ref === \"cca09df1-643d-41ca-b5e6-aef45d7d3f42\")?.choice.label || ''; // Qual é o seu cargo atual?\nconst pergunta6 = respostas.find(answer => answer.field.ref === \"1c5bedbb-6918-492b-8a95-3df9b8853aab\")?.choice.label || ''; // Qual é o seu objetivo profissional para 2024?\nconst pergunta7 = respostas.find(answer => answer.field.ref === \"396b0194-96fe-4041-ae90-f9307e876241\")?.choice.label || ''; // Qual é a sua escolaridade?\nconst pergunta8 = respostas.find(answer => answer.field.ref === \"2f10d945-b3b8-4756-9531-ab9653dee655\")?.choice.label || ''; // Quanto você ganha de salário?\n\n\n// Data de aplicação\nconst dataAplicacao = inputData.body.form_response.submitted_at || '';\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${ano}-${mes}-${dia}`;\n}\n\nfunction formatarDataISO(dataISO) {\n    const data = new Date(dataISO);\n\n    const ano = data.getFullYear();\n    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do zero\n    const dia = String(data.getDate()).padStart(2, '0');\n    const horas = String(data.getHours()).padStart(2, '0');\n    const minutos = String(data.getMinutes()).padStart(2, '0');\n    const segundos = String(data.getSeconds()).padStart(2, '0');\n\n    return `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  \n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// UTMS\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Função para remover todas as aspas e parênteses de um texto\nfunction removerAspasEParenteses(texto) {\n    // Substitui todas as ocorrências de aspas (\"\") por nada\n    let textoSemAspas = texto.replace(/\"/g, '');\n    // Substitui todas as ocorrências de parênteses () por nada\n    textoSemAspas = textoSemAspas.replace(/\\([^()]*\\)/g, '');\n    return textoSemAspas;\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    // Ajuste para remover o espaço extra caso não haja sobrenome\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    // Remover \"@\" e transformar em letras minúsculas\n    return instagram.toLowerCase().trim().replace(/^@/, \"\");\n}\n\nlet telefoneFinal = \"\";\n\n// Verificar se o telefone foi preenchido\nif (telefoneClienteOriginal) {\n    // Limpar o número para remover caracteres não numéricos\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    // Determinar se o telefone possui DDI\n    if (telefoneLimpo.length > 11) {\n        // Extrair o DDI (primeiros dois dígitos)\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        // Assumir DDI padrão (55) para números com DDD + número\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        // Assumir DDI padrão (55) para números com DDD + número de 10 dígitos\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        // Caso o número não tenha tamanho esperado, considerá-lo inválido\n        telefoneFinal = telefoneLimpo; // Ou deixar vazio: telefoneFinal = \"\";\n    }\n\n    // Ajustar número com base no DDD\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            // Se o DDD for maior que 28 e o número tiver 9 dígitos, remover o nono dígito\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1); // Remove o primeiro dígito\n            }\n        } else {\n            // Se o DDD for menor ou igual a 28 e o número tiver 8 dígitos, adicionar o nono dígito\n            if (numero.length === 8) {\n                numero = `9${numero}`; // Adiciona o nono dígito\n            }\n        }\n    }\n\n    // Formatar número final apenas se válido\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst form_id = $node[\"Webhook\"].json[\"body\"][\"form_response\"][\"form_id\"]  || \"\";\nconst form_name = $node[\"Webhook\"].json[\"body\"][\"form_response\"][\"definition\"][\"title\"] || \"\";\nconst endings = inputData.body.form_response.ending.ref || \"\";\nconst data_aplicacao = formatarDataISO(dataAplicacao) || \"\";\n\n// Determinar qualificação\nlet qualificacao = \"Desqualificado\";\nif (endings === \"556e0598-22b1-4627-894a-b41151197fd8\" || endings === \"5d42857f-570c-4bae-bd3b-bb2580f70361\") {\n    qualificacao = \"Qualificado\";\n}\n\nconst result = {\n    ...formattedNames, // Nome formatado\n    email: formattedEmail, // Email formatado\n    whatsapp: telefoneFinal, // WhatsApp formatado ou vazio\n    instagram: formattedInstagram, // Instagram formatado\n    utm_source: utmSource,\n    utm_campaign: utmCampaign,\n    utm_term: utmTerm,\n    utm_medium: utmMedium,\n    utm_content: utmContent,\n    dataAplicacao: data_aplicacao,\n    incomodacao: pergunta1,\n    obstaculo: pergunta2,\n    remuneracao_anterior: pergunta3,\n    tempo_emprego: pergunta4,\n    cargo: pergunta5,\n    objetivo: pergunta6,\n    escolaridade: pergunta7,\n    salario: pergunta8,\n    qualificacao: qualificacao,\n    perguntas_respostas: perguntas_respostas,\n    form_id: form_id,\n    form_name: form_name // Inclui o form_name no resultado\n};\n\n// Aqui estamos ajustando a estrutura do retorno para se adequar ao que o n8n espera\nreturn [{ json: result }];\n"
+      },
+      "id": "3b62d673-9b8e-4e7c-b420-b01555302c91",
+      "name": "formata_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "857cec21-9e14-4ec1-8846-dc73f03b18be",
+              "name": "nome",
+              "value": "={{ $node[\"formata_dados\"].json[\"fname\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "cb8cf50a-ad5f-4f6c-a108-bc8207ed39d6",
+              "name": "sobrenome",
+              "value": "={{ $node[\"formata_dados\"].json[\"lname\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "ea504228-bc53-47ab-af46-8ffc438c3647",
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "936860ac-b806-4273-ad2a-e55dab31d731",
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "d8adee03-c9d3-449a-a1c9-39feba83037b",
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "dbf48f0c-ad19-46ca-ace2-dd71301de650",
+              "name": "data_aplicacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"dataAplicacao\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "24d5eecc-7a73-4814-9e87-2ab22738d2b5",
+              "name": "id_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "7df91456-16d1-4aa6-8c92-bf48117dc184",
+              "name": "id_ferramenta_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "36697c59-df0d-4d8e-a21e-c8252542fd27",
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "24d8401c-9ad4-4813-a992-b19b4ce7db34",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8d013fe4-aba3-4448-9362-f41ae28a4160",
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "9424999b-23c6-4683-baf4-42737742acfc",
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "52797712-1952-4f3e-b216-8214b6dc3986",
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "b1df6562-92bf-4f75-9fd9-045e977f9b0c",
+              "name": "informacoes_importantes",
+              "value": "={{ $node[\"formata_dados\"].json[\"informacoes_importantes\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8be23767-974b-4027-a66e-5479fae83aef",
+              "name": "tempo",
+              "value": "={{ $node[\"formata_dados\"].json[\"tempo\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "359317c7-5d26-484c-b21a-ea63c8c10332",
+              "name": "conhece_thiago",
+              "value": "={{ $node[\"formata_dados\"].json[\"conhece_thiago\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "571e5db2-c2eb-4a74-a4ea-6606e72987ca",
+              "name": "faz_cursinho",
+              "value": "={{ $node[\"formata_dados\"].json[\"faz_cursinho\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "fb37c37f-d346-491d-a166-e2f6ac692331",
+              "name": "fase_atual",
+              "value": "={{ $node[\"formata_dados\"].json[\"fase_atual\"]|| \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "dba5c0a7-b53f-4179-bc30-e37cfa7c45e3",
+              "name": "graduacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"graduacao\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "f8c87689-0188-4acb-81bf-cb20813de065",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "396fb545-7ed0-4eab-9e0d-f17b90721a11",
+              "name": "qualificacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"qualificacao\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f6a8c5d2-7a71-40bf-83df-d02f588d75dd",
+              "name": "id_funil",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_funil\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "12a6881c-106c-4e59-bb47-6c739d268efe",
+              "name": "respostasFormulario",
+              "value": "={{ $node[\"formata_dados\"].json[\"respostasFormulario\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "cf70dcf9-e61a-4bb3-86e8-0ecf4787b0fb",
+              "name": "perguntas_respostas",
+              "value": "={{ $node[\"formata_dados\"].json[\"perguntas_respostas\"] }}",
+              "type": "object"
+            },
+            {
+              "id": "fcf5b300-a2ea-4706-9a2f-a10e3d0c27b4",
+              "name": "email_embaixador",
+              "value": "={{ $node[\"formata_dados\"].json[\"email_embaixador\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "7603413a-2f4d-4b48-97a6-5e66df851a89",
+              "name": "nome_embaixador",
+              "value": "={{ $node[\"formata_dados\"].json[\"nome_embaixador\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        940,
+        0
+      ],
+      "id": "22822751-03e4-4949-b012-5d84671a470f",
+      "name": "dados"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_funis\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        0
+      ],
+      "id": "668980ab-a529-4e57-9cc2-cf3df6782d56",
+      "name": "busca_funil"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Funis"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "f4684a47-6158-4fda-8a5f-0b317a5b2d32",
+      "name": "pesquisa_variavel_n8n_fluxo_funis",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        460,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "6ad418ee-8054-4cf2-b10d-fb2170c780f7",
+      "name": "fila_acoes_funis",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        0
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "LuHAjLmTOXHZ3CMW",
+          "name": "[RabbitMQ] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sessao-estrategica-v1",
+        "options": {}
+      },
+      "id": "49be91ba-5809-4e06-abe9-6f57341da438",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "799a06b4-5853-4487-bb6b-0d15b9f69874"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "10737",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-dc61b30310c0c2c4f9d9d284390f7939-396b3cefb259d2ec-01",
+            "x-forwarded-for": "34.230.177.131",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "3fc641f1cb52",
+            "x-real-ip": "34.230.177.131"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01JQ828ABJKXHDBVZJ9T2BCMZZ",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "fpdbWhpY",
+              "token": "kc4ks5i32e71qbq3ihl8jkc4ksps71vw",
+              "landed_at": "2025-03-26T01:49:25Z",
+              "submitted_at": "2025-03-26T01:49:45Z",
+              "hidden": {
+                "email": "",
+                "name": "",
+                "utm_campaign": "",
+                "utm_content": "",
+                "utm_medium": "",
+                "utm_source": "",
+                "utm_term": ""
+              },
+              "calculated": {
+                "score": 4
+              },
+              "variables": [
+                {
+                  "key": "counter_3c2ff8fe_5fa7_4bcf_92ab_5c8b305afd49",
+                  "type": "number",
+                  "number": 0
+                },
+                {
+                  "key": "counter_7a678620_1641_4448_8d3e_fcac75337683",
+                  "type": "number",
+                  "number": 0
+                },
+                {
+                  "key": "counter_bc30d3e8_d7c1_4c18_b748_476b65760942",
+                  "type": "number",
+                  "number": 0
+                },
+                {
+                  "key": "score",
+                  "type": "number",
+                  "number": 4
+                },
+                {
+                  "key": "winning_outcome_id",
+                  "type": "outcome_id",
+                  "outcome_id": "qDNcEsQixb9u"
+                }
+              ],
+              "outcome": {
+                "id": "qDNcEsQixb9u",
+                "title": "Muito obrigado!"
+              },
+              "definition": {
+                "id": "fpdbWhpY",
+                "title": "🔋3 - SESSÃO SPRINT DE CARREIRA GRATUITA C/ CALENDLY - DADOS AO FINAL",
+                "fields": [
+                  {
+                    "id": "flcnFuWAW93n",
+                    "ref": "396b0194-96fe-4041-ae90-f9307e876241",
+                    "type": "multiple_choice",
+                    "title": "Qual é a sua escolaridade?\n\n",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "Oaay0HaiYeYk",
+                        "ref": "a3dfac6c-154c-48a6-8a6a-a285db46f4ff",
+                        "label": "Ensino Médio"
+                      },
+                      {
+                        "id": "sUqCscjfdLBa",
+                        "ref": "c2e9d139-9afb-4a87-a44f-8911ee03b792",
+                        "label": "Graduação"
+                      },
+                      {
+                        "id": "zvDy3r8vZuft",
+                        "ref": "35d6102b-a9c3-4c03-99d4-ebf5236936e8",
+                        "label": "Pós-graduação"
+                      },
+                      {
+                        "id": "kqLCA5gjJqzH",
+                        "ref": "cc791640-90e9-4a53-97f0-52bf345d2d57",
+                        "label": "Mestrado"
+                      },
+                      {
+                        "id": "8BM7FHq606ak",
+                        "ref": "e0eb975b-5f5f-4aab-bc09-4d442589de0d",
+                        "label": "Doutorado"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "Pm7WnkcFSmCg",
+                    "ref": "1c5bedbb-6918-492b-8a95-3df9b8853aab",
+                    "type": "multiple_choice",
+                    "title": "Qual é o seu objetivo profissional para 2024?",
+                    "properties": {},
+                    "allow_other_choice": true,
+                    "choices": [
+                      {
+                        "id": "JhpLdp4UzBiQ",
+                        "ref": "6d0490a0-3103-41cc-848c-7cc9c5dbf130",
+                        "label": "Ser promovido no meu emprego atual"
+                      },
+                      {
+                        "id": "K9UxQa8l0IQL",
+                        "ref": "6721e568-580e-4493-8aa8-3e62fc81bb5f",
+                        "label": "Aumentar o meu salário, continuando no mesmo cargo e empresa"
+                      },
+                      {
+                        "id": "bV2LmXAQ17KT",
+                        "ref": "3cde49d4-cdb4-4a8d-a00d-4dd62e2b0441",
+                        "label": "Ser promovido para o meu primeiro cargo de liderança, tanto na empresa atual como em uma nova empresa"
+                      },
+                      {
+                        "id": "Viler7zFVEGH",
+                        "ref": "8e0ab4e2-cfe6-4cf5-9c4e-c0fe426f279e",
+                        "label": "Mudar de emprego para uma empresa com oportunidades de crescimento"
+                      },
+                      {
+                        "id": "LuKZQldDLO3M",
+                        "ref": "b6d9eff4-be0e-41d8-9b3c-6e4343c74c12",
+                        "label": "Mudar de área de atuação no meu emprego ou em um novo emprego"
+                      },
+                      {
+                        "id": "VbVRPlaZxnEc",
+                        "ref": "3660f739-4303-452d-b9ea-7efd8fd6c0a1",
+                        "label": "Me recolocar no mercado de trabalho"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ycPtIEYTdNOQ",
+                    "ref": "cca09df1-643d-41ca-b5e6-aef45d7d3f42",
+                    "type": "multiple_choice",
+                    "title": "Qual é o seu cargo atual",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "FJcun0YP5SCX",
+                        "ref": "d1dcabdb-afb8-4b33-9b60-bd15ed8773db",
+                        "label": "Estagiário"
+                      },
+                      {
+                        "id": "FccFPYAqmcxO",
+                        "ref": "f79fb147-4a98-4e99-be8e-f3c614c91a2e",
+                        "label": "Assistente / Auxiliar"
+                      },
+                      {
+                        "id": "pQYXCPbQr06u",
+                        "ref": "942945a4-8108-46aa-b3b2-52ff05c7e5fe",
+                        "label": "Analista"
+                      },
+                      {
+                        "id": "SjGnYDH6Enxz",
+                        "ref": "fea56fa4-147c-4e88-a7db-8ba6c7578a38",
+                        "label": "Especialista"
+                      },
+                      {
+                        "id": "FtbdzHf6zd4k",
+                        "ref": "195982dc-fa3a-40e2-90dd-2b6b2706ca55",
+                        "label": "Coordenador"
+                      },
+                      {
+                        "id": "021lYgi4cP95",
+                        "ref": "40a8cda2-7f4e-42d8-8e09-fb2b4dd1261b",
+                        "label": "Gerente"
+                      },
+                      {
+                        "id": "8AlxrP3EhLm1",
+                        "ref": "f27e1423-5770-4ca2-93da-100535202bca",
+                        "label": "Diretor"
+                      },
+                      {
+                        "id": "YgkW7UNhswCi",
+                        "ref": "00afd273-895e-4a5b-a7a6-7a9efce30fbd",
+                        "label": "Autônomo"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "kqbgfSNuFSbc",
+                    "ref": "49ebca80-de07-4e85-980a-0b5bf062c736",
+                    "type": "multiple_choice",
+                    "title": "Há quanto tempo você está no seu emprego?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "j8gIuF3SFCb9",
+                        "ref": "c55d837b-f2b6-4754-a2da-e1bb014c1dfd",
+                        "label": "Não estou trabalhando"
+                      },
+                      {
+                        "id": "uPqZTamHdDOT",
+                        "ref": "682b3ef0-f070-435a-8ad2-b464c0073300",
+                        "label": "Há menos de 6 meses"
+                      },
+                      {
+                        "id": "5h5krAVHtJJP",
+                        "ref": "f16e5f8a-0d06-4cde-9766-5503fc4cb1aa",
+                        "label": "Entre 6 meses e 1 ano"
+                      },
+                      {
+                        "id": "kN5CYiDbfycI",
+                        "ref": "568620a5-1d89-41d7-9cbd-0ac761eafc40",
+                        "label": "Entre 1 e 2 anos"
+                      },
+                      {
+                        "id": "5WH6Zer3pJv3",
+                        "ref": "de06f258-6497-4714-9d80-c017da37da94",
+                        "label": "Entre 2 e 4 anos"
+                      },
+                      {
+                        "id": "KloebZgp9LYy",
+                        "ref": "1714c0bb-58f1-4fb3-b494-054918828ba7",
+                        "label": "Entre 4 e 6 anos"
+                      },
+                      {
+                        "id": "nlrr8w1NeJ7f",
+                        "ref": "a83246e4-b501-46fa-bf0e-04bec5cca8d6",
+                        "label": "Mais de 6 anos"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "Fx6SkqFmnWR7",
+                    "ref": "2f10d945-b3b8-4756-9531-ab9653dee655",
+                    "type": "multiple_choice",
+                    "title": "Quanto você ganha de salário?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "aQcURvRF7ZBX",
+                        "ref": "8aea7a20-582c-4faf-8b51-e6da205c00d2",
+                        "label": "Até R$3.999"
+                      },
+                      {
+                        "id": "PfjCnSsJD4BG",
+                        "ref": "91052b93-238c-4315-916c-9ea5817b2ca7",
+                        "label": "Entre R$4.000 e R$5.499"
+                      },
+                      {
+                        "id": "S9PA4DQHYpsl",
+                        "ref": "3fa983f4-81c4-40b7-b847-e53936107ac7",
+                        "label": "Entre R$5.500 e R$7.999"
+                      },
+                      {
+                        "id": "DGQrUgnVq95q",
+                        "ref": "0e800925-d3e4-437d-9299-56880ad92111",
+                        "label": "Entre R$8.000 e R$10.999"
+                      },
+                      {
+                        "id": "WFZENJFSu2Aa",
+                        "ref": "c5550bb0-6bd9-4661-876f-08245683115a",
+                        "label": "Entre R$11.000 e R$14.999"
+                      },
+                      {
+                        "id": "fqJRyGIWftlN",
+                        "ref": "6f9f74b5-839d-469a-bd74-649af5ccc475",
+                        "label": "Entre R$15.000 e R$19.999"
+                      },
+                      {
+                        "id": "KuLzQxkbce8H",
+                        "ref": "15e32779-71a2-4576-b12d-d8efbe420cc3",
+                        "label": "Entre R$20.000 e R$24.999"
+                      },
+                      {
+                        "id": "kLkLOLM84yMg",
+                        "ref": "0e3c5e73-67b8-4600-a9b0-805c191d414d",
+                        "label": "Acima de R$25.000"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "EKKqffnyWjNP",
+                    "ref": "4b67740f-820a-4d80-a30c-e53943cedca2",
+                    "type": "multiple_choice",
+                    "title": "Qual dessas opções você acredita que te impede de alcançar esse objetivo profissional?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "76puhnOjHUvM",
+                        "ref": "98e415ab-81f1-40b2-b76b-f76c96e0d2fb",
+                        "label": "Falta de plano de carreira na empresa"
+                      },
+                      {
+                        "id": "eTvmPUXFltOb",
+                        "ref": "2add6a28-5fdd-4c25-96f0-ec9160764412",
+                        "label": "Meu gestor não tem cultura de feedback"
+                      },
+                      {
+                        "id": "Xq5KSSLRZUd5",
+                        "ref": "5fafffe3-938f-4fdd-b090-e8b957f6e02d",
+                        "label": "Falta de oportunidades dentro da empresa"
+                      },
+                      {
+                        "id": "7lDmrFrm45rA",
+                        "ref": "bdd6e23d-606c-4581-84e5-f1b29920a2ce",
+                        "label": "Pouco tempo de experiência no cargo atual"
+                      },
+                      {
+                        "id": "jaT6J0UZCVTN",
+                        "ref": "36b95644-c5c6-4508-986d-f75225bc48f0",
+                        "label": "Tenho pouco tempo na empresa que trabalho"
+                      },
+                      {
+                        "id": "ubbSBDjohmGF",
+                        "ref": "ea714ac4-312f-4ee0-8f98-684197940add",
+                        "label": "A empresa só valoriza quem vem do mercado"
+                      },
+                      {
+                        "id": "h4C8VEDNo156",
+                        "ref": "69f2a5da-ad0e-414d-9181-42478467dd71",
+                        "label": "Não sei e não consigo ser promovido"
+                      },
+                      {
+                        "id": "2OizQUnaOAVv",
+                        "ref": "f3f152dd-3f97-4c39-bf92-6048a35284f9",
+                        "label": "Falta de cursos e certificações na área de atuação"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "wjRUtzxYV50j",
+                    "ref": "66071908-94ec-444b-83b7-b0691b6dd906",
+                    "type": "nps",
+                    "title": "De 0 a 10, sendo 0 nada incomodado e 10 extremamente incomodado, como você se sente por ainda não ter alcançado esse objetivo profissional?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "Qoo5ihXO9pI3",
+                    "ref": "01H8HD3WP1JTDJD2AY10938JSB",
+                    "type": "short_text",
+                    "title": "Seu nome:",
+                    "properties": {}
+                  },
+                  {
+                    "id": "l8HCoT2WDlar",
+                    "ref": "40d2eeb9-e3cc-46a2-90c9-ee11983fedf6",
+                    "type": "phone_number",
+                    "title": "Seu telefone com WhatsApp",
+                    "properties": {}
+                  },
+                  {
+                    "id": "kvmg5jEdIQvo",
+                    "ref": "baacab46-eec7-4f32-8e5e-0f8c887ad696",
+                    "type": "email",
+                    "title": "Qual e-mail você mais utiliza no seu dia a dia?",
+                    "properties": {}
+                  }
+                ],
+                "outcome": {
+                  "variable": "winning_outcome_id",
+                  "choices": [
+                    {
+                      "id": "dRjzcKzrWuiG",
+                      "ref": "4e17b606-a8c0-49c9-993f-0a14e83e6448",
+                      "title": "Rodizio - Calendly",
+                      "counter_variable": "counter_3c2ff8fe_5fa7_4bcf_92ab_5c8b305afd49",
+                      "thankyou_screen_ref": "5d42857f-570c-4bae-bd3b-bb2580f70361"
+                    },
+                    {
+                      "id": "84zBCLItyiMx",
+                      "ref": "412d5259-28eb-41c3-85c6-72d651490e90",
+                      "title": "Agendmaento Lilian",
+                      "counter_variable": "counter_bc30d3e8_d7c1_4c18_b748_476b65760942",
+                      "thankyou_screen_ref": "556e0598-22b1-4627-894a-b41151197fd8"
+                    },
+                    {
+                      "id": "qDNcEsQixb9u",
+                      "ref": "b85e1bb8-44a3-4dff-bc29-71512028eff9",
+                      "title": "Muito obrigado!",
+                      "counter_variable": "counter_7a678620_1641_4448_8d3e_fcac75337683",
+                      "thankyou_screen_ref": "7aed75d3-c4ad-4d58-83e1-570729229053"
+                    }
+                  ]
+                },
+                "endings": [
+                  {
+                    "id": "GWHY4b1uy2rM",
+                    "ref": "7aed75d3-c4ad-4d58-83e1-570729229053",
+                    "title": "Muito obrigado!",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "De acordo com suas respostas, identificamos que, para o seu momento atual, esse é o próximo passo recomendado!\n\nClique abaixo para participar ao vivo da Aula \n_*Como tornar seu LinkedIn em um Ímã de Recrutadores*_!",
+                      "button_text": "ASSISTIR AULA GRATUITA",
+                      "show_button": true,
+                      "share_icons": false,
+                      "button_mode": "redirect",
+                      "redirect_url": "https://links.liliancidreira.com.br/obrigado-sessao-webinar{{hidden:utm_source}}&utm_campaign={{hidden:utm_campaign}}&utm_term={{hidden:utm_term}}&utm_medium={{hidden:utm_medium}}&utm_content={{hidden:utm_content}}&email={{field:baacab46-eec7-4f32-8e5e-0f8c887ad696}}&nome={{field:01H8HD3WP1JTDJD2AY10938JSB}}&telefone={{field:40d2eeb9-e3cc-46a2-90c9-ee11983fedf6}}&form_name=3-Sessao_Sprint"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "zvDy3r8vZuft",
+                    "label": "Pós-graduação",
+                    "ref": "35d6102b-a9c3-4c03-99d4-ebf5236936e8"
+                  },
+                  "field": {
+                    "id": "flcnFuWAW93n",
+                    "type": "multiple_choice",
+                    "ref": "396b0194-96fe-4041-ae90-f9307e876241"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "Viler7zFVEGH",
+                    "label": "Mudar de emprego para uma empresa com oportunidades de crescimento",
+                    "ref": "8e0ab4e2-cfe6-4cf5-9c4e-c0fe426f279e"
+                  },
+                  "field": {
+                    "id": "Pm7WnkcFSmCg",
+                    "type": "multiple_choice",
+                    "ref": "1c5bedbb-6918-492b-8a95-3df9b8853aab"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "FccFPYAqmcxO",
+                    "label": "Assistente / Auxiliar",
+                    "ref": "f79fb147-4a98-4e99-be8e-f3c614c91a2e"
+                  },
+                  "field": {
+                    "id": "ycPtIEYTdNOQ",
+                    "type": "multiple_choice",
+                    "ref": "cca09df1-643d-41ca-b5e6-aef45d7d3f42"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "5WH6Zer3pJv3",
+                    "label": "Entre 2 e 4 anos",
+                    "ref": "de06f258-6497-4714-9d80-c017da37da94"
+                  },
+                  "field": {
+                    "id": "kqbgfSNuFSbc",
+                    "type": "multiple_choice",
+                    "ref": "49ebca80-de07-4e85-980a-0b5bf062c736"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "fqJRyGIWftlN",
+                    "label": "Entre R$15.000 e R$19.999",
+                    "ref": "6f9f74b5-839d-469a-bd74-649af5ccc475"
+                  },
+                  "field": {
+                    "id": "Fx6SkqFmnWR7",
+                    "type": "multiple_choice",
+                    "ref": "2f10d945-b3b8-4756-9531-ab9653dee655"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "7lDmrFrm45rA",
+                    "label": "Pouco tempo de experiência no cargo atual",
+                    "ref": "bdd6e23d-606c-4581-84e5-f1b29920a2ce"
+                  },
+                  "field": {
+                    "id": "EKKqffnyWjNP",
+                    "type": "multiple_choice",
+                    "ref": "4b67740f-820a-4d80-a30c-e53943cedca2"
+                  }
+                },
+                {
+                  "type": "number",
+                  "number": 7,
+                  "field": {
+                    "id": "wjRUtzxYV50j",
+                    "type": "nps",
+                    "ref": "66071908-94ec-444b-83b7-b0691b6dd906"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "gabriel mota",
+                  "field": {
+                    "id": "Qoo5ihXO9pI3",
+                    "type": "short_text",
+                    "ref": "01H8HD3WP1JTDJD2AY10938JSB"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5531985711260",
+                  "field": {
+                    "id": "l8HCoT2WDlar",
+                    "type": "phone_number",
+                    "ref": "40d2eeb9-e3cc-46a2-90c9-ee11983fedf6"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "teste@automagicbots.com.br",
+                  "field": {
+                    "id": "kvmg5jEdIQvo",
+                    "type": "email",
+                    "ref": "baacab46-eec7-4f32-8e5e-0f8c887ad696"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "GWHY4b1uy2rM",
+                "ref": "7aed75d3-c4ad-4d58-83e1-570729229053"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/sessao-estrategica-v1",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-26T02:45:57.480Z",
+  "versionId": "885bd549-d2e8-4ea8-ae41-ff0920d85c82"
+}
