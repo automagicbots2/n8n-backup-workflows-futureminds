@@ -1,0 +1,434 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_tag_funil1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_tag_funil": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_contact": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T18:50:36.148Z",
+  "id": "ZDP9LrqqTkuQgPPH",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][ActiveCampaign] - Adicionar Tag no Contato",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do Email Marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "91ab7741-9356-4e88-bb74-16c20263fb85",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -720,
+        100
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_etapa_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}\n    AND t.entidade = 'contact';\n",
+        "options": {}
+      },
+      "id": "ac7d2bee-8f9a-4dd7-909d-06af3e32bd33",
+      "name": "pesquisa_tag_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        180
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "befd803d-7a73-4261-94aa-efc574fbada2",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -500,
+        100
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_situacao_checkout = '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}'\n    AND t.entidade = 'contact';",
+        "options": {}
+      },
+      "id": "632b1f84-9cf8-4e10-9739-f7118d5ef156",
+      "name": "pesquisa_tag_funil1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "e957cdfa-f8a2-4068-9b13-64df05a3ae2f",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d0a17ed7-a06f-45e0-8679-9641a3456c18",
+      "name": "checkout",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -280,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        240,
+        80
+      ],
+      "id": "51059a64-4d75-4834-a0f8-781a974ad6cc",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        460,
+        0
+      ],
+      "id": "7c9766eb-db67-4ae9-b1aa-aacfca50b374",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}/api/3/contactTags",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contactTag\": {\n    \"contact\": {{ $node[\"pesquisa_user\"].json[\"id_email_mkt\"] }},\n    \"tag\": {{ $node[\"Loop Over Items\"].json[\"id_crm\"] }}\n  }\n}",
+        "options": {}
+      },
+      "id": "22ca67e8-8a62-42c6-98bf-f30dd5951242",
+      "name": "add_tag_contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        180
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "add-tag-email-marketing",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -940,
+        100
+      ],
+      "id": "f6d96a63-0622-4e3f-8284-df6b1b0cdf1b",
+      "name": "fluxo_chamado",
+      "webhookId": "7a046997-4089-434c-a0ae-f4da1d44546d"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.zkgge2.easypanel.host",
+            "user-agent": "axios/1.7.4",
+            "content-length": "1658",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8n-n8n.zkgge2.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "0be4b2663018",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "email": "ee@automagicbots.com.br",
+            "telefone": "5511955835870",
+            "nome": "Gabriel",
+            "sobrenome": "Amaral Mota",
+            "id_user": 5,
+            "id_etapa_funil": 1,
+            "id_situacao_checkout": 5,
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "Amaral Mota",
+              "nome_completo": "Gabriel Amaral Mota",
+              "email": "ee@automagicbots.com.br",
+              "telefone": "5511955835870",
+              "cpf": "",
+              "utm_source": "wpp-oficial",
+              "utm_campaign": "quente",
+              "utm_term": "leads-compra-cancelada",
+              "utm_medium": "1x1",
+              "utm_content": "msg-compra-cancelada",
+              "form_id": "6ei2wmw3",
+              "form_name": "Desconto Renovação ",
+              "value": 1997,
+              "transaction_id": "HP0988071333",
+              "net_value": "",
+              "trans_status": "Boleto Gerado",
+              "payment_method": "Boleto Bancário",
+              "refund_date": "",
+              "event_date": "2025-02-02 15:41:15",
+              "payment_date": "",
+              "product_type": "Assinatura",
+              "product_id": 2241838,
+              "product_name": "Formação do Zero à Importador com Bônus Mercado Livre Descomplicado Grátis",
+              "warranty_date": "",
+              "offer_code": "6ei2wmw3",
+              "discount_coupon": "",
+              "street": "",
+              "address_number": "",
+              "country": "",
+              "district": "",
+              "address_complement": "",
+              "city": "",
+              "address_state": "",
+              "zipcode": "",
+              "affiliate_value": "",
+              "gateway_comission": 106.84,
+              "billet_barcode": "34191096517084568054889356830003199820000199700",
+              "currency": "BRL",
+              "bankslip": "https://hotm.art/bHP0988071333",
+              "recurrenceExpirationDate": "",
+              "cancelledDate": "",
+              "cnpj": "45.157.482/0001-26",
+              "installments": 1,
+              "billetExpirationDate": "",
+              "recurrenceNumber": 1,
+              "src": "",
+              "sck": "wpp-oficial|quente|leads-compra-cancelada|1x1|msg-compra-cancelada",
+              "refusalReason": "",
+              "subscriberCode": "ZJA2I99R",
+              "planName": "Desconto Renovação ",
+              "planId": 859685,
+              "eventId": "2448e579-7b87-4721-8247-9cd5088fce21",
+              "tipo_forms": "Checkout",
+              "id_funil": "1",
+              "id_forms": "2"
+            }
+          },
+          "webhookUrl": "https://n8n-n8n.zkgge2.easypanel.host/webhook/add-tag-email-marketing",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T18:51:19.671Z",
+  "versionId": "18fe17e7-0b78-441c-8993-b58fed01f0f5"
+}
