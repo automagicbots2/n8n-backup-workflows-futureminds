@@ -1,0 +1,96 @@
+{
+  "active": true,
+  "connections": {
+    "executa_procedure": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "executa_procedure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T18:06:16.017Z",
+  "id": "6fAJ1tFXo0gEIKx1",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Banco de Dados] - Busca ou Insere Conversão",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL busca_conversao(\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_transacao_checkout\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"id_transacao_checkout\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_produto\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"id_produto\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"valor\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"valor\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"parcelas\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"parcelas\"] : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"oferta\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"oferta\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"comissao_gateway\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"comissao_gateway\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_vendedor\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_vendedor\"] : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"moeda\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"moeda\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"forma_de_pagamento\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"forma_de_pagamento\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_da_compra\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"status_da_compra\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_garantia\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"data_garantia\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_conversao\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"data_conversao\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_source\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"utm_source\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_campaign\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"utm_campaign\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_term\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"utm_term\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_medium\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"utm_medium\"] + `'` : 'NULL' }},\n    {{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_content\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"utm_content\"] + `'` : 'NULL' }}\n);\n",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "fd151950-3b77-4aa0-90d8-6519e8edc708",
+      "name": "executa_procedure",
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        420,
+        0
+      ],
+      "id": "06750e6e-8034-433c-81ed-8b05330de0b9",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "path": "add-conversion-bd",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b1d453d6-2f41-42e7-832d-637bcb4a1478",
+      "name": "fluxo_chamado",
+      "webhookId": "d6fc03ca-a4ba-4e0c-90d9-a7117cad574b"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T18:06:32.796Z",
+  "versionId": "84e7c172-777b-4057-9e68-f7a2003f5c8d"
+}
