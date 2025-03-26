@@ -446,10 +446,12 @@
   },
   "staticData": {
     "node:Quinta - 19:30": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:Quinta - 20hrs": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     }
   },
   "tags": [
