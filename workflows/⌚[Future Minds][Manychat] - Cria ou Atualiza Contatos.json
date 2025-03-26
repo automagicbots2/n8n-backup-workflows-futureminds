@@ -1,0 +1,870 @@
+{
+  "active": true,
+  "connections": {
+    "cria_contato_manychat": {
+      "main": [
+        [
+          {
+            "node": "verifica_whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_whatsapp": {
+      "main": [
+        [],
+        [
+          {
+            "node": "atualiza_contato_manychat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "procura_subscriber_pelo_telefone_nativo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "erro_de_email_ou_telefone": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_contato_manychat1": {
+      "main": [
+        [
+          {
+            "node": "erro_de_email_ou_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_api_key_manychat": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "procura_subscriber_pelo_telefone_nativo": {
+      "main": [
+        [
+          {
+            "node": "subscriber_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "subscriber_existe": {
+      "main": [
+        [
+          {
+            "node": "atualiza_contato_manychat1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "procura_subscriber_pelo_email_nativo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "procura_subscriber_pelo_email_nativo": {
+      "main": [
+        [
+          {
+            "node": "subscriber_existe1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "subscriber_existe1": {
+      "main": [
+        [
+          {
+            "node": "atualiza_contato_manychat1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria_contato_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_api_key_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_manychat": {
+      "main": [
+        [
+          {
+            "node": "existem_campos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existem_campos": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_manychat": {
+      "main": [
+        [
+          {
+            "node": "preenche_campos_personalizados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_campos_personalizados": {
+      "main": [
+        [
+          {
+            "node": "retorna_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T18:14:43.139Z",
+  "id": "PfbokyyAlLWvHBe9",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Manychat] - Cria ou Atualiza Contatos",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/createSubscriber",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer {{ $node[\"pesquisa_api_key_manychat\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "has_opt_in_sms",
+              "value": "true"
+            },
+            {
+              "name": "has_opt_in_email",
+              "value": "true"
+            },
+            {
+              "name": "consent_phrase",
+              "value": "Olá, aqui é da Automagic Bots. Posso ter seu contato?"
+            },
+            {
+              "name": "whatsapp_phone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] || \"\"  }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] || \"\"  }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || \"\"  }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "735d21ae-b8fc-49cf-a5e3-0744cc29ea31",
+      "name": "cria_contato_manychat",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1080,
+        360
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "0b43ebf2-3b3b-4851-b3ff-a91252309dfd",
+              "leftValue": "={{ $json[\"error\"][\"message\"] }}",
+              "rightValue": "The input value is not a valid WhatsApp ID",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "66563f69-5e68-4609-9cdb-f29b0458970c",
+      "name": "verifica_whatsapp",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -860,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "c04ffdcb-525e-456c-9012-5371aa118900",
+      "name": "Stop and Error2",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "f1d5456b-52a8-4188-b55d-5e1782c456aa",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2240,
+        140
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"error\"][\"message\"] }}",
+              "operation": "contains",
+              "value2": "This email address already exists"
+            },
+            {
+              "value1": "={{ $json[\"data\"][\"id\"] }}",
+              "operation": "isNotEmpty"
+            },
+            {
+              "value1": "={{ $json[\"error\"][\"message\"] }}",
+              "operation": "contains",
+              "value2": "Subscriber with the same phone number already exists in account"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "4bdd1ede-4445-4881-93e3-45766cbdb733",
+      "name": "erro_de_email_ou_telefone",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "path": "cria-contato-manychat",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -2940,
+        140
+      ],
+      "id": "a7b0530c-53e7-4b5f-a6d5-01d78985d1bc",
+      "name": "fluxo_chamado",
+      "webhookId": "bce4c42c-d9b4-48a9-ae4b-9a044d69119a"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/updateSubscriber",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer {{ $node[\"pesquisa_api_key_manychat\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "has_opt_in_sms",
+              "value": "true"
+            },
+            {
+              "name": "has_opt_in_email",
+              "value": "true"
+            },
+            {
+              "name": "consent_phrase",
+              "value": "Olá, aqui é da Automagic Bots. Posso ter seu contato?"
+            },
+            {
+              "name": "whatsapp_phone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] || \"\"  }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] || \"\"  }}"
+            },
+            {
+              "name": "subscriber_id",
+              "value": "={{\n  $node[\"cria_contato_manychat\"].runIndex >= 0 \n    ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"] : $node[\"procura_subscriber_pelo_email_nativo\"].runIndex >= 0 \n      ? $node[\"procura_subscriber_pelo_email_nativo\"].json[\"data\"][\"id\"]\n    : $node[\"procura_subscriber_pelo_telefone_nativo\"].runIndex >= 0 \n      ? $node[\"procura_subscriber_pelo_telefone_nativo\"].json[\"data\"][\"id\"]\n              : null\n}}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "292e8668-76f2-482b-b3e7-3b00ff0afd20",
+      "name": "atualiza_contato_manychat1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -600,
+        140
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "Chave de API Manychat"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "f9a53d24-480a-4c6b-9471-22f1f51c6ad6",
+      "name": "pesquisa_api_key_manychat",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2500,
+        140
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.manychat.com/fb/subscriber/findBySystemField",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] || \"\" }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $node[\"pesquisa_api_key_manychat\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "916ccf18-a981-4773-bf7e-2364a5cdd057",
+      "name": "procura_subscriber_pelo_telefone_nativo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -2000,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f356d66b-c828-4460-8352-f048c50594d9",
+              "leftValue": "={{ $node[\"procura_subscriber_pelo_telefone_nativo\"].json[\"data\"][\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1760,
+        140
+      ],
+      "id": "2c4a7e81-5082-4dd6-916b-81b557f54840",
+      "name": "subscriber_existe"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f356d66b-c828-4460-8352-f048c50594d9",
+              "leftValue": "={{ $node[\"procura_subscriber_pelo_email_nativo\"].json[\"data\"][\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1300,
+        260
+      ],
+      "id": "b27b0501-2432-4cf8-a341-e1a475d4b7d8",
+      "name": "subscriber_existe1"
+    },
+    {
+      "parameters": {
+        "url": "https://api.manychat.com/fb/subscriber/findBySystemField",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] || \"\" }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $node[\"pesquisa_api_key_manychat\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4e24025e-9a29-4676-af91-1fdd32a9c2b4",
+      "name": "procura_subscriber_pelo_email_nativo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1540,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtém o telefone do JSON\nconst telefoneOriginal = $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] || \"\";\n\n// Verifica se o telefone está vazio\nif (!telefoneOriginal) {\n    return [{ json: { telefoneFormatado: \"Telefone vazio\" } }];\n}\n\n// Remove todos os caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, \"\");\n\n// Verifica se tem pelo menos 10 dígitos (DDD + número) e um DDI válido\nif (telefoneLimpo.length < 10) {\n    return [{ json: { telefoneFormatado: \"Número inválido\" } }];\n}\n\n// Extrai DDI, DDD e número\nlet DDI, DDD, numero;\n\nif (telefoneLimpo.length > 11) {\n    DDI = telefoneLimpo.slice(0, 2);\n    DDD = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    DDI = \"55\";\n    DDD = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Se o DDI for 55 (Brasil) e o DDD for menor ou igual a 28, adiciona o nono dígito\nif (DDI === \"55\" && parseInt(DDD) <= 28 && numero.length === 8) {\n    numero = \"9\" + numero;\n}\n\n// Se o DDI for 55 e o número já possuir 9 dígitos, mantém como está\nif (DDI === \"55\" && parseInt(DDD) > 28 && numero.length === 8) {\n    numero = \"9\" + numero;\n}\n\n// Retorna o telefone formatado no padrão sem espaços e sem caracteres especiais\nconst telefoneFormatado = `${DDI}${DDD}${numero}`;\n\nreturn [{ json: { telefoneFormatado } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2720,
+        140
+      ],
+      "id": "a42559d8-3998-4187-aabf-2d510da2ab8e",
+      "name": "formata_dados"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_manychat_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_manychat_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5a586758-adef-48f4-a22c-d50c64784b2b",
+      "name": "pesquisa_json_fields_manychat",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -140,
+        20
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d7e69332-6eea-40b6-a123-55f14f9d7da0",
+              "leftValue": "={{ $node[\"pesquisa_json_fields_manychat\"].json[\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        20
+      ],
+      "id": "4bd9c152-1ce5-4efc-8d96-321ef424bde6",
+      "name": "existem_campos"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        300,
+        200
+      ],
+      "id": "5c682ef4-9f11-43f8-9c69-dccf15a660a3",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/setCustomFields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer {{ $node[\"pesquisa_api_key_manychat\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"subscriber_id\": {{\n  $node[\"cria_contato_manychat\"].runIndex >= 0 \n    ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"] : $node[\"procura_subscriber_pelo_email_nativo\"].runIndex >= 0 \n      ? $node[\"procura_subscriber_pelo_email_nativo\"].json[\"data\"][\"id\"]\n    : $node[\"procura_subscriber_pelo_telefone_nativo\"].runIndex >= 0 \n      ? $node[\"procura_subscriber_pelo_telefone_nativo\"].json[\"data\"][\"id\"]\n              : null\n}},\n  \"fields\": {{ $node[\"formata_campos_manychat\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_manychat\"].json[\"custom_fields_values\"]) \n    : null }}\n}",
+        "options": {}
+      },
+      "id": "a618bbdb-9301-4dfe-bdc8-64b445593ec7",
+      "name": "preenche_campos_personalizados",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        560,
+        -140
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_manychat\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        300,
+        -140
+      ],
+      "id": "7df2c68a-5178-4e5f-9a5a-9070c987196e",
+      "name": "formata_campos_manychat"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b7d2b83a-a6eb-467c-a6ae-328d63a322aa",
+              "name": "id_manychat",
+              "value": "={{   $node[\"cria_contato_manychat\"].runIndex >= 0      ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"] : $node[\"procura_subscriber_pelo_email_nativo\"].runIndex >= 0        ? $node[\"procura_subscriber_pelo_email_nativo\"].json[\"data\"][\"id\"]     : $node[\"procura_subscriber_pelo_telefone_nativo\"].runIndex >= 0        ? $node[\"procura_subscriber_pelo_telefone_nativo\"].json[\"data\"][\"id\"]               : null }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        -140
+      ],
+      "id": "755fe5ad-2881-41ec-98b2-84a03d1bc08c",
+      "name": "retorna_dados"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookgrupokedma.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "515",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8nwebhookgrupokedma.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "63cf449bb96d",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 2,
+            "id_user": 15142,
+            "telefone": "553185711260",
+            "nome": "Gabriel",
+            "sobrenome": "",
+            "graduacao": "2025",
+            "email": "teste@automagicbots.com.br",
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "",
+              "email": "teste@automagicbots.com.br",
+              "telefone": "553185711260",
+              "utm_source": "manychat",
+              "utm_campaign": "quente",
+              "utm_term": "leads-audiencia-ig",
+              "utm_medium": "direct",
+              "utm_content": "automacao-isca-notion",
+              "id_funil": "6",
+              "instagram": "",
+              "graduacao": "2025",
+              "id_forms": "11",
+              "tipo_forms": "Cadastro",
+              "qualificacao": "Qualificado"
+            }
+          },
+          "webhookUrl": "https://n8nwebhookgrupokedma.automagicbots.com.br/webhook/cria-contato-manychat",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T18:16:08.705Z",
+  "versionId": "4081909f-7389-4f62-ad2e-7816c9f4b85e"
+}
