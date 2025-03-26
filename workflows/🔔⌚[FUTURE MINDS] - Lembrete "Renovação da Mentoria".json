@@ -1018,7 +1018,8 @@
   },
   "staticData": {
     "node:todo_dia_7:30am": {
-      "recurrencyRules": []
+      "recurrencyRules": [],
+      "recurrenceRules": []
     },
     "node:everyday_7am": {
       "recurrencyRules": []
