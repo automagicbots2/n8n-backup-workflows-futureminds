@@ -363,27 +363,27 @@
           "headers": {
             "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "10737",
+            "content-length": "9188",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-dc61b30310c0c2c4f9d9d284390f7939-396b3cefb259d2ec-01",
-            "x-forwarded-for": "34.230.177.131",
+            "traceparent": "00-35167faff4af3a429c5013b040098517-9468df21dec959aa-01",
+            "x-forwarded-for": "18.204.78.134",
             "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "3fc641f1cb52",
-            "x-real-ip": "34.230.177.131"
+            "x-real-ip": "18.204.78.134"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JQ828ABJKXHDBVZJ9T2BCMZZ",
+            "event_id": "01JQ9E7GH2ZFP9XQVGZK850Q2T",
             "event_type": "form_response",
             "form_response": {
               "form_id": "fpdbWhpY",
-              "token": "kc4ks5i32e71qbq3ihl8jkc4ksps71vw",
-              "landed_at": "2025-03-26T01:49:25Z",
-              "submitted_at": "2025-03-26T01:49:45Z",
+              "token": "yf2d3ks93c3o4ddh3yf2d3p1u67i5ihb",
+              "landed_at": "2025-03-26T14:37:45Z",
+              "submitted_at": "2025-03-26T14:38:16Z",
               "hidden": {
                 "email": "",
                 "name": "",
@@ -392,40 +392,6 @@
                 "utm_medium": "",
                 "utm_source": "",
                 "utm_term": ""
-              },
-              "calculated": {
-                "score": 4
-              },
-              "variables": [
-                {
-                  "key": "counter_3c2ff8fe_5fa7_4bcf_92ab_5c8b305afd49",
-                  "type": "number",
-                  "number": 0
-                },
-                {
-                  "key": "counter_7a678620_1641_4448_8d3e_fcac75337683",
-                  "type": "number",
-                  "number": 0
-                },
-                {
-                  "key": "counter_bc30d3e8_d7c1_4c18_b748_476b65760942",
-                  "type": "number",
-                  "number": 0
-                },
-                {
-                  "key": "score",
-                  "type": "number",
-                  "number": 4
-                },
-                {
-                  "key": "winning_outcome_id",
-                  "type": "outcome_id",
-                  "outcome_id": "qDNcEsQixb9u"
-                }
-              ],
-              "outcome": {
-                "id": "qDNcEsQixb9u",
-                "title": "Muito obrigado!"
               },
               "definition": {
                 "id": "fpdbWhpY",
@@ -725,45 +691,14 @@
                     "properties": {}
                   }
                 ],
-                "outcome": {
-                  "variable": "winning_outcome_id",
-                  "choices": [
-                    {
-                      "id": "dRjzcKzrWuiG",
-                      "ref": "4e17b606-a8c0-49c9-993f-0a14e83e6448",
-                      "title": "Rodizio - Calendly",
-                      "counter_variable": "counter_3c2ff8fe_5fa7_4bcf_92ab_5c8b305afd49",
-                      "thankyou_screen_ref": "5d42857f-570c-4bae-bd3b-bb2580f70361"
-                    },
-                    {
-                      "id": "84zBCLItyiMx",
-                      "ref": "412d5259-28eb-41c3-85c6-72d651490e90",
-                      "title": "Agendmaento Lilian",
-                      "counter_variable": "counter_bc30d3e8_d7c1_4c18_b748_476b65760942",
-                      "thankyou_screen_ref": "556e0598-22b1-4627-894a-b41151197fd8"
-                    },
-                    {
-                      "id": "qDNcEsQixb9u",
-                      "ref": "b85e1bb8-44a3-4dff-bc29-71512028eff9",
-                      "title": "Muito obrigado!",
-                      "counter_variable": "counter_7a678620_1641_4448_8d3e_fcac75337683",
-                      "thankyou_screen_ref": "7aed75d3-c4ad-4d58-83e1-570729229053"
-                    }
-                  ]
-                },
                 "endings": [
                   {
-                    "id": "GWHY4b1uy2rM",
-                    "ref": "7aed75d3-c4ad-4d58-83e1-570729229053",
-                    "title": "Muito obrigado!",
-                    "type": "thankyou_screen",
+                    "id": "e3flDyu11pdb",
+                    "ref": "5d42857f-570c-4bae-bd3b-bb2580f70361",
+                    "title": "Rodizio - Calendly",
+                    "type": "url_redirect",
                     "properties": {
-                      "description": "De acordo com suas respostas, identificamos que, para o seu momento atual, esse é o próximo passo recomendado!\n\nClique abaixo para participar ao vivo da Aula \n_*Como tornar seu LinkedIn em um Ímã de Recrutadores*_!",
-                      "button_text": "ASSISTIR AULA GRATUITA",
-                      "show_button": true,
-                      "share_icons": false,
-                      "button_mode": "redirect",
-                      "redirect_url": "https://links.liliancidreira.com.br/obrigado-sessao-webinar{{hidden:utm_source}}&utm_campaign={{hidden:utm_campaign}}&utm_term={{hidden:utm_term}}&utm_medium={{hidden:utm_medium}}&utm_content={{hidden:utm_content}}&email={{field:baacab46-eec7-4f32-8e5e-0f8c887ad696}}&nome={{field:01H8HD3WP1JTDJD2AY10938JSB}}&telefone={{field:40d2eeb9-e3cc-46a2-90c9-ee11983fedf6}}&form_name=3-Sessao_Sprint"
+                      "redirect_url": "https://calendly.com/d/cp6w-y48-bw8/sessao-sprint-de-carreira?name={{field:01H8HD3WP1JTDJD2AY10938JSB}}&email={{field:baacab46-eec7-4f32-8e5e-0f8c887ad696}}&a1={{field:40d2eeb9-e3cc-46a2-90c9-ee11983fedf6}}&utm_source={{hidden:utm_source}}&utm_campaign={{hidden:utm_campaign}}&utm_term={{hidden:utm_term}}&utm_medium={{hidden:utm_medium}}&utm_content={{hidden:utm_content}}"
                     }
                   }
                 ]
@@ -785,9 +720,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "Viler7zFVEGH",
-                    "label": "Mudar de emprego para uma empresa com oportunidades de crescimento",
-                    "ref": "8e0ab4e2-cfe6-4cf5-9c4e-c0fe426f279e"
+                    "id": "LuKZQldDLO3M",
+                    "label": "Mudar de área de atuação no meu emprego ou em um novo emprego",
+                    "ref": "b6d9eff4-be0e-41d8-9b3c-6e4343c74c12"
                   },
                   "field": {
                     "id": "Pm7WnkcFSmCg",
@@ -798,9 +733,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "FccFPYAqmcxO",
-                    "label": "Assistente / Auxiliar",
-                    "ref": "f79fb147-4a98-4e99-be8e-f3c614c91a2e"
+                    "id": "SjGnYDH6Enxz",
+                    "label": "Especialista",
+                    "ref": "fea56fa4-147c-4e88-a7db-8ba6c7578a38"
                   },
                   "field": {
                     "id": "ycPtIEYTdNOQ",
@@ -811,9 +746,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "5WH6Zer3pJv3",
-                    "label": "Entre 2 e 4 anos",
-                    "ref": "de06f258-6497-4714-9d80-c017da37da94"
+                    "id": "5h5krAVHtJJP",
+                    "label": "Entre 6 meses e 1 ano",
+                    "ref": "f16e5f8a-0d06-4cde-9766-5503fc4cb1aa"
                   },
                   "field": {
                     "id": "kqbgfSNuFSbc",
@@ -824,9 +759,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "fqJRyGIWftlN",
-                    "label": "Entre R$15.000 e R$19.999",
-                    "ref": "6f9f74b5-839d-469a-bd74-649af5ccc475"
+                    "id": "WFZENJFSu2Aa",
+                    "label": "Entre R$11.000 e R$14.999",
+                    "ref": "c5550bb0-6bd9-4661-876f-08245683115a"
                   },
                   "field": {
                     "id": "Fx6SkqFmnWR7",
@@ -837,9 +772,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "7lDmrFrm45rA",
-                    "label": "Pouco tempo de experiência no cargo atual",
-                    "ref": "bdd6e23d-606c-4581-84e5-f1b29920a2ce"
+                    "id": "jaT6J0UZCVTN",
+                    "label": "Tenho pouco tempo na empresa que trabalho",
+                    "ref": "36b95644-c5c6-4508-986d-f75225bc48f0"
                   },
                   "field": {
                     "id": "EKKqffnyWjNP",
@@ -849,7 +784,7 @@
                 },
                 {
                   "type": "number",
-                  "number": 7,
+                  "number": 6,
                   "field": {
                     "id": "wjRUtzxYV50j",
                     "type": "nps",
@@ -858,7 +793,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "gabriel mota",
+                  "text": "gabriel amaral",
                   "field": {
                     "id": "Qoo5ihXO9pI3",
                     "type": "short_text",
@@ -885,8 +820,8 @@
                 }
               ],
               "ending": {
-                "id": "GWHY4b1uy2rM",
-                "ref": "7aed75d3-c4ad-4d58-83e1-570729229053"
+                "id": "e3flDyu11pdb",
+                "ref": "5d42857f-570c-4bae-bd3b-bb2580f70361"
               }
             }
           },
@@ -904,6 +839,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-26T02:45:57.480Z",
-  "versionId": "885bd549-d2e8-4ea8-ae41-ff0920d85c82"
+  "updatedAt": "2025-03-26T14:42:50.872Z",
+  "versionId": "da4bacc9-e39f-4c94-b9b4-ca9caa1ca024"
 }
