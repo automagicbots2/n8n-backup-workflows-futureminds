@@ -161,38 +161,38 @@
             },
             {
               "id": "b1df6562-92bf-4f75-9fd9-045e977f9b0c",
-              "name": "informacoes_importantes",
-              "value": "={{ $node[\"formata_dados\"].json[\"informacoes_importantes\"] || \"\" }}",
+              "name": "incomodacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"incomodacao\"] || \"\" }}",
               "type": "string"
             },
             {
               "id": "8be23767-974b-4027-a66e-5479fae83aef",
-              "name": "tempo",
-              "value": "={{ $node[\"formata_dados\"].json[\"tempo\"] || \"\" }}",
+              "name": "obstaculo",
+              "value": "={{ $node[\"formata_dados\"].json[\"obstaculo\"]  || \"\" }}",
               "type": "string"
             },
             {
               "id": "359317c7-5d26-484c-b21a-ea63c8c10332",
-              "name": "conhece_thiago",
-              "value": "={{ $node[\"formata_dados\"].json[\"conhece_thiago\"] || \"\" }}",
+              "name": "remuneracao_anterior",
+              "value": "={{ $node[\"formata_dados\"].json[\"remuneracao_anterior\"] || \"\" }}",
               "type": "string"
             },
             {
               "id": "571e5db2-c2eb-4a74-a4ea-6606e72987ca",
-              "name": "faz_cursinho",
-              "value": "={{ $node[\"formata_dados\"].json[\"faz_cursinho\"] || \"\" }}",
+              "name": "tempo_emprego",
+              "value": "={{ $node[\"formata_dados\"].json[\"tempo_emprego\"] || \"\" }}",
               "type": "string"
             },
             {
               "id": "fb37c37f-d346-491d-a166-e2f6ac692331",
-              "name": "fase_atual",
-              "value": "={{ $node[\"formata_dados\"].json[\"fase_atual\"]|| \"\" }}",
+              "name": "cargo",
+              "value": "={{ $node[\"formata_dados\"].json[\"cargo\"] || \"\" }}",
               "type": "string"
             },
             {
               "id": "dba5c0a7-b53f-4179-bc30-e37cfa7c45e3",
-              "name": "graduacao",
-              "value": "={{ $node[\"formata_dados\"].json[\"graduacao\"] || \"\" }}",
+              "name": "objetivo",
+              "value": "={{ $node[\"formata_dados\"].json[\"objetivo\"] || \"\" }}",
               "type": "string"
             },
             {
@@ -215,8 +215,8 @@
             },
             {
               "id": "12a6881c-106c-4e59-bb47-6c739d268efe",
-              "name": "respostasFormulario",
-              "value": "={{ $node[\"formata_dados\"].json[\"respostasFormulario\"] }}",
+              "name": "escolaridade",
+              "value": "={{ $node[\"formata_dados\"].json[\"escolaridade\"] || \"\" }}",
               "type": "string"
             },
             {
@@ -227,14 +227,8 @@
             },
             {
               "id": "fcf5b300-a2ea-4706-9a2f-a10e3d0c27b4",
-              "name": "email_embaixador",
-              "value": "={{ $node[\"formata_dados\"].json[\"email_embaixador\"] }}",
-              "type": "string"
-            },
-            {
-              "id": "7603413a-2f4d-4b48-97a6-5e66df851a89",
-              "name": "nome_embaixador",
-              "value": "={{ $node[\"formata_dados\"].json[\"nome_embaixador\"] }}",
+              "name": "salario",
+              "value": "={{ $node[\"formata_dados\"].json[\"salario\"] || \"\" }}",
               "type": "string"
             }
           ]
@@ -363,35 +357,35 @@
           "headers": {
             "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "9188",
+            "content-length": "9211",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-35167faff4af3a429c5013b040098517-9468df21dec959aa-01",
-            "x-forwarded-for": "18.204.78.134",
+            "traceparent": "00-902216164d3d69a50aa3662abdd0507c-2e0b5035c4ad6a32-01",
+            "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "3fc641f1cb52",
-            "x-real-ip": "18.204.78.134"
+            "x-real-ip": "18.210.136.162"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JQ9E7GH2ZFP9XQVGZK850Q2T",
+            "event_id": "01JQ9ZQ4XWGXHA6X00Y8GBWN6G",
             "event_type": "form_response",
             "form_response": {
               "form_id": "fpdbWhpY",
-              "token": "yf2d3ks93c3o4ddh3yf2d3p1u67i5ihb",
-              "landed_at": "2025-03-26T14:37:45Z",
-              "submitted_at": "2025-03-26T14:38:16Z",
+              "token": "6qis7uhwprum2zed356qis7grvmqocjd",
+              "landed_at": "2025-03-26T19:41:07Z",
+              "submitted_at": "2025-03-26T19:43:54Z",
               "hidden": {
                 "email": "",
                 "name": "",
-                "utm_campaign": "",
-                "utm_content": "",
-                "utm_medium": "",
-                "utm_source": "",
-                "utm_term": ""
+                "utm_campaign": "quente",
+                "utm_content": "ad01",
+                "utm_medium": "stories",
+                "utm_source": "facebook",
+                "utm_term": "ig30d"
               },
               "definition": {
                 "id": "fpdbWhpY",
@@ -707,9 +701,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "zvDy3r8vZuft",
-                    "label": "Pós-graduação",
-                    "ref": "35d6102b-a9c3-4c03-99d4-ebf5236936e8"
+                    "id": "sUqCscjfdLBa",
+                    "label": "Graduação",
+                    "ref": "c2e9d139-9afb-4a87-a44f-8911ee03b792"
                   },
                   "field": {
                     "id": "flcnFuWAW93n",
@@ -720,9 +714,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "LuKZQldDLO3M",
-                    "label": "Mudar de área de atuação no meu emprego ou em um novo emprego",
-                    "ref": "b6d9eff4-be0e-41d8-9b3c-6e4343c74c12"
+                    "id": "Viler7zFVEGH",
+                    "label": "Mudar de emprego para uma empresa com oportunidades de crescimento",
+                    "ref": "8e0ab4e2-cfe6-4cf5-9c4e-c0fe426f279e"
                   },
                   "field": {
                     "id": "Pm7WnkcFSmCg",
@@ -746,9 +740,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "5h5krAVHtJJP",
-                    "label": "Entre 6 meses e 1 ano",
-                    "ref": "f16e5f8a-0d06-4cde-9766-5503fc4cb1aa"
+                    "id": "kN5CYiDbfycI",
+                    "label": "Entre 1 e 2 anos",
+                    "ref": "568620a5-1d89-41d7-9cbd-0ac761eafc40"
                   },
                   "field": {
                     "id": "kqbgfSNuFSbc",
@@ -772,9 +766,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "jaT6J0UZCVTN",
-                    "label": "Tenho pouco tempo na empresa que trabalho",
-                    "ref": "36b95644-c5c6-4508-986d-f75225bc48f0"
+                    "id": "ubbSBDjohmGF",
+                    "label": "A empresa só valoriza quem vem do mercado",
+                    "ref": "ea714ac4-312f-4ee0-8f98-684197940add"
                   },
                   "field": {
                     "id": "EKKqffnyWjNP",
@@ -784,7 +778,7 @@
                 },
                 {
                   "type": "number",
-                  "number": 6,
+                  "number": 5,
                   "field": {
                     "id": "wjRUtzxYV50j",
                     "type": "nps",
@@ -793,7 +787,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "gabriel amaral",
+                  "text": "Gabriel Amaral",
                   "field": {
                     "id": "Qoo5ihXO9pI3",
                     "type": "short_text",
@@ -839,6 +833,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-26T14:42:50.872Z",
-  "versionId": "da4bacc9-e39f-4c94-b9b4-ca9caa1ca024"
+  "updatedAt": "2025-03-26T22:01:27.822Z",
+  "versionId": "4a1d79dd-95d6-4356-9872-e49bbcc3a50f"
 }
