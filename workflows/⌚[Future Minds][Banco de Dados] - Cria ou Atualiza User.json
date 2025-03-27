@@ -147,7 +147,7 @@
               "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] || NULL }}"
             },
             {
-              "column": "status_atividade_wpp",
+              "column": "status_atividade",
               "value": "Y"
             },
             {
@@ -301,6 +301,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T18:17:43.529Z",
-  "versionId": "480641db-db60-44f8-8fde-35e47dbd50be"
+  "updatedAt": "2025-03-26T18:39:30.010Z",
+  "versionId": "dbd19047-72aa-416f-9f84-abecafb7512e"
 }
