@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "rodizio_closer",
+            "node": "pesquisa_agendamento",
             "type": "main",
             "index": 0
           }
@@ -950,17 +950,6 @@
         [
           {
             "node": "Limit",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "rodizio_closer": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_agendamento",
             "type": "main",
             "index": 0
           }
@@ -3720,34 +3709,6 @@
       }
     },
     {
-      "parameters": {
-        "method": "POST",
-        "url": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/consulta-colaborador",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "time",
-              "value": "Closer"
-            },
-            {
-              "name": "user",
-              "value": "={{ $node[\"pesquisa_lead3\"].json[\"id_lead\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "196941bb-4dda-4550-8bbb-ecf3b3b96f4d",
-      "name": "rodizio_closer",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        4880,
-        1820
-      ]
-    },
-    {
       "parameters": {},
       "id": "66d3279d-83c6-48a7-aa11-be515d117f50",
       "name": "Limit",
@@ -3764,24 +3725,26 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-IFNma2Gq0fjis8-2aG3uwg",
-            "deliveryTag": 1,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-dV6RpiC5qMs4XWup80S8Ng",
+            "deliveryTag": 3,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Calendly - Cancelamentos - Clint"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 85
+            }
           },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz de Almeida",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5519984574874",
-            "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "ID do Evento": "358defd8-86e6-4c34-b1c7-aa111286e862",
-            "Data do Cancelamento": "2024-08-05",
-            "ID do Cliente": "19a4c964-bc29-4414-bed8-b9c2b9ed6c94",
-            "API-KEY": "e9072792-f5ae-4bce-8b48-f3e70109c213",
+            "Nome do Cliente": "FERNANDA DA SILVEIRA ALVIM",
+            "E-mail do Cliente": "fernandasialvim@gmail.com",
+            "Telefone do Cliente - Formato BC": "+553291034568",
+            "Telefone do Cliente - Formato Z-API": "553291034568",
+            "ID do Evento": "5621c877-a6f2-4753-8408-64a33381f04e",
+            "Data do Cancelamento": "2025-03-26",
+            "ID do Cliente": "a72d8451-769a-4b42-a64c-45f636b855d6",
+            "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "id_do_campo_inviteeid_bot_conversa": "1139629",
             "id_do_campo_horario_agendado_bot_conversa": "1139625",
@@ -3789,26 +3752,26 @@
             "id_do_campo_dia_da_semana_do_agendamento_bot_conversa": "1139616",
             "fluxo_de_confirmacao_de_cancelamento": "2360305",
             "id_do_campo_motivo_do_cancelamento_bot_conversa": "1139614",
-            "Motivo do Cancelamento": "Teste - cancelamento",
-            "Data de Início": "2024-08-19",
-            "Hora de Início": "12:00:00",
-            "Link da Reunião": "https://calendly.com/events/358defd8-86e6-4c34-b1c7-aa111286e862/google_meet",
+            "Motivo do Cancelamento": "Não responde a confirmação",
+            "Data de Início": "2025-03-26",
+            "Hora de Início": "19:00:00",
+            "Link da Reunião": "https://calendly.com/events/5621c877-a6f2-4753-8408-64a33381f04e/google_meet",
             "Tipo de Evento": "Sessão Sprint de Carreira",
-            "Dia da Semana do Evento": "Segunda",
-            "utm_source": "source1",
-            "utm_campaign": "[\"campaign2\", \"campaign2\"]",
-            "utm_term": "[\"term5?utm_source=source1\", \"term5\"]",
-            "utm_medium": "[\"medium4\", \"medium4\"]",
-            "utm_content": "[\"content3\", \"content3\"]",
-            "data_agendamento": "2024-08-05 13:48:52",
+            "Dia da Semana do Evento": "Quarta",
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_term": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "data_agendamento": "2025-03-25 19:11:12",
             "id_campo_id_banco_de_dados_bot_conversa": "1333394",
-            "data_termino_ac": "2024-08-19",
-            "data_e_hora_de_termino": "19/08/2024 12:45",
-            "data_e_hora_de_inicio": "19/08/2024 12:00",
+            "data_termino_ac": "2025-03-26",
+            "data_e_hora_de_termino": "26/03/2025 20:00",
+            "data_e_hora_de_inicio": "26/03/2025 19:00",
             "funil": "sessao_estrategica",
             "variacao_do_funil": "v1",
-            "E-mail do Responsável": "lilian.cidreira@futureminds.com.br",
-            "Nome do Responsável": "Future Minds",
+            "E-mail do Responsável": "victor.santos@futureminds.com.br",
+            "Nome do Responsável": "Victor Santos",
             "id_do_campo_idleadac_bot_conversa": "1343869",
             "id_do_campo_iddealac_bot_conversa": "1343862"
           }
@@ -3835,6 +3798,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-21T11:56:13.770Z",
-  "versionId": "4a196402-2bb8-46e5-b8a0-3b6ff244a0ed"
+  "updatedAt": "2025-03-26T22:31:49.506Z",
+  "versionId": "93179a1d-76d6-4723-95bf-0c859b5913e9"
 }
