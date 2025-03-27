@@ -897,8 +897,8 @@
       ]
     }
   },
-  "createdAt": "2025-03-25T18:00:59.398Z",
-  "id": "CzrOEj07nHcf2jtk",
+  "createdAt": "2025-03-26T22:02:08.980Z",
+  "id": "44L46DP6F3AFfJVq",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -924,7 +924,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "c2989400-791d-4e75-a455-1736103a65af",
+      "id": "13267850-0e84-4617-97d9-7f7ad375fe82",
       "name": "pesquisa_variavel_n8n_fluxo_users",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1008,7 +1008,7 @@
         -1360,
         700
       ],
-      "id": "cd5bf94e-5dfc-4bc4-baad-7af9c632ec50",
+      "id": "06a419b6-72d8-4d86-9bea-92712a37bd4f",
       "name": "cria_cadastro"
     },
     {
@@ -1031,7 +1031,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "f93cafe1-91c8-4411-868e-e6e3505f3dae",
+      "id": "92842f80-9f14-48f3-b668-72c6d83a3401",
       "name": "pesquisa_variavel_n8n_fluxo_cadastro",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1091,7 +1091,7 @@
         -2420,
         560
       ],
-      "id": "f2472d49-5f12-466f-aba0-5180dc62dc1e",
+      "id": "7a872003-e563-4e55-a56b-3f3630a1ffdb",
       "name": "cria_atualiza_user"
     },
     {
@@ -1119,7 +1119,7 @@
         },
         "options": {}
       },
-      "id": "5ca8b31d-f3df-4b3d-a7f8-275e99f91ac5",
+      "id": "25e71bea-e094-4cde-ac7d-3b925cf222f9",
       "name": "evento_checkout",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -1151,7 +1151,7 @@
         },
         "options": {}
       },
-      "id": "120c5bd1-b813-4236-b101-c091c4fa2f5b",
+      "id": "4b8a5657-e7bf-40e2-b0d2-540df4f278ea",
       "name": "pesquisa_etapa_funil",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1187,7 +1187,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "dee9c6cc-e91c-465e-b4af-bfd778f57f06",
+      "id": "3c0b319b-ffcf-42f3-a4be-a788bf6c995e",
       "name": "pesquisa_variavel_n8n_fluxo_produtos",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1231,7 +1231,7 @@
         -1420,
         380
       ],
-      "id": "4ee921de-ca1e-438b-8530-083a1c33f693",
+      "id": "003dbf50-9c8c-4d40-8154-103cc1b925e1",
       "name": "busca_produto"
     },
     {
@@ -1261,7 +1261,7 @@
         },
         "options": {}
       },
-      "id": "9d6d1931-5b6e-4462-9e03-121dba04f24e",
+      "id": "2bf84edf-17e6-461b-9311-19b1d3a2e616",
       "name": "pesquisa_situacao_checkout",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1313,7 +1313,7 @@
         -460,
         220
       ],
-      "id": "bd53bc58-6c1f-4ec2-be31-c99c3c93d330",
+      "id": "b6021970-6d1a-4996-bc8f-dbfe65640243",
       "name": "create_update_contact_crm1"
     },
     {
@@ -1336,7 +1336,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "89947e4a-e965-4c38-9583-40e455cec075",
+      "id": "e6449f94-ac3a-4838-8a34-83354adf13fc",
       "name": "pesquisa_acao_create_update_contact_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1388,7 +1388,7 @@
         -1100,
         880
       ],
-      "id": "b583516d-afb0-4d59-9310-61d1d0e81178",
+      "id": "fcad7f5f-2bee-4be9-a44c-7a6a0c308e24",
       "name": "create_update_contact_crm3"
     },
     {
@@ -1411,7 +1411,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "d71f9a48-6a7d-4a9a-a701-d257677fe270",
+      "id": "a748c309-ce10-41a8-98ce-596ad3876a31",
       "name": "pesquisa_acao_create_update_contact_crm1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1467,7 +1467,7 @@
         -160,
         440
       ],
-      "id": "4b51643a-83ab-4529-b028-b85f611469eb",
+      "id": "b6880013-73b1-426c-bcb4-78fae6707f3b",
       "name": "create_update_contact_crm4"
     },
     {
@@ -1490,7 +1490,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "c8e3553e-3c82-41c9-848a-8cfae4423e00",
+      "id": "c88337d5-c241-42d7-8832-d7ee0d420b14",
       "name": "pesquisa_acao_create_update_deal_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1526,7 +1526,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "bd73315b-bfde-4a5e-b087-7aea8729a745",
+      "id": "c01265b3-9b9f-4f6e-b934-82ce1f5306ae",
       "name": "pesquisa_acao_create_update_deal_crm1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1566,7 +1566,7 @@
         -560,
         1240
       ],
-      "id": "ff68bda6-c29d-4020-b523-bb4bd07bd42b",
+      "id": "1515c68e-e2ff-4c18-bdb3-d759feeb94e8",
       "name": "add_tag_contact_crm1"
     },
     {
@@ -1589,7 +1589,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "7af31de7-d491-4e76-9898-862e370be584",
+      "id": "85c2a0c2-c337-4a81-813b-f640cf9deef4",
       "name": "pesquisa_acao_add_tag_contact_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1633,7 +1633,7 @@
         40,
         640
       ],
-      "id": "1f3f6092-d1e9-43cd-bc9d-3d7bb098e0fa",
+      "id": "7bcb6de7-c943-41b7-a721-50f1c508fa50",
       "name": "add_tag_contact_crm3"
     },
     {
@@ -1656,7 +1656,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "3d289cd2-4ed7-498a-9c6f-3daff7d511cd",
+      "id": "79c94dba-24b6-470f-9f14-435c00af26db",
       "name": "pesquisa_acao_add_tag_contact_crm1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1692,7 +1692,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "77d024bc-ba7d-4dfd-b398-662863fe5538",
+      "id": "9da702bc-d37a-44e4-bc85-aab3500ddc02",
       "name": "pesquisa_acao_add_tag_deal_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1736,7 +1736,7 @@
         240,
         800
       ],
-      "id": "e88e350d-f141-4041-a90e-cf6fe4104656",
+      "id": "9aadfbe0-62a5-49f9-8764-75ce7b650fe0",
       "name": "add_tag_deal_crm1"
     },
     {
@@ -1759,7 +1759,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "a63fd1fc-1145-45b5-9f42-cafdca3a2ef5",
+      "id": "3c430438-b3ff-4835-8b1b-b94afc771c66",
       "name": "pesquisa_acao_add_tag_deal_crm1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1799,7 +1799,7 @@
         -460,
         1440
       ],
-      "id": "bf17db33-a47e-4045-81bf-12e876768929",
+      "id": "9d5fa749-354f-448b-b30d-b7cb87ae2564",
       "name": "add_tag_deal_crm3"
     },
     {
@@ -1842,7 +1842,7 @@
         -780,
         1060
       ],
-      "id": "8b237100-1346-4e76-8352-04bab3d1cd08",
+      "id": "3106f820-c830-4002-aaa2-20cc8d0c1794",
       "name": "create_update_deal_crm5"
     },
     {
@@ -1865,7 +1865,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "06b0d2e1-028d-49bc-9a59-68dc2b9dc045",
+      "id": "0c339764-41c9-4d28-89ec-c8acc6bb8915",
       "name": "pesquisa_acao_add_conversion_bd",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -1977,7 +1977,7 @@
         540,
         1160
       ],
-      "id": "b0013d63-62a4-4b84-82ad-21f73d185791",
+      "id": "294b347e-5cec-4c25-936d-d99831c9a6b0",
       "name": "add_conversion_bd1"
     },
     {
@@ -2000,7 +2000,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "35b81996-0f21-4e17-8c35-35e41286c4a9",
+      "id": "a80f969d-8dec-436e-af39-afc084edcee8",
       "name": "pesquisa_acao_add_customer_bd",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2040,7 +2040,7 @@
         400,
         960
       ],
-      "id": "86852bd1-afb1-4935-b69d-da9dba80464a",
+      "id": "f47c4864-2f5e-40b0-ba8d-50670f560432",
       "name": "add_customer_bd1"
     },
     {
@@ -2063,7 +2063,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "503b9c75-5b0d-429d-a6b9-35ee56501e50",
+      "id": "3643b944-f69a-40ea-9236-ee1de6bbf25a",
       "name": "pesquisa_acao_add_subscription_bd",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2111,7 +2111,7 @@
         720,
         1360
       ],
-      "id": "28c7898a-dfd9-4b1b-8534-1cb74872233e",
+      "id": "d5fd0b6d-584c-4cde-9d8d-f40ee096f442",
       "name": "add_subscription_bd1"
     },
     {
@@ -2137,7 +2137,7 @@
         },
         "options": {}
       },
-      "id": "1bfa0fa5-dec7-4a0b-9a70-5844fa33fd47",
+      "id": "d5007447-0fd3-434f-9a6f-015523d7d229",
       "name": "create_update_contact_crm2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2169,7 +2169,7 @@
         },
         "options": {}
       },
-      "id": "278e7f1c-c0e2-4256-9eb0-4b05e3d45c7e",
+      "id": "9223d70c-5b35-4eb8-9079-b6217bc703f8",
       "name": "create_update_deal_crm1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2201,7 +2201,7 @@
         },
         "options": {}
       },
-      "id": "130995b5-2a44-4452-8742-1b2f74bcef8c",
+      "id": "cb88656d-5d96-45c3-8fb5-dcaba8292368",
       "name": "add_tag_contact_crm",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2233,7 +2233,7 @@
         },
         "options": {}
       },
-      "id": "613d63b4-d65d-4f66-b05c-75890dc7853a",
+      "id": "363618a3-5b02-448d-82b3-3e081ee6cb16",
       "name": "add_tag_deal_crm2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2265,7 +2265,7 @@
         },
         "options": {}
       },
-      "id": "3141cf95-4627-413b-aed7-7e04ca370c34",
+      "id": "f4331131-bf8c-45f4-bb98-f4ddd1941cb4",
       "name": "create_update_contact_crm",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2297,7 +2297,7 @@
         },
         "options": {}
       },
-      "id": "13e809e5-b47d-4629-8b4a-210b0aee4974",
+      "id": "ee402e39-d47c-464b-8766-636ceb56dacd",
       "name": "create_update_deal_crm",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2329,7 +2329,7 @@
         },
         "options": {}
       },
-      "id": "db9691dc-e161-4636-9f50-28a5fa6e851f",
+      "id": "33b9a870-612a-4711-bbb0-4e6d8cd5dae8",
       "name": "add_tag_contact_crm2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2361,7 +2361,7 @@
         },
         "options": {}
       },
-      "id": "4d53e0f2-55d8-4e00-932d-0e859c95ccaa",
+      "id": "351a6a01-3b72-40e7-85ac-9f10de1b8e7a",
       "name": "add_tag_deal_crm",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2393,7 +2393,7 @@
         },
         "options": {}
       },
-      "id": "f2bed762-4954-4c8e-894a-5f1d9dec0746",
+      "id": "b237b0dc-5bcd-4e20-a5bc-1419c9aeeff0",
       "name": "add_customer_bd",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2426,7 +2426,7 @@
         },
         "options": {}
       },
-      "id": "a96b6496-3049-45e9-aab6-c16ef40e370d",
+      "id": "95fd029b-9fa1-466d-8047-193781ab1c7c",
       "name": "add_conversion_bd",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2458,7 +2458,7 @@
         },
         "options": {}
       },
-      "id": "e60c093e-91cd-4faf-9542-e6037f7b94bc",
+      "id": "6e911019-4bdf-4319-ab85-ce814f42fe47",
       "name": "add_subscription_bd",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2490,7 +2490,7 @@
         },
         "options": {}
       },
-      "id": "c6b6bab3-689b-4c04-a466-536973629c2d",
+      "id": "b7e6032b-89bc-4610-9fb3-5894c60a38f2",
       "name": "add_cadastro_bd",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2523,7 +2523,7 @@
         },
         "options": {}
       },
-      "id": "52d91e2d-a973-42c7-a066-06fcef9fe353",
+      "id": "554217b6-8e71-4c76-8432-d38fcb3537ba",
       "name": "create_update_contact_email_marketing",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2552,7 +2552,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "392cf094-2f98-4676-850e-5a3e846fbfa2",
+      "id": "9293f431-acb5-421e-a10c-0d58fb6a8049",
       "name": "pesquisa_acao_create_update_contact_email_marketing",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2616,7 +2616,7 @@
         940,
         1540
       ],
-      "id": "9b3af05f-ee17-49b6-924a-66da14475963",
+      "id": "64ef4a0e-4148-4a6f-9038-482c0256456a",
       "name": "create_update_contact_email_marketing1"
     },
     {
@@ -2643,7 +2643,7 @@
         },
         "options": {}
       },
-      "id": "e5124abf-1d0c-4401-9ec4-722995ccec83",
+      "id": "c6366611-07de-4849-96ee-ea144f9af110",
       "name": "send_message_api_oficial",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2672,7 +2672,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "a707702c-715f-4dab-b2e7-e8255dbea91f",
+      "id": "fc96d6d3-a24f-45e8-b2d3-777e2c4e575e",
       "name": "pesquisa_acao_send_message_api_oficial",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2740,7 +2740,7 @@
         1420,
         2000
       ],
-      "id": "98e3e3d5-b280-4f8a-9486-08057d8a9211",
+      "id": "4f30cb2e-e52d-4e28-8ebf-f7b372fb2bb3",
       "name": "send_message_api_oficial1"
     },
     {
@@ -2767,7 +2767,7 @@
         },
         "options": {}
       },
-      "id": "a66e93d6-9fb3-49c2-ac23-c2150b6a7b18",
+      "id": "ebe67b47-2c15-4774-9f84-b048aae50db8",
       "name": "add_tag_email_marketing",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2796,7 +2796,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "1debde51-ae7b-4334-af91-980f3b8a59e5",
+      "id": "c9b12948-0811-4870-b8e0-eefb7243da29",
       "name": "pesquisa_acao_add_tag_email_marketing",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2860,7 +2860,7 @@
         1180,
         1760
       ],
-      "id": "9388d5e6-eed6-4c7a-804e-3a625b338236",
+      "id": "49081196-8676-4396-a69e-518c338982b7",
       "name": "add_tag_email_marketing1"
     },
     {
@@ -2887,7 +2887,7 @@
         },
         "options": {}
       },
-      "id": "952c3789-8432-4eb7-be36-b5d88d46560d",
+      "id": "dc824c69-397e-4630-b4d7-865bac4291e8",
       "name": "create_update_contact_email_marketing2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -2916,7 +2916,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "a95baee3-9ded-4f0b-806a-8c161844328c",
+      "id": "cf80f422-ce61-4f2d-8675-188930bb71ff",
       "name": "pesquisa_acao_create_update_contact_email_marketing1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -2976,7 +2976,7 @@
         -300,
         1640
       ],
-      "id": "83980d3a-48bc-4927-b5f5-59202d71e0f1",
+      "id": "98355ea7-f502-437a-9734-95a5822c9903",
       "name": "create_update_contact_email_marketing3"
     },
     {
@@ -3003,7 +3003,7 @@
         },
         "options": {}
       },
-      "id": "143e00bb-98c4-4e8d-a1c4-cac98c66b514",
+      "id": "0b23899c-98b8-4a52-bae4-c23ddee69850",
       "name": "add_tag_email_marketing2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
@@ -3032,7 +3032,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "53af803c-e3b3-4d62-b111-eab78955ed4e",
+      "id": "c9abf86b-a6b0-48ee-9e07-49425125ceca",
       "name": "pesquisa_acao_add_tag_email_marketing1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -3092,7 +3092,7 @@
         -60,
         1860
       ],
-      "id": "80b2ed37-42a5-40a1-9d91-04ab86866b3f",
+      "id": "4470c221-a2b6-4587-a5e3-affb98101de1",
       "name": "add_tag_email_marketing3"
     },
     {
@@ -3125,7 +3125,7 @@
         -300,
         2180
       ],
-      "id": "dbe0aa76-b04a-435d-bf56-0897f52dd5ec",
+      "id": "314cf07b-7809-42b2-b1ad-a98ef176e3fd",
       "name": "insert_forms_answers"
     },
     {
@@ -3148,7 +3148,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "3ce4ac0e-bd51-4d8b-98dd-06d534b1297f",
+      "id": "8dee5d5c-8481-4efc-b85e-daa1180d9fcc",
       "name": "pesquisa_acao_insert_forms_answers",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -3196,7 +3196,7 @@
         180,
         2060
       ],
-      "id": "2f56b499-b7d1-42d4-bc10-e33f62a6c8f7",
+      "id": "dc57947b-6ca7-4883-8962-1ad993e0c1a6",
       "name": "insert_forms_answers1"
     },
     {
@@ -3229,7 +3229,7 @@
         220,
         2640
       ],
-      "id": "346951df-e445-4228-a65a-22016d6790f0",
+      "id": "b443dc99-c8cd-4b2e-b585-774901edb8cf",
       "name": "send_flow_manychat"
     },
     {
@@ -3252,7 +3252,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "6baa44cb-7b13-4d9b-9cf5-4cd3f52c618a",
+      "id": "ec532238-d40b-41d8-9121-7a0d3e788f56",
       "name": "pesquisa_acao_send_flow_manychat",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -3298,7 +3298,7 @@
         -80,
         2400
       ],
-      "id": "b823e5a4-23c5-40ae-8aca-111aa54449e6",
+      "id": "3e9acca9-3067-4a99-90bc-501094b4ec83",
       "name": "create_update_manychat"
     },
     {
@@ -3321,7 +3321,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "811b2cc8-1506-47e6-a324-f904dae7833c",
+      "id": "fbd6acd6-7d1f-4afd-8302-bcbc47b99201",
       "name": "pesquisa_acao_create_update_manychat",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -3381,7 +3381,7 @@
         400,
         2280
       ],
-      "id": "3d4b9603-deec-491b-b168-74499a4982b2",
+      "id": "be2af0d2-0d08-4af4-a09d-2e91e4da4b7e",
       "name": "create_update_manychat1"
     },
     {
@@ -3409,7 +3409,7 @@
         },
         "options": {}
       },
-      "id": "b8d92f6a-d062-42f9-b3d7-ce4101b74bb9",
+      "id": "e2d1f305-8e67-4f3a-9579-6c9d2c3e7ba3",
       "name": "reprocessamento",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
@@ -3422,7 +3422,7 @@
       "parameters": {
         "errorMessage": "Erro"
       },
-      "id": "65c382a8-d87a-4f42-a1c5-0d85fae17760",
+      "id": "6c80a618-e26b-48e3-a83e-94eab80608cd",
       "name": "Stop and Error",
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
@@ -3486,7 +3486,7 @@
         },
         "options": {}
       },
-      "id": "23fb1408-143f-40fe-b3f6-f9d46ccc3668",
+      "id": "f0fd2fc0-78a2-4f43-a619-afe48402706d",
       "name": "nome_email_telefone_ig_null",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
@@ -3497,7 +3497,7 @@
     },
     {
       "parameters": {},
-      "id": "9692f4db-bcaa-4dd5-86e0-a71bb8e4c5c6",
+      "id": "7d7c0f91-0730-40df-a6ce-aef16d83266c",
       "name": "No Operation, do nothing",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
@@ -3534,7 +3534,7 @@
         700,
         2520
       ],
-      "id": "8ced8bd7-5b5e-4d65-b6d5-53265fd513c0",
+      "id": "9604bb72-4e95-47fe-93ab-a3182d7b1ead",
       "name": "send_flow_manychat1",
       "onError": "continueErrorOutput"
     },
@@ -3555,7 +3555,7 @@
           "parallelMessages": 80
         }
       },
-      "id": "b9f117b4-000d-4ca1-b5c3-a070584fcb9e",
+      "id": "0ae9917f-f1e2-49e6-9567-2cb88dd1254b",
       "name": "chega_da_fila",
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
@@ -3606,6 +3606,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T18:05:19.885Z",
-  "versionId": "a33d188d-3f89-4a8b-9360-0a0b62da5ca7"
+  "updatedAt": "2025-03-27T00:03:04.650Z",
+  "versionId": "9870afb6-952c-4289-a45a-bc28dfbef053"
 }
