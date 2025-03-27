@@ -988,7 +988,7 @@
       "main": [
         [
           {
-            "node": "rodizio_closer",
+            "node": "cria/atualiza_contato",
             "type": "main",
             "index": 0
           }
@@ -1106,17 +1106,6 @@
         [
           {
             "node": "envia_nome_do_closer_responsavel",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "rodizio_closer": {
-      "main": [
-        [
-          {
-            "node": "cria/atualiza_contato",
             "type": "main",
             "index": 0
           }
@@ -4748,34 +4737,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/consulta-colaborador",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "time",
-              "value": "Closer"
-            },
-            {
-              "name": "user",
-              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "3fea8d1e-aae0-46ce-bbe3-efe6a7935279",
-      "name": "rodizio_closer",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2820,
-        1040
-      ]
-    },
-    {
-      "parameters": {
         "requestMethod": "POST",
         "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
         "options": {},
@@ -5418,7 +5379,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-vSUdIweQN8d8yYexeBfmrA",
+            "consumerTag": "amq.ctag-p-V4wUDiguZbQUDKM0QaKw",
             "deliveryTag": 5,
             "redelivered": true,
             "exchange": "",
@@ -5426,29 +5387,29 @@
           },
           "properties": {
             "headers": {
-              "x-delivery-count": 1125
+              "x-delivery-count": 2400
             }
           },
           "content": {
-            "Nome do Cliente": "Paulo",
-            "E-mail do Cliente": "paulohenriquecic@gmail.com",
-            "Telefone do Cliente - Formato BC": "+556284872769",
-            "Telefone do Cliente - Formato Z-API": "556284872769",
+            "Nome do Cliente": "FERNANDA DA SILVEIRA ALVIM",
+            "E-mail do Cliente": "fernandasialvim@gmail.com",
+            "Telefone do Cliente - Formato BC": "+553291034568",
+            "Telefone do Cliente - Formato Z-API": "553291034568",
             "Tipo de Evento": "Sessão Sprint de Carreira",
-            "ID do Evento": "ebbd3ba7-b119-4604-b65f-b0f23a672a3f",
-            "Responsável pelo Evento": "Fernando Ruoso",
-            "E-mail do Responsável": "fernando.ruoso@futureminds.com.br",
-            "Data de Início": "26/11/2024  17:00",
-            "Data em que foi feito o Agendamento": "25/11/2024  22:11",
-            "Data de Término": "26/11/2024  17:45",
-            "Dia da Semana de Início do Evento": "Terça",
-            "Link da Reunião": "https://calendly.com/events/ebbd3ba7-b119-4604-b65f-b0f23a672a3f/google_meet",
-            "utm_source": "facebook",
-            "utm_campaign": "🍊[OG][CONVERSÃO INTERESSES][SESSÃO GRATUITA] 08/07/24",
-            "utm_term": "[CARGO - ASSISTENTE]",
-            "utm_medium": "cpc",
-            "utm_content": "Anúncio [5.1].MP4",
-            "ID do Cliente": "4533add4-bd2b-421e-9a84-65515dada588",
+            "ID do Evento": "5621c877-a6f2-4753-8408-64a33381f04e",
+            "Responsável pelo Evento": "Victor Santos",
+            "E-mail do Responsável": "victor.santos@futureminds.com.br",
+            "Data de Início": "26/03/2025  19:00",
+            "Data em que foi feito o Agendamento": "25/03/2025  19:11",
+            "Data de Término": "26/03/2025  20:00",
+            "Dia da Semana de Início do Evento": "Quarta",
+            "Link da Reunião": "https://calendly.com/events/5621c877-a6f2-4753-8408-64a33381f04e/google_meet",
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_term": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "ID do Cliente": "a72d8451-769a-4b42-a64c-45f636b855d6",
             "API-KEY": "1ce1633c-7f94-487a-ad21-62ed7b079427",
             "id_do_campo_id_do_agendamento_bot_conversa": "1139627",
             "fluxo_de_confirmacao_de_agendamento": "1869018",
@@ -5490,6 +5451,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-26T13:12:13.780Z",
-  "versionId": "b1d00da5-0b68-4276-ba81-143de63becf0"
+  "updatedAt": "2025-03-26T22:27:03.148Z",
+  "versionId": "ebddd37e-86aa-47ad-8b93-82768bf54fbe"
 }
