@@ -409,9 +409,9 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "fields_crm_etapas_funil",
+          "value": "situacao_pipeline_stage_2",
           "mode": "list",
-          "cachedResultName": "fields_crm_etapas_funil"
+          "cachedResultName": "situacao_pipeline_stage_2"
         },
         "where": {
           "values": [
@@ -448,9 +448,9 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "fields_crm_etapas_funil",
+          "value": "situacao_pipeline_stage_2",
           "mode": "list",
-          "cachedResultName": "fields_crm_etapas_funil"
+          "cachedResultName": "situacao_pipeline_stage_2"
         },
         "where": {
           "values": [
@@ -870,6 +870,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T19:06:36.769Z",
-  "versionId": "51e7b7d3-1063-4741-84d0-a1a3e02879db"
+  "updatedAt": "2025-03-26T19:59:12.080Z",
+  "versionId": "2b7f71d9-96ba-484f-9696-3e7324a27d03"
 }
