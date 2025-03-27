@@ -24,9 +24,9 @@
       "parameters": {
         "table": {
           "__rl": true,
-          "value": "cadastros",
+          "value": "cadastros2",
           "mode": "list",
-          "cachedResultName": "cadastros"
+          "cachedResultName": "cadastros2"
         },
         "dataMode": "defineBelow",
         "valuesToSend": {
@@ -177,6 +177,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T18:52:43.647Z",
-  "versionId": "6a104339-34d4-4cdb-8efb-94f18c242cf6"
+  "updatedAt": "2025-03-26T18:41:03.587Z",
+  "versionId": "387f1534-ecfc-47d2-88c3-1060e447dabd"
 }
