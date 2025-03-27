@@ -1,0 +1,726 @@
+{
+  "active": false,
+  "connections": {
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_funis": {
+      "main": [
+        [
+          {
+            "node": "busca_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "fila_acoes_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_users": {
+      "main": [
+        [
+          {
+            "node": "cria_atualiza_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_atualiza_user": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "evento": {
+      "main": [
+        [
+          {
+            "node": "reagendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "reagendamento": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-27T11:41:53.752Z",
+  "id": "2rgF4Fj2AXLVFT59",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "const payload = $json;\n// Traduz o triggerEvent\nconst isReschedule = $node[\"evento\"].json[\"payload\"][\"invitee\"][\"is_reschedule\"] === true;\nconst eventData = isReschedule\n    ? $node[\"evento\"].json[\"payload\"][\"new_event\"]\n    : $node[\"evento\"].json[\"payload\"][\"event\"];\nconst inviteeData = isReschedule\n    ? $node[\"evento\"].json[\"payload\"][\"new_invitee\"]\n    : $node[\"evento\"].json[\"payload\"][\"invitee\"];\nconst fullNameAnswer = inviteeData?.name || \"\";\nconst emailAnswer = inviteeData?.email || \"\";\nconst telefoneClienteOriginal = $node[\"evento\"].json[\"payload\"][\"questions_and_answers\"][\"0\"][\"answer\"] || \"\";\n\n// Obtém o valor do campo triggerEvent\nconst triggerEvent = $node[\"evento\"].json[\"event\"];\n\n// Função para traduzir os valores de triggerEvent\nfunction translateTriggerEvent(event, isReschedule) {\n    // Se for um reagendamento, prioriza isso\n    if (isReschedule === true && event === \"invitee.canceled\") {\n        return \"Reagendamento\";\n    }\n\n    const translations = {\n        \"invitee.created\": \"Agendamento\",\n        \"invitee.canceled\": \"Cancelamento\"\n    };\n\n    return translations[event] || \"Desconhecido\";\n}\n\nconst translatedTriggerEvent = translateTriggerEvent(triggerEvent, isReschedule);\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\n// Obtém os valores dos parâmetros\nconst endTime = eventData?.end_time || \"\";\nconst startTime = eventData?.start_time || \"\";\nconst createdAt = eventData?.created_at || \"\";\n\n// Função para formatar a data\nfunction formatToBrazilTime(isoDate) {\n    const date = new Date(isoDate);\n\n    // Formata para o padrão YYYY-MM-DD HH:mm:ss\n    const year = date.getFullYear();\n    const month = String(date.getMonth() + 1).padStart(2, '0');\n    const day = String(date.getDate()).padStart(2, '0');\n    const hours = String(date.getHours()).padStart(2, '0');\n    const minutes = String(date.getMinutes()).padStart(2, '0');\n    const seconds = String(date.getSeconds()).padStart(2, '0');\n\n    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;\n}\n\n// Formata as datas\nconst formattedEndTime = formatToBrazilTime(endTime);\nconst formattedStartTime = formatToBrazilTime(startTime);\nconst formattedCreatedAt = formatToBrazilTime(createdAt);\n\nfunction obterDiaSemana(dataISO) {\n  const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];\n\n  const dataObj = new Date(dataISO);\n  const indiceDia = dataObj.getUTCDay();\n\n  return diasDaSemana[indiceDia];\n}\n\n// 🆕 **Função para converter data ISO para o formato DD/MM/YYYY HH:mm**\nfunction formatToDDMMYYYYHHMM(isoDate) {\n    const date = new Date(isoDate);\n    const day = String(date.getDate()).padStart(2, '0');\n    const month = String(date.getMonth() + 1).padStart(2, '0');\n    const year = date.getFullYear();\n    const hours = String(date.getHours()).padStart(2, '0');\n    const minutes = String(date.getMinutes()).padStart(2, '0');\n    return `${day}/${month}/${year} ${hours}:${minutes}`;\n}\n\n// 🔹 **Aplicação da função para formatar startTime**\nconst formattedStartTimeDDMMYYYYHHMM = formatToDDMMYYYYHHMM(startTime);\n\nconst utm_source = $node[\"evento\"].json[\"payload\"][\"tracking\"][\"utm_source\"] || '';\nconst utm_medium = $node[\"evento\"].json[\"payload\"][\"tracking\"][\"utm_medium\"] || '';\nconst utm_content = $node[\"evento\"].json[\"payload\"][\"tracking\"][\"utm_content\"] || '';\nconst utm_campaign = $node[\"evento\"].json[\"payload\"][\"tracking\"][\"utm_campaign\"] || '';\nconst utm_term = $node[\"evento\"].json[\"payload\"][\"tracking\"][\"utm_term\"] || '';\nconst link_call = eventData?.location || \"\";\nconst diaSemana = obterDiaSemana(startTime)\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst form_id = $node[\"evento\"].json[\"payload\"][\"event_type\"][\"uuid\"] || \"\";\nconst form_name = $node[\"evento\"].json[\"payload\"][\"event_type\"][\"name\"] || \"\";\nconst email_responsavel = eventData?.extended_assigned_to?.[0]?.email || \"\";\n// Obtém o valor do motivo do cancelamento\nconst motivoCancelamento = $node[\"evento\"].json[\"payload\"][\"event\"][\"cancel_reason\"] || \"\";\n\n// Ajusta os IDs de agendamento dependendo se é reagendamento\nlet id_agendamento = \"\";\nlet id_agendamento_reagendado = \"\";\n\nif (isReschedule) {\n    id_agendamento_reagendado = $node[\"evento\"].json[\"payload\"][\"event\"][\"uuid\"] || \"\";\n    id_agendamento = $node[\"evento\"].json[\"payload\"][\"new_event\"][\"uuid\"] || \"\";\n} else {\n    id_agendamento = $node[\"evento\"].json[\"payload\"][\"event\"][\"uuid\"] || \"\";\n    id_agendamento_reagendado = \"\";\n}\n\n// Retornar os resultados\nreturn {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_term: utm_term,\n    utm_medium: utm_medium,\n    utm_content: utm_content,\n    form_id: form_id,\n    form_name: form_name,\n    id_agendamento: id_agendamento,\n    link_call: link_call,\n    email_responsavel: email_responsavel,\n    formattedEndTime: formattedEndTime,\n    formattedStartTime: formattedStartTime,\n    dataAgendamento: formattedCreatedAt,\n    originalTriggerEvent: triggerEvent,\n    translatedTriggerEvent: translatedTriggerEvent,\n    diaSemana: diaSemana,\n    motivo_cancelamento: motivoCancelamento,\n    id_agendamento_reagendado: id_agendamento_reagendado,\n    formattedStartTimeDDMMYYYYHHMM\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        200,
+        0
+      ],
+      "id": "7c3dd20e-cf9f-4e6a-b93c-22dc2cec2a57",
+      "name": "formata_dados"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Funis"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "faac85c9-d131-4f21-9ad0-3ce86c856d0a",
+      "name": "pesquisa_variavel_n8n_fluxo_funis",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        420,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_funis\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        620,
+        0
+      ],
+      "id": "583ea3c8-7784-42ac-abb6-8fa0ad1df56f",
+      "name": "busca_funil"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c74589e2-452e-44a5-8a49-b98c6fcdeca8",
+              "name": "nome",
+              "value": "={{ $node[\"formata_dados\"].json[\"fname\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f17267b5-65b0-4c2b-b9f5-d719193bb457",
+              "name": "sobrenome",
+              "value": "={{ $node[\"formata_dados\"].json[\"lname\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "79edcf9f-8602-409f-8d04-ced41c06d16f",
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "93103cc7-1870-4962-bb01-59462196b4de",
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4750507c-f44a-45d5-b5ce-2a681d5a5581",
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a68b8a08-b2d1-4352-affb-0a6f4045cf4a",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "71c74ec7-51b3-422e-a2d5-ae7bbf3bd1b0",
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "57aa10ae-6631-4352-8925-35138b1c9b7a",
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4e84ee54-3122-48e4-92d9-1f9db59e0b94",
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "2bb4770b-d984-4366-a4c5-6e323c3889c1",
+              "name": "id_funil",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_funil\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "b9134b79-303b-4d22-8c4c-36002bd7e7f8",
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "4b46ea13-5d79-4240-b419-11128000ccd0",
+              "name": "id_agendamento",
+              "value": "={{ $node[\"formata_dados\"].json[\"id_agendamento\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "3119a327-9ecf-46bf-88ad-2580b947ef54",
+              "name": "id_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a2bafec5-dec9-4b7a-89d2-90c739e203f5",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "3e57b6fb-6ca1-4fa2-9361-afd053d76c60",
+              "name": "link_call",
+              "value": "={{ $node[\"formata_dados\"].json[\"link_call\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "3194e1c4-e4e3-4bd8-94a6-3571febefdb4",
+              "name": "email_responsavel",
+              "value": "={{ $node[\"formata_dados\"].json[\"email_responsavel\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a7024d05-e41e-45dc-83cd-fb0f80532870",
+              "name": "data_termino",
+              "value": "={{ $node[\"formata_dados\"].json[\"formattedEndTime\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "e247fdee-27fd-4e2a-be7f-75566c7b4ec4",
+              "name": "data_inicio",
+              "value": "={{ $node[\"formata_dados\"].json[\"formattedStartTime\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f9464d0c-ecdb-44f9-b598-16075561326b",
+              "name": "data_agendamento",
+              "value": "={{ $node[\"formata_dados\"].json[\"dataAgendamento\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "8b42365f-2bfc-414b-9d76-33123402cfa5",
+              "name": "evento",
+              "value": "={{ $node[\"formata_dados\"].json[\"translatedTriggerEvent\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "fa195efa-97bd-4da8-a5d3-0bbbf6214fa8",
+              "name": "dia_semana",
+              "value": "={{ $node[\"formata_dados\"].json[\"diaSemana\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "b8d82f00-0e37-463d-8c75-b8a92df8bc5e",
+              "name": "id_agendamento_reagendado",
+              "value": "={{ $node[\"formata_dados\"].json[\"id_agendamento_reagendado\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "efddf712-bb47-4cff-a012-ddbdb1562aaa",
+              "name": "nome_do_evento",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_name\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "941ba5a2-b41c-40b3-bf33-f83921afaa81",
+              "name": "motivo_cancelamento",
+              "value": "={{ $node[\"formata_dados\"].json[\"motivo_cancelamento\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "75764743-9553-4332-a586-d81352fc4552",
+              "name": "data_call_kommo",
+              "value": "={{ $node[\"formata_dados\"].json[\"formattedStartTimeDDMMYYYYHHMM\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "862231fa-0d60-49e7-badd-7c007a4659ff",
+              "name": "closer",
+              "value": "={{ $node[\"consulta_sdr\"].json[\"nome\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2c78cdc7-db79-45db-8138-3c2f7796e946",
+      "name": "dados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1700,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis v2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "df6264d0-ab39-4ffa-9209-bd2f76c21117",
+      "name": "fila_acoes_funis",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"].replace('Cadastro','SDR').replace('Aplicação','SDR').replace('Agendamento','Closer').replace('Pesquisa','SDR').replace('Checkout','Closer') }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "email_colaborador",
+              "value": "={{ $item(\"0\").$node[\"formata_dados\"].json[\"email_responsavel\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1500,
+        0
+      ],
+      "id": "9e54b45f-4d8e-4adb-8bc4-9245bd5b7bae",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "6770e250-651f-4793-93be-cbcb4590b442",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Users"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "019c8ddc-84a6-4c0f-9ae5-66a4922e0106",
+      "name": "pesquisa_variavel_n8n_fluxo_users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1080,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_users\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"formata_dados\"].json[\"fname\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"formata_dados\"].json[\"lname\"] || \"\" }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}"
+            },
+            {
+              "name": "cpf",
+              "value": "={{ $node[\"formata_dados\"].json[\"cpf\"] || \"\" }}"
+            },
+            {
+              "name": "cnpj",
+              "value": "={{ $node[\"formata_dados\"].json[\"cnpj\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        0
+      ],
+      "id": "f1f810d9-c5fb-49aa-a3bb-85694ba7d033",
+      "name": "cria_atualiza_user"
+    },
+    {
+      "parameters": {
+        "scope": "organization",
+        "events": [
+          "invitee.created",
+          "invitee.canceled"
+        ]
+      },
+      "type": "n8n-nodes-base.calendlyTrigger",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        0
+      ],
+      "id": "238c7f64-b03d-46c7-81ef-7150268b36e5",
+      "name": "evento",
+      "webhookId": "3d4aa0ad-7cdd-4810-b59b-9863b4bc990d",
+      "credentials": {
+        "calendlyApi": {
+          "id": "jXDdnsracFSzSfax",
+          "name": "[Calendly] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"evento\"].json[\"payload\"][\"old_invitee\"][\"is_reschedule\"] }}",
+              "value2": true
+            },
+            {
+              "value1": "={{ $node[\"evento\"].json[\"payload\"][\"event\"][\"canceled\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "7a494f73-9628-416a-b931-fcac0d4eb603",
+      "name": "reagendamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -240
+      ],
+      "id": "f83179a5-5574-4cbf-a39c-3dc35e1c9b9d",
+      "name": "No Operation, do nothing"
+    }
+  ],
+  "pinData": {
+    "evento": [
+      {
+        "json": {
+          "event": "invitee.canceled",
+          "payload": {
+            "event_type": {
+              "uuid": "63a1756a-0987-4bb3-9c54-2369c0adaf1e",
+              "kind": "Round Robin",
+              "slug": null,
+              "name": "Sessão Sprint de Carreira",
+              "duration": 45,
+              "owner": {
+                "type": "organizations",
+                "uuid": null
+              }
+            },
+            "event": {
+              "uuid": "079ac94e-ce9f-4838-b99c-e01911f02f73",
+              "assigned_to": [
+                "Victor Santos"
+              ],
+              "extended_assigned_to": [
+                {
+                  "name": "Victor Santos",
+                  "email": "victor.santos@futureminds.com.br",
+                  "primary": true
+                }
+              ],
+              "start_time": "2025-03-29T15:00:00-03:00",
+              "start_time_pretty": "03:00pm - Saturday, March 29, 2025",
+              "invitee_start_time": "2025-03-29T15:00:00-03:00",
+              "invitee_start_time_pretty": "03:00pm - Saturday, March 29, 2025",
+              "end_time": "2025-03-29T15:45:00-03:00",
+              "end_time_pretty": "03:45pm - Saturday, March 29, 2025",
+              "invitee_end_time": "2025-03-29T15:45:00-03:00",
+              "invitee_end_time_pretty": "03:45pm - Saturday, March 29, 2025",
+              "created_at": "2025-03-27T12:07:36-03:00",
+              "location": "https://calendly.com/events/079ac94e-ce9f-4838-b99c-e01911f02f73/google_meet",
+              "canceled": true,
+              "canceler_name": "Gabriel Amaral",
+              "cancel_reason": "teste",
+              "canceled_at": "2025-03-27T12:12:53-03:00"
+            },
+            "invitee": {
+              "uuid": "fa25eae2-f912-40d0-ade0-1420578c4174",
+              "first_name": null,
+              "last_name": null,
+              "name": "Gabriel Amaral",
+              "email": "teste@automagicbots.com.br",
+              "text_reminder_number": null,
+              "timezone": "America/Sao_Paulo",
+              "created_at": "2025-03-27T12:07:36-03:00",
+              "is_reschedule": true,
+              "payments": [],
+              "canceled": true,
+              "canceler_name": "Gabriel Amaral",
+              "cancel_reason": "teste",
+              "canceled_at": "2025-03-27T12:12:53-03:00"
+            },
+            "questions_and_answers": [
+              {
+                "question": "Telefone com WhatsApp",
+                "answer": "+55 31 98571-1260"
+              }
+            ],
+            "questions_and_responses": {
+              "1_question": "Telefone com WhatsApp",
+              "1_response": "+55 31 98571-1260"
+            },
+            "tracking": {
+              "utm_campaign": "quente",
+              "utm_source": "facebook",
+              "utm_medium": "stories",
+              "utm_content": "ad01",
+              "utm_term": "ig30d",
+              "salesforce_uuid": null
+            },
+            "old_event": null,
+            "old_invitee": null,
+            "new_event": {
+              "uuid": "133fa000-d882-4098-819c-33553166bf27",
+              "assigned_to": [
+                "Victor Santos"
+              ],
+              "extended_assigned_to": [
+                {
+                  "name": "Victor Santos",
+                  "email": "victor.santos@futureminds.com.br",
+                  "primary": true
+                }
+              ],
+              "start_time": "2025-03-29T12:00:00-03:00",
+              "start_time_pretty": "12:00pm - Saturday, March 29, 2025",
+              "invitee_start_time": "2025-03-29T12:00:00-03:00",
+              "invitee_start_time_pretty": "12:00pm - Saturday, March 29, 2025",
+              "end_time": "2025-03-29T12:45:00-03:00",
+              "end_time_pretty": "12:45pm - Saturday, March 29, 2025",
+              "invitee_end_time": "2025-03-29T12:45:00-03:00",
+              "invitee_end_time_pretty": "12:45pm - Saturday, March 29, 2025",
+              "created_at": "2025-03-27T12:12:54-03:00",
+              "location": "https://calendly.com/events/133fa000-d882-4098-819c-33553166bf27/google_meet",
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
+            },
+            "new_invitee": {
+              "uuid": "c2d7a6e9-6fbc-423c-b2cb-3d1c97142428",
+              "first_name": null,
+              "last_name": null,
+              "name": "Gabriel Amaral",
+              "email": "teste@automagicbots.com.br",
+              "text_reminder_number": null,
+              "timezone": "America/Sao_Paulo",
+              "created_at": "2025-03-27T12:12:54-03:00",
+              "is_reschedule": false,
+              "payments": [],
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
+            }
+          },
+          "time": "2025-03-27T15:12:54Z"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-27T15:19:17.353Z",
+  "versionId": "f9de4bfe-74a9-4d9b-8692-3c3dbabac5c4"
+}
