@@ -514,7 +514,9 @@
     },
     {
       "parameters": {
-        "url": "https://aimportacaodescomplicada.api-us1.com/api/3/fields",
+        "url": "https://futureminds14016.api-us1.com/api/3/fields",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
         "sendQuery": true,
         "queryParameters": {
           "parameters": [
@@ -524,20 +526,7 @@
             },
             {
               "name": "search",
-              "value": "utm_"
-            }
-          ]
-        },
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Api-Token",
-              "value": "3009aaee00ffb883b84819b0c39d9dcdcdac7dc8b3c9ba8e83898314722db3dc01defac5"
-            },
-            {
-              "name": "accept",
-              "value": "application/json"
+              "value": "Salário"
             }
           ]
         },
@@ -550,7 +539,13 @@
       "position": [
         -200,
         -180
-      ]
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "HWAA0v3JsWI6IbdK",
+          "name": "[ActiveCampaign] - Future Minds"
+        }
+      }
     },
     {
       "parameters": {
@@ -1188,6 +1183,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T18:08:40.229Z",
-  "versionId": "dca52a90-9f53-49a9-9f00-632948284731"
+  "updatedAt": "2025-03-26T22:53:27.669Z",
+  "versionId": "258978d2-e942-4355-9d98-7fdf0649b31f"
 }
