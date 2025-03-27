@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "rodizio_closer",
+            "node": "cria/atualiza_contato",
             "type": "main",
             "index": 0
           }
@@ -1263,17 +1263,6 @@
         [
           {
             "node": "envia_email_do_closer_responsavel",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "rodizio_closer": {
-      "main": [
-        [
-          {
-            "node": "cria/atualiza_contato",
             "type": "main",
             "index": 0
           }
@@ -5320,34 +5309,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/consulta-colaborador",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "time",
-              "value": "Closer"
-            },
-            {
-              "name": "user",
-              "value": "={{ $node[\"pesquisa_lead4\"].json[\"id_lead\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "e422cad5-14c7-4731-837d-50bbf11da64d",
-      "name": "rodizio_closer",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        -3160,
-        1980
-      ]
-    },
-    {
-      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -5691,6 +5652,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-04T19:45:03.324Z",
-  "versionId": "9bf88486-1dbf-4c35-8b70-308729b49263"
+  "updatedAt": "2025-03-26T22:32:37.602Z",
+  "versionId": "46b91cc3-0e07-4eca-81cf-ed4f6b719e2f"
 }
