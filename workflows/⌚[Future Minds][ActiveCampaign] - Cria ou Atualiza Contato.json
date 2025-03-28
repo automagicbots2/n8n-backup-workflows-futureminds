@@ -443,19 +443,15 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "fields_crm_etapas_funil",
+          "value": "fields_email_marketing_etapas_funil",
           "mode": "list",
-          "cachedResultName": "fields_crm_etapas_funil"
+          "cachedResultName": "fields_email_marketing_etapas_funil"
         },
         "where": {
           "values": [
             {
               "column": "id_etapa_funil",
               "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
-            },
-            {
-              "column": "entidade",
-              "value": "deal"
             }
           ]
         },
@@ -526,7 +522,7 @@
             },
             {
               "name": "search",
-              "value": "Salário"
+              "value": "utm_source"
             }
           ]
         },
@@ -552,19 +548,15 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "fields_crm_etapas_funil",
+          "value": "fields_email_marketing_etapas_funil",
           "mode": "list",
-          "cachedResultName": "fields_crm_etapas_funil"
+          "cachedResultName": "fields_email_marketing_etapas_funil"
         },
         "where": {
           "values": [
             {
               "column": "id_situacao_agendamento",
               "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_agendamento\"] }}"
-            },
-            {
-              "column": "entidade",
-              "value": "deal"
             }
           ]
         },
@@ -1183,6 +1175,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-26T22:53:27.669Z",
-  "versionId": "258978d2-e942-4355-9d98-7fdf0649b31f"
+  "updatedAt": "2025-03-27T19:59:52.333Z",
+  "versionId": "cf2749d6-c51d-406c-95b5-aaac61f5adca"
 }
