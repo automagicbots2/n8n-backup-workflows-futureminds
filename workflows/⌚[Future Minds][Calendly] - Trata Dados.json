@@ -891,15 +891,19 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+    "errorWorkflow": "zRPVyGjtTGhPaWFr",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true
   },
   "staticData": {
     "node:evento": {
-      "webhookId": 5601173
+      "webhookId": 5602762
     }
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-03-27T20:30:37.013Z",
-  "versionId": "2e0061bb-b0f1-47a3-acfb-ce61ad5209e6"
+  "updatedAt": "2025-03-28T11:21:34.499Z",
+  "versionId": "b4a1645a-d77a-49a6-aee9-68fcd486595a"
 }
