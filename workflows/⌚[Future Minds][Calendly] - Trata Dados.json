@@ -772,41 +772,41 @@
               }
             },
             "event": {
-              "uuid": "71fc2269-5fa4-474e-8065-6ed78ef75f43",
+              "uuid": "74bce4a1-8346-421f-a0a5-4633f6ab2487",
               "assigned_to": [
-                "Victor Santos"
+                "Future Minds"
               ],
               "extended_assigned_to": [
                 {
-                  "name": "Victor Santos",
-                  "email": "victor.santos@futureminds.com.br",
+                  "name": "Future Minds",
+                  "email": "lilian.cidreira@futureminds.com.br",
                   "primary": true
                 }
               ],
-              "start_time": "2025-03-28T10:00:00-03:00",
-              "start_time_pretty": "10:00am - Friday, March 28, 2025",
-              "invitee_start_time": "2025-03-28T10:00:00-03:00",
-              "invitee_start_time_pretty": "10:00am - Friday, March 28, 2025",
-              "end_time": "2025-03-28T10:45:00-03:00",
-              "end_time_pretty": "10:45am - Friday, March 28, 2025",
-              "invitee_end_time": "2025-03-28T10:45:00-03:00",
-              "invitee_end_time_pretty": "10:45am - Friday, March 28, 2025",
-              "created_at": "2025-03-27T16:33:18-03:00",
-              "location": "https://calendly.com/events/71fc2269-5fa4-474e-8065-6ed78ef75f43/google_meet",
+              "start_time": "2025-04-04T10:30:00-03:00",
+              "start_time_pretty": "10:30am - Friday, April 4, 2025",
+              "invitee_start_time": "2025-04-04T10:30:00-03:00",
+              "invitee_start_time_pretty": "10:30am - Friday, April 4, 2025",
+              "end_time": "2025-04-04T11:15:00-03:00",
+              "end_time_pretty": "11:15am - Friday, April 4, 2025",
+              "invitee_end_time": "2025-04-04T11:15:00-03:00",
+              "invitee_end_time_pretty": "11:15am - Friday, April 4, 2025",
+              "created_at": "2025-04-01T15:26:32-03:00",
+              "location": "https://calendly.com/events/74bce4a1-8346-421f-a0a5-4633f6ab2487/google_meet",
               "canceled": false,
               "canceler_name": null,
               "cancel_reason": null,
               "canceled_at": null
             },
             "invitee": {
-              "uuid": "78aafaee-721b-4098-9eb8-b5b182972320",
+              "uuid": "17160c53-45b2-4a23-83f5-2b6052563e2d",
               "first_name": null,
               "last_name": null,
-              "name": "Gabriel Amaral",
+              "name": "gabriel",
               "email": "teste@automagicbots.com.br",
               "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2025-03-27T16:33:18-03:00",
+              "created_at": "2025-04-01T15:26:32-03:00",
               "is_reschedule": false,
               "payments": [],
               "canceled": false,
@@ -837,7 +837,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2025-03-27T19:33:19Z"
+          "time": "2025-04-01T18:26:32Z"
         }
       }
     ],
@@ -899,11 +899,11 @@
   },
   "staticData": {
     "node:evento": {
-      "webhookId": 5602762
+      "webhookId": 5614258
     }
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-03-28T11:21:34.499Z",
-  "versionId": "b4a1645a-d77a-49a6-aee9-68fcd486595a"
+  "updatedAt": "2025-04-01T19:43:22.121Z",
+  "versionId": "891ceb7c-169c-4fa8-8a97-e78f8d7aa1d6"
 }
