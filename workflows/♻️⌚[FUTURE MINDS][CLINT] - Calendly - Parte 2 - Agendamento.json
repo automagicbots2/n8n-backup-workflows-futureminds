@@ -889,7 +889,7 @@
       "main": [
         [
           {
-            "node": "envia_campo_id_banco_de_dados",
+            "node": "envia_tag_qualificado",
             "type": "main",
             "index": 0
           }
@@ -3825,6 +3825,7 @@
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3897,6 +3898,7 @@
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4733,6 +4735,7 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5451,6 +5454,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-26T22:27:03.148Z",
-  "versionId": "ebddd37e-86aa-47ad-8b93-82768bf54fbe"
+  "updatedAt": "2025-04-01T19:20:49.111Z",
+  "versionId": "e7ce6178-0a20-445b-9b49-f5889247ac09"
 }
