@@ -1162,6 +1162,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "create_update_bot_conversa",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1181,6 +1188,79 @@
         [
           {
             "node": "create_update_contact_email_marketing4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_email_marketing5": {
+      "main": [
+        [
+          {
+            "node": "create_update_bot_conversa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_nao_oficial": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_send_message_api_nao_oficial": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_bot_conversa": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_bot_conversa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_bot_conversa": {
+      "main": [
+        [
+          {
+            "node": "create_update_bot_conversa1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_bot_conversa1": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial",
             "type": "main",
             "index": 0
           }
@@ -4741,6 +4821,238 @@
       ],
       "id": "c77036be-a45c-4b4e-a67b-bba893c327c3",
       "name": "add_tag_email_marketing5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "send_message_api_nao_oficial",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5f7b35bc-a6f7-40d1-ab81-205e32a8de85",
+      "name": "send_message_api_nao_oficial",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -520,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_message_api_nao_oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "c374e982-57ec-469c-a21d-a4b1336722a0",
+      "name": "pesquisa_acao_send_message_api_nao_oficial",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -260,
+        2520
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_send_message_api_nao_oficial\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_agendamento",
+              "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -20,
+        2520
+      ],
+      "id": "8f7b4a0d-2c6c-47f9-a96d-fbf277fbc5dd",
+      "name": "send_message_api_nao_oficial1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_bot_conversa",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a3c24d42-8a22-42ea-82ea-2cbda189737c",
+      "name": "create_update_bot_conversa",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -800,
+        2260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_bot_conversa"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "e6b5d58b-b1a5-431f-b5d4-e51c8572145e",
+      "name": "pesquisa_acao_create_update_bot_conversa",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -540,
+        2220
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_bot_conversa\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_agendamento",
+              "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -300,
+        2220
+      ],
+      "id": "99cf1ea2-6685-4acd-9e9a-43866f53f7c0",
+      "name": "create_update_bot_conversa1"
     }
   ],
   "pinData": {
@@ -4778,6 +5090,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-27T20:49:05.550Z",
-  "versionId": "de1e5b66-1ae4-4de3-aede-f499ca40b536"
+  "updatedAt": "2025-04-01T19:29:14.483Z",
+  "versionId": "b35e8473-e8bb-4bc4-b728-76a25928aab0"
 }
