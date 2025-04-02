@@ -1,0 +1,421 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_api_key_bot_conversa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_api_key_bot_conversa": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastrar_contato": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendamento": {
+      "main": [
+        [
+          {
+            "node": "busca_fluxo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "qualificacao_preenchida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [],
+        [
+          {
+            "node": "agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_fluxo": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-01T18:25:00.503Z",
+  "id": "tv1OKC9eiLIeknJj",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Future Minds][Bot Conversa] - Envia Mensagem",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "d371999c-ae80-4ee4-a52a-4cef17d7a87a",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -940,
+        100
+      ],
+      "id": "d21621d9-8a0e-49b2-96cb-3b6aaee3361f",
+      "name": "fluxo_chamado",
+      "webhookId": "d371999c-ae80-4ee4-a52a-4cef17d7a87a"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] || \".\"}}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] || \".\"}}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"pesquisa_api_key_bot_conversa\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cadastrar_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        100
+      ],
+      "id": "2fa652bd-a044-4552-93b3-98195577850c",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "Chave de API Bot Conversa"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "97de55b5-a6e6-4797-813a-8f5f666e33d7",
+      "name": "pesquisa_api_key_bot_conversa",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -700,
+        100
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{$node[\"cadastrar_contato\"].json[\"id\"]}}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"pesquisa_api_key_bot_conversa\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "={{ $node[\"busca_fluxo\"].json[\"id_fluxo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "386c63d4-a23f-4d63-8405-261bf77a34f5",
+      "name": "envia_fluxo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        320,
+        160
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fluxo_wpp_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fluxo_wpp_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_agendamento",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_agendamento\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8712d7fd-356a-4cf5-91b6-77622c220e94",
+      "name": "busca_fluxo",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        120,
+        160
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b5c65222-d1af-486c-a4f6-699430a5ee8d",
+      "name": "agendamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -80,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5bfa301b-1605-4e00-98c5-7525029f48c3",
+      "name": "qualificacao_preenchida",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        120,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "626e3f5f-0f35-4b9e-84e1-f493d495f742",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ad3c165d-7c88-4a95-851a-ba0734647984",
+      "name": "checkout",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -280,
+        100
+      ]
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "user-agent": "axios/1.8.2",
+            "content-length": "946",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8nwebhookhetznerfutureminds.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "8fff2fff9f21",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "telefone": "553185711260",
+            "nome": "Gabriel",
+            "sobrenome": "",
+            "id_user": 3397,
+            "id_etapa_funil": 2,
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "",
+              "email": "teste@automagicbots.com.br",
+              "telefone": "553185711260",
+              "utm_source": "facebook",
+              "utm_campaign": "quente",
+              "utm_term": "ig30d",
+              "utm_medium": "stories",
+              "utm_content": "ad01",
+              "id_funil": "12",
+              "instagram": "",
+              "id_agendamento": "74bce4a1-8346-421f-a0a5-4633f6ab2487",
+              "id_forms": "2",
+              "tipo_forms": "Agendamento",
+              "link_call": "https://calendly.com/events/74bce4a1-8346-421f-a0a5-4633f6ab2487/google_meet",
+              "email_responsavel": "lilian.cidreira@futureminds.com.br",
+              "data_termino": "2025-04-04 11:15:00",
+              "data_inicio": "2025-04-04 10:30:00",
+              "data_agendamento": "2025-04-01 15:26:32",
+              "evento": "Agendamento",
+              "dia_semana": "Sexta-feira",
+              "id_agendamento_reagendado": "",
+              "nome_do_evento": "Sessão Sprint de Carreira",
+              "motivo_cancelamento": "",
+              "data_call_kommo": "04/04/2025 10:30",
+              "closer": "Lilian Cidreira"
+            },
+            "id_situacao_agendamento": 1
+          },
+          "webhookUrl": "https://n8nwebhookhetznerfutureminds.automagicbots.com.br/webhook/d371999c-ae80-4ee4-a52a-4cef17d7a87a",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "zRPVyGjtTGhPaWFr"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-01T19:09:24.569Z",
+  "versionId": "4a524239-0a02-4859-abdb-0ace058e277f"
+}
