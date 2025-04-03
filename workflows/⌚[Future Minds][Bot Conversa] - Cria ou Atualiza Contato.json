@@ -426,9 +426,9 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "fields_email_marketing_etapas_funil",
+          "value": "fields_bot_conversa_etapas_funil",
           "mode": "list",
-          "cachedResultName": "fields_email_marketing_etapas_funil"
+          "cachedResultName": "fields_bot_conversa_etapas_funil"
         },
         "where": {
           "values": [
@@ -662,6 +662,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-01T19:19:01.618Z",
-  "versionId": "a5a2888a-4929-4848-9909-3026c81f7b97"
+  "updatedAt": "2025-04-02T19:46:40.542Z",
+  "versionId": "b2543708-3a1d-4c02-b6bd-bd80337fb29f"
 }
