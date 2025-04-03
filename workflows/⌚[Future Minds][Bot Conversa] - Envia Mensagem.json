@@ -74,6 +74,46 @@
           }
         ]
       ]
+    },
+    "busca_fluxo1": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificacao_preenchida": {
+      "main": [
+        [
+          {
+            "node": "busca_fluxo1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "busca_fluxo2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_fluxo2": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-01T18:25:00.503Z",
@@ -284,7 +324,8 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict"
+            "typeValidation": "strict",
+            "version": 1
           },
           "conditions": [
             {
@@ -344,6 +385,150 @@
         -280,
         100
       ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{$node[\"cadastrar_contato\"].json[\"id\"]}}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"pesquisa_api_key_bot_conversa\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "={{ $node[\"busca_fluxo1\"].json[\"id_fluxo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6c5e1194-58c7-4f07-a232-0ee166c104a2",
+      "name": "envia_fluxo1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        560,
+        360
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fluxo_wpp_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fluxo_wpp_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] || \"\" }}"
+            },
+            {
+              "column": "situacao",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2eb8fb09-8682-4fec-ba11-8c6f867dbbc4",
+      "name": "busca_fluxo1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        360,
+        360
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{$node[\"cadastrar_contato\"].json[\"id\"]}}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"pesquisa_api_key_bot_conversa\"].json[\"valor_variavel\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "={{ $node[\"busca_fluxo2\"].json[\"id_fluxo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c1ac218c-b6c4-496f-9863-78e6a44c1b79",
+      "name": "envia_fluxo2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        560,
+        560
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fluxo_wpp_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fluxo_wpp_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6183b61d-9b6b-4237-b64b-83b2dc67b45f",
+      "name": "busca_fluxo2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        360,
+        560
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
     }
   ],
   "pinData": {
@@ -416,6 +601,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-01T19:09:24.569Z",
-  "versionId": "4a524239-0a02-4859-abdb-0ace058e277f"
+  "updatedAt": "2025-04-02T23:03:51.623Z",
+  "versionId": "492e9c53-5a72-4097-8814-8f96189efa45"
 }
