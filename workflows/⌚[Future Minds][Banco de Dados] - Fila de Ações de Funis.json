@@ -795,6 +795,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "create_update_bot_conversa2",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -881,7 +888,13 @@
     },
     "send_flow_manychat1": {
       "main": [
-        [],
+        [
+          {
+            "node": "create_update_bot_conversa2",
+            "type": "main",
+            "index": 0
+          }
+        ],
         []
       ]
     },
@@ -1261,6 +1274,68 @@
         [
           {
             "node": "send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_nao_oficial2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_send_message_api_nao_oficial1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_send_message_api_nao_oficial1": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_bot_conversa2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_bot_conversa1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_message_api_nao_oficial2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_bot_conversa1": {
+      "main": [
+        [
+          {
+            "node": "create_update_bot_conversa3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_bot_conversa3": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial2",
             "type": "main",
             "index": 0
           }
@@ -4924,6 +4999,10 @@
             {
               "name": "id_situacao_agendamento",
               "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] || \"\" }}"
             }
           ]
         },
@@ -5053,6 +5132,234 @@
       ],
       "id": "99cf1ea2-6685-4acd-9e9a-43866f53f7c0",
       "name": "create_update_bot_conversa1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "send_message_api_nao_oficial",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "db71401c-7544-4167-b337-89ec490b5cc6",
+      "name": "send_message_api_nao_oficial2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        5640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_message_api_nao_oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "406984b4-63ee-4dc4-8949-c8403c731862",
+      "name": "pesquisa_acao_send_message_api_nao_oficial1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        740,
+        5600
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_send_message_api_nao_oficial1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        980,
+        5600
+      ],
+      "id": "a285092a-eedf-4ac8-b426-ea15e69460b9",
+      "name": "send_message_api_nao_oficial3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_bot_conversa",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "03219988-535a-445c-add5-74cff28658f5",
+      "name": "create_update_bot_conversa2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        200,
+        5340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_bot_conversa"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "07207a8d-e7b9-4284-91b1-430b73e28ffd",
+      "name": "pesquisa_acao_create_update_bot_conversa1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        460,
+        5300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "JtvnOichfjUUmLAo",
+          "name": "[MySQL] - Future Minds"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_bot_conversa1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        700,
+        5300
+      ],
+      "id": "148cd20c-7058-4535-b9e1-9d143af81e1c",
+      "name": "create_update_bot_conversa3"
     }
   ],
   "pinData": {
@@ -5090,6 +5397,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-01T19:29:14.483Z",
-  "versionId": "b35e8473-e8bb-4bc4-b728-76a25928aab0"
+  "updatedAt": "2025-04-02T22:23:35.831Z",
+  "versionId": "132c746e-724e-496b-95dd-659f75e61ea2"
 }
